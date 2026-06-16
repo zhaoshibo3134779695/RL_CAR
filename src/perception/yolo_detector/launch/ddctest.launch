@@ -1,0 +1,21 @@
+<launch>
+    <node pkg="yolo_detector"
+          type="onnx_yolo_detector_node.py"
+          name="yolo_onnx_detector"
+          output="screen">
+
+        <param name="model_path" value="$(find yolo_detector)/scripts/weiting.onnx"/>
+
+        <param name="img_size" value="640"/>
+        <param name="conf_thres" value="0.1"/>
+        <param name="iou_thres" value="0.1"/>
+        <param name="use_cuda" value="false"/>
+        <remap from="/camera/color/image_raw" to="/camera/image_raw" />
+
+        <rosparam param="class_names">
+            - 0
+        </rosparam>
+
+    </node>
+</launch>
+

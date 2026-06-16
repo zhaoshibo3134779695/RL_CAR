@@ -1,0 +1,118 @@
+path: D:/ultralytics-8.2.87/ultralytics-8.2.87/datasets/zhsq_waste_classification
+train: images/train
+val: images/val
+names:
+  0: close
+  1: open
+  2: Kitchen Waste
+  3: Recyclables
+  4: Other Waste
+  5: Harmful Waste
+  6: Waste computers
+  7: Perfume bottle
+  8: Old Hat
+  9: Gas tank
+  10: Zip-top can
+  11: Glass bottles
+  12: Old iron pot
+  13: Glass Kettle
+  14: Old paper bags
+  15: Old plastic basket
+  16: Basketball
+  17: Carton
+  18: Old toys
+  19: Milk box
+  20: Waste lock
+  21: Newspaper
+  22: Umbrella skeleton
+  23: Spoon
+  24: Old shoes
+  25: Old schoolbag
+  26: Screw
+  27: Old dolls
+  28: Old clip
+  29: Book
+  30: Plastic bottles
+  31: Bad trash can
+  32: Watercolor pen
+  33: Chopping board
+  34: Muck
+  35: Tiles
+  36: Toothbrush
+  37: Broom
+  38: Old Mirror
+  39: Cigarette end
+  40: Lighter
+  41: Plastic bag
+  42: Glue
+  43: Wooden comb
+  44: Earthen jar
+  45: Old bathtub
+  46: Cosmetic brush
+  47: Old Water tank
+  48: Bad closestool
+  49: Dirty clothes
+  50: Shell
+  51: Ceramic bowl
+  52: Toothpaste tube
+  53: Cup
+  54: Bad flowerpots
+  55: Dish
+  56: Towel
+  57: One-off chopsticks
+  58: Toilet paper
+  59: Sponge
+  60: Brick
+  61: Peas peel
+  62: Abandoned tea
+  63: Bone
+  64: Biscuits
+  65: Bread
+  66: Orange peel
+  67: Kernel
+  68: Tomatoes
+  69: Sugar cane
+  70: Mushroom
+  71: Ketchup
+  72: Banana peel
+  73: Scallion
+  74: Pear
+  75: Garlic
+  76: Cake
+  77: Chocolates
+  78: Shrimp shell
+  79: Corn
+  80: Chilli
+  81: Egg shell
+  82: Vegetable leaf
+  83: Crab shell
+  84: Fishbone
+  85: Strawberry
+  86: eggplant
+  87: Prune kernel
+  88: Peanut shell
+  89: Potato
+  90: Watermelon rind
+  91: Apple
+  92: Expired Nail Polish
+  93: Medical gauze
+  94: Paint
+  95: Palette
+  96: Hair gel
+  97: Alcohol
+  98: Oral liquid bottle
+  99: Waste thermometer
+  100: Syringe
+  101: Pesticide
+  102: Expired Capsule medicine
+  103: Paint bucket
+  104: Woundplast
+  105: Pesticide bottle
+  106: Light stick
+  107: Medical cotton swab
+  108: Medical gloves
+  109: Expired cosmetics
+  110: Expired tablets
+  111: Battery
+  112: Fluorescent Lamp
+  113: Waste battery

@@ -1,0 +1,6 @@
+<launch>
+	<node pkg = "car_bringup" type = "newt.py" name = "newt" />
+	<!--node pkg = "mbot_teleop" type = "mbot_teleop.py" name = "mbot_teleop"/-->
+	<include file="$(find nav_demo)/launch/nav777.launch"/>
+        
+</launch>

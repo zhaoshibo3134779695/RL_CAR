@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="yolo_detector"
+          type="yolo_json_parser_node"
+          name="yolo_json_parser"
+          output="screen">
+
+        <!-- JSON 话题名称（必须与 Python 节点发布的一致） -->
+        <param name="detections_topic" value="/yolo/detections"/>
+
+    </node>
+</launch>

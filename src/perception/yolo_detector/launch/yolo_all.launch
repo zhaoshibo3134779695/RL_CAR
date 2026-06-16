@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find yolo_detector)/launch/onnx_yolo_detector.launch"/>
+    <include file="$(find yolo_detector)/launch/yolo_json_parser.launch"/>
+</launch>

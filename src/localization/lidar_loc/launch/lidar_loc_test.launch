@@ -1,0 +1,19 @@
+<launch>
+
+  <include file="$(find nav_demo)/launch/nav03_map_server.launch" />
+  <include file="$(find nav_demo)/launch/nav05_path_dwa.launch" />
+
+  <rosparam file="$(find lidar_loc)/config/kf.yaml" command="load"/>
+  <node pkg="lidar_loc" type="lidar_loc" name="lidar_loc">
+    <param name="base_frame" value="base_footprint" />
+    <param name="odom_frame" value="odom" />
+    <param name="laser_frame" value="laser_link" />
+    <param name="laser_topic" value="scan" />
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find nav_demo)/config/single_nav.rviz"
+        required="true" />
+
+
+</launch>

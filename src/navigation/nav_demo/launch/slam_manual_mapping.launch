@@ -1,0 +1,6 @@
+<launch>
+  <!-- Manual SLAM mapping entrypoint: lidar + IMU + odom fusion + RViz + gmapping + move_base -->
+  <include file="$(find nav_demo)/launch/gmapping_lslidar.launch" />
+  <include file="$(find nav_demo)/launch/nav05_path_dwa.launch" />
+  <node pkg="car_bringup" type="newt.py" name="cmd_vel_listener" output="screen" />
+</launch>

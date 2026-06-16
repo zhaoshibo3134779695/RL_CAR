@@ -1,0 +1,8 @@
+<launch>
+  <!-- Manual navigation entrypoint: load map + localization + move_base + RViz -->
+  <arg name="map" default="mymap.yaml" />
+  <include file="$(find nav_demo)/launch/nav777.launch">
+    <arg name="enable_usb_cam" value="false" />
+    <arg name="map" value="$(arg map)" />
+  </include>
+</launch>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sync_example</name>
+  <version>0.0.0</version>
+  <description>The sync_example package</description>
+
+  <!-- 维护者信息（可根据自己情况改） -->
+  <maintainer email="you@example.com">your_name</maintainer>
+  <license>MIT</license>
+
+  <!-- 编译依赖 -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  
+  <!-- 运行依赖 -->
+  <exec_depend>rospy</exec_depend>
+
+  <!-- 导出配置 -->
+  <export>
+    <build_type>catkin</build_type>
+  </export>
+</package>
