@@ -1,6 +1,0 @@
-<launch>
-  <node pkg="car_bringup" name="newt" type="newt.py"/>
-  <include  file="$(find car_bringup)/launch/gmapping.launch" />
-  <include  file="$(find nav_demo)/launch/nav04_amcl.launch" />
-  <include  file="$(find nav_demo)/launch/nav05_path_dwa.launch" />
-</launch>

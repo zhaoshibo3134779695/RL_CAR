@@ -1,7 +1,0 @@
-<launch>
-  <node pkg="imu_tools" type="imu_node" name="imu_test" output="screen">
-    <param name="port" value="/dev/ttyUSB0" />
-    <param name="baud" value="115200" />
-    <param name="frame_id" value="imu_link" />
-  </node>
-</launch>

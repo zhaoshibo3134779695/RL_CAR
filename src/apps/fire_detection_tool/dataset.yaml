@@ -1,6 +1,0 @@
-path: D:/ultralytics-8.2.87/ultralytics-8.2.87/datasets/zhsq_fire_title
-train: images/train
-val: images/val
-names:
-  0: fire
-  1: title
