@@ -1,0 +1,83 @@
+#!/usr/bin/python3
+import math
+import rclpy
+from geometry_msgs.msg import Twist
+from nav_msgs.msg import Odometry
+from sensor_msgs.msg import Imu
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
+
+
+class WheelOdometry(Node):
+    """Recompute the onboard base.cpp midpoint integral using the ROS clock."""
+
+    def __init__(self):
+        super().__init__('wheel_odometry')
+        defaults = dict(linear_scale_x=1.071, linear_scale_y=1.0, angular_scale=2.22,
+                        max_vel_dt=0.5, use_imu_yaw=False, imu_timeout=0.2,
+                        odom_frame='odom', base_frame='base_footprint')
+        self.p = {k: self.declare_parameter(k, v).value for k, v in defaults.items()}
+        self.x = self.y = self.yaw = self.imu_yaw = self.imu_rate = 0.0
+        self.previous_ns = self.imu_ns = self.last_imu_angle = None
+        self.out = self.create_publisher(Odometry, '~/odom', 20)
+        self.create_subscription(Twist, '/vel_raw', self.velocity, qos_profile_sensor_data)
+        if self.p['use_imu_yaw']:
+            self.create_subscription(Imu, '/imu0', self.imu, qos_profile_sensor_data)
+
+    def imu(self, msg):
+        q = msg.orientation
+        angle = math.atan2(2 * (q.w*q.z + q.x*q.y), 1 - 2 * (q.y*q.y + q.z*q.z))
+        if self.last_imu_angle is None:
+            self.imu_yaw = self.yaw
+        else:
+            delta = angle - self.last_imu_angle
+            self.imu_yaw += math.atan2(math.sin(delta), math.cos(delta))
+        self.last_imu_angle = angle
+        self.imu_rate = msg.angular_velocity.z
+        stamp = msg.header.stamp
+        self.imu_ns = stamp.sec * 10**9 + stamp.nanosec or self.get_clock().now().nanoseconds
+
+    def velocity(self, msg):
+        now = self.get_clock().now()
+        ns = now.nanoseconds
+        dt = 0.0 if self.previous_ns is None else (ns - self.previous_ns) * 1e-9
+        self.previous_ns = ns
+        if not 0.0 <= dt <= self.p['max_vel_dt']:
+            dt = 0.0
+        vx = msg.linear.x * self.p['linear_scale_x']
+        vy = msg.linear.y * self.p['linear_scale_y']
+        wz = msg.angular.z * self.p['angular_scale']
+        before = self.yaw
+        if self.imu_ns is not None and 0 <= ns - self.imu_ns <= self.p['imu_timeout'] * 1e9:
+            self.yaw, wz = self.imu_yaw, self.imu_rate
+        else:
+            self.yaw += wz * dt
+        mid = (before + self.yaw) / 2
+        self.x += (vx * math.cos(mid) - vy * math.sin(mid)) * dt
+        self.y += (vx * math.sin(mid) + vy * math.cos(mid)) * dt
+        out = Odometry()
+        out.header.stamp = now.to_msg()
+        out.header.frame_id, out.child_frame_id = self.p['odom_frame'], self.p['base_frame']
+        out.pose.pose.position.x, out.pose.pose.position.y = self.x, self.y
+        out.pose.pose.orientation.z, out.pose.pose.orientation.w = math.sin(self.yaw / 2), math.cos(self.yaw / 2)
+        out.twist.twist.linear.x, out.twist.twist.linear.y, out.twist.twist.angular.z = vx, vy, wz
+        for i in (0, 7, 35):
+            out.pose.covariance[i], out.twist.covariance[i] = 0.001, 0.0001
+        self.out.publish(out)
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = WheelOdometry()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.destroy_node()
+    except (ExternalShutdownException, KeyboardInterrupt):
+        pass
+
+
+if __name__ == '__main__':
+    main()

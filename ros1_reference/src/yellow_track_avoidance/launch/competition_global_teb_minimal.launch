@@ -1,0 +1,28 @@
+<launch>
+  <!-- First candidate: only DWA -> TEB changes from the frozen baseline. -->
+  <arg name="start_camera" default="false"/>
+  <arg name="start_lidar" default="false"/>
+  <arg name="start_odometry" default="false"/>
+  <arg name="start_chassis" default="false"/>
+  <arg name="start_rviz" default="false"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_planner_core.launch">
+    <arg name="profile_name" value="global_planner_teb_minimal"/>
+    <arg name="global_planner_plugin" value="global_planner/GlobalPlanner"/>
+    <arg name="global_planner_config"
+         value="$(find yellow_track_avoidance)/config/click_nav_global_planner.yaml"/>
+    <arg name="global_plan_topic" value="/move_base/GlobalPlanner/plan"/>
+    <arg name="local_planner_plugin"
+         value="teb_local_planner/TebLocalPlannerROS"/>
+    <arg name="local_planner_config"
+         value="$(find yellow_track_avoidance)/config/competition_teb_baseline.yaml"/>
+    <arg name="use_sbpl" value="false"/>
+    <arg name="use_teb" value="true"/>
+    <arg name="start_camera" value="$(arg start_camera)"/>
+    <arg name="start_lidar" value="$(arg start_lidar)"/>
+    <arg name="start_odometry" value="$(arg start_odometry)"/>
+    <arg name="start_chassis" value="$(arg start_chassis)"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+  </include>
+</launch>
+

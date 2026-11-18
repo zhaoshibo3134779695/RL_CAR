@@ -1,0 +1,10 @@
+# The narrow passage has 0.485 m clear width between its INNER wall faces.
+# Keep costmap inflation to the requested 1 cm; exact collision remains
+# enforced by the 0.34 x 0.33 m polygon.
+global_costmap:
+  inflation_radius: 0.01
+  cost_scaling_factor: 70.0
+
+local_costmap:
+  inflation_radius: 0.01
+  cost_scaling_factor: 70.0

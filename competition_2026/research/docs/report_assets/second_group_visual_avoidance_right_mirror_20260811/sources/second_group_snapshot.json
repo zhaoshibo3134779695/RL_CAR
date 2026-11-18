@@ -1,0 +1,2323 @@
+{
+  "/yellow_track_avoidance/debug/disc_status": {
+    "timestamp": 1786432759.2471647,
+    "frame_id": 27,
+    "left_line_detected": true,
+    "right_line_detected": false,
+    "disc_detected": true,
+    "disc_count": 2,
+    "disc_center_x_px": 163.99118041992188,
+    "disc_center_y_px": 719.554443359375,
+    "disc_major_axis_px": 57.09081268310547,
+    "disc_minor_axis_px": 50.22621536254883,
+    "disc_angle_deg": 65.5663070678711,
+    "disc_area_px": 631.0,
+    "disc_confidence": 0.9719226928989132,
+    "red_area_px": 487,
+    "white_area_px": 106,
+    "red_mask_area_px": 0,
+    "white_mask_area_px": 0,
+    "red_white_center_distance_px": 0.5152715097325988,
+    "candidate_count": 0,
+    "rejected_candidate_count": 0,
+    "disc_inside_lane": null,
+    "distance_to_left_line_px": null,
+    "distance_to_right_line_px": null,
+    "processing_time_ms": 149.26880200073356,
+    "used_history": false,
+    "motion_enabled": false,
+    "detections": [
+      {
+        "candidate_id": 0,
+        "center_x_px": 163.99118041992188,
+        "center_y_px": 719.554443359375,
+        "major_axis_px": 57.09081268310547,
+        "minor_axis_px": 50.22621536254883,
+        "angle_deg": 65.5663070678711,
+        "contour_area_px": 631.0,
+        "confidence": 0.9719226928989132,
+        "red_area_px": 487,
+        "white_area_px": 106,
+        "red_white_center_distance_px": 0.5152715097325988,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "used_history": false,
+        "metric_projection": {
+          "input_resolution_px": [
+            640,
+            480
+          ],
+          "roi_applied": false,
+          "resize_applied": false,
+          "detection_coordinate_system": "undistorted_full_image_px",
+          "distorted_full_image_px": [
+            219.83199806126208,
+            318.72131116247806
+          ],
+          "roi_pixel": null,
+          "resized_pixel": null,
+          "undistorted_full_image_px": [
+            219.4152069091797,
+            317.5733337402344
+          ],
+          "homography_source_is_undistorted": true,
+          "homography_input_px": [
+            219.4152069091797,
+            317.5733337402344
+          ],
+          "bev_pixel": [
+            163.99118041992188,
+            719.554443359375
+          ],
+          "bev_output_resolution_px": [
+            640,
+            800
+          ],
+          "bev_lateral_m_per_pixel": 0.0015960829552801804,
+          "bev_forward_m_per_pixel": 0.001963686292419414,
+          "ground_m": [
+            0.15600615056882544,
+            0.24900301780514358
+          ],
+          "base_m": [
+            0.7023061505688255,
+            0.24900301780514358
+          ],
+          "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+          "diameter_sample_count": 72,
+          "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+          "visible_ring_to_physical_diameter_ratio": 0.922076,
+          "estimated_visible_ring_diameter_m": 0.09498265193559838,
+          "estimated_visible_ring_forward_span_m": 0.10102341379668059,
+          "estimated_visible_ring_lateral_span_m": 0.08930310142632958,
+          "perimeter_ground_bounds_m": {
+            "forward": [
+              0.1087719684112384,
+              0.209795382207919
+            ],
+            "lateral": [
+              0.20397144270180861,
+              0.2932745441281382
+            ]
+          },
+          "estimated_physical_diameter_m": 0.10300956964024481,
+          "estimated_diameter_m": 0.10300956964024481
+        }
+      },
+      {
+        "candidate_id": 1,
+        "center_x_px": 409.1795959472656,
+        "center_y_px": 452.3351745605469,
+        "major_axis_px": 55.97871780395508,
+        "minor_axis_px": 44.508216857910156,
+        "angle_deg": 79.5280532836914,
+        "contour_area_px": 48.5,
+        "confidence": 0.7446793731904768,
+        "red_area_px": 65,
+        "white_area_px": 21,
+        "red_white_center_distance_px": 0.3725013587542116,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "used_history": false,
+        "metric_projection": {
+          "input_resolution_px": [
+            640,
+            480
+          ],
+          "roi_applied": false,
+          "resize_applied": false,
+          "detection_coordinate_system": "undistorted_full_image_px",
+          "distorted_full_image_px": [
+            394.5206201115086,
+            269.06936023486645
+          ],
+          "roi_pixel": null,
+          "resized_pixel": null,
+          "undistorted_full_image_px": [
+            393.28338623046875,
+            268.2281188964844
+          ],
+          "homography_source_is_undistorted": true,
+          "homography_input_px": [
+            393.28338623046875,
+            268.2281188964844
+          ],
+          "bev_pixel": [
+            409.1795959472656,
+            452.3351745605469
+          ],
+          "bev_output_resolution_px": [
+            640,
+            800
+          ],
+          "bev_lateral_m_per_pixel": 0.0015960829552801804,
+          "bev_forward_m_per_pixel": 0.001963686292419414,
+          "ground_m": [
+            0.680740965779423,
+            -0.14233803305020412
+          ],
+          "base_m": [
+            1.227040965779423,
+            -0.14233803305020412
+          ],
+          "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+          "diameter_sample_count": 72,
+          "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+          "visible_ring_to_physical_diameter_ratio": 0.922076,
+          "estimated_visible_ring_diameter_m": 0.08848356142325792,
+          "estimated_visible_ring_forward_span_m": 0.088177352974671,
+          "estimated_visible_ring_lateral_span_m": 0.08879083322440447,
+          "perimeter_ground_bounds_m": {
+            "forward": [
+              0.6381308069985869,
+              0.7263081599732579
+            ],
+            "lateral": [
+              -0.18692036886226254,
+              -0.09812953563785808
+            ]
+          },
+          "estimated_physical_diameter_m": 0.09596124551908727,
+          "estimated_diameter_m": 0.09596124551908727
+        }
+      }
+    ],
+    "candidates": [
+      {
+        "candidate_id": 0,
+        "source": "red_ring",
+        "accepted": true,
+        "reject_reason": "",
+        "ellipse": [
+          [
+            219.4152069091797,
+            317.5733337402344
+          ],
+          [
+            14.812947273254395,
+            57.647640228271484
+          ],
+          84.9571304321289
+        ],
+        "contour_area_px": 631.0,
+        "red_area_px": 487,
+        "white_area_px": 106,
+        "red_white_center_distance_px": 0.5152715097325988,
+        "confidence": 0.9719226928989132,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": {
+          "input_resolution_px": [
+            640,
+            480
+          ],
+          "roi_applied": false,
+          "resize_applied": false,
+          "detection_coordinate_system": "undistorted_full_image_px",
+          "distorted_full_image_px": [
+            219.83199806126208,
+            318.72131116247806
+          ],
+          "roi_pixel": null,
+          "resized_pixel": null,
+          "undistorted_full_image_px": [
+            219.4152069091797,
+            317.5733337402344
+          ],
+          "homography_source_is_undistorted": true,
+          "homography_input_px": [
+            219.4152069091797,
+            317.5733337402344
+          ],
+          "bev_pixel": [
+            163.99118041992188,
+            719.554443359375
+          ],
+          "bev_output_resolution_px": [
+            640,
+            800
+          ],
+          "bev_lateral_m_per_pixel": 0.0015960829552801804,
+          "bev_forward_m_per_pixel": 0.001963686292419414,
+          "ground_m": [
+            0.15600615056882544,
+            0.24900301780514358
+          ],
+          "base_m": [
+            0.7023061505688255,
+            0.24900301780514358
+          ],
+          "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+          "diameter_sample_count": 72,
+          "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+          "visible_ring_to_physical_diameter_ratio": 0.922076,
+          "estimated_visible_ring_diameter_m": 0.09498265193559838,
+          "estimated_visible_ring_forward_span_m": 0.10102341379668059,
+          "estimated_visible_ring_lateral_span_m": 0.08930310142632958,
+          "perimeter_ground_bounds_m": {
+            "forward": [
+              0.1087719684112384,
+              0.209795382207919
+            ],
+            "lateral": [
+              0.20397144270180861,
+              0.2932745441281382
+            ]
+          },
+          "estimated_physical_diameter_m": 0.10300956964024481,
+          "estimated_diameter_m": 0.10300956964024481
+        }
+      },
+      {
+        "candidate_id": 1,
+        "source": "red_ring",
+        "accepted": true,
+        "reject_reason": "",
+        "ellipse": [
+          [
+            393.28338623046875,
+            268.2281188964844
+          ],
+          [
+            4.721582889556885,
+            32.20595932006836
+          ],
+          90.63911437988281
+        ],
+        "contour_area_px": 48.5,
+        "red_area_px": 65,
+        "white_area_px": 21,
+        "red_white_center_distance_px": 0.3725013587542116,
+        "confidence": 0.7446793731904768,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": {
+          "input_resolution_px": [
+            640,
+            480
+          ],
+          "roi_applied": false,
+          "resize_applied": false,
+          "detection_coordinate_system": "undistorted_full_image_px",
+          "distorted_full_image_px": [
+            394.5206201115086,
+            269.06936023486645
+          ],
+          "roi_pixel": null,
+          "resized_pixel": null,
+          "undistorted_full_image_px": [
+            393.28338623046875,
+            268.2281188964844
+          ],
+          "homography_source_is_undistorted": true,
+          "homography_input_px": [
+            393.28338623046875,
+            268.2281188964844
+          ],
+          "bev_pixel": [
+            409.1795959472656,
+            452.3351745605469
+          ],
+          "bev_output_resolution_px": [
+            640,
+            800
+          ],
+          "bev_lateral_m_per_pixel": 0.0015960829552801804,
+          "bev_forward_m_per_pixel": 0.001963686292419414,
+          "ground_m": [
+            0.680740965779423,
+            -0.14233803305020412
+          ],
+          "base_m": [
+            1.227040965779423,
+            -0.14233803305020412
+          ],
+          "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+          "diameter_sample_count": 72,
+          "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+          "visible_ring_to_physical_diameter_ratio": 0.922076,
+          "estimated_visible_ring_diameter_m": 0.08848356142325792,
+          "estimated_visible_ring_forward_span_m": 0.088177352974671,
+          "estimated_visible_ring_lateral_span_m": 0.08879083322440447,
+          "perimeter_ground_bounds_m": {
+            "forward": [
+              0.6381308069985869,
+              0.7263081599732579
+            ],
+            "lateral": [
+              -0.18692036886226254,
+              -0.09812953563785808
+            ]
+          },
+          "estimated_physical_diameter_m": 0.09596124551908727,
+          "estimated_diameter_m": 0.09596124551908727
+        }
+      },
+      {
+        "candidate_id": 2,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            503.7441101074219,
+            402.8356628417969
+          ],
+          [
+            3.549860954284668,
+            7.937058925628662
+          ],
+          68.42317962646484
+        ],
+        "contour_area_px": 10.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 3,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            503.7441101074219,
+            402.8356628417969
+          ],
+          [
+            5.147298383712768,
+            11.50873544216156
+          ],
+          68.42317962646484
+        ],
+        "contour_area_px": 10.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 4,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            503.7441101074219,
+            402.8356628417969
+          ],
+          [
+            7.099721908569336,
+            15.874117851257324
+          ],
+          68.42317962646484
+        ],
+        "contour_area_px": 10.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 5,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            503.7441101074219,
+            402.8356628417969
+          ],
+          [
+            8.519666290283203,
+            19.04894142150879
+          ],
+          68.42317962646484
+        ],
+        "contour_area_px": 10.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 6,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            395.1683349609375,
+            391.9538879394531
+          ],
+          [
+            6.000680446624756,
+            10.002585411071777
+          ],
+          122.50714111328125
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 7,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            395.1683349609375,
+            391.9538879394531
+          ],
+          [
+            8.700986647605896,
+            14.503748846054076
+          ],
+          122.50714111328125
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 8,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            395.1683349609375,
+            391.9538879394531
+          ],
+          [
+            12.001360893249512,
+            20.005170822143555
+          ],
+          122.50714111328125
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 9,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            395.1683349609375,
+            391.9538879394531
+          ],
+          [
+            14.401633071899413,
+            24.006204986572264
+          ],
+          122.50714111328125
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 10,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            519.7233276367188,
+            391.0285949707031
+          ],
+          [
+            4.714323997497559,
+            6.078049182891846
+          ],
+          177.89927673339844
+        ],
+        "contour_area_px": 17.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 11,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            519.7233276367188,
+            391.0285949707031
+          ],
+          [
+            6.835769796371459,
+            8.813171315193175
+          ],
+          177.89927673339844
+        ],
+        "contour_area_px": 17.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 12,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            519.7233276367188,
+            391.0285949707031
+          ],
+          [
+            9.428647994995117,
+            12.156098365783691
+          ],
+          177.89927673339844
+        ],
+        "contour_area_px": 17.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 13,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            519.7233276367188,
+            391.0285949707031
+          ],
+          [
+            11.31437759399414,
+            14.58731803894043
+          ],
+          177.89927673339844
+        ],
+        "contour_area_px": 17.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 14,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            498.0403747558594,
+            392.05047607421875
+          ],
+          [
+            6.097001075744629,
+            21.518314361572266
+          ],
+          107.96923065185547
+        ],
+        "contour_area_px": 39.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 15,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            498.0403747558594,
+            392.05047607421875
+          ],
+          [
+            8.84065155982971,
+            31.201555824279783
+          ],
+          107.96923065185547
+        ],
+        "contour_area_px": 39.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 16,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            498.0403747558594,
+            392.05047607421875
+          ],
+          [
+            12.194002151489258,
+            43.03662872314453
+          ],
+          107.96923065185547
+        ],
+        "contour_area_px": 39.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 17,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            498.0403747558594,
+            392.05047607421875
+          ],
+          [
+            14.632802581787109,
+            51.64395446777343
+          ],
+          107.96923065185547
+        ],
+        "contour_area_px": 39.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 18,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            555.6539916992188,
+            387.6741638183594
+          ],
+          [
+            4.420460224151611,
+            9.527020454406738
+          ],
+          101.46327209472656
+        ],
+        "contour_area_px": 14.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 19,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            555.6539916992188,
+            387.6741638183594
+          ],
+          [
+            6.409667325019837,
+            13.81417965888977
+          ],
+          101.46327209472656
+        ],
+        "contour_area_px": 14.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 20,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            555.6539916992188,
+            387.6741638183594
+          ],
+          [
+            8.840920448303223,
+            19.054040908813477
+          ],
+          101.46327209472656
+        ],
+        "contour_area_px": 14.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 21,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            555.6539916992188,
+            387.6741638183594
+          ],
+          [
+            10.609104537963868,
+            22.864849090576172
+          ],
+          101.46327209472656
+        ],
+        "contour_area_px": 14.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 22,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            565.9002685546875,
+            363.2215576171875
+          ],
+          [
+            5.431132793426514,
+            6.484332084655762
+          ],
+          143.28253173828125
+        ],
+        "contour_area_px": 19.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 23,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            565.9002685546875,
+            363.2215576171875
+          ],
+          [
+            7.8751425504684445,
+            9.402281522750854
+          ],
+          143.28253173828125
+        ],
+        "contour_area_px": 19.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 24,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            565.9002685546875,
+            363.2215576171875
+          ],
+          [
+            10.862265586853027,
+            12.968664169311523
+          ],
+          143.28253173828125
+        ],
+        "contour_area_px": 19.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 25,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            565.9002685546875,
+            363.2215576171875
+          ],
+          [
+            13.034718704223632,
+            15.562397003173828
+          ],
+          143.28253173828125
+        ],
+        "contour_area_px": 19.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 26,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            211.9569091796875,
+            318.043212890625
+          ],
+          [
+            13.634527206420898,
+            48.439701080322266
+          ],
+          84.36617279052734
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 27,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            211.9569091796875,
+            318.043212890625
+          ],
+          [
+            19.7700644493103,
+            70.23756656646728
+          ],
+          84.36617279052734
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 28,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            211.9569091796875,
+            318.043212890625
+          ],
+          [
+            27.269054412841797,
+            96.87940216064453
+          ],
+          84.36617279052734
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 29,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            211.9569091796875,
+            318.043212890625
+          ],
+          [
+            32.72286529541015,
+            116.25528259277343
+          ],
+          84.36617279052734
+        ],
+        "contour_area_px": 23.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 30,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            226.08885192871094,
+            316.3868103027344
+          ],
+          [
+            13.085103034973145,
+            47.28636932373047
+          ],
+          88.5573501586914
+        ],
+        "contour_area_px": 278.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 31,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            226.08885192871094,
+            316.3868103027344
+          ],
+          [
+            18.97339940071106,
+            68.56523551940917
+          ],
+          88.5573501586914
+        ],
+        "contour_area_px": 278.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 32,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            226.08885192871094,
+            316.3868103027344
+          ],
+          [
+            26.17020606994629,
+            94.57273864746094
+          ],
+          88.5573501586914
+        ],
+        "contour_area_px": 278.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 33,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "duplicate_candidate",
+        "ellipse": [
+          [
+            226.08885192871094,
+            316.3868103027344
+          ],
+          [
+            31.404247283935547,
+            113.48728637695312
+          ],
+          88.5573501586914
+        ],
+        "contour_area_px": 278.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 34,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            260.7173156738281,
+            295.3147277832031
+          ],
+          [
+            8.680413246154785,
+            18.566478729248047
+          ],
+          55.84729766845703
+        ],
+        "contour_area_px": 55.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 35,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            260.7173156738281,
+            295.3147277832031
+          ],
+          [
+            12.586599206924438,
+            26.92139415740967
+          ],
+          55.84729766845703
+        ],
+        "contour_area_px": 55.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 36,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "red_annulus_too_weak",
+        "ellipse": [
+          [
+            260.7173156738281,
+            295.3147277832031
+          ],
+          [
+            17.36082649230957,
+            37.132957458496094
+          ],
+          55.84729766845703
+        ],
+        "contour_area_px": 55.5,
+        "red_area_px": 0,
+        "white_area_px": 51,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 37,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "red_annulus_too_weak",
+        "ellipse": [
+          [
+            260.7173156738281,
+            295.3147277832031
+          ],
+          [
+            20.832991790771484,
+            44.559548950195314
+          ],
+          55.84729766845703
+        ],
+        "contour_area_px": 55.5,
+        "red_area_px": 0,
+        "white_area_px": 66,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 38,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            183.81411743164062,
+            288.2807312011719
+          ],
+          [
+            2.9375131130218506,
+            17.813743591308594
+          ],
+          88.81892395019531
+        ],
+        "contour_area_px": 24.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 39,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            183.81411743164062,
+            288.2807312011719
+          ],
+          [
+            4.259394013881683,
+            25.82992820739746
+          ],
+          88.81892395019531
+        ],
+        "contour_area_px": 24.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 40,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            183.81411743164062,
+            288.2807312011719
+          ],
+          [
+            5.875026226043701,
+            35.62748718261719
+          ],
+          88.81892395019531
+        ],
+        "contour_area_px": 24.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 41,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "red_annulus_too_weak",
+        "ellipse": [
+          [
+            183.81411743164062,
+            288.2807312011719
+          ],
+          [
+            7.050031471252441,
+            42.752984619140626
+          ],
+          88.81892395019531
+        ],
+        "contour_area_px": 24.0,
+        "red_area_px": 0,
+        "white_area_px": 34,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 42,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            190.82562255859375,
+            270.81024169921875
+          ],
+          [
+            7.160340309143066,
+            16.697431564331055
+          ],
+          0.020926034078001976
+        ],
+        "contour_area_px": 60.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 43,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            190.82562255859375,
+            270.81024169921875
+          ],
+          [
+            10.382493448257446,
+            24.21127576828003
+          ],
+          0.020926034078001976
+        ],
+        "contour_area_px": 60.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 44,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            190.82562255859375,
+            270.81024169921875
+          ],
+          [
+            14.320680618286133,
+            33.39486312866211
+          ],
+          0.020926034078001976
+        ],
+        "contour_area_px": 60.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 45,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            190.82562255859375,
+            270.81024169921875
+          ],
+          [
+            17.184816741943358,
+            40.07383575439453
+          ],
+          0.020926034078001976
+        ],
+        "contour_area_px": 60.5,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 46,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            269.6317443847656,
+            265.6700744628906
+          ],
+          [
+            10.756096839904785,
+            18.89733123779297
+          ],
+          58.37548065185547
+        ],
+        "contour_area_px": 79.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 47,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            269.6317443847656,
+            265.6700744628906
+          ],
+          [
+            15.596340417861938,
+            27.401130294799803
+          ],
+          58.37548065185547
+        ],
+        "contour_area_px": 79.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 48,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            269.6317443847656,
+            265.6700744628906
+          ],
+          [
+            21.51219367980957,
+            37.79466247558594
+          ],
+          58.37548065185547
+        ],
+        "contour_area_px": 79.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      },
+      {
+        "candidate_id": 49,
+        "source": "white_center",
+        "accepted": false,
+        "reject_reason": "no_red_near_white_center",
+        "ellipse": [
+          [
+            269.6317443847656,
+            265.6700744628906
+          ],
+          [
+            25.814632415771484,
+            45.35359497070312
+          ],
+          58.37548065185547
+        ],
+        "contour_area_px": 79.0,
+        "red_area_px": 0,
+        "white_area_px": 0,
+        "red_white_center_distance_px": null,
+        "confidence": 0.0,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "metric_projection": null
+      }
+    ]
+  },
+  "/yellow_track_avoidance/debug/disks": {
+    "stamp": 1786432759.2471647,
+    "raw": [
+      {
+        "track_id": 4,
+        "confirmed": true,
+        "center_px": [
+          163.99118041992188,
+          719.554443359375
+        ],
+        "center_m": [
+          0.15600615056882544,
+          0.24900301780514358
+        ],
+        "center_base_m": [
+          0.7023061505688255,
+          0.24900301780514358
+        ],
+        "ellipse": [
+          [
+            164.24130249023438,
+            717.8822021484375
+          ],
+          [
+            50.22621536254883,
+            57.09081268310547
+          ],
+          65.5663070678711
+        ],
+        "contour": [
+          [
+            159,
+            692
+          ],
+          [
+            159,
+            696
+          ],
+          [
+            148,
+            695
+          ],
+          [
+            148,
+            699
+          ],
+          [
+            143,
+            699
+          ],
+          [
+            143,
+            703
+          ],
+          [
+            142,
+            703
+          ],
+          [
+            142,
+            706
+          ],
+          [
+            139,
+            706
+          ],
+          [
+            139,
+            709
+          ],
+          [
+            138,
+            709
+          ],
+          [
+            137,
+            716
+          ],
+          [
+            136,
+            716
+          ],
+          [
+            136,
+            719
+          ],
+          [
+            135,
+            719
+          ],
+          [
+            138,
+            729
+          ],
+          [
+            139,
+            732
+          ],
+          [
+            140,
+            732
+          ],
+          [
+            144,
+            738
+          ],
+          [
+            177,
+            740
+          ],
+          [
+            177,
+            737
+          ],
+          [
+            182,
+            737
+          ],
+          [
+            183,
+            731
+          ],
+          [
+            188,
+            731
+          ],
+          [
+            190,
+            721
+          ],
+          [
+            191,
+            722
+          ],
+          [
+            192,
+            715
+          ],
+          [
+            191,
+            711
+          ],
+          [
+            192,
+            708
+          ],
+          [
+            191,
+            704
+          ],
+          [
+            188,
+            704
+          ],
+          [
+            187,
+            701
+          ],
+          [
+            186,
+            701
+          ],
+          [
+            184,
+            697
+          ],
+          [
+            178,
+            697
+          ],
+          [
+            176,
+            693
+          ]
+        ],
+        "estimated_diameter_m": 0.10300956964024481,
+        "confidence": 0.9719226928989132,
+        "red_annulus_ratio": 0.7905844155844156,
+        "white_center_ratio": 1.0,
+        "red_sector_coverage": 1.0,
+        "white_center_contrast": 69.5,
+        "proposal_source": "red_ring_original",
+        "candidate_id": 0,
+        "contour_area_px": 631.0,
+        "red_area_px": 487,
+        "white_area_px": 106,
+        "red_white_center_distance_px": 0.5152715097325988,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "used_history": false,
+        "metric_projection": {
+          "input_resolution_px": [
+            640,
+            480
+          ],
+          "roi_applied": false,
+          "resize_applied": false,
+          "detection_coordinate_system": "undistorted_full_image_px",
+          "distorted_full_image_px": [
+            219.83199806126208,
+            318.72131116247806
+          ],
+          "roi_pixel": null,
+          "resized_pixel": null,
+          "undistorted_full_image_px": [
+            219.4152069091797,
+            317.5733337402344
+          ],
+          "homography_source_is_undistorted": true,
+          "homography_input_px": [
+            219.4152069091797,
+            317.5733337402344
+          ],
+          "bev_pixel": [
+            163.99118041992188,
+            719.554443359375
+          ],
+          "bev_output_resolution_px": [
+            640,
+            800
+          ],
+          "bev_lateral_m_per_pixel": 0.0015960829552801804,
+          "bev_forward_m_per_pixel": 0.001963686292419414,
+          "ground_m": [
+            0.15600615056882544,
+            0.24900301780514358
+          ],
+          "base_m": [
+            0.7023061505688255,
+            0.24900301780514358
+          ],
+          "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+          "diameter_sample_count": 72,
+          "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+          "visible_ring_to_physical_diameter_ratio": 0.922076,
+          "estimated_visible_ring_diameter_m": 0.09498265193559838,
+          "estimated_visible_ring_forward_span_m": 0.10102341379668059,
+          "estimated_visible_ring_lateral_span_m": 0.08930310142632958,
+          "perimeter_ground_bounds_m": {
+            "forward": [
+              0.1087719684112384,
+              0.209795382207919
+            ],
+            "lateral": [
+              0.20397144270180861,
+              0.2932745441281382
+            ]
+          },
+          "estimated_physical_diameter_m": 0.10300956964024481,
+          "estimated_diameter_m": 0.10300956964024481
+        },
+        "stamp": 1786432759.2471647
+      },
+      {
+        "track_id": 2,
+        "confirmed": true,
+        "center_px": [
+          409.1795959472656,
+          452.3351745605469
+        ],
+        "center_m": [
+          0.680740965779423,
+          -0.14233803305020412
+        ],
+        "center_base_m": [
+          1.227040965779423,
+          -0.14233803305020412
+        ],
+        "ellipse": [
+          [
+            409.30023193359375,
+            451.58251953125
+          ],
+          [
+            44.508216857910156,
+            55.97871780395508
+          ],
+          79.5280532836914
+        ],
+        "contour": [
+          [
+            394,
+            429
+          ],
+          [
+            390,
+            439
+          ],
+          [
+            387,
+            439
+          ],
+          [
+            383,
+            449
+          ],
+          [
+            381,
+            449
+          ],
+          [
+            381,
+            467
+          ],
+          [
+            429,
+            469
+          ],
+          [
+            434,
+            460
+          ],
+          [
+            435,
+            460
+          ],
+          [
+            438,
+            451
+          ],
+          [
+            433,
+            451
+          ],
+          [
+            434,
+            441
+          ],
+          [
+            427,
+            441
+          ],
+          [
+            422,
+            460
+          ],
+          [
+            417,
+            469
+          ],
+          [
+            394,
+            468
+          ],
+          [
+            394,
+            459
+          ],
+          [
+            399,
+            440
+          ],
+          [
+            403,
+            430
+          ],
+          [
+            424,
+            431
+          ]
+        ],
+        "estimated_diameter_m": 0.09596124551908727,
+        "confidence": 0.7446793731904768,
+        "red_annulus_ratio": 0.5701754385964912,
+        "white_center_ratio": 1.0,
+        "red_sector_coverage": 0.8,
+        "white_center_contrast": 43.5,
+        "proposal_source": "red_ring_original",
+        "candidate_id": 1,
+        "contour_area_px": 48.5,
+        "red_area_px": 65,
+        "white_area_px": 21,
+        "red_white_center_distance_px": 0.3725013587542116,
+        "inside_lane": null,
+        "distance_to_left_line_px": null,
+        "distance_to_right_line_px": null,
+        "used_history": false,
+        "metric_projection": {
+          "input_resolution_px": [
+            640,
+            480
+          ],
+          "roi_applied": false,
+          "resize_applied": false,
+          "detection_coordinate_system": "undistorted_full_image_px",
+          "distorted_full_image_px": [
+            394.5206201115086,
+            269.06936023486645
+          ],
+          "roi_pixel": null,
+          "resized_pixel": null,
+          "undistorted_full_image_px": [
+            393.28338623046875,
+            268.2281188964844
+          ],
+          "homography_source_is_undistorted": true,
+          "homography_input_px": [
+            393.28338623046875,
+            268.2281188964844
+          ],
+          "bev_pixel": [
+            409.1795959472656,
+            452.3351745605469
+          ],
+          "bev_output_resolution_px": [
+            640,
+            800
+          ],
+          "bev_lateral_m_per_pixel": 0.0015960829552801804,
+          "bev_forward_m_per_pixel": 0.001963686292419414,
+          "ground_m": [
+            0.680740965779423,
+            -0.14233803305020412
+          ],
+          "base_m": [
+            1.227040965779423,
+            -0.14233803305020412
+          ],
+          "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+          "diameter_sample_count": 72,
+          "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+          "visible_ring_to_physical_diameter_ratio": 0.922076,
+          "estimated_visible_ring_diameter_m": 0.08848356142325792,
+          "estimated_visible_ring_forward_span_m": 0.088177352974671,
+          "estimated_visible_ring_lateral_span_m": 0.08879083322440447,
+          "perimeter_ground_bounds_m": {
+            "forward": [
+              0.6381308069985869,
+              0.7263081599732579
+            ],
+            "lateral": [
+              -0.18692036886226254,
+              -0.09812953563785808
+            ]
+          },
+          "estimated_physical_diameter_m": 0.09596124551908727,
+          "estimated_diameter_m": 0.09596124551908727
+        },
+        "stamp": 1786432759.2471647
+      }
+    ],
+    "confirmed_tracks": [
+      {
+        "track_id": 4,
+        "center_px": [
+          164.1022224093546,
+          719.7761682511507
+        ],
+        "center_m": [
+          0.1555707524381575,
+          0.24882578557848967
+        ],
+        "center_base_m": [
+          0.7018707524381576,
+          0.24882578557848967
+        ],
+        "estimated_diameter_m": 0.10271094977185627,
+        "confidence": 0.9719226928989132,
+        "hits": 476,
+        "misses": 0,
+        "stamp": 1786432759.2471647
+      },
+      {
+        "track_id": 2,
+        "center_px": [
+          409.24708518291123,
+          453.37470514227186
+        ],
+        "center_m": [
+          0.6786996538255391,
+          -0.1424457514688829
+        ],
+        "center_base_m": [
+          1.224999653825539,
+          -0.1424457514688829
+        ],
+        "estimated_diameter_m": 0.10939878073122734,
+        "confidence": 0.7446793731904768,
+        "hits": 525,
+        "misses": 0,
+        "stamp": 1786432759.2471647
+      }
+    ]
+  },
+  "/yellow_track_disc_costmap_bridge/status": {
+    "stamp": 1786432759.198067,
+    "input_fresh": true,
+    "latest_raw_count": 1,
+    "timestamp_transform_drop_count": 0,
+    "disc_count": 2,
+    "costmap_disc_count": 2,
+    "costmap_writes_enabled": true,
+    "costmap_writes_configured": true,
+    "fixed_transform_available": true,
+    "localization_required": false,
+    "localization_state": "not_required",
+    "frame_id": "base_link",
+    "fixed_frame": "odom",
+    "memory_mode": "mission_locked_confirmed_until_reset",
+    "lock_confirmed_discs_for_mission": true,
+    "confirmed_positions_frozen": true,
+    "costmap_requires_confirmed": true,
+    "memory_count": 2,
+    "active_memory_count": 2,
+    "tombstone_count": 0,
+    "passed_candidate_count": 0,
+    "passed_removal_count": 0,
+    "timeout_removal_count": 0,
+    "tombstone_gc_count": 0,
+    "tombstone_reactivation_count": 0,
+    "tombstone_suppression_count": 0,
+    "last_removal_reason": null,
+    "confirmed_memory_timeout_sec": 30.0,
+    "confirmed_timeout_scope": "disabled_until_scene_reset",
+    "unconfirmed_memory_timeout_sec": 0.8,
+    "navigation_active": false,
+    "navigation_epoch": 1,
+    "navigation_goal_id": "/move_base-1-1786432717.791609356",
+    "scene_generation": 0,
+    "scene_reset_count": 0,
+    "scene_reset_stamp_sec": null,
+    "scene_reset_drop_count": 0,
+    "scene_reset_safety": {
+      "require_navigation_gate": false,
+      "navigation_gate_enabled": true,
+      "navigation_gate_allowed": true,
+      "navigation_active": false,
+      "output_command": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "odom_linear_speed_mps": 0.0,
+      "odom_angular_speed_radps": 0.0003523345870372527
+    },
+    "global_path_topic": "/move_base/GlobalPlanner/plan",
+    "global_path_points": 891,
+    "global_path_age_sec": 35.331745624542236,
+    "global_path_fresh": false,
+    "global_path_timeout_sec": 5.0,
+    "active_tracks": [
+      {
+        "memory_id": 1,
+        "fixed_xy": [
+          0.7024342902205951,
+          0.24886729366742621
+        ],
+        "base_xy": [
+          0.7023880090334517,
+          0.24899788493295288
+        ],
+        "confirmed": true,
+        "estimated_diameter_m": 0.10292248143047797,
+        "confidence": 0.9650973251409808,
+        "phase": "ahead",
+        "last_seen_age_sec": 0.3549351692199707
+      },
+      {
+        "memory_id": 2,
+        "fixed_xy": [
+          1.227459626231966,
+          -0.14350782971519968
+        ],
+        "base_xy": [
+          1.2274862857859739,
+          -0.14327961971766465
+        ],
+        "confirmed": true,
+        "estimated_diameter_m": 0.11760905791870362,
+        "confidence": 0.7004362189445918,
+        "phase": "ahead",
+        "last_seen_age_sec": 0.5231113433837891
+      }
+    ],
+    "live_tracks": [
+      {
+        "memory_id": 1,
+        "fixed_xy": [
+          0.7020778539426039,
+          0.24802522353691797
+        ],
+        "base_xy": [
+          0.702022815949973,
+          0.2481809629944666
+        ],
+        "confirmed": true,
+        "estimated_diameter_m": 0.10292248143047797,
+        "confidence": 0.9650973251409808,
+        "phase": "ahead",
+        "last_seen_age_sec": 0.3549351692199707
+      }
+    ],
+    "pass_progress_margin_m": 0.05,
+    "pass_clearance_m": 0.03,
+    "pass_confirm_duration_sec": 1.0,
+    "pass_confirm_frames": 8,
+    "pass_min_advance_m": 0.1,
+    "passed_tombstone_sec": 20.0,
+    "passage_states": [
+      {
+        "memory_id": 1,
+        "phase": "ahead",
+        "confirmed": true,
+        "navigation_epoch": 1
+      },
+      {
+        "memory_id": 2,
+        "phase": "ahead",
+        "confirmed": true,
+        "navigation_epoch": 1
+      }
+    ],
+    "publish_rate_hz": 10.0,
+    "scan_angle_min_rad": -3.141592653589793,
+    "scan_angle_max_rad": 3.141592653589793,
+    "scan_topic": "/yellow_track_avoidance/disc_scan",
+    "marker_topic": "/yellow_track_avoidance/disc_markers",
+    "scene_reset_topic": "/yellow_track_avoidance/reset_scene",
+    "marker_persistence_sec": 0.3
+  },
+  "/yellow_track_competition_corridor_map/status": {
+    "stamp": 1786432759.3110313,
+    "state": "locked",
+    "scene_generation": 0,
+    "corridor_cloud_ready": true,
+    "cloud_publish_count": 438,
+    "last_cloud_publish_sec": 1786432759.3110313,
+    "scene_reset_topic": "/yellow_track_avoidance/reset_scene",
+    "fixed_frame": "odom",
+    "candidate_count": 5,
+    "required_frames": 5,
+    "left_source": "camera_live",
+    "right_source": "left_plus_metric_width",
+    "center_separation_m": 0.91,
+    "yellow_line_width_m": 0.03,
+    "vehicle_front_offset_m": 0.17,
+    "corridor_length_m": 1.55,
+    "goal_left_from_right_endpoint_m": 0.24,
+    "goal_forward_from_right_endpoint_m": 0.57,
+    "goal_reference": [
+      1.7099980892623265,
+      -0.4058228537777262
+    ],
+    "goal_front_center": [
+      2.2860632164347985,
+      -0.18076959506823048
+    ],
+    "goal_base_center": [
+      2.1161210366220926,
+      -0.17633614037623901
+    ],
+    "goal_yaw_rad": -0.026082102318065015,
+    "publish_goal_on_lock": false,
+    "goal_ready": true,
+    "send_goal_service": "/yellow_track_competition_corridor_map/send_goal",
+    "goal_sent": true,
+    "preview_plan_topic": "/yellow_track_avoidance/corridor_goal_plan",
+    "preview_plan_pose_count": 856,
+    "locked_boundary_topic": "/yellow_track_avoidance/corridor_boundaries",
+    "quality": 0.8734511668294115,
+    "fit_residual_m": 5.4492723312523365e-09,
+    "source_stamp": 1786432671.5650241
+  },
+  "/yellow_track_avoidance/corridor_boundaries": {
+    "stamp": 1786432759.3110313,
+    "scene_generation": 0,
+    "frame_id": "odom",
+    "left_detected": true,
+    "right_detected": false,
+    "boundary_detection_mode": "locked_left_only",
+    "boundary_pair_valid": true,
+    "boundary_inference": "right_from_locked_left_metric_width",
+    "left_base_m": [
+      [
+        0.18425729549772724,
+        0.5442903132937393
+      ],
+      [
+        1.7337301114371044,
+        0.5038676381608759
+      ]
+    ],
+    "right_base_m": [
+      [
+        0.16052527332294933,
+        -0.36540017864486274
+      ],
+      [
+        1.7099980892623265,
+        -0.4058228537777262
+      ]
+    ],
+    "quality": 0.8734511668294115,
+    "expected_center_separation_m": 0.91,
+    "yellow_line_width_m": 0.03
+  },
+  "/yellow_track_teb_compact_obstacles/status": {
+    "stamp": 1786432759.1727247,
+    "ready": true,
+    "reason": "ready",
+    "scene_generation": 0,
+    "last_ready_generation": 0,
+    "frame_id": "odom",
+    "obstacle_count": 4,
+    "line_count": 2,
+    "circle_count": 2,
+    "publish_count": 442,
+    "empty_publish_count": 5,
+    "output_topic": "/move_base/TebLocalPlannerROS/obstacles",
+    "disc_radius_m": 0.05,
+    "yellow_line_half_width_m": 0.015
+  }
+}

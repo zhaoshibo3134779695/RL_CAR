@@ -1,0 +1,21 @@
+SBPLLatticePlanner:
+  # Stage-1 experimental global search in (x, y, yaw). The exact rectangular
+  # Costmap2DROS footprint is collision-checked along every motion primitive.
+  environment_type: XYThetaLattice
+  planner_type: ARAPlanner
+
+  # The 5 mm XYTheta lattice and complete filled-disc geometry contain many
+  # more states than a 2-D GlobalPlanner search. This is a one-shot planning
+  # phase while the robot is still locked, so keep the geometry exact and use
+  # a bounded 15 s budget with a stronger initial ARA* heuristic instead.
+  allocated_time: 15.0
+  initial_epsilon: 5.0
+  forward_search: false
+  force_scratch_limit: 500
+
+  nominalvel_mpersecs: 0.10
+  timetoturn45degsinplace_secs: 2.62
+  lethal_obstacle: 253
+  allow_unknown: false
+  publish_footprint_path: true
+  visualizer_skip_poses: 1

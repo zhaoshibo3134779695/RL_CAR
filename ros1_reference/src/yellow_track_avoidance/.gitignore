@@ -1,0 +1,26 @@
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Runtime logs and generated acceptance/navigation runs
+Log/
+debug_captures/
+disc_acceptance_runs/
+navigation_runs/
+offline_navigation_runs/
+
+# Large calibration workspaces and duplicated archives. Keep the compact,
+# accepted 640x480 evidence files under calibration_runs/current.
+calibration_runs/*
+!calibration_runs/current/
+calibration_runs/current/*
+!calibration_runs/current/calibrated_candidate.yaml
+!calibration_runs/current/calibration_report.json
+!calibration_runs/current/live_validation.json
+!calibration_runs/current/raw.jpg
+
+*.zip
+*.tar.gz
+*.tgz
+

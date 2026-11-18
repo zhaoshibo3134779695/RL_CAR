@@ -1,0 +1,65 @@
+<launch>
+  <!--
+    Stage-1 phase 2: add lidar to an already-running prepare launch, capture a
+    world-fixed entrance goal and publish a make_plan preview.  This launch
+    neither starts the chassis nor sends an active move_base goal.
+  -->
+  <arg name="start_lidar_driver" default="true"/>
+  <arg name="scan_frame_count" default="60"/>
+  <arg name="scan_retry_overlap_frames" default="20"/>
+  <arg name="expected_width_m" default="0.485"/>
+  <arg name="front_clearance_m" default="0.10"/>
+    <!-- The validated GlobalPlanner baseline requires one semantic gap
+         decision per frozen disc. The isolated SBPL profile sets this false. -->
+  <arg name="require_passage_closures" default="true"/>
+
+  <include if="$(arg start_lidar_driver)"
+           file="$(find lslidar_driver)/launch/lslidar_serial.launch"/>
+
+  <node pkg="yellow_track_avoidance" type="stage1_lidar_goal.py"
+        name="yellow_track_stage1_lidar_goal" output="screen" required="true">
+    <param name="scan_topic" value="/scan"/>
+    <param name="base_frame" value="base_link"/>
+    <param name="target_frame" value="map"/>
+    <param name="odom_topic" value="/odom"/>
+    <param name="scan_frame_count" value="$(arg scan_frame_count)"/>
+    <param name="capture_retry_overlap_frames"
+           value="$(arg scan_retry_overlap_frames)"/>
+    <param name="heading_scan_frame_count" value="$(arg scan_frame_count)"/>
+    <param name="heading_topic"
+           value="/yellow_track_avoidance/stage1_lidar_heading"/>
+    <param name="heading_maximum_rms_m" value="0.020"/>
+    <param name="heading_minimum_inliers" value="30"/>
+    <param name="heading_minimum_span_m" value="1.0"/>
+    <param name="expected_width_m" value="$(arg expected_width_m)"/>
+    <param name="width_tolerance_m" value="0.08"/>
+    <param name="vehicle_front_offset_m" value="0.17"/>
+    <param name="desired_front_clearance_m" value="$(arg front_clearance_m)"/>
+    <param name="minimum_disc_count" value="2"/>
+    <param name="perception_status_topic"
+           value="/yellow_track_avoidance/debug/status"/>
+    <!-- The centimetre-scale entrance end face is intermittent from the start
+         pose.  Use the two stable faces at the terminal left turn instead,
+         then back-project the measured 1.40 m straight passage. -->
+    <param name="narrow_straight_length_m" value="1.40"/>
+    <param name="terminal_expected_turn_depth_m" value="0.485"/>
+    <param name="terminal_turn_depth_tolerance_m" value="0.18"/>
+    <!-- Static 2026-08-13 capture: inner/outer faces are near 3.93/4.45 m.
+         Keep this as a broad rejection window, not a fixed goal coordinate. -->
+    <param name="terminal_inner_expected_forward_m" value="3.95"/>
+    <param name="terminal_inner_forward_tolerance_m" value="0.55"/>
+    <param name="terminal_face_ransac_threshold_m" value="0.035"/>
+    <param name="terminal_face_minimum_support" value="10"/>
+    <param name="terminal_face_minimum_lateral_span_m" value="0.22"/>
+    <param name="terminal_face_maximum_abs_slope_ds_dd" value="0.55"/>
+    <!-- Allow the 1 Hz global costmap one full update after the frozen gap
+         closures have appeared before requesting the preview plan. -->
+    <param name="world_stable_sec" value="1.1"/>
+    <param name="require_passage_closures"
+           value="$(arg require_passage_closures)"/>
+    <param name="compact_status_topic"
+           value="/yellow_track_teb_compact_obstacles/status"/>
+    <param name="auto_capture_when_ready" value="true"/>
+    <param name="auto_send_goal_when_ready" value="false"/>
+  </node>
+</launch>

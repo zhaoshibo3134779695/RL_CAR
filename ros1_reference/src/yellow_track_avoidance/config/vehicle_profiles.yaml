@@ -1,0 +1,14 @@
+active_profile: migration_vehicle
+
+profiles:
+  current_vehicle:
+    length_m: 0.33
+    width_m: 0.30
+    active_for_planning: false
+    note: 迁移包来源车辆
+
+  migration_vehicle:
+    length_m: 0.34
+    width_m: 0.33
+    active_for_planning: true
+    note: 当前 x86_64 全向车；启动车体前仍须实测全部突出物

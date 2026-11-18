@@ -1,0 +1,5 @@
+<launch>
+  <!-- Stage-2 phase 3: explicit physical-motion switch. -->
+  <node pkg="car_bringup" type="newt.py" name="cmd_vel_listener"
+        output="screen" required="true"/>
+</launch>

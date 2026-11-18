@@ -1,0 +1,95 @@
+<launch>
+  <!--
+    Stage-1 phase 1: acquire/freeze the yellow corridor and both discs while
+    move_base is present but the serial chassis consumer is physically absent.
+  -->
+  <arg name="start_rviz" default="true"/>
+  <arg name="start_perception_view" default="true"/>
+  <arg name="start_lidar" default="false"/>
+  <arg name="start_chassis" default="false"/>
+  <arg name="start_imu" default="true"/>
+  <arg name="start_odometry" default="true"/>
+  <!-- GlobalPlanner receives a broad preference field so its point path stays
+       near the useful corridor centre and starts avoiding discs early. -->
+  <arg name="costmap_inflation_radius" default="0.24"/>
+  <arg name="global_costmap_inflation_radius" default="0.24"/>
+  <!-- Local feasibility checks the exact rectangle against the 9 cm lethal
+       disc cloud, so no second InflationLayer clearance is added. -->
+  <arg name="local_costmap_inflation_radius" default="0.0"/>
+  <!-- Each 0.08 m collision circle is the physical 0.05 m disc plus the
+       requested 0.03 m no-entry allowance. -->
+  <arg name="disc_collision_radius_m" default="0.08"/>
+  <!-- TEB and local feasibility share the one-centimetre-larger 9 cm guard. -->
+  <arg name="teb_disc_collision_radius_m" default="0.09"/>
+  <arg name="local_disc_collision_radius_m" default="0.09"/>
+  <!-- Physical edge gap must hold the 0.33 m body, the requested 30 mm
+       disc guard and another 20 mm total manoeuvring/boundary allowance. -->
+  <arg name="passage_total_clearance_m" default="0.05"/>
+  <!-- In costmap_2d a smaller scaling factor decays more slowly.  Therefore
+       20 keeps global preference costs useful across the 24 cm band, while
+       the local one-cell band uses a steep decay. -->
+  <arg name="costmap_cost_scaling_factor" default="20.0"/>
+  <arg name="global_costmap_cost_scaling_factor" default="20.0"/>
+  <arg name="local_costmap_cost_scaling_factor" default="70.0"/>
+  <arg name="stage1_teb_guard_config"
+       default="$(find yellow_track_avoidance)/config/competition_stage1_teb_guard_override.yaml"/>
+  <!-- Keep the formal default unchanged.  Shadow A/B runs may explicitly
+       expose the already-generated topology closures to TEB as well. -->
+  <arg name="include_passage_closures_in_teb" default="false"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_global_teb_compact.launch">
+    <arg name="start_camera" value="true"/>
+    <arg name="start_lidar" value="$(arg start_lidar)"/>
+    <arg name="start_imu" value="$(arg start_imu)"/>
+    <arg name="start_odometry" value="$(arg start_odometry)"/>
+    <arg name="start_chassis" value="$(arg start_chassis)"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="enable_mission_perception_latch" value="true"/>
+    <!-- Phase 1 builds only the scene. The first route is generated only
+         after the lidar entrance goal is frozen in phase 2. -->
+    <arg name="publish_corridor_goal_preview" value="false"/>
+    <!-- The visual line fixes lateral position; the stationary N10 right-wall
+         fit supplies the one-shot Stage-1 corridor heading. -->
+    <arg name="require_lidar_corridor_heading" value="true"/>
+    <!-- Freeze each disc-to-yellow narrow gap so GlobalPlanner is forced
+         through the physically wider side around every collected disc. -->
+    <arg name="enable_stage1_passage_closures" value="true"/>
+    <!-- The closure is only a GlobalPlanner topology hint.  TEB and its local
+         feasibility map receive only physical yellow boundaries and discs. -->
+    <arg name="include_passage_closures_in_teb"
+         value="$(arg include_passage_closures_in_teb)"/>
+    <arg name="publish_full_disc_cloud" value="true"/>
+    <arg name="global_costmap_observation_sources"
+         value="frozen_discs yellow_corridor passage_closures"/>
+    <arg name="local_costmap_observation_sources"
+         value="local_frozen_discs yellow_corridor"/>
+    <arg name="costmap_inflation_radius"
+         value="$(arg costmap_inflation_radius)"/>
+    <arg name="costmap_cost_scaling_factor"
+         value="$(arg costmap_cost_scaling_factor)"/>
+    <arg name="global_costmap_inflation_radius"
+         value="$(arg global_costmap_inflation_radius)"/>
+    <arg name="local_costmap_inflation_radius"
+         value="$(arg local_costmap_inflation_radius)"/>
+    <arg name="global_costmap_cost_scaling_factor"
+         value="$(arg global_costmap_cost_scaling_factor)"/>
+    <arg name="local_costmap_cost_scaling_factor"
+         value="$(arg local_costmap_cost_scaling_factor)"/>
+    <arg name="disc_collision_radius_m"
+         value="$(arg disc_collision_radius_m)"/>
+    <arg name="teb_disc_collision_radius_m"
+         value="$(arg teb_disc_collision_radius_m)"/>
+    <arg name="local_disc_collision_radius_m"
+         value="$(arg local_disc_collision_radius_m)"/>
+    <arg name="passage_total_clearance_m"
+         value="$(arg passage_total_clearance_m)"/>
+    <arg name="use_stage1_teb_guard_override" value="true"/>
+    <arg name="stage1_teb_guard_config"
+         value="$(arg stage1_teb_guard_config)"/>
+  </include>
+
+  <node if="$(arg start_perception_view)"
+        pkg="rqt_image_view" type="rqt_image_view"
+        name="stage1_perception_view" output="screen"
+        args="/yellow_track_avoidance/debug/raw_overlay"/>
+</launch>

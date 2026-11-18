@@ -1,0 +1,49 @@
+# Stage-2 scan-to-frozen-map localization.
+# The initial pose is defined by the stationary wall capture: base_link=(0,0,0)
+# in map.  Wheel+IMU owns continuous odom->base; AMCL only corrects map->odom.
+use_map_topic: true
+first_map_only: true
+tf_broadcast: true
+global_frame_id: map
+odom_frame_id: odom
+base_frame_id: base_footprint
+transform_tolerance: 0.20
+
+# The Mecanum base is holonomic.
+odom_model_type: omni
+odom_alpha1: 0.08
+odom_alpha2: 0.08
+odom_alpha3: 0.12
+odom_alpha4: 0.12
+odom_alpha5: 0.08
+
+# The initial pose is already known within a few centimetres/degrees.
+min_particles: 200
+max_particles: 600
+kld_err: 0.03
+kld_z: 0.99
+update_min_d: 0.01
+update_min_a: 0.01
+resample_interval: 1
+recovery_alpha_slow: 0.0
+recovery_alpha_fast: 0.0
+
+laser_model_type: likelihood_field
+laser_min_range: 0.05
+laser_max_range: 3.50
+laser_max_beams: 80
+laser_z_hit: 0.92
+laser_z_rand: 0.08
+laser_sigma_hit: 0.025
+laser_likelihood_max_dist: 0.15
+do_beamskip: false
+
+initial_pose_x: 0.0
+initial_pose_y: 0.0
+initial_pose_a: 0.0
+initial_cov_xx: 0.0004
+initial_cov_yy: 0.0004
+initial_cov_aa: 0.0012
+
+gui_publish_rate: 2.0
+save_pose_rate: -1.0

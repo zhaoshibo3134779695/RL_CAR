@@ -1,0 +1,69 @@
+<launch>
+  <!--
+    Experimental Stage-1 planner pair:
+      SBPL XYTheta lattice + compact-obstacle TEB
+
+    It deliberately does not publish the semantic disc-to-yellow closure
+    lines used by the validated GlobalPlanner baseline. SBPL must select a
+    route using the two yellow boundaries, two physical discs, the exact
+    0.34 x 0.33 m rectangular footprint and the holonomic motion lattice.
+  -->
+  <arg name="start_camera" default="false"/>
+  <arg name="start_lidar" default="false"/>
+  <arg name="start_imu" default="true"/>
+  <arg name="start_odometry" default="false"/>
+  <arg name="start_chassis" default="false"/>
+  <arg name="start_rviz" default="false"/>
+  <arg name="enable_mission_perception_latch" default="true"/>
+  <arg name="publish_corridor_goal_preview" default="false"/>
+  <arg name="require_lidar_corridor_heading" default="false"/>
+  <arg name="costmap_inflation_radius" default="0.24"/>
+  <!-- SBPL-only half-cell lattice/costmap discretization guard. The physical
+       TEB footprint remains 0.34 x 0.33 m and the validated baseline stays at
+       zero padding. -->
+  <arg name="costmap_footprint_padding_m" default="0.005"/>
+  <arg name="map"
+       default="$(find yellow_track_avoidance)/maps/competition_blank_5x4_1cm.yaml"/>
+  <arg name="motion_primitives"
+       default="$(find yellow_track_avoidance)/config/yta_1cm.mprim"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_planner_core.launch">
+    <arg name="profile_name" value="stage1_sbpl_teb_compact_no_closures"/>
+    <arg name="global_planner_plugin" value="SBPLLatticePlanner"/>
+    <arg name="global_planner_config"
+         value="$(find yellow_track_avoidance)/config/competition_stage1_sbpl.yaml"/>
+    <arg name="global_plan_topic"
+         value="/move_base/SBPLLatticePlanner/plan"/>
+    <arg name="local_planner_plugin"
+         value="teb_local_planner/TebLocalPlannerROS"/>
+    <arg name="local_planner_config"
+         value="$(find yellow_track_avoidance)/config/competition_teb_baseline.yaml"/>
+    <arg name="move_base_config"
+         value="$(find yellow_track_avoidance)/config/competition_move_base_sbpl_no_recovery.yaml"/>
+    <arg name="costmap_common_config"
+         value="$(find yellow_track_avoidance)/config/click_nav_costmap_common_no_passage_closures.yaml"/>
+    <arg name="use_sbpl" value="true"/>
+    <arg name="use_teb" value="true"/>
+    <arg name="use_compact_teb_obstacles" value="true"/>
+    <arg name="enable_stage1_passage_closures" value="false"/>
+    <arg name="publish_sbpl_full_disc_cloud" value="true"/>
+    <arg name="motion_primitives" value="$(arg motion_primitives)"/>
+    <arg name="map" value="$(arg map)"/>
+    <arg name="start_camera" value="$(arg start_camera)"/>
+    <arg name="start_lidar" value="$(arg start_lidar)"/>
+    <arg name="start_imu" value="$(arg start_imu)"/>
+    <arg name="start_odometry" value="$(arg start_odometry)"/>
+    <arg name="start_chassis" value="$(arg start_chassis)"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="enable_mission_perception_latch"
+         value="$(arg enable_mission_perception_latch)"/>
+    <arg name="publish_corridor_goal_preview"
+         value="$(arg publish_corridor_goal_preview)"/>
+    <arg name="require_lidar_corridor_heading"
+         value="$(arg require_lidar_corridor_heading)"/>
+    <arg name="costmap_inflation_radius"
+         value="$(arg costmap_inflation_radius)"/>
+    <arg name="costmap_footprint_padding_m"
+         value="$(arg costmap_footprint_padding_m)"/>
+  </include>
+</launch>

@@ -1,0 +1,578 @@
+ros:
+  image_topic: /camera/color/image_raw
+  camera_info_topic: /camera/color/camera_info
+  output_cmd_topic: /yellow_track_avoidance/cmd_vel
+  debug_topic_prefix: /yellow_track_avoidance/debug
+  queue_size: 1
+  camera_timeout_sec: 0.5
+  publish_debug_images: true
+  publish_candidates: true
+  require_exclusive_output: true
+  publisher_audit_interval_sec: 0.5
+camera:
+  expected_encoding: rgb8
+  expected_width: 1920
+  expected_height: 1080
+  use_bev_polygon_for_detection: false
+  detection_source_points:
+  - - 242.49475329921142
+    - 704.1090583099948
+  - - 1671.042162070336
+    - 703.1601518440505
+  - - 1496.3077399247968
+    - 585.7445723981991
+  - - 418.5174268976533
+    - 594.9720098129648
+  detection_extend_to_image_bottom: true
+  roi_y_start_ratio: 0.5
+  roi_y_end_ratio: 1.0
+  roi_x_start_ratio: 0.0
+  roi_x_end_ratio: 1.0
+  yellow_roi_y_start_ratio: 0.5
+  yellow_roi_y_end_ratio: 1.0
+  yellow_roi_x_start_ratio: 0.0
+  yellow_roi_x_end_ratio: 1.0
+camera_photometry:
+  set_auto_exposure_service: /camera/set_color_auto_exposure
+  get_auto_exposure_service: /camera/get_color_auto_exposure
+  set_exposure_service: /camera/set_color_exposure
+  get_exposure_service: /camera/get_color_exposure
+  set_gain_service: /camera/set_color_gain
+  get_gain_service: /camera/get_color_gain
+  auto_exposure: false
+  exposure: 100
+  gain: 0
+  white_balance_supported: false
+  service_timeout_sec: 5.0
+camera_intrinsics:
+  calibrated: true
+  image_width: 1920
+  image_height: 1080
+  distortion_model: plumb_bob
+  camera_matrix:
+  - 1073.8833350299037
+  - 0.0
+  - 956.8856334444768
+  - 0.0
+  - 1074.7437111861618
+  - 553.2134983299493
+  - 0.0
+  - 0.0
+  - 1.0
+  distortion_coefficients:
+  - 0.01433837951777266
+  - -0.0778018316469524
+  - -3.641045146863267e-05
+  - -0.00022824966268206772
+  - 0.05311937102110466
+  rectified_camera_matrix:
+  - 1061.5820655451541
+  - 0.0
+  - 956.2717447981569
+  - 0.0
+  - 1063.4764026061662
+  - 553.2746473252008
+  - 0.0
+  - 0.0
+  - 1.0
+  calibration_rms_px: 0.23032163369939523
+yellow_hsv:
+  lower:
+  - 12
+  - 15
+  - 70
+  upper:
+  - 32
+  - 255
+  - 255
+yellow_scoring:
+  enabled: true
+  band_height_px: 54
+  ground_max_saturation: 55
+  ground_min_value: 45
+  hue_low: 10
+  hue_peak: 25
+  hue_high: 42
+  saturation_full_scale: 85.0
+  lab_b_mad_k: 3.0
+  cb_mad_k: 3.0
+  lab_b_min_delta: 3.0
+  cb_min_delta: 3.0
+  lab_b_full_delta: 16.0
+  cb_full_delta: 14.0
+  hsv_weight: 0.25
+  lab_b_weight: 0.45
+  cb_weight: 0.3
+  minimum_hue_evidence: 0.08
+  score_threshold: 0.46
+yellow_confidence_v2:
+  enabled: true
+  absolute_center: 10.0
+  absolute_scale: 6.0
+  green_excess_center: 0.015
+  green_excess_scale: 0.01
+  green_penalty: 0.7
+  specular_luminance_center: 245.0
+  specular_luminance_scale: 4.0
+  specular_chroma_center: 10.0
+  specular_chroma_scale: 3.0
+  specular_penalty: 0.9
+  hue_low: 10.0
+  hue_peak: 25.0
+  hue_high: 42.0
+  hue_bonus_min_saturation: 30.0
+  hue_bonus_saturation_scale: 10.0
+  hue_bonus_weight: 0.2
+  display_threshold: 0.4
+yellow_orientation_filter:
+  enabled: false
+  window_size_px: 56
+  minimum_nonhorizontal_angle_deg: 10.0
+  minimum_anisotropy: 0.2
+  minimum_support_pixels: 91
+  recovery_dilate_px: 7
+  red_exclusion_dilate_px: 0
+red_hsv:
+  lower_1:
+  - 0
+  - 20
+  - 60
+  upper_1:
+  - 15
+  - 255
+  - 255
+  lower_2:
+  - 155
+  - 20
+  - 60
+  upper_2:
+  - 179
+  - 255
+  - 255
+white_hsv:
+  lower:
+  - 0
+  - 0
+  - 190
+  upper:
+  - 179
+  - 60
+  - 255
+morphology:
+  yellow_open_kernel: 1
+  yellow_close_kernel: 11
+  yellow_open_iterations: 0
+  yellow_close_iterations: 1
+  red_open_kernel: 1
+  red_close_kernel: 7
+  red_open_iterations: 1
+  red_close_iterations: 1
+  white_open_kernel: 1
+  white_close_kernel: 7
+  white_open_iterations: 1
+  white_close_iterations: 1
+boundary:
+  row_step_px: 18
+  row_band_half_height_px: 7
+  minimum_row_pixels: 16
+  minimum_boundary_gap_px: 79
+  row_assignment_mode: perspective_sides
+  perspective_center_exclusion_px: 157.45511568682787
+  row_tracking_max_jump_px: 161.9538332778801
+  row_tracking_max_gap_rows: 1
+  row_tracking_velocity_alpha: 0.5
+  use_previous_reference_center: false
+  enforce_perspective_side_direction: true
+  perspective_direction_slope_tolerance: 0.15
+  minimum_fit_points: 6
+  polynomial_degree: 1
+  robust_fit_iterations: 3
+  fit_outlier_px: 40.48845831947003
+  smoothing_alpha: 1.0
+  lane_width_alpha: 0.08
+  initial_lane_width_px: 0.0
+  minimum_lane_width_px: 179.94870364208901
+  maximum_lane_width_px: 2024.4229159735012
+  single_side_hold_frames: 0
+  both_side_stop_frames: 3
+  minimum_quality: 0.25
+normal_profile_detector:
+  enabled: true
+  normal_sections: 28
+  normal_step_px: 4.498717591052225
+  corridor_far_px: 56.233969888152814
+  corridor_near_px: 134.96152773156675
+  max_offset_change_per_section_px: 17.9948703642089
+  dp_smooth_weight: 0.12
+  dp_position_weight: 0.08
+  road_reference_inside_distances_px:
+  - 17.9948703642089
+  - 26.99230554631335
+  - 35.9897407284178
+  ridge_distances_px:
+  - 6.7480763865783375
+  - 11.246793977630563
+  - 17.9948703642089
+  - 24.742946750787237
+  local_delta_center: 4.0
+  local_delta_scale: 3.0
+  ridge_center: 3.0
+  ridge_scale: 2.0
+  inner_edge_center: 2.0
+  inner_edge_scale: 2.0
+  profile_score_weights:
+    base_confidence: 0.35
+    local_delta: 0.3
+    ridge: 0.25
+    inner_edge: 0.1
+  minimum_section_confidence: 0.4
+  minimum_base_confidence: 0.18
+  minimum_section_prominence: 2.0
+  minimum_valid_sections: 12
+  minimum_support_ratio: 0.38
+  minimum_arc_coverage_ratio: 0.5
+  minimum_median_confidence: 0.4
+  minimum_median_prominence: 3.0
+  maximum_fit_rms_px: 11.246793977630563
+  maximum_consecutive_missing_sections: 6
+  minimum_quality_score: 0.5
+  direction_slope_tolerance: 0.15
+  left:
+    far_point:
+    - 658.8040708973751
+    - 606.7900939614965
+    near_point:
+    - 242.41560900177603
+    - 766.8783348282402
+  right:
+    far_point:
+    - 1239.278625760655
+    - 588.7889988192521
+    near_point:
+    - 1671.0377794471863
+    - 743.3133238333369
+disk_detection:
+  minimum_contour_area_px: 151.7884497303205
+  maximum_contour_area_px: 607153.798921282
+  minimum_circularity: 0.03
+  minimum_axis_ratio: 0.08
+  minimum_minor_axis_px: 5.623396988815282
+  maximum_major_axis_px: 404.88458319470027
+  proposal_red_close_kernel_x: 35
+  proposal_red_close_kernel_y: 7
+  minimum_white_candidate_area_px: 40.47691992808547
+  maximum_white_candidate_area_px: 30357.689946064103
+  minimum_red_pixels_near_white_proposal: 25
+  white_outer_scale_hypotheses:
+  - 1.0
+  - 1.45
+  - 2.0
+  - 2.4
+  annulus_inner_ratio: 0.48
+  annulus_outer_ratio: 1.08
+  center_ratio: 0.4
+  minimum_red_annulus_ratio: 0.3
+  ring_sector_count: 20
+  minimum_sector_red_ratio: 0.12
+  minimum_ring_sector_coverage: 0.5
+  maximum_missing_sector_fraction: 0.35
+  center_max_saturation: 45
+  center_lab_neutral_tolerance: 14
+  minimum_neutral_center_ratio: 0.65
+  minimum_center_brightness_contrast: 8.0
+  full_center_brightness_contrast: 35.0
+  minimum_white_center_ratio: 0.15
+  maximum_red_center_ratio: 0.3
+  strong_ring_recovery_enabled: true
+  strong_ring_recovery_maximum_red_center_ratio: 0.75
+  strong_ring_recovery_minimum_red_annulus_ratio: 0.6
+  strong_ring_recovery_minimum_sector_coverage: 0.9
+  strong_ring_recovery_minimum_neutral_center_ratio: 0.85
+  strong_ring_recovery_minimum_center_contrast: 30.0
+  strong_ring_recovery_maximum_center_offset_px: 12.0
+  maximum_center_offset_fraction: 0.35
+  minimum_center_offset_limit_px: 8.99743518210445
+  lane_filter_enabled: true
+  lane_center_margin_px: 44.987175910522254
+  outer_contours_only: true
+  hierarchy_bonus: 0.08
+  confidence_threshold: 0.62
+  dedup_center_fraction: 0.32
+  cross_view_dedup_distance_m: 0.06
+  tracking_match_distance_m: 0.3
+  confirmation_frames: 3
+  allowed_missed_frames: 4
+  track_timeout_sec: 0.8
+  position_smoothing_alpha: 0.45
+  minimum_projected_diameter_m: 0.055
+  maximum_projected_diameter_m: 0.15
+disc_acceptance:
+  overall_recall: 0.95
+  false_positive_rate: 0.01
+  max_consecutive_misses: 3
+  processing_fps: 10.0
+  normal_recall: 0.98
+  near_yellow_recall: 0.95
+  occlusion_20_recall: 0.95
+  occlusion_40_recall: 0.85
+  reflection_recall: 0.9
+  center_std_near_px: 6.7480763865783375
+  center_std_middle_px: 8.99743518210445
+  center_std_far_px: 11.246793977630563
+bev:
+  calibrated: true
+  source_is_undistorted: true
+  source_points:
+  - - -587.18896484375
+    - 1083.634521484375
+  - - 2864.15673828125
+    - 1048.885986328125
+  - - 1280.011474609375
+    - 586.7310791015625
+  - - 707.4432373046875
+    - 596.5789184570312
+  extend_to_image_bottom: false
+  bottom_extension_output_fraction: 0.35
+  output_width_px: 640
+  output_height_px: 800
+  real_width_m: 1.01
+  real_length_m: 1.5689853476431117
+physical:
+  robot_width_m: 0.3
+  robot_length_m: 0.33
+  disk_diameter_m: 0.1
+  track_gray_width_m: 0.88
+  yellow_line_width_m: 0.03
+  local_forward_origin_offset_m: 0.39
+safety:
+  boundary_margin_m: 0.03
+  obstacle_margin_m: 0.03
+  emergency_obstacle_distance_m: 0.03
+  minimum_corridor_width_m: 0.02
+  track_width_tolerance_m: 0.2
+  stop_is_latched: true
+  stop_recovery_frames: 10
+planner:
+  horizon_m: 2.5
+  sample_spacing_m: 0.04
+  candidate_offsets_m:
+  - -0.45
+  - -0.3
+  - -0.16
+  - 0.0
+  - 0.16
+  - 0.3
+  - 0.45
+  pre_obstacle_clearance_m: 0.35
+  post_obstacle_clearance_m: 0.55
+  minimum_transition_m: 0.45
+  maximum_curvature: 3.5
+  direction_lock_min_sec: 1.5
+  collision_sample_padding_m: 0.01
+  score_weights:
+    obstacle_clearance: 4.0
+    boundary_clearance: 3.0
+    lateral_offset: 1.1
+    path_length: 0.5
+    curvature: 2.0
+    smoothness: 1.5
+    previous_path: 1.8
+    return_to_center: 1.2
+state_machine:
+  approach_confirm_frames: 2
+  avoid_confirm_frames: 2
+  clear_confirm_frames: 5
+  return_confirm_frames: 8
+  avoid_start_distance_m: 1.35
+  approach_distance_m: 2.2
+  minimum_avoid_time_sec: 0.8
+  return_timeout_sec: 4.0
+  center_tolerance_m: 0.06
+control:
+  enable_motion: false
+  max_linear_speed_mps: 0.12
+  approach_speed_mps: 0.08
+  avoid_speed_mps: 0.06
+  return_speed_mps: 0.08
+  max_angular_speed_radps: 0.35
+  max_linear_accel_mps2: 0.25
+  max_angular_accel_radps2: 0.8
+  lookahead_distance_m: 0.38
+  heading_gain: 0.8
+  curvature_slowdown_gain: 1.2
+  shutdown_stop_repeats: 5
+  shutdown_stop_interval_sec: 0.04
+debug:
+  image_publish_stride: 2
+  draw_raw_contours: true
+  draw_all_candidates: true
+  image_jpeg_quality: 90
+calibration_metadata:
+  method: checkerboard_intrinsics_with_full_lens_ground_homography_rebase
+  timestamp_utc: '2026-07-25T09:42:52.020613+00:00'
+  source_image: /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/raw.jpg
+  point_order:
+  - near-left
+  - near-right
+  - far-right
+  - far-left
+  depth_topic: /camera/depth/points
+  depth_frame: camera_depth_optical_frame
+  color_frame: camera_color_optical_frame
+  depth_plane_normal:
+  - -0.01367098
+  - -0.99948261
+  - -0.02911369
+  depth_plane_d_m: 0.15782215
+  depth_plane_frames: 10
+  depth_plane_support_ratio_median: 0.84365
+  depth_plane_inlier_threshold_m: 0.006
+  depth_plane_inlier_p95_m: 0.004835
+  raw_lane_width_m: 0.8436447584047047
+  lane_width_reference_m: 0.91
+  depth_scale_correction: 1.07865305975559
+  corrected_color_camera_height_m: 0.16996820664157455
+  lane_center_right_of_camera_m: 0.033114830284414254
+  near_forward_from_camera_m: 0.31209121619000896
+  far_forward_from_camera_m: 1.8810765638331206
+  represented_forward_span_m: 1.5689853476431117
+  disc_reference_diameter_m: 0.1
+  disc_recovered_diameters_m:
+  - 0.09620793253479398
+  - 0.0989756562060234
+  bev_lateral_margin_each_side_m: 0.05
+  mapped_lateral_span_m: 1.01
+  meters_per_pixel_x: 0.0015805946791862286
+  meters_per_pixel_y: 0.001963686292419414
+  raw_detection_region: configured six-point ROI through image bottom; independent
+    of metric BEV polygon
+  intrinsics_valid: true
+  safety_valid: true
+  profile_transfer:
+    base_config: /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/config/calibrated.yaml
+    source_resolution:
+    - 640
+    - 480
+    target_resolution:
+    - 1920
+    - 1080
+    scale_x: 2.2487211848709254
+    scale_y: 2.249996406181299
+    offset_x_px: 238.66112719447165
+    offset_y_px: -0.40182787764376826
+    registration_mean_error_px: 0.8038139563254955
+    registration_max_error_px: 2.204526466512977
+    source_image: /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/reference_640x480.png
+    target_image: /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/reference_1920x1080.png
+  pre_checkerboard_metric_validation:
+    samples: 30
+    known_disk_diameter_m: 0.1
+    known_edge_to_edge_gap_m: 0.3
+    expected_center_distance_m: 0.4
+    measured_center_distance_mean_m: 0.4083004625576505
+    measured_center_distance_std_m: 0.00031248875047513005
+    inferred_edge_gap_mean_m: 0.30830046255765053
+    measured_lane_width_mean_m: 0.8897499513368804
+    measured_lane_width_std_m: 0.0010093259724007753
+    processing_rate_hz: 3.377984936111179
+    note: No forced scale correction was applied because the 8.3 mm disc-gap residual
+      is within manual placement/measurement uncertainty and a global rescale would
+      invalidate the independently calibrated track width.
+  validation_note: Checkerboard intrinsics and full-lens ground rebase passed offline
+    and 40-frame live metric validation. Live launch remains gate-locked until explicitly
+    enabled.
+  intrinsics:
+    timestamp_utc: '2026-07-25T09:22:40.861424+00:00'
+    board_inner_corners:
+    - 11
+    - 8
+    square_size_m: 0.015
+    accepted_views: 40
+    mean_reprojection_error_px: 0.22714814133942127
+    maximum_reprojection_error_px: 0.32447779178619385
+    center_span_ratio:
+    - 0.6718524297078451
+    - 0.4406684027777778
+    checkerboard_scale_ratio: 3.7476952911871795
+    source_images:
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_000.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_001.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_002.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_004.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_005.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_006.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_007.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_008.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_010.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_011.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_012.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_013.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_014.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_015.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_016.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_017.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_018.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_019.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_020.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_021.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_022.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_023.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_024.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_025.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_026.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_027.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_030.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_031.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_032.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_033.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_034.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_035.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_036.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_037.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_038.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_040.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_041.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_042.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_043.png
+    - /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/max_1920x1080_30/checkerboard_frames/checkerboard_044.png
+  rectified_geometry_rebase:
+    reference_config: /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/config/calibrated_1920x1080.yaml
+    intrinsic_config: /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/config/intrinsic_calibrated_1920x1080_checkerboard.yaml
+    mapping: old_rectified_to_raw_to_new_rectified
+    ground_fit:
+      sample_count: 2991
+      mean_error_bev_px: 1.1216537952423096
+      p95_error_bev_px: 3.6740602254867554
+      max_error_bev_px: 6.54516077041626
+      mean_error_m: 0.002129804342985153
+      p95_error_m: 0.007075069006532431
+      max_error_m: 0.012846065685153008
+  metric_validation:
+    timestamp_utc: '2026-07-25T09:56:00+00:00'
+    mode: live_locked_static
+    samples: 40
+    known_disk_diameter_m: 0.1
+    known_edge_to_edge_gap_m: 0.3
+    expected_center_distance_m: 0.4
+    measured_center_distance_mean_m: 0.40657024867342145
+    measured_center_distance_std_m: 0.0005984005090943074
+    inferred_edge_gap_mean_m: 0.3065702486734214
+    edge_gap_error_m: 0.0065702486734214305
+    measured_disk_diameters_mean_m:
+    - 0.09467030168648274
+    - 0.09011618290546256
+    measured_disk_diameters_std_m:
+    - 0.0010254414051083318
+    - 0.0008404010451156889
+    measured_lane_width_mean_m: 0.8895410231269463
+    measured_lane_width_std_m: 0.0007396939058822075
+    boundary_quality_mean: 0.9592647622591086
+    perception_rate_hz: 2.713609800788603
+    processing_time_mean_ms: 356.21401087798694
+    processing_time_p95_ms: 391.0665940002218
+    camera_stream_rate_hz: 29.72
+    all_output_commands_zero: true
+    note: The red-ring segmentation slightly underestimates visible diameter; collision
+      geometry continues to use the configured physical 0.05 m disc radius. No forced
+      global scale correction was applied because the measured 6.6 mm gap residual
+      is smaller than the conflict that a diameter-based rescale would introduce.

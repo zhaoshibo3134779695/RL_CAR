@@ -1,0 +1,36 @@
+[
+  {
+    "run": "A",
+    "stage1": {
+      "outcome": "SUCCEEDED",
+      "elapsed_sec": 51.68628891700064,
+      "navigation_elapsed_sec": 31.593027353,
+      "goal": {"x_m": 2.318, "y_m": -0.307, "yaw_rad": -0.035},
+      "preview_plan_pose_count": 986
+    },
+    "stage2": {
+      "outcome": "SUCCEEDED",
+      "elapsed_sec": 41.943380769000214,
+      "navigation_elapsed_sec": 29.893055439,
+      "goal": {"x_m": 2.089, "y_m": -0.013, "yaw_rad": 0.039},
+      "preview_plan_pose_count": 419
+    }
+  },
+  {
+    "run": "B",
+    "stage1": {
+      "outcome": "SUCCEEDED",
+      "elapsed_sec": 53.5849555650002,
+      "navigation_elapsed_sec": 32.996011019,
+      "goal": {"x_m": 2.242, "y_m": -0.291, "yaw_rad": -0.018},
+      "preview_plan_pose_count": 952
+    },
+    "stage2": {
+      "outcome": "SUCCEEDED",
+      "elapsed_sec": 43.90345761499884,
+      "navigation_elapsed_sec": 31.494303704,
+      "goal": {"x_m": 2.081, "y_m": -0.002, "yaw_rad": 0.034},
+      "preview_plan_pose_count": 417
+    }
+  }
+]

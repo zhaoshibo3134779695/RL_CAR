@@ -1,0 +1,25 @@
+<launch>
+  <arg name="config" default="$(find yellow_track_avoidance)/config/calibrated.yaml"/>
+  <arg name="start_detector" default="true"/>
+  <arg name="image_topic" default="/camera/color/image_raw"/>
+  <arg name="camera_info_topic" default="/camera/color/camera_info"/>
+  <arg name="output_dir" default="$(find yellow_track_avoidance)/disc_acceptance_runs/current"/>
+
+  <include if="$(arg start_detector)"
+           file="$(find yellow_track_avoidance)/launch/detect_only.launch">
+    <arg name="config" value="$(arg config)"/>
+    <arg name="image_topic" value="$(arg image_topic)"/>
+    <arg name="camera_info_topic" value="$(arg camera_info_topic)"/>
+  </include>
+
+  <node pkg="yellow_track_avoidance"
+        type="disc_acceptance_recorder.py"
+        name="disc_acceptance_recorder"
+        output="screen"
+        required="true">
+    <param name="config_file" value="$(arg config)"/>
+    <param name="output_dir" value="$(arg output_dir)"/>
+    <param name="disc_status_topic" value="/yellow_track_avoidance/debug/disc_status"/>
+    <param name="auto_start" value="false"/>
+  </node>
+</launch>

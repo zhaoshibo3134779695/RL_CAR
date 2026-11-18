@@ -1,0 +1,5 @@
+<launch>
+  <!-- Stage-1 phase 3 physical motion switch. Goal sending remains explicit. -->
+  <node pkg="car_bringup" type="newt.py" name="cmd_vel_listener"
+        output="screen" required="true"/>
+</launch>

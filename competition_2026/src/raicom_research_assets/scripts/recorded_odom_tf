@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+import rclpy
+from geometry_msgs.msg import TransformStamped
+from nav_msgs.msg import Odometry
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
+from tf2_ros import TransformBroadcaster
+
+
+class RecordedOdomTF(Node):
+    def __init__(self):
+        super().__init__('recorded_odom_tf')
+        self.broadcaster = TransformBroadcaster(self)
+        self.create_subscription(Odometry, '/odom', self.on_odom, qos_profile_sensor_data)
+
+    def on_odom(self, odom):
+        transform = TransformStamped()
+        transform.header = odom.header
+        transform.child_frame_id = odom.child_frame_id
+        pose = odom.pose.pose
+        translation = transform.transform.translation
+        translation.x, translation.y, translation.z = pose.position.x, pose.position.y, pose.position.z
+        transform.transform.rotation = pose.orientation
+        self.broadcaster.sendTransform(transform)
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = RecordedOdomTF()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.destroy_node()
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+
+
+if __name__ == '__main__':
+    main()

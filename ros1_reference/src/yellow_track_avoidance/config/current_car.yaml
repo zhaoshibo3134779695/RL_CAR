@@ -1,0 +1,73 @@
+# Safe profile for the x86_64 ROS Noetic mecanum car in this workspace.
+# Reuse the archive-validated colour, boundary, and disc parameters, while the
+# donor-car camera geometry is explicitly invalidated below.
+extends: calibrated.yaml
+
+ros:
+  image_topic: /usb_cam/image_raw
+  camera_info_topic: /usb_cam/camera_info
+  output_cmd_topic: /yellow_track_avoidance/cmd_vel
+
+camera:
+  expected_encoding: [rgb8, bgr8]
+  expected_width: 640
+  expected_height: 480
+  # The donor Orbbec's pixel polygon is invalid for this USB camera.
+  detection_source_points: null
+  use_bev_polygon_for_detection: false
+  roi_y_start_ratio: 0.50
+  roi_y_end_ratio: 1.00
+  roi_x_start_ratio: 0.00
+  roi_x_end_ratio: 1.00
+  yellow_roi_y_start_ratio: 0.50
+  yellow_roi_y_end_ratio: 1.00
+  yellow_roi_x_start_ratio: 0.00
+  yellow_roi_x_end_ratio: 1.00
+  # At 640x480 this is approximately (0,479) -> (160,240) ->
+  # (639,240) -> (639,479), matching this car's accepted lower-frame ROI.
+  roi_polygon_normalized:
+    - [0.00, 1.00]
+    - [0.25, 0.50]
+    - [1.00, 0.50]
+    - [1.00, 1.00]
+  yellow_roi_polygon_normalized:
+    - [0.00, 1.00]
+    - [0.25, 0.50]
+    - [0.625, 0.50]
+    - [0.50, 1.00]
+
+boundary:
+  detection_mode: left_only
+
+camera_intrinsics:
+  calibrated: false
+  image_width: 640
+  image_height: 480
+  camera_matrix: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+  distortion_coefficients: [0.0, 0.0, 0.0, 0.0, 0.0]
+  rectified_camera_matrix: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+  calibration_rms_px: 0.0
+
+bev:
+  calibrated: false
+  source_points:
+    - [0.0, 0.0]
+    - [0.0, 0.0]
+    - [0.0, 0.0]
+    - [0.0, 0.0]
+  real_length_m: 0.0
+
+physical:
+  # Recorded migration envelope. Re-measure protruding wheels, brackets and
+  # cables before enabling motion; do not reduce these values from software
+  # evidence alone.
+  robot_width_m: 0.33
+  robot_length_m: 0.34
+  local_forward_origin_offset_m: 0.0
+
+control:
+  enable_motion: false
+
+# Do not expose the donor-car calibration metadata through this deliberately
+# uncalibrated safety profile.
+calibration_metadata: null

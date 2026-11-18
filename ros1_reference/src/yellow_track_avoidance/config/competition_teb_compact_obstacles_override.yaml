@@ -1,0 +1,3 @@
+# A/B-only override. All remaining values come from competition_teb_baseline.yaml.
+TebLocalPlannerROS:
+  include_costmap_obstacles: false

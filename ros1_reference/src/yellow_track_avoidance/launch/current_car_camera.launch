@@ -1,0 +1,81 @@
+<launch>
+  <!-- USB camera used by this car. No viewer is started, so this is safe over SSH. -->
+  <arg name="start_camera" default="true"/>
+  <arg name="video_device"
+       default="/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._Orbbec_DaBai_DCW2_RGB_Camera_CH8Z16501C1-video-index0"/>
+  <arg name="image_width" default="640"/>
+  <arg name="image_height" default="480"/>
+  <arg name="framerate" default="30"/>
+  <arg name="pixel_format" default="mjpeg"/>
+  <arg name="lock_photometry" default="true"/>
+  <!-- The UVC camera cannot meter hardware auto exposure inside our detection
+       ROI.  Keep exposure manual and try fixed levels from low to high; freeze
+       the first level that stably detects the line and both metric discs. -->
+  <arg name="automatic_photometry_commissioning" default="false"/>
+  <arg name="auto_tune_exposure" default="true"/>
+  <!-- Fixed competition-light photometry. 2026-08-13 live A/B reduced the
+       ground-ROI Y>=250 clipping fraction from about 92% (100) to 1% (40)
+       while retaining both red/white disc candidates and 28/28 yellow-line
+       profile sections. -->
+  <arg name="exposure_time_absolute" default="40"/>
+  <arg name="camera_gain" default="0"/>
+  <arg name="photometry_ready_topic"
+       default="/yellow_track_avoidance/camera_photometry_ready"/>
+  <arg name="photometry_preview_topic"
+       default="/yellow_track_avoidance/camera_photometry_preview"/>
+
+  <node if="$(arg start_camera)"
+        pkg="usb_cam" type="usb_cam_node" name="usb_cam"
+        output="screen" required="true">
+    <param name="video_device" value="$(arg video_device)"/>
+    <param name="image_width" value="$(arg image_width)"/>
+    <param name="image_height" value="$(arg image_height)"/>
+    <param name="framerate" value="$(arg framerate)"/>
+    <param name="pixel_format" value="$(arg pixel_format)"/>
+    <param name="io_method" value="mmap"/>
+    <param name="camera_name" value="yellow_track_rgb"/>
+    <param name="camera_frame_id" value="usb_cam"/>
+    <param name="camera_info_url"
+           value="file://$(find yellow_track_avoidance)/config/orbbec_640x480_camera_info.yaml"/>
+  </node>
+
+  <node if="$(eval arg('start_camera') and arg('lock_photometry'))"
+        pkg="yellow_track_avoidance" type="v4l2_camera_controls.py"
+        name="yellow_track_v4l2_controls" output="screen" required="true">
+    <param name="video_device" value="$(arg video_device)"/>
+    <param name="startup_delay_sec" value="1.0"/>
+    <param name="automatic_photometry_commissioning"
+           value="$(arg automatic_photometry_commissioning)"/>
+    <!-- This Orbbec/Sonix UVC device exposes only mode 1 (manual) and mode 3
+         (aperture-priority automatic exposure); V4L2 mode 0 is rejected. -->
+    <param name="automatic_exposure_mode" value="3"/>
+    <param name="manual_exposure_mode" value="1"/>
+    <param name="automatic_photometry_settle_sec" value="0.8"/>
+    <param name="automatic_photometry_evaluate_sec" value="3.2"/>
+    <param name="post_freeze_validate_sec" value="0.8"/>
+    <param name="white_balance_warmup_sec" value="2.0"/>
+    <param name="photometry_ready_topic"
+           value="$(arg photometry_ready_topic)"/>
+    <param name="photometry_preview_topic"
+           value="$(arg photometry_preview_topic)"/>
+    <param name="auto_tune_exposure" value="$(arg auto_tune_exposure)"/>
+    <!-- 2026-08-13 live fine sweep: exposure 56 produced two metric discs in
+         12/18 frames and 58 in 13/18; at 60 and above the far/near overlap
+         disappeared.  Keep the search in the useful low range and resolve
+         the narrow transition from 54 to 60.  The first stable result is frozen. -->
+    <rosparam param="exposure_candidates">[30, 40, 50, 54, 56, 58, 60]</rosparam>
+    <param name="exposure_settle_sec" value="0.25"/>
+    <param name="exposure_evaluate_sec" value="0.70"/>
+    <param name="required_detection_hits" value="2"/>
+    <param name="expected_metric_disc_count" value="2"/>
+    <param name="minimum_left_line_quality" value="0.70"/>
+    <param name="minimum_disc_confidence" value="0.50"/>
+    <param name="auto_exposure" value="1"/>
+    <param name="exposure_dynamic_framerate" value="0"/>
+    <param name="exposure_time_absolute" value="$(arg exposure_time_absolute)"/>
+    <param name="gain" value="$(arg camera_gain)"/>
+    <param name="white_balance_automatic" value="0"/>
+    <param name="white_balance_temperature" value="4600"/>
+    <param name="sharpness" value="3"/>
+  </node>
+</launch>

@@ -1,0 +1,52 @@
+# Competition odometry: one fusion layer, with one owner per state variable.
+#
+#   wheel odometry (/odom_raw): body-frame vx and vy only
+#   Yesense IMU (/imu0):       relative yaw and yaw rate only
+#
+# The wheel pose and wheel yaw rate are deliberately excluded.  In particular,
+# base_node must run with use_imu_yaw=false when this profile is loaded; the IMU
+# must not be integrated once in base_node and then integrated again here.
+
+frequency: 20
+sensor_timeout: 0.05
+two_d_mode: true
+transform_time_offset: 0.0
+transform_timeout: 0.0
+print_diagnostics: true
+debug: false
+publish_tf: true
+publish_acceleration: false
+
+odom_frame: odom
+world_frame: odom
+base_link_frame: base_footprint
+
+odom0: /odom_raw
+odom0_config: [false, false, false,
+               false, false, false,
+               true,  true,  false,
+               false, false, false,
+               false, false, false]
+odom0_queue_size: 1
+odom0_nodelay: false
+odom0_differential: false
+odom0_relative: false
+
+imu0: /imu0
+imu0_config: [false, false, false,
+              false, false, true,
+              false, false, false,
+              false, false, true,
+              false, false, false]
+imu0_queue_size: 5
+imu0_nodelay: true
+imu0_differential: false
+# Yesense publishes an absolute heading whose initial value is unrelated to the
+# competition odom origin.  Treat the first valid orientation as yaw=0 while
+# retaining all subsequent measured yaw changes.
+imu0_relative: true
+# Acceleration is not fused by imu0_config, so gravity removal is unnecessary.
+imu0_remove_gravitational_acceleration: false
+
+use_control: false
+

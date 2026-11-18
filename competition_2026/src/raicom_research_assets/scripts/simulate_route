@@ -1,0 +1,210 @@
+#!/usr/bin/python3
+"""Follow the recorded path using the Gazebo planar body and its measured pose."""
+import json
+import math
+import time
+
+import numpy as np
+import rclpy
+import yaml
+from ament_index_python.packages import get_package_share_path
+from geometry_msgs.msg import PoseStamped, TransformStamped
+from gz.msgs.pose_v_pb2 import Pose_V
+from gz.msgs.twist_pb2 import Twist
+from gz.transport import Node as GazeboNode
+from nav_msgs.msg import Path
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import DurabilityPolicy, QoSProfile
+from std_msgs.msg import String
+from std_srvs.srv import Trigger
+from tf2_ros import TransformBroadcaster
+
+from raicom_research_assets.route_footprint import FootprintMap
+
+
+def angle(value):
+    return math.atan2(math.sin(value), math.cos(value))
+
+
+def clamp(value, limit):
+    return max(-limit, min(value, limit))
+
+
+class RouteSimulation(Node):
+    def __init__(self):
+        super().__init__('route_simulation')
+        share = get_package_share_path('raicom_research_assets')
+        config = yaml.safe_load((share / 'config/competition/navigation.yaml').read_text())['competition_reference']['ros__parameters']
+        self.tuning = config['regions_1_3']
+        self.map = FootprintMap(share / 'maps/vehicle/727best_map.yaml', config['nav_costmap_footprint_xy'])
+        self.goals = yaml.safe_load((share / 'config/competition/waypoints.yaml').read_text())['waypoints']
+        self.gz = GazeboNode()
+        self.motion = self.gz.advertise('/model/mowen/route_velocity', Twist)
+        self.sample = None
+        self.gz.subscribe(Pose_V, '/world/raicom_research/dynamic_pose/info', self.on_pose)
+        self.tf = TransformBroadcaster(self)
+        qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.status = self.create_publisher(String, '~/status', qos)
+        self.trail_pub = self.create_publisher(Path, '~/trail', qos)
+        self.create_subscription(Path, '/recorded_waypoints/path', self.on_path, qos)
+        self.create_service(Trigger, '~/start', self.start)
+        self.trail = Path()
+        self.trail.header.frame_id = 'map'
+        self.state = 'idle'
+        self.last_sim_time = None
+        self.route = None
+        self.leg, self.index = 0, 0
+        self.reached = []
+        self.v = self.w = 0.0
+        self.aligning = False
+        self.create_timer(1.0/self.tuning['direct_control_rate'], self.update)
+
+    def on_pose(self, message):
+        for model in message.pose:
+            if model.name == 'mowen':
+                q = model.orientation
+                yaw = math.atan2(2*(q.w*q.z + q.x*q.y), 1-2*(q.y*q.y + q.z*q.z))
+                stamp = message.header.stamp
+                self.sample = ((model.position.x, model.position.y, yaw), stamp.sec + stamp.nsec*1e-9, time.monotonic())
+                break
+
+    def on_path(self, msg):
+        if self.state != 'idle' or not msg.poses:
+            return
+        route = np.array([(p.pose.position.x, p.pose.position.y) for p in msg.poses])
+        ends = []
+        index = 0
+        for g in self.goals:
+            distances = np.hypot(route[index:,0]-g['position']['x'], route[index:,1]-g['position']['y'])
+            nearest = distances.argmin()
+            if distances[nearest] > self.map.res:
+                self.get_logger().warning(f"Route does not pass through {g['name']}")
+                return
+            index += int(nearest)
+            ends.append(index)
+        self.route, self.ends = route, ends
+        self.arc = np.r_[0, np.cumsum(np.hypot(*np.diff(route, axis=0).T))]
+
+    def start(self, request, response):
+        if self.state != 'idle' or self.route is None or self.sample is None or time.monotonic()-self.sample[2] > 0.5:
+            response.message = f'State {self.state}. A current Gazebo pose and the full recorded plan are required.'
+            return response
+        self.state = 'running'
+        self.progress_pose = self.sample[0]
+        self.progress_time = self.sample[1]
+        self.report('started')
+        response.success, response.message = True, 'Running the ordered navigation waypoints in Gazebo'
+        return response
+
+    def report(self, reason):
+        pose = self.sample[0] if self.sample else None
+        data = dict(state=self.state, reason=reason, reached=self.reached,
+                    target=self.goals[self.leg]['name'] if self.leg < len(self.goals) else None, pose=pose)
+        self.status.publish(String(data=json.dumps(data)))
+        self.get_logger().info(json.dumps(data))
+
+    def command(self, v, w):
+        cmd = Twist()
+        cmd.linear.x = v
+        cmd.angular.z = w
+        self.motion.publish(cmd)
+        self.v, self.w = v, w
+
+    def stop(self, state, reason):
+        self.command(0., 0.)
+        self.state = state
+        self.report(reason)
+
+    def display(self, pose):
+        x,y,yaw = pose
+        t = TransformStamped()
+        t.header.stamp = self.get_clock().now().to_msg()
+        t.header.frame_id, t.child_frame_id = 'map','base_footprint'
+        t.transform.translation.x, t.transform.translation.y = x,y
+        t.transform.rotation.z, t.transform.rotation.w = math.sin(yaw/2),math.cos(yaw/2)
+        self.tf.sendTransform(t)
+        last = self.trail.poses[-1].pose.position if self.trail.poses else None
+        if last is None or math.hypot(x-last.x, y-last.y) >= .012:
+            point = PoseStamped(header=t.header)
+            point.pose.position.x,point.pose.position.y = x,y
+            point.pose.orientation = t.transform.rotation
+            self.trail.poses.append(point)
+            self.trail.header.stamp = t.header.stamp
+            self.trail_pub.publish(self.trail)
+
+    def update(self):
+        sample = self.sample
+        if sample is None:
+            return
+        pose, sim_time, received = sample
+        if time.monotonic()-received > 0.5:
+            if self.state == 'running':
+                self.stop('stopped', 'Gazebo pose feedback timed out')
+            return
+        self.display(pose)
+        dt = 0.0 if self.last_sim_time is None else sim_time-self.last_sim_time
+        self.last_sim_time = sim_time
+        if self.state != 'running' or dt <= 0:
+            return
+        dt = min(dt, .12)
+        x,y,yaw = pose
+        px,py,pa = self.progress_pose
+        if math.hypot(x-px,y-py) > .009 or abs(angle(yaw-pa)) > .04:
+            self.progress_pose, self.progress_time = pose,sim_time
+        elif sim_time-self.progress_time > self.tuning['direct_stall_timeout']:
+            self.stop('stopped','No progress in measured Gazebo pose')
+            return
+        end = self.ends[self.leg]
+        g = self.goals[self.leg]
+        dist = math.hypot(g['position']['x']-x, g['position']['y']-y)
+        tolerance = self.tuning['direct_position_tolerance']
+        if dist < tolerance*0.65:
+            self.aligning = True
+        if self.aligning:
+            err = angle(g['yaw']-yaw)
+            if dist <= tolerance and abs(err) < .025 and abs(self.v) < .012:
+                self.reached.append(g['name'])
+                self.index = end
+                self.leg += 1
+                self.aligning = False
+                if self.leg == len(self.goals):
+                    self.stop('complete','All recorded navigation goals reached')
+                else:
+                    self.report('waypoint reached')
+                return
+            speed = 0.
+        else:
+            nearest = self.route[self.index:min(self.index+220,end+1)]
+            self.index += int(np.hypot(nearest[:,0]-x, nearest[:,1]-y).argmin())
+            lookahead = self.tuning['direct_lookahead']
+            aim = min(end, int(np.searchsorted(self.arc,self.arc[self.index]+lookahead)))
+            dx,dy = self.route[aim] - [x,y]
+            err = angle(math.atan2(dy,dx)-yaw)
+            speed = self.tuning['direct_max_linear']*min(1., dist/self.tuning['direct_goal_slowdown_distance'])
+            if abs(err) > math.radians(self.tuning['direct_rotate_only_angle_deg']):
+                speed = 0.
+        spin = clamp(self.tuning['direct_heading_gain']*err,self.tuning['direct_max_angular'])
+        v = self.v + clamp(speed-self.v,self.tuning['direct_max_linear_accel']*dt)
+        w = self.w + clamp(spin-self.w,self.tuning['direct_max_angular_accel']*dt)
+        if self.map.intersects(x,y,yaw) or self.map.impending_contact(pose,v,w,.15):
+            self.stop('blocked', 'Navigation footprint would enter an occupied map cell')
+            return
+        self.command(v,w)
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = RouteSimulation()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.command(0.,0.)
+                node.destroy_node()
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+
+
+if __name__ == '__main__':
+    main()

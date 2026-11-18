@@ -1,0 +1,55 @@
+DWAPlannerROS:
+  recovery_behavior_enabled: false
+  clearing_rotation_allowed: false
+
+  acc_lim_x: 0.50
+  acc_lim_y: 0.50
+  acc_lim_th: 1.00
+  acc_lim_trans: 0.50
+  acc_lim_theta: 1.00
+
+  max_vel_trans: 0.24
+  min_vel_trans: 0.04
+
+  max_vel_x: 0.27
+  min_vel_x: 0.00
+  max_vel_y: 0.18
+  min_vel_y: -0.18
+
+  max_vel_theta: 0.35
+  min_vel_theta: 0.05
+  trans_stopped_vel: 0.02
+  theta_stopped_vel: 0.01
+
+  # The competition route is narrower than the rectangular footprint while
+  # it is turning diagonally. Intermediate goal arrows therefore do not force
+  # an in-place final rotation inside a corridor.
+  yaw_goal_tolerance: 3.14
+  xy_goal_tolerance: 0.10
+  latch_xy_goal_tolerance: true
+
+  sim_time: 1.8
+  sim_granularity: 0.02
+  vx_samples: 20
+  vy_samples: 20
+  vth_samples: 20
+
+  path_distance_bias: 45.0
+  goal_distance_bias: 28.0
+  occdist_scale: 0.25
+
+  # Score the robot center and penalize unnecessary heading changes so the
+  # omni base strafes through narrow corners instead of trying to spin there.
+  forward_point_distance: 0.0
+  twirling_scale: 2.0
+
+  stop_time_buffer: 0.15
+  scaling_speed: 0.20
+  max_scaling_factor: 0.2
+  publish_cost_grid: false
+
+  oscillation_reset_dist: 0.02
+  oscillation_reset_angle: 0.2
+  prune_plan: true
+  holonomic_robot: true
+  penalize_negative_x: true

@@ -1,0 +1,122 @@
+TebLocalPlannerROS:
+  odom_topic: /odom
+  map_frame: odom
+
+  teb_autosize: true
+  dt_ref: 0.20
+  dt_hysteresis: 0.02
+  max_samples: 200
+  global_plan_overwrite_orientation: false
+  allow_init_with_backwards_motion: false
+  # SBPL selects the obstacle side globally. Keep the local optimization on
+  # that route instead of allowing it to contract across a nearby disc.
+  max_global_plan_lookahead_dist: 0.90
+  global_plan_viapoint_sep: 0.10
+  via_points_ordered: true
+  # Check the immediate trajectory while allowing the 15 Hz controller to
+  # re-evaluate later poses instead of rejecting the entire passage early.
+  feasibility_check_no_poses: 8
+  publish_feedback: true
+
+  # Current competition speed limits for the omnidirectional base.
+  max_vel_x: 0.10
+  max_vel_x_backwards: 0.04
+  max_vel_y: 0.08
+  max_vel_theta: 0.25
+  acc_lim_x: 0.20
+  acc_lim_y: 0.20
+  acc_lim_theta: 0.40
+  min_turning_radius: 0.0
+  is_footprint_dynamic: false
+
+  # Exact physical body; obstacle distance is measured from these polygon
+  # edges, not from a circumscribed 0.24 m robot circle.
+  footprint_model:
+    type: polygon
+    vertices:
+      - [-0.170, -0.165]
+      - [-0.170,  0.165]
+      - [ 0.170,  0.165]
+      - [ 0.170, -0.165]
+
+  xy_goal_tolerance: 0.01
+  yaw_goal_tolerance: 0.15
+  free_goal_vel: false
+  complete_global_plan: true
+
+  # /disc_scan publishes the near surface of each 0.10 m disc, not its center.
+  # Finish-first mode keeps only 5 mm between the exact body polygon and an
+  # obstacle. Contact remains invalid, while wider soft-clearance preferences
+  # are removed so a narrow but geometrically valid route is not rejected.
+  min_obstacle_dist: 0.005
+  inflation_dist: 0.005
+  dynamic_obstacle_inflation_dist: 0.005
+  include_dynamic_obstacles: false
+  include_costmap_obstacles: true
+  # The omnidirectional chassis can translate sideways while its heading stays
+  # unchanged. Keep nearby rear-heading obstacles in TEB's optimizer so they
+  # cannot be ignored there and then rejected by the footprint feasibility
+  # check.
+  costmap_obstacles_behind_robot_dist: 0.80
+  obstacle_poses_affected: 12
+  legacy_obstacle_association: false
+  # Even with the 5 mm clearance, retain nearby obstacles in the optimizer so
+  # the trajectory converges outside collision instead of failing its final
+  # exact-footprint feasibility check.
+  obstacle_association_force_inclusion_factor: 3.0
+  obstacle_association_cutoff_factor: 8.0
+  costmap_converter_plugin: ""
+  costmap_converter_spin_thread: false
+
+  no_inner_iterations: 6
+  no_outer_iterations: 4
+  optimization_activate: true
+  optimization_verbose: false
+  penalty_epsilon: 0.0
+  weight_max_vel_x: 2.0
+  weight_max_vel_y: 2.0
+  weight_max_vel_theta: 1.0
+  weight_acc_lim_x: 1.0
+  weight_acc_lim_y: 1.0
+  weight_acc_lim_theta: 1.0
+  # This is an omnidirectional base: lateral motion and reversing must not be
+  # penalized as if the platform were differential drive.
+  weight_kinematics_nh: 0.0
+  weight_kinematics_forward_drive: 0.0
+  weight_kinematics_turning_radius: 0.0
+  weight_optimaltime: 1.0
+  weight_shortest_path: 0.0
+  # Keep a small collision-convergence weight, but remove all optional
+  # inflation preferences. Exact footprint feasibility remains authoritative.
+  weight_obstacle: 10.0
+  weight_inflation: 0.0
+  weight_dynamic_obstacle: 0.0
+  weight_dynamic_obstacle_inflation: 0.0
+  weight_viapoint: 10.0
+  weight_adapt_factor: 1.3
+
+  # Start field validation with one deterministic local optimization. SBPL
+  # already selects the global side of each obstacle; homotopy can be enabled
+  # after the baseline path following test succeeds.
+  enable_homotopy_class_planning: false
+  enable_multithreading: true
+  simple_exploration: false
+  max_number_classes: 4
+  selection_cost_hysteresis: 1.0
+  selection_prefer_initial_plan: 0.90
+  selection_obst_cost_scale: 0.0
+  selection_viapoint_cost_scale: 0.0
+  selection_alternative_time_cost: false
+  switching_blocking_period: 0.0
+  roadmap_graph_no_samples: 20
+  roadmap_graph_area_width: 1.20
+  roadmap_graph_area_length_scale: 1.0
+  h_signature_prescaler: 0.5
+  h_signature_threshold: 0.1
+  obstacle_heading_threshold: 0.45
+  viapoints_all_candidates: false
+  visualize_hc_graph: true
+
+  shrink_horizon_backup: true
+  shrink_horizon_min_duration: 3.0
+  oscillation_recovery: true

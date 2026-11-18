@@ -1,0 +1,55 @@
+#!/usr/bin/python3
+import math
+
+import rclpy
+from geometry_msgs.msg import Twist
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
+
+
+class VelocityCenter(Node):
+    """Reconstruct wheel feedback at the rotation center using the onboard calibration."""
+
+    def __init__(self):
+        super().__init__('velocity_center', automatically_declare_parameters_from_overrides=True)
+        self.active_until_ns = None
+        self.feedback = self.create_publisher(Twist, '~/feedback', 20)
+        self.create_subscription(Twist, 'navigation_input', self.command, qos_profile_sensor_data)
+        self.create_subscription(Twist, 'wheel_input', self.correct, qos_profile_sensor_data)
+
+    def value(self, key):
+        return self.get_parameter(key).value
+
+    def command(self, msg):
+        now = self.get_clock().now().nanoseconds
+        translation = math.hypot(msg.linear.x, msg.linear.y)
+        if self.value('apply_during_translation') or translation <= self.value('max_command_translation'):
+            if abs(msg.angular.z) >= self.value('min_command_angular'):
+                self.active_until_ns = now + round(self.value('hold_time') * 1e9)
+        else:
+            self.active_until_ns = now
+
+    def correct(self, msg):
+        now = self.get_clock().now().nanoseconds
+        if self.active_until_ns is not None and now <= self.active_until_ns and abs(msg.angular.z) >= self.value('min_feedback_angular'):
+            direction = 'ccw' if msg.angular.z > 0 else 'cw'
+            msg.linear.x -= self.value(direction + '_vx_per_w') * msg.angular.z
+            msg.linear.y -= self.value(direction + '_vy_per_w') * msg.angular.z
+        self.feedback.publish(msg)
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = VelocityCenter()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.destroy_node()
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+
+
+if __name__ == '__main__':
+    main()

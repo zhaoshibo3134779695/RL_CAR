@@ -1,0 +1,50 @@
+{
+  "timestamp_local": "2026-08-18T21:20:33+08:00",
+  "source_image": "calibration_runs/extrinsic_20260818/constraint_scene_raw.png",
+  "method": "undistorted_floor_reaching_hough_segments_with_common_horizon_then_candidate_bev_parallelism",
+  "selected_floor_seams": 9,
+  "floor_forward_angle_deg_median": 3.6002513320896328,
+  "floor_forward_angle_deg_p95": 6.0904711719008295,
+  "floor_forward_angle_deg_max": 7.0548348748755565,
+  "left_wall_floor_junction": {
+    "raw": [
+      2.0,
+      298.0,
+      216.0,
+      231.0
+    ],
+    "bev": [
+      [
+        -158.71145629882812,
+        313.15374755859375
+      ],
+      [
+        -134.6717529296875,
+        -724.0518188476562
+      ]
+    ],
+    "metric_endpoints_base_m": [
+      [
+        1.216135800854584,
+        0.6794631958959125
+      ],
+      [
+        3.8123950409202916,
+        0.6410938350984356
+      ]
+    ],
+    "metric_length_m": 2.596542749402477,
+    "forward_angle_deg": 0.8466960356454841,
+    "visible_in_operational_bev": false
+  },
+  "checkerboard_out_of_fit_snapshot": {
+    "detected": true,
+    "edge_count": 157,
+    "edge_mean_mm": 15.028215984943914,
+    "edge_mean_abs_error_mm": 0.12494041756916886,
+    "edge_p95_abs_error_mm": 0.3512920031080168,
+    "diagonal_mean_mm": 21.252123254129195,
+    "diagonal_mean_abs_error_mm": 0.1582488562814432
+  },
+  "interpretation": "15 mm checkerboard supplies absolute scale and rectangularity. Floor seams and the left wall-floor junction validate longitudinal straightness/parallelism. The wall-floor line lies just outside the operational 1.02 m BEV width."
+}

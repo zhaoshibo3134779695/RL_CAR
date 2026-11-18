@@ -1,0 +1,149 @@
+{
+  "target_normal": [
+    -9.015736093250698e-05,
+    -0.9956418693589868,
+    -0.09325910063362534
+  ],
+  "groups": [
+    {
+      "label": "multi_mid_center_1920",
+      "normal": [
+        -0.006248811944853697,
+        -0.9955396412089439,
+        -0.09413700192190874
+      ],
+      "angle_to_target_deg": 0.3564806578732273,
+      "pitch_delta_deg": 0.05062806084378835,
+      "roll_delta_deg": -0.35444168077949006,
+      "reprojection_rms_mean_px": 0.11772220628336072,
+      "normal_spread_deg_p95": 0.007050498409391696
+    },
+    {
+      "label": "multi_mid_left_1920",
+      "normal": [
+        0.0011208117959756656,
+        -0.9948651084503701,
+        -0.10120355610822776
+      ],
+      "angle_to_target_deg": 0.46258857664344954,
+      "pitch_delta_deg": 0.45735567260362764,
+      "roll_delta_deg": 0.06973745888905862,
+      "reprojection_rms_mean_px": 0.17085256706923246,
+      "normal_spread_deg_p95": 0.008912684050273923
+    },
+    {
+      "label": "multi_mid_right_1920",
+      "normal": [
+        0.009849790355312145,
+        -0.9955983594400434,
+        -0.09320347799438877
+      ],
+      "angle_to_target_deg": 0.5695337703064351,
+      "pitch_delta_deg": -0.002940707179849511,
+      "roll_delta_deg": 0.5720162253143871,
+      "reprojection_rms_mean_px": 0.28715707920491695,
+      "normal_spread_deg_p95": 0.011232043382399642
+    },
+    {
+      "label": "multi_close_center_1920",
+      "normal": [
+        -0.00540507038029957,
+        -0.9953385725441455,
+        -0.0962907639390557
+      ],
+      "angle_to_target_deg": 0.3510103739211571,
+      "pitch_delta_deg": 0.17456794111729135,
+      "roll_delta_deg": -0.30594676264111836,
+      "reprojection_rms_mean_px": 0.0779276373796165,
+      "normal_spread_deg_p95": 0.004159670981410935
+    },
+    {
+      "label": "multi_close_left_1920",
+      "normal": [
+        -0.0006939384016304748,
+        -0.9959191310329193,
+        -0.09024745366008799
+      ],
+      "angle_to_target_deg": 0.17670384961912203,
+      "pitch_delta_deg": -0.17328445876825693,
+      "roll_delta_deg": -0.03473440702318771,
+      "reprojection_rms_mean_px": 0.1836152095347643,
+      "normal_spread_deg_p95": 0.007003096220193227
+    },
+    {
+      "label": "multi_close_right_1920",
+      "normal": [
+        -0.003382745742683509,
+        -0.9956504296207742,
+        -0.09310627812993094
+      ],
+      "angle_to_target_deg": 0.18885523386561381,
+      "pitch_delta_deg": -0.008763715027019892,
+      "roll_delta_deg": -0.18947476161124188,
+      "reprojection_rms_mean_px": 0.12837715912610292,
+      "normal_spread_deg_p95": 0.005462375567022179
+    }
+  ],
+  "symmetric_subaggregates": {
+    "mid_triplet": {
+      "normal": [
+        0.0015739742698142561,
+        -0.9953623218802659,
+        -0.09618404642207556
+      ],
+      "angle_to_target_deg": 0.1934765692847016,
+      "pitch_delta_deg": 0.16835085501330216,
+      "roll_delta_deg": 0.09579043867426387
+    },
+    "close_triplet": {
+      "normal": [
+        -0.0031606004437357955,
+        -0.9956409593474377,
+        -0.09321529206385026
+      ],
+      "angle_to_target_deg": 0.1759414122826102,
+      "pitch_delta_deg": -0.0024942570017545407,
+      "roll_delta_deg": -0.17669303847509454
+    },
+    "center_pair": {
+      "normal": [
+        -0.005826945089224608,
+        -0.9954397776811477,
+        -0.09521394709303169
+      ],
+      "angle_to_target_deg": 0.34744640608693,
+      "pitch_delta_deg": 0.1125981533213114,
+      "roll_delta_deg": -0.33019673064813343
+    },
+    "left_pair": {
+      "normal": [
+        0.00021344001727023224,
+        -0.9954076034849197,
+        -0.09572699393466683
+      ],
+      "angle_to_target_deg": 0.14309673933775793,
+      "pitch_delta_deg": 0.14203554584987899,
+      "roll_delta_deg": 0.017473879796097887
+    },
+    "right_pair": {
+      "normal": [
+        0.0032335930872770743,
+        -0.9956461884896004,
+        -0.09315691719822576
+      ],
+      "angle_to_target_deg": 0.1905270964968596,
+      "pitch_delta_deg": -0.005852273395092311,
+      "roll_delta_deg": 0.19126899297957972
+    }
+  },
+  "equal_position_weight_normal": [
+    -0.0007933435886626483,
+    -0.9955055380625022,
+    -0.09470002266545754
+  ],
+  "angle_to_target_deg": 0.09219661756006559,
+  "pitch_delta_deg": 0.08292747082024299,
+  "roll_delta_deg": -0.040472201541902474,
+  "improvement_vs_yesterday_deg": 0.6939443824399344,
+  "method": "equal weight per physical board position across mid/close x left/center/right"
+}

@@ -1,0 +1,6 @@
+image: /home/mowen/bit_ws/src/nav_demo/map/map630_cropped_48cm_1cm.png
+resolution: 0.010400
+origin: [-2.50, -2.00, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

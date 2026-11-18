@@ -1,0 +1,128 @@
+<launch>
+  <!--
+    Stage-2 phase 1: capture the physical corridor once as a static map.  The
+    proven wheel+IMU filter owns odom->base and AMCL uses later scans only to
+    correct map->odom.  No goal node or chassis consumer exists in this phase.
+  -->
+  <arg name="start_rviz" default="true"/>
+  <arg name="imu_config"
+       default="$(find yellow_track_avoidance)/config/competition_yesense_imu.yaml"/>
+  <arg name="map_frame" default="map"/>
+  <arg name="odom_frame" default="odom"/>
+  <arg name="base_frame" default="base_link"/>
+  <arg name="base_footprint_frame" default="base_footprint"/>
+  <arg name="linear_scale_x" default="1.071"/>
+  <arg name="linear_scale_y" default="1.0"/>
+  <arg name="angular_scale" default="2.22"/>
+  <arg name="vehicle_half_length_m" default="0.17"/>
+  <arg name="vehicle_half_width_m" default="0.165"/>
+  <!-- Stage 2 uses the original centered LiDAR registration by default. -->
+  <arg name="stage2_laser_lateral_offset_m" default="0.0"/>
+
+  <param name="use_sim_time" value="false"/>
+  <param name="yellow_track_competition_planner_profile"
+         value="stage2_frozen_map_amcl_global_planner_teb"/>
+
+  <include file="$(find mowen)/launch/display.launch"/>
+  <include file="$(find lslidar_driver)/launch/lslidar_serial.launch">
+    <arg name="laser_y" value="$(arg stage2_laser_lateral_offset_m)"/>
+  </include>
+
+  <node pkg="yesense_imu" type="yesense_imu_node"
+        name="yesense_imu_node" output="screen" required="true">
+    <rosparam command="load" file="$(arg imu_config)"/>
+  </node>
+
+  <node pkg="car_bringup" type="pubv.py" name="vel_raw_pub" output="screen"/>
+  <node pkg="car_bringup" type="base_node" name="odometry_publisher"
+        output="screen">
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <param name="base_footprint_frame" value="$(arg base_footprint_frame)"/>
+    <param name="linear_scale_x" value="$(arg linear_scale_x)"/>
+    <param name="linear_scale_y" value="$(arg linear_scale_y)"/>
+    <param name="angular_scale" value="$(arg angular_scale)"/>
+    <param name="use_imu_yaw" value="false"/>
+    <remap from="/sub_vel" to="/vel_raw"/>
+    <remap from="/pub_odom" to="/odom_raw"/>
+    <remap from="/tf" to="/yellow_track_avoidance/odom_raw_tf_unused"/>
+  </node>
+
+  <!-- Only this local filter publishes odom -> base_footprint. -->
+  <node pkg="robot_localization" type="ekf_localization_node"
+        name="ekf_localization" output="screen" required="true">
+    <remap from="odometry/filtered" to="/odom"/>
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <param name="world_frame" value="$(arg odom_frame)"/>
+    <param name="base_link_frame" value="$(arg base_footprint_frame)"/>
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/competition_robot_localization_wheel_xy_imu_yaw.yaml"/>
+  </node>
+
+  <!-- Capture three walls once. This node never publishes cmd_vel. -->
+  <node pkg="yellow_track_avoidance" type="stage2_frozen_scene.py"
+        name="yellow_track_stage2_frozen_scene" output="screen" required="true">
+    <param name="scan_topic" value="/scan"/>
+    <param name="odom_topic" value="/odom"/>
+    <param name="base_frame" value="$(arg base_frame)"/>
+    <param name="map_frame" value="$(arg map_frame)"/>
+    <param name="scan_frame_count" value="40"/>
+    <!-- 0.485 m is the clear distance between the two INNER wall faces;
+         wall thickness is used only when rasterizing the frozen map. -->
+    <param name="expected_width_m" value="0.485"/>
+    <param name="width_tolerance_m" value="0.10"/>
+    <param name="wall_thickness_m" value="0.01"/>
+    <param name="stationary_stable_sec" value="0.5"/>
+    <param name="auto_capture_when_ready" value="true"/>
+  </node>
+
+  <!-- Standard scan-to-known-map localization; this is the sole map->odom owner. -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen" clear_params="true">
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/competition_stage2_amcl.yaml"/>
+    <remap from="scan" to="/scan"/>
+    <remap from="map" to="/map"/>
+  </node>
+
+  <node pkg="move_base" type="move_base" name="move_base"
+        output="screen" clear_params="true">
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/click_nav_global_costmap.yaml"/>
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/click_nav_local_costmap.yaml"/>
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/competition_stage2_static_costmaps.yaml"/>
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/competition_move_base_no_recovery.yaml"/>
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/click_nav_global_planner.yaml"/>
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/competition_teb_baseline.yaml"/>
+    <rosparam command="load"
+              file="$(find yellow_track_avoidance)/config/competition_stage2_teb_override.yaml"/>
+    <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
+    <rosparam param="global_costmap/footprint" subst_value="true">
+      [[-$(arg vehicle_half_length_m), -$(arg vehicle_half_width_m)],
+       [-$(arg vehicle_half_length_m),  $(arg vehicle_half_width_m)],
+       [ $(arg vehicle_half_length_m),  $(arg vehicle_half_width_m)],
+       [ $(arg vehicle_half_length_m), -$(arg vehicle_half_width_m)]]
+    </rosparam>
+    <rosparam param="local_costmap/footprint" subst_value="true">
+      [[-$(arg vehicle_half_length_m), -$(arg vehicle_half_width_m)],
+       [-$(arg vehicle_half_length_m),  $(arg vehicle_half_width_m)],
+       [ $(arg vehicle_half_length_m),  $(arg vehicle_half_width_m)],
+       [ $(arg vehicle_half_length_m), -$(arg vehicle_half_width_m)]]
+    </rosparam>
+    <rosparam param="TebLocalPlannerROS/footprint_model/vertices"
+              subst_value="true">
+      [[-$(arg vehicle_half_length_m), -$(arg vehicle_half_width_m)],
+       [-$(arg vehicle_half_length_m),  $(arg vehicle_half_width_m)],
+       [ $(arg vehicle_half_length_m),  $(arg vehicle_half_width_m)],
+       [ $(arg vehicle_half_length_m), -$(arg vehicle_half_width_m)]]
+    </rosparam>
+  </node>
+
+  <node if="$(arg start_rviz)" pkg="rviz" type="rviz" name="rviz"
+        output="screen"
+        args="-d $(find yellow_track_avoidance)/config/stage2_navigation.rviz"/>
+</launch>

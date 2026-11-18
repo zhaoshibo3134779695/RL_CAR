@@ -1,0 +1,44 @@
+#!/usr/bin/python3
+import argparse
+import csv
+import math
+from pathlib import Path
+
+from nav_msgs.msg import Odometry
+from rclpy.serialization import deserialize_message
+from rosbag2_py import ConverterOptions, SequentialReader, StorageFilter, StorageOptions
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Export planar odometry in its recorded reference frame.')
+    parser.add_argument('bag', type=Path)
+    parser.add_argument('csv', type=Path)
+    parser.add_argument('--topic', default='/odom')
+    args = parser.parse_args()
+    reader = SequentialReader()
+    reader.open(StorageOptions(uri=str(args.bag)), ConverterOptions('', ''))
+    types = {entry.name: entry.type for entry in reader.get_all_topics_and_types()}
+    if types.get(args.topic) != 'nav_msgs/msg/Odometry':
+        parser.error(f'{args.topic} must contain nav_msgs/msg/Odometry. Odometry topics: '
+                     + ', '.join(k for k, v in types.items() if v == 'nav_msgs/msg/Odometry'))
+    reader.set_filter(StorageFilter(topics=[args.topic]))
+    args.csv.parent.mkdir(parents=True, exist_ok=True)
+    with args.csv.open('x', newline='') as stream:
+        writer = csv.writer(stream)
+        writer.writerow(['record_ns', 'header_ns', 'frame', 'child_frame', 'x_m', 'y_m', 'yaw_rad',
+                         'vx_mps', 'vy_mps', 'wz_radps'])
+        while reader.has_next():
+            _, data, record_ns, _ = reader.read_next_ext()
+            msg = deserialize_message(data, Odometry)
+            p = msg.pose.pose
+            q = p.orientation
+            stamp = msg.header.stamp
+            yaw = math.atan2(2 * (q.w*q.z + q.x*q.y), 1 - 2 * (q.y*q.y + q.z*q.z))
+            speed = msg.twist.twist
+            writer.writerow((record_ns, stamp.sec * 10**9 + stamp.nanosec, msg.header.frame_id,
+                             msg.child_frame_id, p.position.x, p.position.y, yaw,
+                             speed.linear.x, speed.linear.y, speed.angular.z))
+
+
+if __name__ == '__main__':
+    main()

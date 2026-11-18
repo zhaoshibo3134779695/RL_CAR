@@ -1,0 +1,53 @@
+{
+  "groups": [
+    {
+      "label": "multi_mid_center_1920",
+      "normal": [
+        -0.006248811944853697,
+        -0.9955396412089439,
+        -0.09413700192190874
+      ],
+      "angle_to_target_deg": 0.3564806578732273,
+      "reprojection_rms_mean_px": 0.11772220628336072
+    },
+    {
+      "label": "multi_mid_left_1920",
+      "normal": [
+        0.0011208117959756656,
+        -0.9948651084503701,
+        -0.10120355610822776
+      ],
+      "angle_to_target_deg": 0.46258857664344954,
+      "reprojection_rms_mean_px": 0.17085256706923246
+    },
+    {
+      "label": "multi_mid_right_1920",
+      "normal": [
+        0.009849790355312145,
+        -0.9955983594400434,
+        -0.09320347799438877
+      ],
+      "angle_to_target_deg": 0.5695337703064351,
+      "reprojection_rms_mean_px": 0.28715707920491695
+    },
+    {
+      "label": "multi_close_center_1920",
+      "normal": [
+        -0.00540507038029957,
+        -0.9953385725441455,
+        -0.0962907639390557
+      ],
+      "angle_to_target_deg": 0.3510103739211571,
+      "reprojection_rms_mean_px": 0.0779276373796165
+    }
+  ],
+  "equal_position_weight_normal": [
+    -0.00017082442155953823,
+    -0.9953609307147115,
+    -0.09621116580605471
+  ],
+  "angle_to_target_deg": 0.16996799445688965,
+  "pitch_delta_deg": 0.1699051436902712,
+  "roll_delta_deg": -0.004644887572118415,
+  "method": "equal weight per physical board position; provisional, before symmetric close-left/right"
+}

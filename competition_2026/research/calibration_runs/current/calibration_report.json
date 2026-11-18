@@ -1,0 +1,141 @@
+{
+  "calibration_passed": true,
+  "generated_at": "2026-07-21T18:36:51+08:00",
+  "method": "depth ground plane + calibrated RGB intrinsics + 0.91 m yellow-center reference",
+  "validation": {
+    "intrinsic_rms_px": 0.17787123007908634,
+    "depth_plane_frames": 10,
+    "depth_plane_support_ratio_median": 0.84365,
+    "depth_plane_inlier_p95_mm": 4.835,
+    "depth_scale_correction": 1.07865305975559,
+    "lane_width_reference_m": 0.91,
+    "projected_lane_width_m": 0.9054247233896228,
+    "projected_lane_width_error_percent": -0.5027776494920033,
+    "disc_reference_diameter_m": 0.1,
+    "calibration_disc_recovered_diameters_m": [
+      0.09620793253479398,
+      0.0989756562060234
+    ],
+    "offline_left_line_detected": true,
+    "offline_right_line_detected": true,
+    "offline_boundary_quality": 0.9442147799041971,
+    "offline_disc_count": 2,
+    "offline_disc_centers_m": [
+      [
+        0.3577807899560047,
+        -0.2749283529409967
+      ],
+      [
+        0.49699349151673455,
+        0.12914297351628215
+      ]
+    ],
+    "offline_processing_error": "",
+    "live_frames": 60,
+    "live_fps": 10.034013410152772,
+    "live_processing_time_p50_ms": 89.07871500014153,
+    "live_processing_time_p95_ms": 97.37752340033694,
+    "live_both_lines_frames": 60,
+    "live_two_disc_frames": 60,
+    "live_boundary_history_frames": 0,
+    "live_disc_history_frames": 0,
+    "live_disc_center_std_m": [
+      [
+        0.0013757471594538172,
+        0.0007059989287024241
+      ],
+      [
+        0.0010453968523519133,
+        0.0005844545593749797
+      ]
+    ]
+  },
+  "bev": {
+    "calibrated": true,
+    "source_is_undistorted": true,
+    "source_points": [
+      [
+        -363.6008423031446,
+        479.48201921303774
+      ],
+      [
+        1167.053477456982,
+        466.1409884585299
+      ],
+      [
+        463.33862932436324,
+        259.0086199134597
+      ],
+      [
+        206.51268976452525,
+        263.2988494877937
+      ]
+    ],
+    "extend_to_image_bottom": false,
+    "bottom_extension_output_fraction": 0.35,
+    "output_width_px": 640,
+    "output_height_px": 800,
+    "real_width_m": 1.01,
+    "real_length_m": 1.5689853476431117
+  },
+  "calibration_metadata": {
+    "method": "depth_ground_plane_plus_lane_width",
+    "timestamp_utc": "2026-07-21T10:09:42.882240+00:00",
+    "source_image": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/raw.jpg",
+    "point_order": [
+      "near-left",
+      "near-right",
+      "far-right",
+      "far-left"
+    ],
+    "depth_topic": "/camera/depth/points",
+    "depth_frame": "camera_depth_optical_frame",
+    "color_frame": "camera_color_optical_frame",
+    "depth_plane_normal": [
+      -0.01367098,
+      -0.99948261,
+      -0.02911369
+    ],
+    "depth_plane_d_m": 0.15782215,
+    "depth_plane_frames": 10,
+    "depth_plane_support_ratio_median": 0.84365,
+    "depth_plane_inlier_threshold_m": 0.006,
+    "depth_plane_inlier_p95_m": 0.004835,
+    "raw_lane_width_m": 0.8436447584047047,
+    "lane_width_reference_m": 0.91,
+    "depth_scale_correction": 1.07865305975559,
+    "corrected_color_camera_height_m": 0.16996820664157455,
+    "lane_center_right_of_camera_m": 0.033114830284414254,
+    "near_forward_from_camera_m": 0.31209121619000896,
+    "far_forward_from_camera_m": 1.8810765638331206,
+    "represented_forward_span_m": 1.5689853476431117,
+    "disc_reference_diameter_m": 0.1,
+    "disc_recovered_diameters_m": [
+      0.09620793253479398,
+      0.0989756562060234
+    ],
+    "bev_lateral_margin_each_side_m": 0.05,
+    "mapped_lateral_span_m": 1.01,
+    "meters_per_pixel_x": 0.0015805946791862286,
+    "meters_per_pixel_y": 0.001963686292419414,
+    "raw_detection_region": "configured bottom-half ROI; independent of metric BEV polygon",
+    "intrinsics_valid": true,
+    "safety_valid": true
+  },
+  "safety": {
+    "motion_enabled": false,
+    "vehicle_reference_origin_requires_low_speed_stage_validation": true,
+    "offline_planning_result": "no_collision_free_candidate",
+    "offline_planning_note": "two inflated disc exclusion zones overlap the available corridor, so STOP is the expected safe result"
+  },
+  "artifacts": {
+    "raw_image": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/raw.jpg",
+    "bev_preview": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/offline_calibrated_projected/bev.png",
+    "plan_preview": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/offline_calibrated_projected/plan.png",
+    "offline_result": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/offline_calibrated_projected/result.json",
+    "live_validation": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/live_validation.json",
+    "candidate_config": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/calibrated_candidate.yaml",
+    "active_config": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/config/calibrated.yaml",
+    "archive": "/home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current.zip"
+  }
+}

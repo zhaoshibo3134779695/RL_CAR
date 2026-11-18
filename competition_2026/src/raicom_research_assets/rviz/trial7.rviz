@@ -1,0 +1,164 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+  Property Tree Widget:
+    Expanded: []
+    Splitter Ratio: 0.61
+- Class: rviz_common/Tool Properties
+  Name: Tool Properties
+- Class: rviz_common/Views
+  Name: Views
+- Class: rviz_common/Time
+  Name: Time
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Background Color: 36; 41; 49
+    Fixed Frame: odom
+    Frame Rate: 30
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Grid - 0.5 m
+    Enabled: true
+    Alpha: 0.22
+    Color: 125; 142; 156
+    Cell Size: 0.5
+    Plane Cell Count: 12
+    Offset:
+      X: 0
+      Y: 0
+      Z: -0.012
+  - Class: rviz_default_plugins/Map
+    Name: Recorded local costmap
+    Enabled: true
+    Topic:
+      Value: /move_base/local_costmap/costmap
+      Durability Policy: Volatile
+      Reliability Policy: Best Effort
+      Depth: 5
+    Alpha: 0.47
+    Color Scheme: costmap
+    Draw Behind: true
+  - Class: rviz_default_plugins/Path
+    Name: Recorded TEB path
+    Enabled: true
+    Topic:
+      Value: /move_base/TebLocalPlannerROS/local_plan
+      Durability Policy: Volatile
+      Reliability Policy: Best Effort
+      Depth: 5
+    Color: 51; 207; 232
+    Line Style: Billboards
+    Line Width: 0.018
+  - Class: rviz_default_plugins/Pose
+    Name: Corridor goal
+    Enabled: true
+    Topic:
+      Value: /yellow_track_avoidance/corridor_goal
+      Durability Policy: Volatile
+      Reliability Policy: Best Effort
+      Depth: 5
+    Color: 245; 157; 45
+    Shape: Arrow
+    Shaft Length: 0.12
+    Shaft Radius: 0.01
+    Head Length: 0.04
+    Head Radius: 0.023
+  - Class: rviz_default_plugins/Odometry
+    Name: Fused odometry
+    Enabled: true
+    Topic:
+      Value: /odom
+      Durability Policy: Volatile
+      Reliability Policy: Best Effort
+      Depth: 5
+    Keep: 35
+    Position Tolerance: 0.045
+    Angle Tolerance: 0.1
+    Shape:
+      Value: Arrow
+      Color: 98; 228; 134
+      Shaft Length: 0.07
+      Shaft Radius: 0.006
+      Head Length: 0.025
+      Head Radius: 0.012
+    Covariance:
+      Value: false
+  - Class: rviz_default_plugins/Odometry
+    Name: Wheel odometry
+    Enabled: false
+    Topic:
+      Value: /odom_raw
+      Durability Policy: Volatile
+      Reliability Policy: Best Effort
+      Depth: 5
+    Keep: 35
+    Shape:
+      Value: Arrow
+      Color: 235; 138; 62
+      Shaft Length: 0.07
+      Head Length: 0.025
+    Covariance:
+      Value: false
+  - Class: rviz_default_plugins/RobotModel
+    Name: Mowen reference
+    Enabled: true
+    Description Source: Topic
+    Description Topic:
+      Value: /robot_description
+      Depth: 1
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+    Visual Enabled: true
+  - Class: rviz_imu_plugin/Imu
+    Name: IMU - onboard
+    Enabled: false
+    Topic:
+      Value: /imu0
+      Reliability Policy: Best Effort
+      Durability Policy: Volatile
+      Depth: 10
+  - Class: rviz_default_plugins/LaserScan
+    Name: Vision disc scan
+    Enabled: true
+    Topic:
+      Value: /yellow_track_avoidance/disc_scan
+      Reliability Policy: Best Effort
+      Durability Policy: Volatile
+      Depth: 10
+    Style: Points
+  Tools:
+  - Class: rviz_default_plugins/Interact
+    Hide Inactive Objects: true
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/Select
+  - Class: rviz_default_plugins/FocusCamera
+  - Class: rviz_default_plugins/Measure
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 6.6
+      Focal Point:
+        X: 1.05
+        Y: 0
+        Z: 0
+      Pitch: 1.5
+      Yaw: 4.71
+      Enable Stereo Rendering: false
+      Focal Shape Size: 0.025
+Window Geometry:
+  Width: 1020
+  Height: 800
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Views:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000200000000000000e900000315fc0200000001fc0000001100000315000000300100001cfa000000000200000003fb000000100044006900730070006c0061007900730100000000ffffffff0000001300fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000000ffffffff0000001300fffffffb0000000a005600690065007700730100000000ffffffff0000001300ffffff000000030000039800000030fc0100000001fb0000000800540069006d00650100000000000003980000003400ffffff000002a90000031500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  X: 410
+  Y: 76
+  Displays:
+    collapsed: false

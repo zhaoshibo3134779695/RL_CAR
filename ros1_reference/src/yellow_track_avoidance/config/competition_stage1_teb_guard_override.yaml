@@ -1,0 +1,45 @@
+# Stage-1-only override for the camera-frozen disc course.
+#
+# The Stage-1 compact/local circles contain the commissioned 40 mm hard
+# allowance (0.050 m physical + 0.040 m guard). Do not add the baseline's
+# further 20 mm soft distance on top of that envelope.
+controller_patience: 2.0
+
+# Preserve a nearly constant corridor/goal yaw through the S-shaped point
+# path.  FORWARD mode made the holonomic body follow every path tangent.
+GlobalPlanner:
+  orientation_mode: 2
+
+TebLocalPlannerROS:
+  # Give strafe the same limit as forward motion.  The 0.10/0.20 angular
+  # limits are the smallest pair that completed the current two-disc scene in
+  # three consecutive locked shadow runs; 0.05/0.10 repeatedly became
+  # infeasible near the S-curve transition.
+  max_vel_y: 0.10
+  max_vel_theta: 0.10
+  acc_lim_theta: 0.20
+
+  # Restrict optimization to the immediately useful S-curve section.  A
+  # shorter horizon can be replanned after each lateral displacement instead
+  # of rejecting the complete distant transition at once.
+  max_global_plan_lookahead_dist: 0.55
+  dt_ref: 0.15
+  no_inner_iterations: 8
+  no_outer_iterations: 5
+
+  min_obstacle_dist: 0.005
+  inflation_dist: 0.005
+  penalty_epsilon: 0.005
+  weight_obstacle: 100.0
+  # Let the holonomic body move away from the point-path centreline when the
+  # exact rectangle and guarded circle require additional lateral clearance.
+  weight_viapoint: 1.0
+
+  # TEB's standard immediate five poses remain exactly footprint-checked;
+  # farther poses are checked after the virtual/real vehicle advances and the
+  # local trajectory is rebuilt.  Values 12 and above repeatedly rejected a
+  # future transition that was not yet the active control segment.
+  feasibility_check_no_poses: 5
+  shrink_horizon_backup: true
+  shrink_horizon_min_duration: 2.0
+  oscillation_recovery: true

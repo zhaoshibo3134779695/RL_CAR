@@ -1,0 +1,21 @@
+<launch>
+  <!-- Perception and metric planning run continuously, but every velocity
+       output remains zero and stays isolated from the chassis /cmd_vel. -->
+  <arg name="config" default="$(find yellow_track_avoidance)/config/calibrated.yaml"/>
+  <arg name="image_topic" default="/camera/color/image_raw"/>
+  <arg name="camera_info_topic" default="/camera/color/camera_info"/>
+  <arg name="output_cmd_topic" default="/yellow_track_avoidance/cmd_vel"/>
+
+  <node pkg="yellow_track_avoidance"
+        type="yellow_track_avoidance_node.py"
+        name="yellow_track_avoidance"
+        output="screen"
+        required="true">
+    <param name="config_file" value="$(arg config)"/>
+    <param name="image_topic" value="$(arg image_topic)"/>
+    <param name="camera_info_topic" value="$(arg camera_info_topic)"/>
+    <param name="output_cmd_topic" value="$(arg output_cmd_topic)"/>
+    <param name="enable_planning" value="true"/>
+    <param name="enable_motion" value="false"/>
+  </node>
+</launch>

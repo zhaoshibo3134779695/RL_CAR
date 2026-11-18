@@ -1,0 +1,81 @@
+{
+  "accepted": true,
+  "source": {
+    "archive": "/home/mowen/Sebastian/src/yellow_track_avoidance_migration_20260731.zip",
+    "archive_sha256": "38971e1014dbee23ae61fe3dec3a4dcc361919317c75087c3c9c98c72f7099ba",
+    "profile": "yellow_track_avoidance/config/calibrated.yaml",
+    "profile_sha256": "19c84f01656880a4f7a41c5faf40900ba6a7fbf7057910a099425f4aa1a22972",
+    "archive_integrity_test": "passed"
+  },
+  "parameter_provenance": {
+    "copied_exactly": [
+      "yellow_hsv",
+      "yellow_scoring",
+      "yellow_confidence_v2",
+      "yellow_orientation_filter",
+      "red_hsv",
+      "white_hsv",
+      "morphology",
+      "boundary",
+      "normal_profile_detector",
+      "disk_detection",
+      "disc_acceptance"
+    ],
+    "kept_from_current_camera": [
+      "camera_intrinsics",
+      "bev",
+      "camera.roi_polygon_normalized",
+      "camera.yellow_roi_polygon_normalized",
+      "camera.expected_width",
+      "camera.expected_height",
+      "ros.image_topic",
+      "ros.camera_info_topic"
+    ],
+    "kept_from_current_vehicle": [
+      "physical.robot_width_m",
+      "physical.robot_length_m",
+      "physical.local_forward_origin_offset_m",
+      "control.enable_motion"
+    ]
+  },
+  "same_frame_ab_validation": {
+    "frames_per_profile": 100,
+    "original_current_reference": {
+      "both_boundaries_frames": 100,
+      "two_confirmed_discs_frames": 100,
+      "boundary_quality_mean": 0.8241055662830061,
+      "boundary_quality_minimum": 0.800703098021591,
+      "left_quality_mean": 0.8241055662830061,
+      "left_valid_sections_mean": 19.46,
+      "processing_time_ms_mean": 94.79652841000643,
+      "maximum_abs_output_command": 0.0
+    },
+    "archive_reference": {
+      "both_boundaries_frames": 100,
+      "two_confirmed_discs_frames": 100,
+      "boundary_quality_mean": 0.863373271284084,
+      "boundary_quality_minimum": 0.8536333716907109,
+      "left_quality_mean": 0.866365472702057,
+      "left_valid_sections_mean": 22.65,
+      "processing_time_ms_mean": 88.12724526002057,
+      "maximum_abs_output_command": 0.0
+    }
+  },
+  "final_live_validation": {
+    "status_frames": 100,
+    "disk_frames": 100,
+    "both_boundaries_frames": 100,
+    "two_confirmed_discs_frames": 100,
+    "boundary_quality_mean": 0.805795495,
+    "left_quality_mean": 0.855274934,
+    "left_valid_sections_mean": 22.76,
+    "right_valid_sections_mean": 20.76,
+    "disc_confidence_mean": 0.917051272,
+    "disc_center_distance_m_mean": 0.50123556,
+    "disc_edge_gap_m_mean": 0.415482683,
+    "maximum_abs_output_command": 0.0
+  },
+  "active_config": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/current_car_calibrated_640x480.yaml",
+  "safe_uncalibrated_config": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/current_car.yaml",
+  "motion_enabled": false
+}

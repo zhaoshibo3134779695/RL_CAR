@@ -1,0 +1,15 @@
+{
+  "capture_bag": "/tmp/vision_report_capture_20260811.bag",
+  "capture_bag_sha256": "97b65a71f3b758af2026aa394c5888612b86677a58e7da9cbaee0fea82293e38",
+  "selected_image_stamp": 1786415060.899856,
+  "selected_raw_stamp": 1786415060.899856,
+  "config": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/current_car_recalibrated_640x480_20260809.yaml",
+  "config_sha256": "7f49a55d3272a4a500803137a776c1aca052e8a75c259209b24027a7564726ea",
+  "formal_motion_started": false,
+  "capture_nodes": [
+    "usb_cam",
+    "yellow_track_avoidance"
+  ],
+  "motion_enabled": false,
+  "planning_enabled": false
+}

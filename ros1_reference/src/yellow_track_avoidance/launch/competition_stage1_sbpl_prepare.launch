@@ -1,0 +1,27 @@
+<launch>
+  <!-- Locked scene acquisition for the isolated SBPL Stage-1 experiment. -->
+  <arg name="start_rviz" default="true"/>
+  <arg name="start_perception_view" default="true"/>
+  <arg name="start_lidar" default="false"/>
+  <arg name="start_chassis" default="false"/>
+  <arg name="costmap_inflation_radius" default="0.24"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_sbpl_teb_compact.launch">
+    <arg name="start_camera" value="true"/>
+    <arg name="start_lidar" value="$(arg start_lidar)"/>
+    <arg name="start_imu" value="true"/>
+    <arg name="start_odometry" value="true"/>
+    <arg name="start_chassis" value="$(arg start_chassis)"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="enable_mission_perception_latch" value="true"/>
+    <arg name="publish_corridor_goal_preview" value="false"/>
+    <arg name="require_lidar_corridor_heading" value="true"/>
+    <arg name="costmap_inflation_radius"
+         value="$(arg costmap_inflation_radius)"/>
+  </include>
+
+  <node if="$(arg start_perception_view)"
+        pkg="rqt_image_view" type="rqt_image_view"
+        name="stage1_perception_view" output="screen"
+        args="/yellow_track_avoidance/debug/raw_overlay"/>
+</launch>

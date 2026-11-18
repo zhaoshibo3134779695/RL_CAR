@@ -1,0 +1,99 @@
+# Costmap inputs for click-to-navigate testing on the 5 m x 4 m track.
+# The virtual disc scan is camera-derived and is additionally guarded by the
+# perception safety gate before commands reach the chassis.
+footprint:
+  - [-0.165, -0.150]
+  - [-0.165,  0.150]
+  - [ 0.165,  0.150]
+  - [ 0.165, -0.150]
+# Competition mode uses the exact physical rectangle with no extra costmap
+# padding. SBPL rotates and checks this polygon along every candidate action
+# whenever the traversable outer-radius trigger band indicates possible contact.
+footprint_padding: 0.0
+
+map_type: costmap
+transform_tolerance: 0.35
+obstacle_range: 1.60
+raytrace_range: 1.70
+observation_sources: scan yellow_discs yellow_corridor passage_closures
+
+scan:
+  sensor_frame: laser_link
+  data_type: LaserScan
+  topic: /scan
+  marking: true
+  clearing: true
+  inf_is_valid: true
+  obstacle_range: 1.60
+  raytrace_range: 1.70
+  observation_persistence: 0.0
+  expected_update_rate: 0.0
+
+yellow_discs:
+  sensor_frame: base_link
+  data_type: LaserScan
+  topic: /yellow_track_avoidance/disc_scan
+  marking: true
+  clearing: true
+  inf_is_valid: true
+  obstacle_range: 1.60
+  raytrace_range: 1.70
+  # The perception tracker already stabilizes each disc center. Do not retain
+  # every 10 Hz LaserScan observation here: small camera/TF changes while the
+  # vehicle moves would otherwise leave several old disc positions in the map.
+  observation_persistence: 0.0
+  expected_update_rate: 0.0
+
+# Complete odom-fixed collision discs.  Stage 1 selects this source instead of
+# the virtual LaserScan so the hard feasibility map contains the complete
+# guarded circle rather than only the camera-facing arc.  Other profiles leave
+# it out of observation_sources unless they explicitly enable the publisher.
+frozen_discs:
+  sensor_frame: odom
+  data_type: PointCloud2
+  topic: /yellow_track_avoidance/sbpl_disc_cloud
+  marking: true
+  clearing: false
+  obstacle_range: 5.0
+  observation_persistence: 0.0
+  expected_update_rate: 0.0
+
+# Stage-1 local feasibility-only disc envelope.  It is intentionally a
+# separate topic from frozen_discs so an extra local collision allowance does
+# not alter GlobalPlanner topology or TEB's compact semantic circles.
+local_frozen_discs:
+  sensor_frame: odom
+  data_type: PointCloud2
+  topic: /yellow_track_avoidance/local_disc_cloud
+  marking: true
+  clearing: false
+  obstacle_range: 5.0
+  observation_persistence: 0.0
+  expected_update_rate: 0.0
+
+# In current-car competition mode this is an odom-fixed point cloud built
+# from the live left yellow line and the calibrated 0.91 m parallel offset.
+# It only marks: the corridor is locked once, so clearing rays cannot erase
+# real lidar obstacles and visual jitter cannot leave repeated line trails.
+yellow_corridor:
+  sensor_frame: odom
+  data_type: PointCloud2
+  topic: /yellow_track_avoidance/corridor_cloud
+  marking: true
+  clearing: false
+  obstacle_range: 5.0
+  observation_persistence: 0.0
+  expected_update_rate: 0.0
+
+# Stage-1 only: each frozen disc closes its narrower gap to the corresponding
+# yellow inner edge.  The publisher is absent/empty in profiles that do not
+# enable semantic passage selection, so this source is otherwise inert.
+passage_closures:
+  sensor_frame: odom
+  data_type: PointCloud2
+  topic: /yellow_track_avoidance/passage_closure_cloud
+  marking: true
+  clearing: false
+  obstacle_range: 5.0
+  observation_persistence: 0.0
+  expected_update_rate: 0.0

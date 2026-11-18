@@ -1,0 +1,8 @@
+/competition_2026/build/
+/competition_2026/install/
+/competition_2026/log/
+/competition_2026/src/mowen/urdf/mowen.urdf
+/competition_2026/src/mowen/meshes/base_link.STL
+__pycache__/
+.pytest_cache/
+*.pyc

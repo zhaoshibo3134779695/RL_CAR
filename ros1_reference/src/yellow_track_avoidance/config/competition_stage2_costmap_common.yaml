@@ -1,0 +1,25 @@
+# Stage-2 uses only the real N10_P scan on the blank competition map.
+footprint:
+  - [-0.170, -0.165]
+  - [-0.170,  0.165]
+  - [ 0.170,  0.165]
+  - [ 0.170, -0.165]
+footprint_padding: 0.0
+
+map_type: costmap
+transform_tolerance: 0.35
+obstacle_range: 3.20
+raytrace_range: 3.50
+observation_sources: scan
+
+scan:
+  sensor_frame: laser_link
+  data_type: LaserScan
+  topic: /scan
+  marking: true
+  clearing: true
+  inf_is_valid: true
+  obstacle_range: 3.20
+  raytrace_range: 3.50
+  observation_persistence: 0.0
+  expected_update_rate: 0.0

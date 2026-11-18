@@ -1,0 +1,127 @@
+#!/usr/bin/python3
+from copy import deepcopy
+import math
+
+import rclpy
+import yaml
+from action_msgs.msg import GoalStatus
+from ament_index_python.packages import get_package_share_path
+from geometry_msgs.msg import PoseStamped
+from nav2_msgs.action import ComputePathThroughPoses
+from nav_msgs.msg import Path
+from rclpy.action import ActionClient
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import DurabilityPolicy, QoSProfile
+from std_msgs.msg import Bool
+from visualization_msgs.msg import Marker, MarkerArray
+
+
+class RecordedWaypoints(Node):
+    def __init__(self):
+        super().__init__('recorded_waypoints')
+        share = get_package_share_path('raicom_research_assets')
+        data = yaml.safe_load((share / 'config/competition/waypoints.yaml').read_text())
+        self.poses = []
+        markers = MarkerArray()
+        for waypoint in data['waypoints']:
+            name = waypoint['name']
+            label = name.removeprefix('goal_')
+            pose = PoseStamped()
+            pose.header.frame_id = data['frame_id']
+            pose.pose.position.x = waypoint['position']['x']
+            pose.pose.position.y = waypoint['position']['y']
+            if 'orientation' in waypoint:
+                pose.pose.orientation.z = waypoint['orientation']['z']
+                pose.pose.orientation.w = waypoint['orientation']['w']
+            else:
+                half_yaw = waypoint['yaw'] / 2
+                pose.pose.orientation.z = math.sin(half_yaw)
+                pose.pose.orientation.w = math.cos(half_yaw)
+            self.poses.append(pose)
+
+            arrow = Marker(header=pose.header, ns='heading', id=int(label), type=Marker.ARROW)
+            arrow.pose = deepcopy(pose.pose)
+            arrow.pose.position.z = 0.045
+            arrow.scale.x, arrow.scale.y, arrow.scale.z = 0.115, 0.035, 0.046
+            if name in data['footprint_overlap']:
+                arrow.color.r, arrow.color.g, arrow.color.b = 0.85, 0.30, 0.03
+            else:
+                arrow.color.r, arrow.color.g, arrow.color.b = 0.05, 0.23, 0.42
+            arrow.color.a = 1.0
+            text = Marker(header=pose.header, ns='number', id=int(label), type=Marker.TEXT_VIEW_FACING)
+            text.pose.position = deepcopy(arrow.pose.position)
+            text.pose.position.z = 0.24
+            text.pose.orientation.w = 1.0
+            text.color = arrow.color
+            text.scale.z = 0.145
+            text.text = label
+            markers.markers.extend((arrow, text))
+
+        qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.markers = self.create_publisher(MarkerArray, '~/markers', qos)
+        self.markers.publish(markers)
+        self.path = self.create_publisher(Path, '~/path', qos)
+        self.client = ActionClient(self, ComputePathThroughPoses, 'compute_path_through_poses')
+        self.active = False
+        self.pending = False
+        self.generation = 0
+        self.create_subscription(Bool, '/planning_lifecycle/managed_nodes_activated', self.on_state, qos)
+        self.create_timer(0.25, self.request_when_ready)
+
+    def on_state(self, message):
+        if self.active == message.data:
+            return
+        self.active = message.data
+        self.pending = self.active
+        self.generation += 1
+        self.path.publish(Path(header=self.poses[0].header))
+
+    def request_when_ready(self):
+        if not self.pending or not self.client.server_is_ready():
+            return
+        self.pending = False
+        request = ComputePathThroughPoses.Goal(planner_id='GridBased', use_start=False)
+        request.goals.header = self.poses[0].header
+        request.goals.goals = self.poses
+        generation = self.generation
+        future = self.client.send_goal_async(request)
+        future.add_done_callback(lambda result: self.on_accepted(result, generation))
+
+    def on_accepted(self, future, generation):
+        if generation != self.generation:
+            return
+        handle = future.result()
+        if not handle or not handle.accepted:
+            self.get_logger().warning('Planner rejected the recorded route')
+            return
+        handle.get_result_async().add_done_callback(lambda result: self.on_result(result, generation))
+
+    def on_result(self, future, generation):
+        if generation != self.generation:
+            return
+        outcome = future.result()
+        if outcome and outcome.status == GoalStatus.STATUS_SUCCEEDED:
+            result = outcome.result
+            if result.last_reached_index == result.ALL_GOALS and result.path.poses:
+                self.path.publish(result.path)
+                self.get_logger().info(f'Planned through all {len(self.poses)} recorded navigation poses')
+                return
+        reason = outcome.result.error_msg if outcome else 'No action result'
+        self.get_logger().warning(f'Incomplete recorded route: {reason}')
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = RecordedWaypoints()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.destroy_node()
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+
+
+if __name__ == '__main__':
+    main()

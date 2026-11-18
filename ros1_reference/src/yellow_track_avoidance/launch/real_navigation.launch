@@ -1,0 +1,62 @@
+<launch>
+  <!--
+    Single-package entrypoint for live RViz navigation with yellow-track and
+    red/white-disc avoidance.
+
+    This launch is motion-capable but deliberately starts unarmed. After the
+    physical emergency stop is staffed and every status is healthy, reset the
+    perception STOP latch and enable the navigation gate through its services.
+  -->
+  <arg name="map"
+       default="$(find yellow_track_avoidance)/maps/track_7_15_5x4.yaml"/>
+  <!-- The verified 640x480 profile processes about 2.5x as many avoidance
+       frames as 1080p while preserving the camera's 30 FPS hardware maximum. -->
+  <arg name="config"
+       default="$(find yellow_track_avoidance)/config/calibrated.yaml"/>
+  <arg name="motion_primitives"
+       default="$(find yellow_track_avoidance)/config/yta_1cm.mprim"/>
+  <arg name="rviz_config"
+       default="$(find yellow_track_avoidance)/config/navigation.rviz"/>
+  <arg name="initial_x" default="4.15"/>
+  <arg name="initial_y" default="3.49"/>
+  <arg name="initial_yaw" default="3.141592653589793"/>
+  <arg name="vehicle_length_m" default="0.33"/>
+  <arg name="vehicle_width_m" default="0.30"/>
+  <arg name="local_forward_origin_offset_m" default="0.39"/>
+  <arg name="start_imu" default="false"/>
+  <arg name="auto_field_localization" default="true"/>
+  <arg name="enable_passage_supervisor" default="true"/>
+  <arg name="color_width" default="640"/>
+  <arg name="color_height" default="480"/>
+  <arg name="color_fps" default="30"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/click_navigation.launch">
+    <arg name="map" value="$(arg map)"/>
+    <arg name="config" value="$(arg config)"/>
+    <arg name="motion_primitives" value="$(arg motion_primitives)"/>
+    <arg name="rviz_config" value="$(arg rviz_config)"/>
+    <arg name="initial_x" value="$(arg initial_x)"/>
+    <arg name="initial_y" value="$(arg initial_y)"/>
+    <arg name="initial_yaw" value="$(arg initial_yaw)"/>
+    <arg name="vehicle_length_m" value="$(arg vehicle_length_m)"/>
+    <arg name="vehicle_width_m" value="$(arg vehicle_width_m)"/>
+    <arg name="local_forward_origin_offset_m"
+         value="$(arg local_forward_origin_offset_m)"/>
+    <arg name="start_camera" value="true"/>
+    <arg name="start_lidar" value="true"/>
+    <arg name="start_chassis" value="true"/>
+    <arg name="start_imu" value="$(arg start_imu)"/>
+    <arg name="start_rviz" value="true"/>
+    <arg name="start_perception_views" value="true"/>
+    <arg name="apply_camera_photometry" value="true"/>
+    <arg name="color_width" value="$(arg color_width)"/>
+    <arg name="color_height" value="$(arg color_height)"/>
+    <arg name="color_fps" value="$(arg color_fps)"/>
+    <arg name="auto_field_localization"
+         value="$(arg auto_field_localization)"/>
+    <arg name="enable_passage_supervisor"
+         value="$(arg enable_passage_supervisor)"/>
+    <arg name="enable_motion" value="true"/>
+    <arg name="start_enabled" value="false"/>
+  </include>
+</launch>

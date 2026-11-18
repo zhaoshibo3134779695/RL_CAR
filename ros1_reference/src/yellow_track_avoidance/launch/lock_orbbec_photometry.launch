@@ -1,0 +1,13 @@
+<launch>
+  <arg name="config" default="$(find yellow_track_avoidance)/config/default.yaml"/>
+  <arg name="audit_only" default="false"/>
+
+  <!-- Run after the camera driver is online and before starting perception. -->
+  <node pkg="yellow_track_avoidance"
+        type="orbbec_photometry.py"
+        name="yellow_track_orbbec_photometry"
+        output="screen"
+        args="--config $(arg config)">
+    <param name="audit_only" value="$(arg audit_only)"/>
+  </node>
+</launch>

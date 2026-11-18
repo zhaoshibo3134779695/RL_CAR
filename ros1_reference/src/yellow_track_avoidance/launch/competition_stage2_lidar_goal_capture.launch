@@ -1,0 +1,19 @@
+<launch>
+  <!-- Stage-2 phase 2: derive and preview the goal from Phase-1 frozen walls. -->
+  <arg name="front_clearance_m" default="0.20"/>
+
+  <node pkg="yellow_track_avoidance" type="stage2_lidar_goal.py"
+        name="yellow_track_stage2_lidar_goal" output="screen" required="true">
+    <param name="odom_topic" value="/odom"/>
+    <param name="base_frame" value="base_link"/>
+    <param name="target_frame" value="map"/>
+    <param name="frozen_geometry_topic"
+           value="/yellow_track_avoidance/stage2_frozen_geometry"/>
+    <param name="vehicle_front_offset_m" value="0.17"/>
+    <param name="vehicle_half_width_m" value="0.165"/>
+    <param name="desired_front_clearance_m" value="$(arg front_clearance_m)"/>
+    <param name="preview_plan_retry_sec" value="1.0"/>
+    <param name="auto_capture_when_ready" value="false"/>
+    <param name="auto_send_goal_when_ready" value="false"/>
+  </node>
+</launch>

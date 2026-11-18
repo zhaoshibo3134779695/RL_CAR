@@ -1,0 +1,28 @@
+local_costmap:
+  global_frame: odom
+  robot_base_frame: base_link
+  # Stay close to the effective 7.8-10 Hz obstacle input without repeatedly
+  # processing the same 240 x 240 grid at 20 Hz.
+  update_frequency: 8.0
+  publish_frequency: 4.0
+  transform_tolerance: 0.35
+  static_map: false
+  rolling_window: true
+  # costmap_2d exposes width/height through integer dynamic-reconfigure
+  # parameters.  Fractional values such as 2.4 are truncated to 2 at runtime.
+  # Keep a 3 m longitudinal window so both camera-visible mission discs (up to
+  # the 1.6 m obstacle range) can enter DWA's map, while retaining the smaller
+  # 2 m lateral window needed by the 0.91 m competition corridor.
+  width: 3
+  height: 2
+  resolution: 0.01
+  # Competition mode: exact physical rectangle, no extra costmap clearance.
+  # TEB keeps 5 mm from the obstacle surface around this polygon.
+  footprint_padding: 0.0
+  # Cover the physical rectangle's 0.237 m outer radius for reliable exact
+  # footprint feasibility checks. This is a traversable/check-trigger band,
+  # not 0.24 m of mandatory clearance.
+  inflation_radius: 0.24
+  # This is the largest decay that still leaves a nonzero SBPL trigger cost at
+  # the 0.237 m circumscribed radius.
+  cost_scaling_factor: 70.0

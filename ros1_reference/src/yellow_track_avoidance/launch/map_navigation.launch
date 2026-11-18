@@ -1,0 +1,12 @@
+<launch>
+  <!-- Loads the map and publishes a validated path only. No velocity node. -->
+  <arg name="map" default="$(find yellow_track_avoidance)/maps/track_7_15_5x4.yaml"/>
+  <arg name="route" default="$(find yellow_track_avoidance)/config/track_7_15_route.yaml"/>
+
+  <node pkg="map_server" type="map_server" name="yellow_track_map_server"
+        output="screen" args="$(arg map)"/>
+  <node pkg="yellow_track_avoidance" type="map_route_publisher.py"
+        name="yellow_track_map_route" output="screen" required="true">
+    <param name="route_file" value="$(arg route)"/>
+  </node>
+</launch>

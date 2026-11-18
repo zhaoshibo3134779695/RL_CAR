@@ -1,0 +1,100 @@
+# Navigation-only poses from the final launch, in the original array order.
+# footprint_overlap: an occupied 727best cell center falls inside the navigation footprint at the saved heading.
+source_member: bit_ws/src/nav_demo/config/7.25_first51.yaml
+source_sha256: e9b504ed8019a657a3fa14d6c2f94357e859060cb805f7a29b21992f1ab768cb
+frame_id: map
+map_image_sha256: 14ecb8c4bf679348bdc1b82d2b7e74d9ad328fd45f9b6b2e729133a484c4f746
+footprint_overlap:
+- goal_09
+- goal_14
+- goal_15
+waypoints:
+- name: goal_01
+  position:
+    x: -2.179
+    y: -1.532
+  orientation:
+    z: 0.024497549
+    w: 0.99969989
+  yaw: 0.049
+- name: goal_02
+  position:
+    x: -1.686921825
+    y: -1.51483655
+  orientation:
+    z: 0.705146241
+    w: 0.7090619
+  yaw: 1.565258741
+- name: goal_05
+  position:
+    x: -1.654745221
+    y: 1.235663633
+  orientation:
+    z: 0.002354842
+    w: 0.999997227
+  yaw: 0.004709689
+- name: goal_06
+  position:
+    x: -0.274869631529
+    y: 1.208891253471
+  orientation:
+    z: -0.705221466027
+    w: 0.708987082996
+  yaw: -1.565470933914
+- name: goal_09
+  position:
+    x: 0.029372796535
+    y: 0.333947376728
+  orientation:
+    z: -0.151418344933
+    w: 0.988469769299
+  yaw: -0.304006010294
+- name: goal_11
+  position:
+    x: 0.733272871971
+    y: 0.154736638546
+  yaw: -0.523302083015
+- name: goal_12
+  position:
+    x: 0.863272871971
+    y: 0.027736638546
+  yaw: -0.873302083015
+- name: goal_14
+  position:
+    x: 0.96887468338
+    y: -0.592615923882
+  yaw: -2.007624168396
+- name: goal_15
+  position:
+    x: 0.659448719025
+    y: -0.95640073061
+  yaw: -2.951554298401
+- name: goal_16
+  position:
+    x: -0.01003930235
+    y: -1.013329224586
+  yaw: -1.635146913528
+- name: goal_18
+  position:
+    x: -0.015645850658
+    y: -1.68399189949
+  orientation:
+    z: 0.003931717596
+    w: 0.999992270769
+  yaw: 0.007863455452
+- name: goal_20
+  position:
+    x: 2.125327596664
+    y: -1.690725631714
+  orientation:
+    z: 0.702324593585
+    w: 0.711856843225
+  yaw: 1.557315587997
+- name: goal_24
+  position:
+    x: 2.153587518692
+    y: 1.504711093903
+  orientation:
+    z: -0.999994443016
+    w: 0.003333757105
+  yaw: -3.134925127029

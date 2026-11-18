@@ -1,0 +1,105 @@
+<launch>
+  <!--
+    GlobalPlanner + original TEB 6x4, with only the optimizer obstacle
+    representation changed from costmap points to four semantic primitives.
+  -->
+  <arg name="start_camera" default="false"/>
+  <arg name="start_lidar" default="false"/>
+  <!-- Formal competition default: use the commissioned Yesense yaw/wz.
+       Set start_imu:=false explicitly for wheel-only A/B replay. -->
+  <arg name="start_imu" default="true"/>
+  <arg name="start_odometry" default="false"/>
+  <arg name="start_chassis" default="false"/>
+  <arg name="start_rviz" default="false"/>
+  <!-- Set false only for the operator's live pre-run recognition inspection. -->
+  <arg name="enable_mission_perception_latch" default="true"/>
+  <arg name="publish_corridor_goal_preview" default="true"/>
+  <arg name="require_lidar_corridor_heading" default="false"/>
+  <arg name="enable_stage1_passage_closures" default="false"/>
+  <arg name="include_passage_closures_in_teb" default="true"/>
+  <arg name="publish_full_disc_cloud" default="false"/>
+  <arg name="global_costmap_observation_sources"
+       default="scan yellow_discs yellow_corridor passage_closures"/>
+  <arg name="local_costmap_observation_sources"
+       default="scan yellow_discs yellow_corridor passage_closures"/>
+  <arg name="costmap_inflation_radius" default="0.24"/>
+  <arg name="costmap_cost_scaling_factor" default="70.0"/>
+  <arg name="global_costmap_inflation_radius"
+       default="$(arg costmap_inflation_radius)"/>
+  <arg name="local_costmap_inflation_radius"
+       default="$(arg costmap_inflation_radius)"/>
+  <arg name="global_costmap_cost_scaling_factor"
+       default="$(arg costmap_cost_scaling_factor)"/>
+  <arg name="local_costmap_cost_scaling_factor"
+       default="$(arg costmap_cost_scaling_factor)"/>
+  <arg name="disc_collision_radius_m" default="0.05"/>
+  <arg name="teb_disc_collision_radius_m"
+       default="$(arg disc_collision_radius_m)"/>
+  <arg name="local_disc_collision_radius_m"
+       default="$(arg disc_collision_radius_m)"/>
+  <arg name="passage_total_clearance_m" default="0.02"/>
+  <arg name="use_stage1_teb_guard_override" default="false"/>
+  <arg name="stage1_teb_guard_config"
+       default="$(find yellow_track_avoidance)/config/competition_stage1_teb_guard_override.yaml"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_planner_core.launch">
+    <arg name="profile_name" value="global_planner_teb_compact_obstacles"/>
+    <arg name="global_planner_plugin" value="global_planner/GlobalPlanner"/>
+    <arg name="global_planner_config"
+         value="$(find yellow_track_avoidance)/config/click_nav_global_planner.yaml"/>
+    <arg name="global_plan_topic" value="/move_base/GlobalPlanner/plan"/>
+    <arg name="local_planner_plugin"
+         value="teb_local_planner/TebLocalPlannerROS"/>
+    <arg name="local_planner_config"
+         value="$(find yellow_track_avoidance)/config/competition_teb_baseline.yaml"/>
+    <arg name="use_sbpl" value="false"/>
+    <arg name="use_teb" value="true"/>
+    <arg name="use_compact_teb_obstacles" value="true"/>
+    <arg name="start_camera" value="$(arg start_camera)"/>
+    <arg name="start_lidar" value="$(arg start_lidar)"/>
+    <arg name="start_imu" value="$(arg start_imu)"/>
+    <arg name="start_odometry" value="$(arg start_odometry)"/>
+    <arg name="start_chassis" value="$(arg start_chassis)"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="enable_mission_perception_latch"
+         value="$(arg enable_mission_perception_latch)"/>
+    <arg name="publish_corridor_goal_preview"
+         value="$(arg publish_corridor_goal_preview)"/>
+    <arg name="require_lidar_corridor_heading"
+         value="$(arg require_lidar_corridor_heading)"/>
+    <arg name="enable_stage1_passage_closures"
+         value="$(arg enable_stage1_passage_closures)"/>
+    <arg name="include_passage_closures_in_teb"
+         value="$(arg include_passage_closures_in_teb)"/>
+    <arg name="publish_sbpl_full_disc_cloud"
+         value="$(arg publish_full_disc_cloud)"/>
+    <arg name="global_costmap_observation_sources"
+         value="$(arg global_costmap_observation_sources)"/>
+    <arg name="local_costmap_observation_sources"
+         value="$(arg local_costmap_observation_sources)"/>
+    <arg name="costmap_inflation_radius"
+         value="$(arg costmap_inflation_radius)"/>
+    <arg name="costmap_cost_scaling_factor"
+         value="$(arg costmap_cost_scaling_factor)"/>
+    <arg name="global_costmap_inflation_radius"
+         value="$(arg global_costmap_inflation_radius)"/>
+    <arg name="local_costmap_inflation_radius"
+         value="$(arg local_costmap_inflation_radius)"/>
+    <arg name="global_costmap_cost_scaling_factor"
+         value="$(arg global_costmap_cost_scaling_factor)"/>
+    <arg name="local_costmap_cost_scaling_factor"
+         value="$(arg local_costmap_cost_scaling_factor)"/>
+    <arg name="disc_collision_radius_m"
+         value="$(arg disc_collision_radius_m)"/>
+    <arg name="teb_disc_collision_radius_m"
+         value="$(arg teb_disc_collision_radius_m)"/>
+    <arg name="local_disc_collision_radius_m"
+         value="$(arg local_disc_collision_radius_m)"/>
+    <arg name="passage_total_clearance_m"
+         value="$(arg passage_total_clearance_m)"/>
+    <arg name="use_stage1_teb_guard_override"
+         value="$(arg use_stage1_teb_guard_override)"/>
+    <arg name="stage1_teb_guard_config"
+         value="$(arg stage1_teb_guard_config)"/>
+  </include>
+</launch>

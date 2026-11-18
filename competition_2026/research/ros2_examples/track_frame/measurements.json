@@ -1,0 +1,11 @@
+{
+  "calibrated": true,
+  "boundary_quality": 0.9674289222243084,
+  "left_boundary": true,
+  "right_boundary": false,
+  "detected_discs": 2,
+  "tracked_discs": 0,
+  "selected_path": null,
+  "input": "research/docs/report_assets/vision_avoidance_20260811/sources/raw_rgb.png",
+  "profile": "/home/sebastian/projects/robotics/raicom_2026/install/raicom_research_assets/share/raicom_research_assets/config/vision/region4_competition_20260819.yaml"
+}

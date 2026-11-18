@@ -1,0 +1,22 @@
+<launch>
+  <!-- Exact rollback entrypoint for the previously accepted 640x480@30 profile. -->
+  <arg name="enable_passage_supervisor" default="true"/>
+  <arg name="vehicle_length_m" default="0.33"/>
+  <arg name="vehicle_width_m" default="0.30"/>
+  <!-- Static sensor matching is enabled by default; it does not rotate or
+       move the vehicle. -->
+  <arg name="auto_field_localization" default="true"/>
+  <include file="$(find yellow_track_avoidance)/launch/real_navigation.launch">
+    <arg name="config"
+         value="$(find yellow_track_avoidance)/config/calibrated.yaml"/>
+    <arg name="color_width" value="640"/>
+    <arg name="color_height" value="480"/>
+    <arg name="color_fps" value="30"/>
+    <arg name="vehicle_length_m" value="$(arg vehicle_length_m)"/>
+    <arg name="vehicle_width_m" value="$(arg vehicle_width_m)"/>
+    <arg name="auto_field_localization"
+         value="$(arg auto_field_localization)"/>
+    <arg name="enable_passage_supervisor"
+         value="$(arg enable_passage_supervisor)"/>
+  </include>
+</launch>

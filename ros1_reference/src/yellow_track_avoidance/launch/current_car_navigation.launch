@@ -1,0 +1,165 @@
+<launch>
+  <!--
+    Zero-motion integration entrypoint for this x86_64 mecanum car.
+    The current field-test profile uses GlobalPlanner, holonomic DWA and the
+    odom-locked disc costmap. Chassis startup and both software motion locks
+    default off. The experimental passage controller is not part of this
+    formal competition entrypoint.
+  -->
+  <arg name="map"
+       default="$(find yellow_track_avoidance)/maps/competition_blank_5x4.yaml"/>
+  <!-- The current 727 map is 5 mm/cell. Keep the old car's metric primitive
+       distances while expressing their endpoints on that finer grid. -->
+  <arg name="motion_primitives"
+       default="$(find yellow_track_avoidance)/config/yta_5mm_metric.mprim"/>
+  <arg name="config"
+       default="$(find yellow_track_avoidance)/config/current_car.yaml"/>
+  <arg name="video_device"
+       default="/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._Orbbec_DaBai_DCW2_RGB_Camera_CH8Z16501C1-video-index0"/>
+  <arg name="start_camera" default="false"/>
+  <arg name="start_lidar" default="false"/>
+  <arg name="start_odometry" default="false"/>
+  <arg name="start_chassis" default="false"/>
+  <arg name="start_rviz" default="false"/>
+  <arg name="start_perception_views" default="false"/>
+  <arg name="enable_motion" default="false"/>
+  <arg name="start_enabled" default="false"/>
+  <arg name="auto_field_localization" default="false"/>
+  <!-- Current test profile: GlobalPlanner + holonomic DWA. -->
+  <arg name="global_planner_plugin" default="global_planner/GlobalPlanner"/>
+  <arg name="local_planner_plugin"
+       default="dwa_local_planner/DWAPlannerROS"/>
+  <arg name="global_plan_topic"
+       default="/move_base/GlobalPlanner/plan"/>
+  <!-- This package is responsible only for the straight wide segment. Use
+       odom plus the observed left yellow edge instead of the full-field map. -->
+  <arg name="use_amcl" default="false"/>
+  <arg name="start_competition_corridor_map" default="true"/>
+  <arg name="enable_passage_supervisor" default="false"/>
+  <!-- Formal competition profile: discs are generic obstacles.  The exact
+       gate controller remains available through 40cm_precision_test.launch. -->
+  <arg name="competition_two_disc_mode" default="false"/>
+  <arg name="enable_gate_special_mode" default="false"/>
+  <arg name="claim_all_road_discs" default="true"/>
+  <arg name="force_between_disc_pair" default="false"/>
+  <arg name="competition_finish_priority" default="false"/>
+  <!-- The longitudinal origin is the fixed vehicle-front start plane, not the
+       first/last yellow pixel visible in the current camera frame.  A partial
+       line observation therefore changes only the fitted lateral position and
+       yaw; it must never shift this 1.85 m physical segment forward. -->
+  <arg name="competition_corridor_length_m" default="1.85"/>
+  <!-- Retain the currently commissioned 0.57 m terminal plane. The final
+       12 cm is now handled by live-line alignment and precision creep, rather
+       than the former position-only 0.02 m early-stop rule. -->
+  <!-- Compute and retain the goal on every launch. Sending it is an explicit
+       step after the safety gate has been unlocked, so waiting never causes
+       move_base to time out before the run begins. -->
+  <arg name="publish_corridor_goal_on_lock" default="false"/>
+  <arg name="corridor_goal_left_offset_m" default="0.24"/>
+  <arg name="corridor_goal_forward_offset_m" default="0.57"/>
+  <arg name="passage_activation_zone_enabled" default="false"/>
+  <!-- Formal competition: only confirmed discs are frozen in odom and marked
+       in both move_base costmaps until a locked/stationary scene reset. -->
+  <arg name="disc_costmap_writes_enabled" default="true"/>
+  <arg name="disc_mission_lock_enabled" default="true"/>
+  <!-- Generic fallbacks used only when mission locking is explicitly turned
+       off (for example by the frozen 40 cm regression launch). -->
+  <arg name="disc_confirmed_memory_timeout_sec" default="30.0"/>
+  <arg name="passage_track_fresh_sec" default="2.0"/>
+  <arg name="enforce_boundary_in_activation_zone" default="false"/>
+  <arg name="enforce_disc_emergency_clearance" default="true"/>
+  <arg name="disc_emergency_clearance_m" default="0.020"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/current_car_camera.launch">
+    <arg name="start_camera" value="$(arg start_camera)"/>
+    <arg name="video_device" value="$(arg video_device)"/>
+  </include>
+
+  <include file="$(find yellow_track_avoidance)/launch/click_navigation.launch">
+    <arg name="map" value="$(arg map)"/>
+    <arg name="motion_primitives" value="$(arg motion_primitives)"/>
+    <arg name="config" value="$(arg config)"/>
+    <arg name="image_topic" value="/usb_cam/image_raw"/>
+    <arg name="camera_info_topic" value="/usb_cam/camera_info"/>
+    <arg name="global_planner_plugin" value="$(arg global_planner_plugin)"/>
+    <arg name="local_planner_plugin" value="$(arg local_planner_plugin)"/>
+    <arg name="global_plan_topic" value="$(arg global_plan_topic)"/>
+    <arg name="start_camera" value="false"/>
+    <arg name="start_lidar" value="$(arg start_lidar)"/>
+    <arg name="start_odometry" value="$(arg start_odometry)"/>
+    <arg name="start_chassis" value="$(arg start_chassis)"/>
+    <arg name="start_imu" value="false"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="start_perception_views" value="$(arg start_perception_views)"/>
+    <arg name="apply_camera_photometry" value="false"/>
+    <arg name="auto_field_localization"
+         value="$(arg auto_field_localization)"/>
+    <arg name="use_amcl" value="$(arg use_amcl)"/>
+    <arg name="start_competition_corridor_map"
+         value="$(arg start_competition_corridor_map)"/>
+    <arg name="competition_corridor_length_m"
+         value="$(arg competition_corridor_length_m)"/>
+    <arg name="publish_corridor_goal_on_lock"
+         value="$(arg publish_corridor_goal_on_lock)"/>
+    <arg name="corridor_goal_left_offset_m"
+         value="$(arg corridor_goal_left_offset_m)"/>
+    <arg name="corridor_goal_forward_offset_m"
+         value="$(arg corridor_goal_forward_offset_m)"/>
+    <arg name="navigation_boundary_topic"
+         value="/yellow_track_avoidance/corridor_boundaries"/>
+    <!-- Terminal alignment must use the current camera line, not the odom-fixed
+         corridor copy used by the passage supervisor. -->
+    <arg name="terminal_boundary_topic"
+         value="/yellow_track_avoidance/debug/boundaries"/>
+    <arg name="enable_passage_supervisor"
+         value="$(arg enable_passage_supervisor)"/>
+    <!-- GlobalPlanner+DWA owns finish recovery. The legacy short-goal/creep
+         recovery repeatedly replaced the true terminal goal in this profile. -->
+    <arg name="finish_recovery_enabled" value="false"/>
+    <!-- A measured 40 cm opening leaves 3.5 cm per side for the 33 cm body.
+         Require 2 cm modeled clearance so the dedicated controller may enter
+         after centering, while retaining about 1.5 cm of lateral error budget. -->
+    <arg name="passage_minimum_predicted_gate_clearance_m"
+         value="0.020"/>
+    <arg name="competition_two_disc_mode"
+         value="$(arg competition_two_disc_mode)"/>
+    <arg name="enable_gate_special_mode"
+         value="$(arg enable_gate_special_mode)"/>
+    <arg name="claim_all_road_discs"
+         value="$(arg claim_all_road_discs)"/>
+    <arg name="force_between_disc_pair"
+         value="$(arg force_between_disc_pair)"/>
+    <arg name="competition_finish_priority"
+         value="$(arg competition_finish_priority)"/>
+    <!-- Confirmed visual discs are odom-fixed until a guarded scene reset or
+         process restart; the generic timeout parameter is bypassed. -->
+    <arg name="disc_confirmed_memory_timeout_sec"
+         value="$(arg disc_confirmed_memory_timeout_sec)"/>
+    <arg name="disc_mission_lock_enabled"
+         value="$(arg disc_mission_lock_enabled)"/>
+    <arg name="passage_track_fresh_sec"
+         value="$(arg passage_track_fresh_sec)"/>
+    <arg name="passage_activation_zone_enabled"
+         value="$(arg passage_activation_zone_enabled)"/>
+    <arg name="disc_costmap_writes_enabled"
+         value="$(arg disc_costmap_writes_enabled)"/>
+    <arg name="enforce_boundary_in_activation_zone"
+         value="$(arg enforce_boundary_in_activation_zone)"/>
+    <arg name="enforce_disc_emergency_clearance"
+         value="$(arg enforce_disc_emergency_clearance)"/>
+    <arg name="disc_emergency_clearance_m"
+         value="$(arg disc_emergency_clearance_m)"/>
+    <arg name="enable_motion" value="$(arg enable_motion)"/>
+    <arg name="start_enabled" value="$(arg start_enabled)"/>
+    <!-- Re-localized in the map's far upper-right open area. -->
+    <arg name="initial_x" value="2.0395"/>
+    <arg name="initial_y" value="1.5870"/>
+    <arg name="initial_yaw" value="-3.03687289847"/>
+    <arg name="vehicle_length_m" value="0.34"/>
+    <arg name="vehicle_width_m" value="0.33"/>
+    <arg name="local_forward_origin_offset_m" value="0.5463"/>
+    <arg name="linear_scale_x" value="1.071"/>
+    <arg name="linear_scale_y" value="1.0"/>
+    <arg name="angular_scale" value="2.22"/>
+  </include>
+</launch>

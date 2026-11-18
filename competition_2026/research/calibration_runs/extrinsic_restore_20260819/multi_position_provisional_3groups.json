@@ -1,0 +1,43 @@
+{
+  "groups": [
+    {
+      "label": "multi_mid_center_1920",
+      "normal": [
+        -0.006248811944853697,
+        -0.9955396412089439,
+        -0.09413700192190874
+      ],
+      "reprojection_rms_mean_px": 0.11772220628336072,
+      "angle_to_target_deg": 0.3564806578722049
+    },
+    {
+      "label": "multi_mid_left_1920",
+      "normal": [
+        0.0011208117959756656,
+        -0.9948651084503701,
+        -0.10120355610822776
+      ],
+      "reprojection_rms_mean_px": 0.17085256706923246,
+      "angle_to_target_deg": 0.4625885766426617
+    },
+    {
+      "label": "multi_mid_right_1920",
+      "normal": [
+        0.009849790355312145,
+        -0.9955983594400434,
+        -0.09320347799438877
+      ],
+      "reprojection_rms_mean_px": 0.28715707920491695,
+      "angle_to_target_deg": 0.5695337703064351
+    }
+  ],
+  "equal_position_weight_normal": [
+    0.0015739742698142561,
+    -0.9953623218802659,
+    -0.09618404642207556
+  ],
+  "angle_to_target_deg": 0.1934765692847016,
+  "pitch_delta_deg": 0.16835085501330216,
+  "roll_delta_deg": 0.09579043867426387,
+  "method": "equal weight per physical board position; provisional, before close-range positions"
+}

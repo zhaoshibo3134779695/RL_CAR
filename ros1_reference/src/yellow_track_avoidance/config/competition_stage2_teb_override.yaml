@@ -1,0 +1,17 @@
+# Narrow-passage motion limits.  Stage 2 is a straight, pre-scanned corridor,
+# so use a substantially higher forward speed while retaining the existing
+# low lateral speed, steering limits, wall model and exact rectangular body.
+TebLocalPlannerROS:
+  map_frame: map
+  max_vel_x: 0.35
+  max_vel_x_backwards: 0.03
+  max_vel_y: 0.04
+  max_vel_theta: 0.10
+  acc_lim_x: 0.80
+  acc_lim_y: 0.15
+  acc_lim_theta: 0.25
+  min_obstacle_dist: 0.025
+  # The frozen scene publisher supplies exactly three LineObstacle messages.
+  # Do not expand the static costmap back into hundreds of point obstacles.
+  include_costmap_obstacles: false
+  costmap_obstacles_behind_robot_dist: 0.50

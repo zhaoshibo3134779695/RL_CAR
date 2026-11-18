@@ -1,0 +1,141 @@
+# Effective onboard navigation values. Original members and scopes: catalog/competition_parameters.tsv.
+competition_reference:
+  ros__parameters:
+    regions_1_3:
+      direct_control_rate: 30.0
+      direct_max_linear: 0.4
+      direct_min_linear: 0.04
+      direct_max_angular: 0.45
+      direct_max_linear_accel: 0.45
+      direct_max_angular_accel: 1.2
+      direct_lookahead: 0.18
+      direct_position_tolerance: 0.03
+      direct_cross_track_limit: 0.12
+      direct_heading_gain: 1.8
+      direct_goal_slowdown_distance: 0.35
+      direct_stall_timeout: 3.0
+      direct_rotate_only_angle_deg: 18.0
+      start_delay: 2.0
+      goal_timeout: 120.0
+      turn_stage_timeout: 30.0
+      turn_stage_settle_time: 0.2
+      base_frame: base_footprint
+      settle_time: 0.05
+    region_4:
+      require_two_confirmed_discs: true
+      extend_to_terminal_marker: true
+      control_rate_hz: 30.0
+      lookahead_m: 0.18
+      max_linear_mps: 0.324
+      min_linear_mps: 0.035
+      max_angular_radps: 0.18
+      max_linear_accel_mps2: 0.18
+      max_angular_accel_radps2: 0.35
+      position_tolerance_m: 0.045
+      maximum_cross_track_error_m: 0.08
+      minimum_disc_clearance_m: 0.005
+      stop_on_disc_clearance_violation: false
+      final_lateral_offset_m: 0.035
+      final_offset_blend_distance_m: 0.3
+      vehicle_half_length_m: 0.17
+      vehicle_half_width_m: 0.165
+      vehicle_front_offset_m: 0.17
+      terminal_forward_offset_m: 0.35
+      physical_disc_radius_m: 0.05
+      odom_timeout_sec: 0.4
+      disc_status_timeout_sec: 0.5
+      stall_timeout_sec: 3.0
+      mission_timeout_sec: 120.0
+      rotate_only_angle_deg: 32.0
+      yaw_tolerance_deg: 3.0
+      terminal_max_linear_mps: 0.42
+      minimum_confirmed_disc_count: 2
+    waypoint_overrides:
+      entry_06:
+        turn_then_drive: true
+      entry_07:
+        turn_then_drive: true
+      entry_08:
+        turn_then_drive: true
+      entry_09:
+        turn_then_drive: true
+      entry_10:
+        turn_then_drive: true
+        arc_radius: 0.97
+        arc_angle_deg: -73.3413
+        arc_speed: 0.23
+        arc_min_speed: 0.04
+        arc_start_yaw: -0.133978
+        arc_timeout: 35.0
+      entry_11:
+        turn_then_drive: true
+      entry_12:
+        turn_then_drive: true
+      entry_13:
+        turn_then_drive: true
+        arc_radius: 1.08
+        arc_second_half_radius: 1.1
+        arc_second_half_start_ratio: 0.5
+        arc_angle_deg: -102.5202
+        arc_speed: 0.23
+        arc_min_speed: 0.04
+        arc_start_yaw: -1.642073
+        arc_timeout: 45.0
+      entry_14:
+        turn_then_drive: true
+      entry_15:
+        turn_then_drive: true
+      entry_16:
+        turn_then_drive: true
+      entry_17:
+        turn_then_drive: true
+      entry_18:
+        direct_lookahead: 0.3
+        direct_heading_gain: 1.0
+        direct_max_angular: 0.15
+    odometry:
+      regions_1_3:
+        odom_frame: odom
+        base_footprint_frame: base_footprint
+        linear_scale_x: 1.071
+        linear_scale_y: 1.0
+        angular_scale: 2.22
+        max_vel_dt: 0.5
+        use_imu_yaw: true
+        imu_topic: /imu0
+        imu_timeout: 0.2
+      region_4:
+        odom_frame: odom
+        base_footprint_frame: base_footprint
+        linear_scale_x: 1.071
+        linear_scale_y: 1.0
+        angular_scale: 2.22
+        use_imu_yaw: false
+        imu_topic: /imu0
+        imu_timeout: 0.2
+    feedback_center:
+      input_topic: /vel_raw
+      output_topic: /vel_raw_centered
+      command_topic: /cmd_vel_nav_raw
+      max_command_translation: 0.0
+      apply_during_translation: false
+      min_command_angular: 0.05
+      min_feedback_angular: 0.02
+      hold_time: 0.4
+      ccw_vx_per_w: 0.16684
+      ccw_vy_per_w: 0.01677
+      cw_vx_per_w: 0.200501
+      cw_vy_per_w: -0.036911
+    map_start:
+      x: -2.206142425537
+      y: 1.518534635544
+      yaw: -1.578953110544
+    nav_costmap_footprint_xy:
+    - -0.1475
+    - -0.155
+    - -0.1475
+    - 0.155
+    - 0.1475
+    - 0.155
+    - 0.1475
+    - -0.155

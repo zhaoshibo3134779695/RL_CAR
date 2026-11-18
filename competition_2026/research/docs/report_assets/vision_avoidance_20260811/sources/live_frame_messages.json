@@ -1,0 +1,896 @@
+{
+  "/yellow_track_avoidance/debug/status": {
+    "message_stamp": 1786426225.642076,
+    "data": {
+      "stamp": 1786426225.642076,
+      "state": "STOP",
+      "stop_reason": "yellow_boundaries_lost",
+      "command": {
+        "linear_x": 0.0,
+        "linear_y": 0.0,
+        "angular_z": 0.0
+      },
+      "camera_info_received": true,
+      "diagnostics": {
+        "calibrated": true,
+        "intrinsics_calibrated": true,
+        "boundary_quality": 0.9316517133154706,
+        "left_detected": true,
+        "right_detected": false,
+        "raw_disk_count": 2,
+        "confirmed_disk_count": 2,
+        "safe_path": false,
+        "selected_path": null,
+        "left_space_m": 0.0,
+        "right_space_m": 0.0,
+        "motion_enabled": false,
+        "desired_command": {
+          "linear_x": 0.0,
+          "angular_z": 0.0
+        },
+        "output_command": {
+          "linear_x": 0.0,
+          "angular_z": 0.0
+        },
+        "processing_error": "",
+        "boundary_source": "projected_raw_profile",
+        "boundary_used_history": false,
+        "disc_used_history": false,
+        "planning_enabled": true,
+        "local_forward_origin_offset_m": 0.5463,
+        "profile_detector": true,
+        "boundary_detection_mode": "left_only",
+        "left_quality": 0.9316517133154706,
+        "right_quality": 0.0,
+        "left_valid_sections": 26,
+        "right_valid_sections": 0,
+        "left_support_ratio": 0.9285714285714286,
+        "right_support_ratio": 0.0,
+        "left_median_confidence": 0.963420957326889,
+        "right_median_confidence": 0.0,
+        "left_median_prominence": 94.5283203125,
+        "right_median_prominence": 0.0,
+        "left_fit_rms_px": 0.9194614629576859,
+        "right_fit_rms_px": null,
+        "left_slope_dx_dy": -2.072298119495922,
+        "right_slope_dx_dy": null,
+        "left_longest_missing_sections": 0,
+        "right_longest_missing_sections": 60,
+        "processing_time_ms": 73.75392099856981
+      }
+    }
+  },
+  "/yellow_track_avoidance/debug/disks": {
+    "message_stamp": 1786426225.642076,
+    "data": {
+      "stamp": 1786426225.642076,
+      "raw": [
+        {
+          "track_id": 14,
+          "confirmed": true,
+          "center_px": [
+            393.84619140625,
+            794.3923950195312
+          ],
+          "center_m": [
+            0.009047890741029905,
+            -0.11786464741587337
+          ],
+          "center_base_m": [
+            0.5553478907410299,
+            -0.11786464741587337
+          ],
+          "ellipse": [
+            [
+              393.997802734375,
+              792.52392578125
+            ],
+            [
+              49.691837310791016,
+              57.148319244384766
+            ],
+            84.49486541748047
+          ],
+          "contour": [
+            [
+              380,
+              770
+            ],
+            [
+              378,
+              772
+            ],
+            [
+              377,
+              772
+            ],
+            [
+              375,
+              775
+            ],
+            [
+              374,
+              775
+            ],
+            [
+              372,
+              777
+            ],
+            [
+              370,
+              777
+            ],
+            [
+              369,
+              780
+            ],
+            [
+              364,
+              792
+            ],
+            [
+              364,
+              794
+            ],
+            [
+              365,
+              794
+            ],
+            [
+              365,
+              798
+            ],
+            [
+              366,
+              798
+            ],
+            [
+              366,
+              801
+            ],
+            [
+              367,
+              801
+            ],
+            [
+              367,
+              803
+            ],
+            [
+              369,
+              803
+            ],
+            [
+              369,
+              805
+            ],
+            [
+              370,
+              805
+            ],
+            [
+              370,
+              807
+            ],
+            [
+              371,
+              807
+            ],
+            [
+              371,
+              809
+            ],
+            [
+              375,
+              809
+            ],
+            [
+              375,
+              811
+            ],
+            [
+              380,
+              812
+            ],
+            [
+              380,
+              814
+            ],
+            [
+              386,
+              814
+            ],
+            [
+              386,
+              818
+            ],
+            [
+              398,
+              818
+            ],
+            [
+              400,
+              816
+            ],
+            [
+              402,
+              817
+            ],
+            [
+              405,
+              813
+            ],
+            [
+              409,
+              813
+            ],
+            [
+              412,
+              809
+            ],
+            [
+              413,
+              809
+            ],
+            [
+              417,
+              805
+            ],
+            [
+              418,
+              805
+            ],
+            [
+              420,
+              800
+            ],
+            [
+              422,
+              798
+            ],
+            [
+              420,
+              798
+            ],
+            [
+              421,
+              794
+            ],
+            [
+              422,
+              791
+            ],
+            [
+              421,
+              791
+            ],
+            [
+              423,
+              782
+            ],
+            [
+              419,
+              782
+            ],
+            [
+              419,
+              779
+            ],
+            [
+              415,
+              779
+            ],
+            [
+              416,
+              777
+            ],
+            [
+              414,
+              776
+            ],
+            [
+              414,
+              774
+            ],
+            [
+              413,
+              774
+            ],
+            [
+              413,
+              771
+            ]
+          ],
+          "estimated_diameter_m": 0.10228727505045346,
+          "confidence": 0.9697480648069413,
+          "red_annulus_ratio": 0.7537037037037037,
+          "white_center_ratio": 1.0,
+          "red_sector_coverage": 1.0,
+          "white_center_contrast": 74.0,
+          "proposal_source": "red_ring_original",
+          "candidate_id": 0,
+          "contour_area_px": 1113.0,
+          "red_area_px": 814,
+          "white_area_px": 180,
+          "red_white_center_distance_px": 0.9000247598989597,
+          "inside_lane": null,
+          "distance_to_left_line_px": null,
+          "distance_to_right_line_px": null,
+          "used_history": false,
+          "metric_projection": {
+            "input_resolution_px": [
+              640,
+              480
+            ],
+            "roi_applied": false,
+            "resize_applied": false,
+            "detection_coordinate_system": "undistorted_full_image_px",
+            "distorted_full_image_px": [
+              478.78244710570493,
+              342.7444582667137
+            ],
+            "roi_pixel": null,
+            "resized_pixel": null,
+            "undistorted_full_image_px": [
+              477.2181396484375,
+              341.546875
+            ],
+            "homography_source_is_undistorted": true,
+            "homography_input_px": [
+              477.2181396484375,
+              341.546875
+            ],
+            "bev_pixel": [
+              393.84619140625,
+              794.3923950195312
+            ],
+            "bev_output_resolution_px": [
+              640,
+              800
+            ],
+            "bev_lateral_m_per_pixel": 0.0015960829552801804,
+            "bev_forward_m_per_pixel": 0.001963686292419414,
+            "ground_m": [
+              0.009047890741029905,
+              -0.11786464741587337
+            ],
+            "base_m": [
+              0.5553478907410299,
+              -0.11786464741587337
+            ],
+            "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+            "diameter_sample_count": 72,
+            "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+            "visible_ring_to_physical_diameter_ratio": 0.922076,
+            "estimated_visible_ring_diameter_m": 0.09431664142942192,
+            "estimated_visible_ring_forward_span_m": 0.09764940666668187,
+            "estimated_visible_ring_lateral_span_m": 0.09109762316212158,
+            "perimeter_ground_bounds_m": {
+              "forward": [
+                -0.03611941091650997,
+                0.06152999575017191
+              ],
+              "lateral": [
+                -0.16364877017726126,
+                -0.07255114701513968
+              ]
+            },
+            "estimated_physical_diameter_m": 0.10228727505045346,
+            "estimated_diameter_m": 0.10228727505045346
+          },
+          "stamp": 1786426225.642076
+        },
+        {
+          "track_id": 13,
+          "confirmed": true,
+          "center_px": [
+            126.09893035888672,
+            527.394775390625
+          ],
+          "center_m": [
+            0.5333474565149258,
+            0.3094821922647762
+          ],
+          "center_base_m": [
+            1.0796474565149259,
+            0.3094821922647762
+          ],
+          "ellipse": [
+            [
+              125.95181274414062,
+              526.1185913085938
+            ],
+            [
+              51.62902069091797,
+              60.42256164550781
+            ],
+            126.79340362548828
+          ],
+          "contour": [
+            [
+              132,
+              500
+            ],
+            [
+              132,
+              508
+            ],
+            [
+              99,
+              507
+            ],
+            [
+              99,
+              514
+            ],
+            [
+              98,
+              514
+            ],
+            [
+              98,
+              529
+            ],
+            [
+              100,
+              536
+            ],
+            [
+              103,
+              536
+            ],
+            [
+              106,
+              543
+            ],
+            [
+              109,
+              543
+            ],
+            [
+              112,
+              550
+            ],
+            [
+              141,
+              551
+            ],
+            [
+              141,
+              544
+            ],
+            [
+              151,
+              545
+            ],
+            [
+              152,
+              538
+            ],
+            [
+              153,
+              538
+            ],
+            [
+              154,
+              524
+            ],
+            [
+              151,
+              516
+            ],
+            [
+              150,
+              516
+            ],
+            [
+              147,
+              508
+            ],
+            [
+              141,
+              508
+            ],
+            [
+              138,
+              500
+            ]
+          ],
+          "estimated_diameter_m": 0.10778260422618434,
+          "confidence": 0.8271438716488608,
+          "red_annulus_ratio": 0.7655502392344498,
+          "white_center_ratio": 1.0,
+          "red_sector_coverage": 0.85,
+          "white_center_contrast": 72.0,
+          "proposal_source": "red_ring_original",
+          "candidate_id": 1,
+          "contour_area_px": 199.5,
+          "red_area_px": 160,
+          "white_area_px": 33,
+          "red_white_center_distance_px": 0.803454049504278,
+          "inside_lane": null,
+          "distance_to_left_line_px": null,
+          "distance_to_right_line_px": null,
+          "used_history": false,
+          "metric_projection": {
+            "input_resolution_px": [
+              640,
+              480
+            ],
+            "roi_applied": false,
+            "resize_applied": false,
+            "detection_coordinate_system": "undistorted_full_image_px",
+            "distorted_full_image_px": [
+              219.0985281654493,
+              279.5026450108603
+            ],
+            "roi_pixel": null,
+            "resized_pixel": null,
+            "undistorted_full_image_px": [
+              218.66860961914062,
+              278.5856018066406
+            ],
+            "homography_source_is_undistorted": true,
+            "homography_input_px": [
+              218.66860961914062,
+              278.5856018066406
+            ],
+            "bev_pixel": [
+              126.09893035888672,
+              527.394775390625
+            ],
+            "bev_output_resolution_px": [
+              640,
+              800
+            ],
+            "bev_lateral_m_per_pixel": 0.0015960829552801804,
+            "bev_forward_m_per_pixel": 0.001963686292419414,
+            "ground_m": [
+              0.5333474565149258,
+              0.3094821922647762
+            ],
+            "base_m": [
+              1.0796474565149259,
+              0.3094821922647762
+            ],
+            "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+            "diameter_sample_count": 72,
+            "visible_ring_diameter_mode": "geometric_mean_ground_spans",
+            "visible_ring_to_physical_diameter_ratio": 0.922076,
+            "estimated_visible_ring_diameter_m": 0.09938375257446315,
+            "estimated_visible_ring_forward_span_m": 0.10781439567971463,
+            "estimated_visible_ring_lateral_span_m": 0.09161235114765387,
+            "perimeter_ground_bounds_m": {
+              "forward": [
+                0.48193864317745216,
+                0.5897530388571668
+              ],
+              "lateral": [
+                0.26391407990640126,
+                0.3555264310540551
+              ]
+            },
+            "estimated_physical_diameter_m": 0.10778260422618434,
+            "estimated_diameter_m": 0.10778260422618434
+          },
+          "stamp": 1786426225.642076
+        }
+      ],
+      "confirmed_tracks": [
+        {
+          "track_id": 14,
+          "center_px": [
+            393.7476663086238,
+            794.3149477040197
+          ],
+          "center_m": [
+            0.009199972972884819,
+            -0.11770739318688474
+          ],
+          "center_base_m": [
+            0.5554999729728848,
+            -0.11770739318688474
+          ],
+          "estimated_diameter_m": 0.10212067052815843,
+          "confidence": 0.9697480648069413,
+          "hits": 689,
+          "misses": 0,
+          "stamp": 1786426225.642076
+        },
+        {
+          "track_id": 13,
+          "center_px": [
+            126.63378061299105,
+            528.3373385507193
+          ],
+          "center_m": [
+            0.5314965581577091,
+            0.308628526890573
+          ],
+          "center_base_m": [
+            1.0777965581577091,
+            0.308628526890573
+          ],
+          "estimated_diameter_m": 0.10559212262584071,
+          "confidence": 0.8271438716488608,
+          "hits": 690,
+          "misses": 0,
+          "stamp": 1786426225.642076
+        }
+      ]
+    }
+  },
+  "/yellow_track_avoidance/debug/boundaries": {
+    "message_stamp": 1786426225.642076,
+    "data": {
+      "stamp": 1786426225.642076,
+      "frame_id": "base_link",
+      "left_detected": true,
+      "right_detected": false,
+      "boundary_detection_mode": "left_only",
+      "quality": 0.9316517133154706,
+      "boundary_pair_valid": true,
+      "boundary_inference": "right_from_left_metric_width",
+      "expected_center_separation_m": 0.91,
+      "yellow_line_width_m": 0.03,
+      "left_base_m": [
+        [
+          0.7191043937329085,
+          0.5003999069609105
+        ],
+        [
+          0.7348138840722638,
+          0.4998417034364278
+        ],
+        [
+          0.7505233744116191,
+          0.49928349991194515
+        ],
+        [
+          0.7662328647509744,
+          0.4987252971857987
+        ],
+        [
+          0.7819423550903297,
+          0.4981670954687803
+        ],
+        [
+          0.8133613357690404,
+          0.49705069203474334
+        ],
+        [
+          0.8290708261083957,
+          0.49649249015899843
+        ],
+        [
+          0.844780316447751,
+          0.49593428810601553
+        ],
+        [
+          0.8604898067871063,
+          0.4953760860530327
+        ],
+        [
+          0.8761992971264616,
+          0.4948178840000498
+        ],
+        [
+          0.9076182778051722,
+          0.49370148053054574
+        ],
+        [
+          0.9233277681445274,
+          0.4931432792255305
+        ],
+        [
+          0.9390372584838828,
+          0.4925850779205151
+        ],
+        [
+          0.9547467488232381,
+          0.4920268766154997
+        ],
+        [
+          0.9704562391625934,
+          0.4914686753104844
+        ],
+        [
+          1.001875219841304,
+          0.4903522763268697
+        ],
+        [
+          1.0175847101806594,
+          0.48979407760863847
+        ],
+        [
+          1.0332942005200145,
+          0.48923587889040726
+        ],
+        [
+          1.04900369085937,
+          0.488677680172176
+        ],
+        [
+          1.0804226715380807,
+          0.48756128273571364
+        ]
+      ],
+      "right_base_m": [
+        [
+          0.6867900041358516,
+          -0.40902616492452293
+        ],
+        [
+          0.7024994944752069,
+          -0.40958436844900564
+        ],
+        [
+          0.7182089848145622,
+          -0.4101425719734883
+        ],
+        [
+          0.7339184751539175,
+          -0.41070077469963473
+        ],
+        [
+          0.7496279654932728,
+          -0.41125897641665315
+        ],
+        [
+          0.7810469461719834,
+          -0.4123753798506901
+        ],
+        [
+          0.7967564365113388,
+          -0.412933581726435
+        ],
+        [
+          0.8124659268506941,
+          -0.4134917837794179
+        ],
+        [
+          0.8281754171900494,
+          -0.41404998583240077
+        ],
+        [
+          0.8438849075294047,
+          -0.41460818788538367
+        ],
+        [
+          0.8753038882081153,
+          -0.4157245913548877
+        ],
+        [
+          0.8910133785474705,
+          -0.416282792659903
+        ],
+        [
+          0.9067228688868259,
+          -0.41684099396491836
+        ],
+        [
+          0.9224323592261812,
+          -0.41739919526993374
+        ],
+        [
+          0.9381418495655365,
+          -0.41795739657494907
+        ],
+        [
+          0.969560830244247,
+          -0.4190737955585638
+        ],
+        [
+          0.9852703205836025,
+          -0.419631994276795
+        ],
+        [
+          1.0009798109229577,
+          -0.4201901929950262
+        ],
+        [
+          1.0166893012623133,
+          -0.42074839171325745
+        ],
+        [
+          1.048108281941024,
+          -0.4218647891497198
+        ]
+      ],
+      "right_wall_base_m": [
+        [
+          0.6867900041358516,
+          -0.43902616492452295
+        ],
+        [
+          0.7024994944752069,
+          -0.4395843684490056
+        ],
+        [
+          0.7182089848145622,
+          -0.4401425719734883
+        ],
+        [
+          0.7339184751539175,
+          -0.44070077469963476
+        ],
+        [
+          0.7496279654932728,
+          -0.4412589764166531
+        ],
+        [
+          0.7810469461719834,
+          -0.4423753798506901
+        ],
+        [
+          0.7967564365113388,
+          -0.44293358172643504
+        ],
+        [
+          0.8124659268506941,
+          -0.4434917837794179
+        ],
+        [
+          0.8281754171900494,
+          -0.44404998583240074
+        ],
+        [
+          0.8438849075294047,
+          -0.4446081878853837
+        ],
+        [
+          0.8753038882081153,
+          -0.44572459135488773
+        ],
+        [
+          0.8910133785474705,
+          -0.446282792659903
+        ],
+        [
+          0.9067228688868259,
+          -0.4468409939649184
+        ],
+        [
+          0.9224323592261812,
+          -0.44739919526993377
+        ],
+        [
+          0.9381418495655365,
+          -0.44795739657494904
+        ],
+        [
+          0.969560830244247,
+          -0.44907379555856375
+        ],
+        [
+          0.9852703205836025,
+          -0.449631994276795
+        ],
+        [
+          1.0009798109229577,
+          -0.45019019299502616
+        ],
+        [
+          1.0166893012623133,
+          -0.4507483917132574
+        ],
+        [
+          1.048108281941024,
+          -0.45186478914971984
+        ]
+      ]
+    }
+  },
+  "/yellow_track_avoidance/debug/candidates": {
+    "message_stamp": 1786426225.642076,
+    "data": {
+      "stamp": 1786426225.642076,
+      "safe": false,
+      "reason": "boundaries_unavailable",
+      "selected": null,
+      "left_space_m": 0.0,
+      "right_space_m": 0.0,
+      "candidates": []
+    }
+  }
+}

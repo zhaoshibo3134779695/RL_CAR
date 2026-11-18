@@ -1,0 +1,47 @@
+# Stage-1 SBPL experiment: the world contains only real lidar returns, the two
+# frozen visual discs and the two yellow corridor boundaries. No semantic
+# disc-to-line gap closure source exists in this costmap.
+footprint:
+  - [-0.165, -0.150]
+  - [-0.165,  0.150]
+  - [ 0.165,  0.150]
+  - [ 0.165, -0.150]
+footprint_padding: 0.0
+
+map_type: costmap
+transform_tolerance: 0.35
+obstacle_range: 1.60
+raytrace_range: 1.70
+observation_sources: scan sbpl_discs yellow_corridor
+
+scan:
+  sensor_frame: laser_link
+  data_type: LaserScan
+  topic: /scan
+  marking: true
+  clearing: true
+  inf_is_valid: true
+  obstacle_range: 1.60
+  raytrace_range: 1.70
+  observation_persistence: 0.0
+  expected_update_rate: 0.0
+
+sbpl_discs:
+  sensor_frame: odom
+  data_type: PointCloud2
+  topic: /yellow_track_avoidance/sbpl_disc_cloud
+  marking: true
+  clearing: false
+  obstacle_range: 5.0
+  observation_persistence: 0.0
+  expected_update_rate: 0.0
+
+yellow_corridor:
+  sensor_frame: odom
+  data_type: PointCloud2
+  topic: /yellow_track_avoidance/corridor_cloud
+  marking: true
+  clearing: false
+  obstacle_range: 5.0
+  observation_persistence: 0.0
+  expected_update_rate: 0.0

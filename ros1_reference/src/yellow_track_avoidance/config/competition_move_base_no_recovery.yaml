@@ -1,0 +1,15 @@
+# Common move_base timing for the locked planner A/B profiles.
+#
+# Keep the measured N95-safe 8 Hz controller cadence used by the DWA trials,
+# but stop immediately on planner failure.  No recovery behavior is allowed to
+# change the robot pose or clear evidence during the first TEB/SBPL comparison.
+shutdown_costmaps: false
+controller_frequency: 8.0
+controller_patience: 0.8
+planner_frequency: 0.5
+planner_patience: 1.8
+oscillation_timeout: 6.0
+oscillation_distance: 0.03
+recovery_behavior_enabled: false
+clearing_rotation_allowed: false
+

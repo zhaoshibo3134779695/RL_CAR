@@ -1,0 +1,76 @@
+{
+  "purpose": "第二组技术报告，右侧镜像错列布局，图片版式与第一组分离",
+  "capture_bag": {
+    "path": "/tmp/second_group_right_mirror_20260811.bag",
+    "sha256": "08b3736f27137ad6e1970fc82700c5780a3d9d2548ddc633c17a346ab9928fc5",
+    "included_in_zip": false
+  },
+  "plan_bag": {
+    "path": "/tmp/second_group_right_mirror_plans_20260811.bag",
+    "sha256": "1e101bc5ef0e6f6fcb93c6701d5634b563e009783c11ce7001a171455c77134c",
+    "included_in_zip": false
+  },
+  "config": {
+    "path": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/current_car_recalibrated_640x480_20260809.yaml",
+    "sha256": "7f49a55d3272a4a500803137a776c1aca052e8a75c259209b24027a7564726ea"
+  },
+  "selected_image_stamp": 1786432759.247165,
+  "motion_during_static_capture": false,
+  "dynamic_trial_bag_available": false,
+  "disc_count": 2,
+  "costmap_disc_count": 2,
+  "planning_samples": {
+    "global": 3,
+    "local": 31
+  },
+  "figures": [
+    {
+      "file": "B01-视觉避障分层架构与任务态调度.png",
+      "sha256": "061448f725f73403baf3259c9299f58cf254ae0274aee42b3e3dc584bf5617c4"
+    },
+    {
+      "file": "B02-右侧镜像双圆片实景与锁定状态.png",
+      "sha256": "f7859973c26d32248e2c0bdc01364e5edb03edf61c8f1d2bc29cf6283ccbcc16"
+    },
+    {
+      "file": "B03-红色环带分割与连通域提取.png",
+      "sha256": "8e2f1be8fc13ad65219f85fc7aaea1bd58b3fd35f7bd943dc49185c35273984f"
+    },
+    {
+      "file": "B04-白心中性特征与20扇区验证.png",
+      "sha256": "c0ee8d3173ce488dfd93f9dc83b373dac440f35f0fa8fb508f6667f19beb56f2"
+    },
+    {
+      "file": "B05-圆片候选筛选漏斗与拒绝原因.png",
+      "sha256": "78acafbdc27776708c414752973fee2a882468aa8736b78fb05274c5d9274ef2"
+    },
+    {
+      "file": "B06-黄线连续置信度与截面得分诊断.png",
+      "sha256": "afe8c2abc4eb9b68535b1195dda5dd89b646b37c407c09d9a7b0fe13b0ecf578"
+    },
+    {
+      "file": "B07-圆片像素中心到车体米制坐标对应.png",
+      "sha256": "7fccb78e5ad7a76df62096871cadd8a38f918e39bd6376e29a36cbfcce31c1de"
+    },
+    {
+      "file": "B08-双圆片连续帧定位稳定性.png",
+      "sha256": "c3ff71c509f3ba79be8770edeb076949678b8898fcc1f8fedd48f5ceee1070d8"
+    },
+    {
+      "file": "B09-costmap栅格与紧凑语义障碍对照.png",
+      "sha256": "25439b96159b4da03dc792e64065f1bc7f64cac73e3282ff237cd29af19c76e7"
+    },
+    {
+      "file": "B10-右侧镜像布局GlobalPlanner与TEB锁止规划.png",
+      "sha256": "bd079d0e955ceffdb58a54a53374d1a305ebe8766a22ac2484a2c5dd4179101a"
+    },
+    {
+      "file": "B11-ACQUIRE至LOCKED视觉CPU哑铃对比.png",
+      "sha256": "cdbbc0efc58af62a209a46e7f9b76914583cf92385d9cdbcc6eb58b483308901"
+    },
+    {
+      "file": "B12-红白圆片520帧专项验收矩阵.png",
+      "sha256": "6c250fca110ad02fe0db7720f2afd466c85b12107edb6c1b16d9b130441b578b"
+    }
+  ]
+}

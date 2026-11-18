@@ -1,0 +1,8 @@
+# Copied verbatim from the commissioned bit_ws Yesense launch parameters.
+# Keep the source workspace untouched; the competition profile owns this copy.
+yesense_port: /dev/imu
+yesense_baudrate: 460800
+frame_id: base_link
+imu_topic: /imu0
+angular_velocity_stddev: 0.0025
+orientation_stddev: 0.0025

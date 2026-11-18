@@ -1,0 +1,4491 @@
+{
+  "captured_total_frames": 100,
+  "center_distance_m": {
+    "max": 0.5023476919186566,
+    "mean": 0.4985645250490326,
+    "median": 0.49852955810267807,
+    "min": 0.4945633193239323,
+    "stdev": 0.0015826343578376528
+  },
+  "center_distance_mean_error_m": -0.001435474950967408,
+  "center_distance_within_5mm_fraction": 0.979381443298969,
+  "diameter_method": [
+    "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+    "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+  ],
+  "frames": [
+    {
+      "center_distance_m": 0.49668133322409963,
+      "centers_base_m": [
+        [
+          1.2322018746998076,
+          0.37919838996399924
+        ],
+        [
+          1.2853154299794336,
+          -0.11463487847670349
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6859018746998076,
+          0.37919838996399924
+        ],
+        [
+          0.7390154299794336,
+          -0.11463487847670349
+        ]
+      ],
+      "confidences": [
+        0.8113856939306962,
+        0.7685017225424543
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10355968347271914,
+        0.09084846927503387
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256405.845074,
+      "visible_ring_diameters_m": [
+        0.09713059850929127,
+        0.08520850874038795
+      ]
+    },
+    {
+      "center_distance_m": 0.49866792985493197,
+      "centers_base_m": [
+        [
+          1.2349239365424762,
+          0.3797184758940225
+        ],
+        [
+          1.2923412655788982,
+          -0.11563286870103015
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6886239365424762,
+          0.3797184758940225
+        ],
+        [
+          0.7460412655788982,
+          -0.11563286870103015
+        ]
+      ],
+      "confidences": [
+        0.8023094160507713,
+        0.7541347257708523
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10162897568657242,
+        0.09153386762614452
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256405.9488504,
+      "visible_ring_diameters_m": [
+        0.09531975092337353,
+        0.08585135690125739
+      ]
+    },
+    {
+      "center_distance_m": 0.49743058103931714,
+      "centers_base_m": [
+        [
+          1.239993756499101,
+          0.3793412887790033
+        ],
+        [
+          1.2901296614949826,
+          -0.11555625009480897
+        ]
+      ],
+      "centers_m": [
+        [
+          0.693693756499101,
+          0.3793412887790033
+        ],
+        [
+          0.7438296614949828,
+          -0.11555625009480897
+        ]
+      ],
+      "confidences": [
+        0.7479463738020781,
+        0.7938560910071373
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10911285450079812,
+        0.09994524186034888
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.0486832,
+      "visible_ring_diameters_m": [
+        0.10233902332766046,
+        0.09374054491590718
+      ]
+    },
+    {
+      "center_distance_m": 0.49783227168207883,
+      "centers_base_m": [
+        [
+          1.231296917830245,
+          0.37954905525378807
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.684996917830245,
+          0.37954905525378807
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.8107377693099302,
+        0.8080244583530999
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09623859692294287,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.1806521,
+      "visible_ring_diameters_m": [
+        0.09026401206877345,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.49698037440139975,
+      "centers_base_m": [
+        [
+          1.2365063076530516,
+          0.3792683354938998
+        ],
+        [
+          1.2888698771554064,
+          -0.11494573667435358
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6902063076530516,
+          0.3792683354938998
+        ],
+        [
+          0.7425698771554063,
+          -0.11494573667435358
+        ]
+      ],
+      "confidences": [
+        0.7623657746521615,
+        0.7737133894935344
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10255182329512921,
+        0.09560581625699292
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.31669,
+      "visible_ring_diameters_m": [
+        0.09618530726292725,
+        0.08967051503645568
+      ]
+    },
+    {
+      "center_distance_m": 0.49851110450437164,
+      "centers_base_m": [
+        [
+          1.2327850837756689,
+          0.3804015163994514
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6864850837756689,
+          0.3804015163994514
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.7776457191906159,
+        0.8053321506607921
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09593731270738046,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.3846052,
+      "visible_ring_diameters_m": [
+        0.08998143186769848,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.5009943911870837,
+      "centers_base_m": [
+        [
+          1.232929807359537,
+          0.37956508037867476
+        ],
+        [
+          1.29274613205203,
+          -0.1178456023586372
+        ]
+      ],
+      "centers_m": [
+        [
+          0.686629807359537,
+          0.37956508037867476
+        ],
+        [
+          0.74644613205203,
+          -0.1178456023586372
+        ]
+      ],
+      "confidences": [
+        0.7805493981851913,
+        0.7475162091068164
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09745805745730066,
+        0.09222620287063704
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.4847362,
+      "visible_ring_diameters_m": [
+        0.0914077673178114,
+        0.0865007113064816
+      ]
+    },
+    {
+      "center_distance_m": 0.4988956060639274,
+      "centers_base_m": [
+        [
+          1.2323251444356322,
+          0.378829422422915
+        ],
+        [
+          1.2913394068314412,
+          -0.11656349495052915
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6860251444356323,
+          0.378829422422915
+        ],
+        [
+          0.7450394068314412,
+          -0.11656349495052915
+        ]
+      ],
+      "confidences": [
+        0.8183731252807989,
+        0.8181270759359108
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09595582981549065,
+        0.09195332186540951
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.6208484,
+      "visible_ring_diameters_m": [
+        0.08999879941588995,
+        0.0862447710170682
+      ]
+    },
+    {
+      "center_distance_m": 0.4972134619397798,
+      "centers_base_m": [
+        [
+          1.233233097652687,
+          0.3797440722561136
+        ],
+        [
+          1.2892549677350904,
+          -0.11430327042129738
+        ]
+      ],
+      "centers_m": [
+        [
+          0.686933097652687,
+          0.3797440722561136
+        ],
+        [
+          0.7429549677350904,
+          -0.11430327042129738
+        ]
+      ],
+      "confidences": [
+        0.7632313769696624,
+        0.8335001031228564
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09102956734281405,
+        0.08964169193947638
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.7208028,
+      "visible_ring_diameters_m": [
+        0.08537836406557343,
+        0.08407664930494438
+      ]
+    },
+    {
+      "center_distance_m": 0.49768556231426564,
+      "centers_base_m": [
+        [
+          1.231644913627977,
+          0.3802283330209267
+        ],
+        [
+          1.2863096780042607,
+          -0.11444598657910289
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6853449136279769,
+          0.3802283330209267
+        ],
+        [
+          0.7400096780042607,
+          -0.11444598657910289
+        ]
+      ],
+      "confidences": [
+        0.8263357394105751,
+        0.7653414094735937
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10063189142149463,
+        0.09021158060389253
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.8208823,
+      "visible_ring_diameters_m": [
+        0.09438456661048679,
+        0.08461115873180047
+      ]
+    },
+    {
+      "center_distance_m": 0.5011665099262698,
+      "centers_base_m": [
+        [
+          1.2356391646888394,
+          0.3804615862634834
+        ],
+        [
+          1.291472924075689,
+          -0.11758506013061616
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6893391646888393,
+          0.3804615862634834
+        ],
+        [
+          0.745172924075689,
+          -0.11758506013061616
+        ]
+      ],
+      "confidences": [
+        0.7761164987926262,
+        0.720129005453008
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10027693057532687,
+        0.08641600212530705
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256406.924737,
+      "visible_ring_diameters_m": [
+        0.09405164207576935,
+        0.08105121342344009
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256407.0246148
+    },
+    {
+      "center_distance_m": 0.5014781161501249,
+      "centers_base_m": [
+        [
+          1.2262653312676193,
+          0.38152807293726876
+        ],
+        [
+          1.290654561648648,
+          -0.11579911110600974
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6799653312676193,
+          0.38152807293726876
+        ],
+        [
+          0.744354561648648,
+          -0.11579911110600974
+        ]
+      ],
+      "confidences": [
+        0.785613080770264,
+        0.7879164328637224
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09066170208143685,
+        0.09967541681579353
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.1925867,
+      "visible_ring_diameters_m": [
+        0.08503333623418038,
+        0.09348747087018203
+      ]
+    },
+    {
+      "center_distance_m": 0.5006114186410899,
+      "centers_base_m": [
+        [
+          1.2337680655339256,
+          0.37997277124585294
+        ],
+        [
+          1.2919903932875738,
+          -0.11724142105439846
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6874680655339256,
+          0.37997277124585294
+        ],
+        [
+          0.7456903932875738,
+          -0.11724142105439846
+        ]
+      ],
+      "confidences": [
+        0.8292612572681208,
+        0.8073355413233105
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09743067776348321,
+        0.09608569214049639
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.2925987,
+      "visible_ring_diameters_m": [
+        0.09138208738177539,
+        0.09012059976259473
+      ]
+    },
+    {
+      "center_distance_m": 0.5014610418330653,
+      "centers_base_m": [
+        [
+          1.2379909379084348,
+          0.382432895813185
+        ],
+        [
+          1.2916390415806507,
+          -0.11615015388734226
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6916909379084348,
+          0.382432895813185
+        ],
+        [
+          0.7453390415806507,
+          -0.11615015388734226
+        ]
+      ],
+      "confidences": [
+        0.7935376590958602,
+        0.7609656721409563
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10204877691681825,
+        0.08927907365864664
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.3927023,
+      "visible_ring_diameters_m": [
+        0.09571349048863065,
+        0.08373654271648921
+      ]
+    },
+    {
+      "center_distance_m": 0.49910229123209826,
+      "centers_base_m": [
+        [
+          1.2315838480660881,
+          0.3790664627580551
+        ],
+        [
+          1.2900931060555791,
+          -0.11659447361140433
+        ]
+      ],
+      "centers_m": [
+        [
+          0.685283848066088,
+          0.3790664627580551
+        ],
+        [
+          0.7437931060555792,
+          -0.11659447361140433
+        ]
+      ],
+      "confidences": [
+        0.7903869110471018,
+        0.7888052212428448
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10528498664095089,
+        0.08899947549241849
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.496847,
+      "visible_ring_diameters_m": [
+        0.09874879319394837,
+        0.08347430227390429
+      ]
+    },
+    {
+      "center_distance_m": 0.49944987197014007,
+      "centers_base_m": [
+        [
+          1.237604648789754,
+          0.3805566045381725
+        ],
+        [
+          1.2908947488636144,
+          -0.11604216695155564
+        ]
+      ],
+      "centers_m": [
+        [
+          0.691304648789754,
+          0.3805566045381725
+        ],
+        [
+          0.7445947488636143,
+          -0.11604216695155564
+        ]
+      ],
+      "confidences": [
+        0.7583436420226868,
+        0.7924584860736593
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10142470071646707,
+        0.09158889789439242
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.5967283,
+      "visible_ring_diameters_m": [
+        0.0951281575402977,
+        0.0859029708374129
+      ]
+    },
+    {
+      "center_distance_m": 0.49988747978955544,
+      "centers_base_m": [
+        [
+          1.2314963547193187,
+          0.3796112439413233
+        ],
+        [
+          1.2918885773997926,
+          -0.11661478509188382
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6851963547193188,
+          0.3796112439413233
+        ],
+        [
+          0.7455885773997925,
+          -0.11661478509188382
+        ]
+      ],
+      "confidences": [
+        0.8042531410929324,
+        0.7737618956068737
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09842752561423596,
+        0.1007522936595803
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.7327225,
+      "visible_ring_diameters_m": [
+        0.09231704995716623,
+        0.09449749416158537
+      ]
+    },
+    {
+      "center_distance_m": 0.4999240076413526,
+      "centers_base_m": [
+        [
+          1.23673061422631,
+          0.3789933998786325
+        ],
+        [
+          1.291518708265368,
+          -0.11791934715826777
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6904306142263098,
+          0.3789933998786325
+        ],
+        [
+          0.7452187082653682,
+          -0.11791934715826777
+        ]
+      ],
+      "confidences": [
+        0.7860953217102331,
+        0.7686346449929988
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10164725486918202,
+        0.10042728701151077
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.832739,
+      "visible_ring_diameters_m": [
+        0.09533689531670879,
+        0.09419266423947763
+      ]
+    },
+    {
+      "center_distance_m": 0.4961423923664221,
+      "centers_base_m": [
+        [
+          1.2380956902167584,
+          0.3799293353640362
+        ],
+        [
+          1.2849898468609426,
+          -0.11399192513778449
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6917956902167585,
+          0.3799293353640362
+        ],
+        [
+          0.7386898468609426,
+          -0.11399192513778449
+        ]
+      ],
+      "confidences": [
+        0.7856066561177819,
+        0.7396798371211097
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10221173239655114,
+        0.09553359658992813
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256407.9646723,
+      "visible_ring_diameters_m": [
+        0.09586632953512111,
+        0.0896027788359294
+      ]
+    },
+    {
+      "center_distance_m": 0.49842729591070684,
+      "centers_base_m": [
+        [
+          1.2361821028544069,
+          0.38071798826167047
+        ],
+        [
+          1.287025205785373,
+          -0.11510934881567396
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6898821028544069,
+          0.38071798826167047
+        ],
+        [
+          0.7407252057853729,
+          -0.11510934881567396
+        ]
+      ],
+      "confidences": [
+        0.7641340279596617,
+        0.7904429466643115
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10473801359727668,
+        0.08699801085441007
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.0687578,
+      "visible_ring_diameters_m": [
+        0.0982357767640119,
+        0.08159709048968566
+      ]
+    },
+    {
+      "center_distance_m": 0.49737921408204483,
+      "centers_base_m": [
+        [
+          1.2340527784726245,
+          0.3796718130683646
+        ],
+        [
+          1.291547892689941,
+          -0.1143731185340254
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6877527784726245,
+          0.3796718130683646
+        ],
+        [
+          0.7452478926899412,
+          -0.1143731185340254
+        ]
+      ],
+      "confidences": [
+        0.801217857957035,
+        0.7528691833568155
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09497182798605579,
+        0.0990660798060591
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.200564,
+      "visible_ring_diameters_m": [
+        0.08907588536843224,
+        0.09291596208930632
+      ]
+    },
+    {
+      "center_distance_m": 0.4985052068907253,
+      "centers_base_m": [
+        [
+          1.230277680267334,
+          0.37836291593780164
+        ],
+        [
+          1.2923115418117765,
+          -0.11626749287169498
+        ]
+      ],
+      "centers_m": [
+        [
+          0.683977680267334,
+          0.37836291593780164
+        ],
+        [
+          0.7460115418117765,
+          -0.11626749287169498
+        ]
+      ],
+      "confidences": [
+        0.8616834743675524,
+        0.7763138344881875
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09926635544804281,
+        0.08918820792895511
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.3043945,
+      "visible_ring_diameters_m": [
+        0.09310380442640495,
+        0.08365131801887563
+      ]
+    },
+    {
+      "center_distance_m": 0.4989580272068249,
+      "centers_base_m": [
+        [
+          1.2323750635848505,
+          0.3792137940544108
+        ],
+        [
+          1.2916481504770267,
+          -0.11621108832878073
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6860750635848506,
+          0.3792137940544108
+        ],
+        [
+          0.7453481504770267,
+          -0.11621108832878073
+        ]
+      ],
+      "confidences": [
+        0.8162536035237683,
+        0.7899508556611781
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09712934794318408,
+        0.09753207357070776
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.4052737,
+      "visible_ring_diameters_m": [
+        0.09109946440714972,
+        0.09147718843955958
+      ]
+    },
+    {
+      "center_distance_m": 0.49991566173536683,
+      "centers_base_m": [
+        [
+          1.2318809059564542,
+          0.38031768892246054
+        ],
+        [
+          1.2916030854107456,
+          -0.11601781265841477
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6855809059564543,
+          0.38031768892246054
+        ],
+        [
+          0.7453030854107456,
+          -0.11601781265841477
+        ]
+      ],
+      "confidences": [
+        0.830139938687834,
+        0.7995171678570431
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09464680478190353,
+        0.08939498157080181
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.5047426,
+      "visible_ring_diameters_m": [
+        0.08877103991805933,
+        0.08384525495374281
+      ]
+    },
+    {
+      "center_distance_m": 0.49781853847665125,
+      "centers_base_m": [
+        [
+          1.2348742571010574,
+          0.38021499904543204
+        ],
+        [
+          1.2910411504020782,
+          -0.11442484705265661
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6885742571010572,
+          0.38021499904543204
+        ],
+        [
+          0.7447411504020781,
+          -0.11442484705265661
+        ]
+      ],
+      "confidences": [
+        0.8015431144918707,
+        0.7478717254172746
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.0977616779909608,
+        0.0963232903863717
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.6046782,
+      "visible_ring_diameters_m": [
+        0.09169253879610478,
+        0.09034344768036291
+      ]
+    },
+    {
+      "center_distance_m": 0.4975553658460951,
+      "centers_base_m": [
+        [
+          1.2335606583605228,
+          0.3795262961668479
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6872606583605227,
+          0.3795262961668479
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.802514950721492,
+        0.7675629198915613
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09690099708555562,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.6725461,
+      "visible_ring_diameters_m": [
+        0.09088528979085317,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.49764636371317206,
+      "centers_base_m": [
+        [
+          1.2353304210432539,
+          0.378843511381497
+        ],
+        [
+          1.2888251716508243,
+          -0.1159192751883668
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6890304210432538,
+          0.378843511381497
+        ],
+        [
+          0.7425251716508242,
+          -0.1159192751883668
+        ]
+      ],
+      "confidences": [
+        0.7853696702462305,
+        0.7937076054032701
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10154076814241544,
+        0.0963194482114251
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.7728512,
+      "visible_ring_diameters_m": [
+        0.09523701938857447,
+        0.09033984403134018
+      ]
+    },
+    {
+      "center_distance_m": 0.4997059951746794,
+      "centers_base_m": [
+        [
+          1.2317052600664677,
+          0.38075995070875224
+        ],
+        [
+          1.2875742564998243,
+          -0.11581304176168632
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6854052600664677,
+          0.38075995070875224
+        ],
+        [
+          0.7412742564998244,
+          -0.11581304176168632
+        ]
+      ],
+      "confidences": [
+        0.8113265784066248,
+        0.7587925445223814
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09543358337500765,
+        0.09959838985392484
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.8766015,
+      "visible_ring_diameters_m": [
+        0.08950897453778646,
+        0.09341522581634668
+      ]
+    },
+    {
+      "center_distance_m": 0.4979584234586703,
+      "centers_base_m": [
+        [
+          1.235358107294081,
+          0.3799589014759092
+        ],
+        [
+          1.2871008335960734,
+          -0.11530393961786953
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6890581072940808,
+          0.3799589014759092
+        ],
+        [
+          0.7408008335960734,
+          -0.11530393961786953
+        ]
+      ],
+      "confidences": [
+        0.7891039264342423,
+        0.7848666401803288
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10431430015945004,
+        0.09539768650905726
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256408.9767785,
+      "visible_ring_diameters_m": [
+        0.09783836786479126,
+        0.08947530618387257
+      ]
+    },
+    {
+      "center_distance_m": 0.4991161205844787,
+      "centers_base_m": [
+        [
+          1.233051159432967,
+          0.3795380349361418
+        ],
+        [
+          1.2913613400950834,
+          -0.11616028527328887
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6867511594329669,
+          0.3795380349361418
+        ],
+        [
+          0.7450613400950834,
+          -0.11616028527328887
+        ]
+      ],
+      "confidences": [
+        0.8353946195585181,
+        0.7719623713781368
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09689243838782222,
+        0.0919498183579627
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.0765576,
+      "visible_ring_diameters_m": [
+        0.09087726242532414,
+        0.08624148501074047
+      ]
+    },
+    {
+      "center_distance_m": 0.4988504667657103,
+      "centers_base_m": [
+        [
+          1.2267896321517862,
+          0.3802833737234251
+        ],
+        [
+          1.2888414717811814,
+          -0.11469274427720622
+        ]
+      ],
+      "centers_m": [
+        [
+          0.680489632151786,
+          0.3802833737234251
+        ],
+        [
+          0.7425414717811812,
+          -0.11469274427720622
+        ]
+      ],
+      "confidences": [
+        0.8307918388152925,
+        0.7742886663895691
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09534166218384627,
+        0.09521300944518193
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.212473,
+      "visible_ring_diameters_m": [
+        0.08942275990276834,
+        0.08930209405011905
+      ]
+    },
+    {
+      "center_distance_m": 0.49936128959536413,
+      "centers_base_m": [
+        [
+          1.2275922337910186,
+          0.37957647818786466
+        ],
+        [
+          1.2909863771699226,
+          -0.1157445087807879
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6812922337910187,
+          0.37957647818786466
+        ],
+        [
+          0.7446863771699226,
+          -0.1157445087807879
+        ]
+      ],
+      "confidences": [
+        0.7718597402613017,
+        0.7624392651678723
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09359901246739193,
+        0.0910234350861149
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.3124125,
+      "visible_ring_diameters_m": [
+        0.08778829556032135,
+        0.08537261250528061
+      ]
+    },
+    {
+      "center_distance_m": 0.4980030426295156,
+      "centers_base_m": [
+        [
+          1.2320334799707517,
+          0.3793216713958783
+        ],
+        [
+          1.2918058782090105,
+          -0.11508129266997567
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6857334799707517,
+          0.3793216713958783
+        ],
+        [
+          0.7455058782090106,
+          -0.11508129266997567
+        ]
+      ],
+      "confidences": [
+        0.7938641206815784,
+        0.73500347339154
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1044942587295774,
+        0.09436785048199146
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.4125285,
+      "visible_ring_diameters_m": [
+        0.09800715443343651,
+        0.08850940336994902
+      ]
+    },
+    {
+      "center_distance_m": 0.49900245274075195,
+      "centers_base_m": [
+        [
+          1.2328969673910237,
+          0.38033407936174435
+        ],
+        [
+          1.287380332890136,
+          -0.11568508430552417
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6865969673910237,
+          0.38033407936174435
+        ],
+        [
+          0.741080332890136,
+          -0.11568508430552417
+        ]
+      ],
+      "confidences": [
+        0.7880690104601322,
+        0.7769330347793044
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10421079849981744,
+        0.08953017231211374
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.5165968,
+      "visible_ring_diameters_m": [
+        0.09774129168794618,
+        0.08397205292353385
+      ]
+    },
+    {
+      "center_distance_m": 0.49897536982816887,
+      "centers_base_m": [
+        [
+          1.2345806749737818,
+          0.38099853754150675
+        ],
+        [
+          1.2857382146105683,
+          -0.11534743638541912
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6882806749737818,
+          0.38099853754150675
+        ],
+        [
+          0.7394382146105682,
+          -0.11534743638541912
+        ]
+      ],
+      "confidences": [
+        0.7883743556405314,
+        0.8032299562612437
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10107238882662128,
+        0.0915215164034096
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.6165805,
+      "visible_ring_diameters_m": [
+        0.09479771751214064,
+        0.08583977245433427
+      ]
+    },
+    {
+      "center_distance_m": 0.49995203510584496,
+      "centers_base_m": [
+        [
+          1.2378797134895283,
+          0.38024635519785094
+        ],
+        [
+          1.2895895398960577,
+          -0.11702432688534072
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6915797134895283,
+          0.38024635519785094
+        ],
+        [
+          0.7432895398960577,
+          -0.11702432688534072
+        ]
+      ],
+      "confidences": [
+        0.7585550371806182,
+        0.7267968905621478
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10393590914164726,
+        0.08666339713816815
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.748498,
+      "visible_ring_diameters_m": [
+        0.09748346772607652,
+        0.0812832499154572
+      ]
+    },
+    {
+      "center_distance_m": 0.495986973881335,
+      "centers_base_m": [
+        [
+          1.2375438828626142,
+          0.37858864370377776
+        ],
+        [
+          1.2872639547535432,
+          -0.11489995060324874
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6912438828626143,
+          0.37858864370377776
+        ],
+        [
+          0.740963954753543,
+          -0.11489995060324874
+        ]
+      ],
+      "confidences": [
+        0.7534048568584678,
+        0.7561662958583273
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10592942299429542,
+        0.10067313377977698
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.8546288,
+      "visible_ring_diameters_m": [
+        0.09935322231735322,
+        0.09442324860341654
+      ]
+    },
+    {
+      "center_distance_m": 0.4982234446453183,
+      "centers_base_m": [
+        [
+          1.2358126532086318,
+          0.38044237072619524
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6895126532086316,
+          0.38044237072619524
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.7855320013853139,
+        0.8484859968146382
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09820469690219574,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256409.953789,
+      "visible_ring_diameters_m": [
+        0.09210805466633742,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.49882751012579096,
+      "centers_base_m": [
+        [
+          1.2345219465629367,
+          0.3794724488247135
+        ],
+        [
+          1.2871236058370132,
+          -0.11657386987940715
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6882219465629367,
+          0.3794724488247135
+        ],
+        [
+          0.7408236058370133,
+          -0.11657386987940715
+        ]
+      ],
+      "confidences": [
+        0.7980654741644823,
+        0.7751094553088653
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09693726074210421,
+        0.08767144211983145
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.0525432,
+      "visible_ring_diameters_m": [
+        0.0909193021646514,
+        0.0822287144930796
+      ]
+    },
+    {
+      "center_distance_m": 0.49851490670599996,
+      "centers_base_m": [
+        [
+          1.234569228926362,
+          0.37997918860209556
+        ],
+        [
+          1.2891947411504994,
+          -0.11553384414511936
+        ]
+      ],
+      "centers_m": [
+        [
+          0.688269228926362,
+          0.37997918860209556
+        ],
+        [
+          0.7428947411504992,
+          -0.11553384414511936
+        ]
+      ],
+      "confidences": [
+        0.8336912638369431,
+        0.8225645448565112
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09845844057658282,
+        0.09711530317576983
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.1885169,
+      "visible_ring_diameters_m": [
+        0.09234604568885398,
+        0.09108629155243325
+      ]
+    },
+    {
+      "center_distance_m": 0.5005490135985886,
+      "centers_base_m": [
+        [
+          1.2317090354643079,
+          0.3808468224723857
+        ],
+        [
+          1.2886283116205937,
+          -0.11645541059756995
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6854090354643078,
+          0.3808468224723857
+        ],
+        [
+          0.7423283116205937,
+          -0.11645541059756995
+        ]
+      ],
+      "confidences": [
+        0.8212707706186563,
+        0.7398001532937267
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09796022034007774,
+        0.0873218324442323
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.3244429,
+      "visible_ring_diameters_m": [
+        0.0918787554448284,
+        0.08190080892310429
+      ]
+    },
+    {
+      "center_distance_m": 0.4982433076283636,
+      "centers_base_m": [
+        [
+          1.2397260628141573,
+          0.3785778669290629
+        ],
+        [
+          1.28919821691359,
+          -0.11720323352275357
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6934260628141573,
+          0.3785778669290629
+        ],
+        [
+          0.7428982169135901,
+          -0.11720323352275357
+        ]
+      ],
+      "confidences": [
+        0.742078907457641,
+        0.6865612064054317
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1103334603592104,
+        0.08391322134797344
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.4565935,
+      "visible_ring_diameters_m": [
+        0.10348385279793172,
+        0.07870380768900674
+      ]
+    },
+    {
+      "center_distance_m": 0.499425009035783,
+      "centers_base_m": [
+        [
+          1.2328306881844986,
+          0.3792125154540209
+        ],
+        [
+          1.290045404203505,
+          -0.11692437686629058
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6865306881844986,
+          0.3792125154540209
+        ],
+        [
+          0.7437454042035051,
+          -0.11692437686629058
+        ]
+      ],
+      "confidences": [
+        0.8084718276307786,
+        0.6904637253561605
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09686762308043367,
+        0.09461169376676198
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.5564172,
+      "visible_ring_diameters_m": [
+        0.09085398767613591,
+        0.08873810862857867
+      ]
+    },
+    {
+      "center_distance_m": 0.4981681341505375,
+      "centers_base_m": [
+        [
+          1.2353157389405425,
+          0.3794523808871654
+        ],
+        [
+          1.2865182237897104,
+          -0.11607743196802363
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6890157389405426,
+          0.3794523808871654
+        ],
+        [
+          0.7402182237897105,
+          -0.11607743196802363
+        ]
+      ],
+      "confidences": [
+        0.8045191676662593,
+        0.7748141967824009
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10238778636748942,
+        0.09003797569905961
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.6925733,
+      "visible_ring_diameters_m": [
+        0.09603145390585828,
+        0.08444833138678437
+      ]
+    },
+    {
+      "center_distance_m": 0.4992381859078033,
+      "centers_base_m": [
+        [
+          1.2292241644891133,
+          0.3807214952798828
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6829241644891133,
+          0.3807214952798828
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.7804928116412903,
+        0.8053321506607921
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09370681662901932,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.7922528,
+      "visible_ring_diameters_m": [
+        0.08788940713569053,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.4977758920573122,
+      "centers_base_m": [
+        [
+          1.2310742292846326,
+          0.3797301050689973
+        ],
+        [
+          1.2898041982303914,
+          -0.11456902446805058
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6847742292846325,
+          0.3797301050689973
+        ],
+        [
+          0.7435041982303914,
+          -0.11456902446805058
+        ]
+      ],
+      "confidences": [
+        0.8310460098541564,
+        0.8344598369685008
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.0990027680761034,
+        0.09897736874577111
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.8975184,
+      "visible_ring_diameters_m": [
+        0.09285658081256773,
+        0.09283275829714296
+      ]
+    },
+    {
+      "center_distance_m": 0.4982696573019744,
+      "centers_base_m": [
+        [
+          1.2391554983247124,
+          0.3796748208235675
+        ],
+        [
+          1.2885166677130382,
+          -0.11614382177112564
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6928554983247125,
+          0.3796748208235675
+        ],
+        [
+          0.7422166677130382,
+          -0.11614382177112564
+        ]
+      ],
+      "confidences": [
+        0.7534671999152577,
+        0.7288723698297093
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.11112400684124274,
+        0.08466237441610851
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256410.9962995,
+      "visible_ring_diameters_m": [
+        0.1042253213924108,
+        0.07940645261261932
+      ]
+    },
+    {
+      "center_distance_m": 0.49799581613306443,
+      "centers_base_m": [
+        [
+          1.2359694820363678,
+          0.38023007435288625
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6896694820363678,
+          0.38023007435288625
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.7966507760380104,
+        0.7945244583530998
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10071710634901458,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.098884,
+      "visible_ring_diameters_m": [
+        0.094464491313174,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.49921193645536865,
+      "centers_base_m": [
+        [
+          1.227491736296134,
+          0.37988593601365916
+        ],
+        [
+          1.290503665588946,
+          -0.11533326218681114
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6811917362961338,
+          0.37988593601365916
+        ],
+        [
+          0.744203665588946,
+          -0.11533326218681114
+        ]
+      ],
+      "confidences": [
+        0.7575535766601209,
+        0.7953443394792161
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09696651445239944,
+        0.09421226544532982
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.1962733,
+      "visible_ring_diameters_m": [
+        0.09094673977641603,
+        0.08836347720232013
+      ]
+    },
+    {
+      "center_distance_m": 0.4985048059831608,
+      "centers_base_m": [
+        [
+          1.2328209200916742,
+          0.3789879201626758
+        ],
+        [
+          1.291550948964383,
+          -0.11604523559249139
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6865209200916743,
+          0.3789879201626758
+        ],
+        [
+          0.7452509489643832,
+          -0.11604523559249139
+        ]
+      ],
+      "confidences": [
+        0.831819144670292,
+        0.8047749080851969
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09240660964194561,
+        0.09902217739773458
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.3004558,
+      "visible_ring_diameters_m": [
+        0.08666991825154673,
+        0.09287478518480484
+      ]
+    },
+    {
+      "center_distance_m": 0.49897723666046334,
+      "centers_base_m": [
+        [
+          1.2291335549409523,
+          0.379636085320327
+        ],
+        [
+          1.2902651563285752,
+          -0.11558226047988342
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6828335549409523,
+          0.379636085320327
+        ],
+        [
+          0.7439651563285753,
+          -0.11558226047988342
+        ]
+      ],
+      "confidences": [
+        0.7609747712089994,
+        0.7828833805161644
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09292561637538904,
+        0.09290532438590642
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.432363,
+      "visible_ring_diameters_m": [
+        0.08715670454674618,
+        0.08713767230352856
+      ]
+    },
+    {
+      "center_distance_m": 0.4958408042350561,
+      "centers_base_m": [
+        [
+          1.2330836997667312,
+          0.37883727668245293
+        ],
+        [
+          1.2867762692357296,
+          -0.11408788105275952
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6867836997667311,
+          0.37883727668245293
+        ],
+        [
+          0.7404762692357296,
+          -0.11408788105275952
+        ]
+      ],
+      "confidences": [
+        0.8068865424790486,
+        0.7972240399472992
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10181398366400851,
+        0.09456339184521101
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.5684369,
+      "visible_ring_diameters_m": [
+        0.09549327342725501,
+        0.08869280533687218
+      ]
+    },
+    {
+      "center_distance_m": 0.4986812878837643,
+      "centers_base_m": [
+        [
+          1.236016824326743,
+          0.3795126699398356
+        ],
+        [
+          1.2905190068881056,
+          -0.11618132738256258
+        ]
+      ],
+      "centers_m": [
+        [
+          0.689716824326743,
+          0.3795126699398356
+        ],
+        [
+          0.7442190068881056,
+          -0.11618132738256258
+        ]
+      ],
+      "confidences": [
+        0.7740512785378311,
+        0.7454211352744516
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10170907893191844,
+        0.09419088962984229
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.7044945,
+      "visible_ring_diameters_m": [
+        0.09539488128204293,
+        0.08834342841806062
+      ]
+    },
+    {
+      "center_distance_m": 0.49940708568615827,
+      "centers_base_m": [
+        [
+          1.2356527681064535,
+          0.3788292397657165
+        ],
+        [
+          1.2930826218753921,
+          -0.11726475246722741
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6893527681064534,
+          0.3788292397657165
+        ],
+        [
+          0.7467826218753922,
+          -0.11726475246722741
+        ]
+      ],
+      "confidences": [
+        0.789599595756584,
+        0.7763590034496616
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09980972699805069,
+        0.09768782257292832
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.804404,
+      "visible_ring_diameters_m": [
+        0.0936134429468731,
+        0.09162326839360747
+      ]
+    },
+    {
+      "center_distance_m": 0.5023476919186566,
+      "centers_base_m": [
+        [
+          1.2318438111745023,
+          0.3804127924371757
+        ],
+        [
+          1.2947783148481187,
+          -0.11797706683301162
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6855438111745021,
+          0.3804127924371757
+        ],
+        [
+          0.7484783148481187,
+          -0.11797706683301162
+        ]
+      ],
+      "confidences": [
+        0.8375708736606077,
+        0.7336936246530461
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09547480505474379,
+        0.10458181935938533
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256411.9042604,
+      "visible_ring_diameters_m": [
+        0.08954763713591407,
+        0.09808927921495281
+      ]
+    },
+    {
+      "center_distance_m": 0.49850567173596716,
+      "centers_base_m": [
+        [
+          1.239140876148951,
+          0.38025828880149
+        ],
+        [
+          1.2931287056998206,
+          -0.11531533742705946
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6928408761489511,
+          0.38025828880149
+        ],
+        [
+          0.7468287056998207,
+          -0.11531533742705946
+        ]
+      ],
+      "confidences": [
+        0.7292229965314991,
+        0.7356312640378067
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.11257090850228461,
+        0.10275637817983188
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256412.0405796,
+      "visible_ring_diameters_m": [
+        0.10558239800377478,
+        0.0963771631832324
+      ]
+    },
+    {
+      "center_distance_m": 0.4968368410639311,
+      "centers_base_m": [
+        [
+          1.2272990112254423,
+          0.3780685577737545
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6809990112254423,
+          0.3780685577737545
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.7946735402709252,
+        0.8080244583530999
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10085953509047411,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256412.140668,
+      "visible_ring_diameters_m": [
+        0.0945980779410873,
+        0.09090611352317182
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256412.240862
+    },
+    {
+      "center_distance_m": 0.49778377078966635,
+      "centers_base_m": [
+        [
+          1.236016824326743,
+          0.3795126699398356
+        ],
+        [
+          1.2912936825687118,
+          -0.11519244566387062
+        ]
+      ],
+      "centers_m": [
+        [
+          0.689716824326743,
+          0.3795126699398356
+        ],
+        [
+          0.7449936825687119,
+          -0.11519244566387062
+        ]
+      ],
+      "confidences": [
+        0.7527191107056633,
+        0.827412490644602
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10170907893191844,
+        0.09534398800076656
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256412.3763764,
+      "visible_ring_diameters_m": [
+        0.09539488128204293,
+        0.08942494133073253
+      ]
+    },
+    {
+      "center_distance_m": 0.49665508329058233,
+      "centers_base_m": [
+        [
+          1.2351629851453956,
+          0.37895597950722154
+        ],
+        [
+          1.2883329916117727,
+          -0.11484481248357781
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6888629851453956,
+          0.37895597950722154
+        ],
+        [
+          0.7420329916117727,
+          -0.11484481248357781
+        ]
+      ],
+      "confidences": [
+        0.8020274787950429,
+        0.7845012404345125
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10031752432940794,
+        0.09656521443155981
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256412.4763432,
+      "visible_ring_diameters_m": [
+        0.09408971573047178,
+        0.09057035284765323
+      ]
+    },
+    {
+      "center_distance_m": 0.49812864741289126,
+      "centers_base_m": [
+        [
+          1.235954680079757,
+          0.38014189963456974
+        ],
+        [
+          1.2844539800754564,
+          -0.11562010705142432
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6896546800797569,
+          0.38014189963456974
+        ],
+        [
+          0.7381539800754563,
+          -0.11562010705142432
+        ]
+      ],
+      "confidences": [
+        0.837992767833839,
+        0.7875333207627586
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09821182870105691,
+        0.09224200455420939
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256412.5763495,
+      "visible_ring_diameters_m": [
+        0.09211474371625147,
+        0.08651553200630771
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256412.6804798
+    },
+    {
+      "center_distance_m": 0.4948792659660008,
+      "centers_base_m": [
+        [
+          1.2328966078293246,
+          0.37971522459588825
+        ],
+        [
+          1.284079196931145,
+          -0.11251016123450755
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6865966078293246,
+          0.37971522459588825
+        ],
+        [
+          0.737779196931145,
+          -0.11251016123450755
+        ]
+      ],
+      "confidences": [
+        0.8098029898442992,
+        0.7813304809879993
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1047286865238424,
+        0.0855830321965714
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256412.8125503,
+      "visible_ring_diameters_m": [
+        0.0982270287242861,
+        0.08026995507071782
+      ]
+    },
+    {
+      "center_distance_m": 0.49691080580432484,
+      "centers_base_m": [
+        [
+          1.2362429886354462,
+          0.3795226552000234
+        ],
+        [
+          1.286580547817546,
+          -0.11483195341679943
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6899429886354462,
+          0.3795226552000234
+        ],
+        [
+          0.740280547817546,
+          -0.11483195341679943
+        ]
+      ],
+      "confidences": [
+        0.7789925011833834,
+        0.7755399074373942
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.0999173458974977,
+        0.09082414209118309
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256412.9124575,
+      "visible_ring_diameters_m": [
+        0.09371438076131663,
+        0.08518569181155777
+      ]
+    },
+    {
+      "center_distance_m": 0.4997261561635163,
+      "centers_base_m": [
+        [
+          1.2295478898721592,
+          0.3791324628924669
+        ],
+        [
+          1.2907582951988243,
+          -0.11683075896345707
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6832478898721592,
+          0.3791324628924669
+        ],
+        [
+          0.7444582951988243,
+          -0.11683075896345707
+        ]
+      ],
+      "confidences": [
+        0.8390432006723331,
+        0.7519245721819356
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1003718578137587,
+        0.09680467470536426
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.0164614,
+      "visible_ring_diameters_m": [
+        0.09414067613974607,
+        0.09079494719686203
+      ]
+    },
+    {
+      "center_distance_m": 0.4991089423111871,
+      "centers_base_m": [
+        [
+          1.2364577068967297,
+          0.37962254433334064
+        ],
+        [
+          1.2886629493976023,
+          -0.11674863628698605
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6901577068967298,
+          0.37962254433334064
+        ],
+        [
+          0.7423629493976023,
+          -0.11674863628698605
+        ]
+      ],
+      "confidences": [
+        0.7876073513879731,
+        0.7984394973872575
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10150362294617225,
+        0.10438566317564942
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.1163526,
+      "visible_ring_diameters_m": [
+        0.09520218020191554,
+        0.09790530059616351
+      ]
+    },
+    {
+      "center_distance_m": 0.49976121724154765,
+      "centers_base_m": [
+        [
+          1.2247910084476088,
+          0.3807037288230365
+        ],
+        [
+          1.2854099347793344,
+          -0.11536745561438093
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6784910084476088,
+          0.3807037288230365
+        ],
+        [
+          0.7391099347793343,
+          -0.11536745561438093
+        ]
+      ],
+      "confidences": [
+        0.7876925476289823,
+        0.7602323251094021
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09101302149478879,
+        0.09154386363311845
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.2161372,
+      "visible_ring_diameters_m": [
+        0.0853628453997409,
+        0.08586073234648398
+      ]
+    },
+    {
+      "center_distance_m": 0.499490883864382,
+      "centers_base_m": [
+        [
+          1.2351192983989607,
+          0.3801822181668645
+        ],
+        [
+          1.29165066740892,
+          -0.11609930212326412
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6888192983989608,
+          0.3801822181668645
+        ],
+        [
+          0.7453506674089201,
+          -0.11609930212326412
+        ]
+      ],
+      "confidences": [
+        0.7896547626970505,
+        0.7676080673692737
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09641435164165969,
+        0.09867013203030493
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.3161922,
+      "visible_ring_diameters_m": [
+        0.09042885576515548,
+        0.09254459513309544
+      ]
+    },
+    {
+      "center_distance_m": 0.4984358027440077,
+      "centers_base_m": [
+        [
+          1.2318877975556861,
+          0.3796230801277897
+        ],
+        [
+          1.2906229202191315,
+          -0.11533998397171802
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6855877975556861,
+          0.3796230801277897
+        ],
+        [
+          0.7443229202191315,
+          -0.11533998397171802
+        ]
+      ],
+      "confidences": [
+        0.8142362693861422,
+        0.7908368690443947
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09836302556654569,
+        0.09642039905087461
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.4202306,
+      "visible_ring_diameters_m": [
+        0.09225655413460336,
+        0.09043452774537769
+      ]
+    },
+    {
+      "center_distance_m": 0.4981159933293152,
+      "centers_base_m": [
+        [
+          1.229157525720889,
+          0.3798815157094541
+        ],
+        [
+          1.2897081952567446,
+          -0.11454052994507576
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6828575257208891,
+          0.3798815157094541
+        ],
+        [
+          0.7434081952567446,
+          -0.11454052994507576
+        ]
+      ],
+      "confidences": [
+        0.8480850445371051,
+        0.8052918638620838
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1047081227642425,
+        0.09869533721435517
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.5207582,
+      "visible_ring_diameters_m": [
+        0.09820774158270204,
+        0.09256823555502645
+      ]
+    },
+    {
+      "center_distance_m": 0.49771350530531305,
+      "centers_base_m": [
+        [
+          1.2359456311103307,
+          0.37911992043149934
+        ],
+        [
+          1.289909010465665,
+          -0.11565951229772627
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6896456311103307,
+          0.37911992043149934
+        ],
+        [
+          0.7436090104656649,
+          -0.11565951229772627
+        ]
+      ],
+      "confidences": [
+        0.7802505849586748,
+        0.7421328131160267
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09907859764143286,
+        0.09393170640597334
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.6201508,
+      "visible_ring_diameters_m": [
+        0.09292770280539507,
+        0.0881003355385368
+      ]
+    },
+    {
+      "center_distance_m": 0.4978907938028369,
+      "centers_base_m": [
+        [
+          1.2320893918149542,
+          0.3794899352071886
+        ],
+        [
+          1.2889133841209914,
+          -0.11514758505590514
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6857893918149542,
+          0.3794899352071886
+        ],
+        [
+          0.7426133841209915,
+          -0.11514758505590514
+        ]
+      ],
+      "confidences": [
+        0.8103847346861619,
+        0.8091025279590447
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1025419707780464,
+        0.09337392064149705
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.720396,
+      "visible_ring_diameters_m": [
+        0.09617606639960104,
+        0.08757717765192721
+      ]
+    },
+    {
+      "center_distance_m": 0.500639115160598,
+      "centers_base_m": [
+        [
+          1.2311258863153962,
+          0.3809263879480769
+        ],
+        [
+          1.2906278941559683,
+          -0.1161641819601914
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6848258863153962,
+          0.3809263879480769
+        ],
+        [
+          0.7443278941559683,
+          -0.1161641819601914
+        ]
+      ],
+      "confidences": [
+        0.8288635964094604,
+        0.758207128042336
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09895934819823284,
+        0.09927312062250841
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.824388,
+      "visible_ring_diameters_m": [
+        0.09281585648256453,
+        0.09311014961231928
+      ]
+    },
+    {
+      "center_distance_m": 0.49797907269119757,
+      "centers_base_m": [
+        [
+          1.2268320005053241,
+          0.3781803074478314
+        ],
+        [
+          1.2850563058483173,
+          -0.11638322447270041
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6805320005053243,
+          0.3781803074478314
+        ],
+        [
+          0.7387563058483173,
+          -0.11638322447270041
+        ]
+      ],
+      "confidences": [
+        0.8534364064836566,
+        0.7604306577855164
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09889792655499212,
+        0.09192664357489966
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256413.9245236,
+      "visible_ring_diameters_m": [
+        0.09275824795413594,
+        0.08621974894054642
+      ]
+    },
+    {
+      "center_distance_m": 0.4964092007870145,
+      "centers_base_m": [
+        [
+          1.231837818479518,
+          0.38057849904770613
+        ],
+        [
+          1.283388658688117,
+          -0.11314673374862366
+        ]
+      ],
+      "centers_m": [
+        [
+          0.685537818479518,
+          0.38057849904770613
+        ],
+        [
+          0.7370886586881168,
+          -0.11314673374862366
+        ]
+      ],
+      "confidences": [
+        0.8141998039672064,
+        0.765070348365566
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09550911643262244,
+        0.09514487906588316
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.0245976,
+      "visible_ring_diameters_m": [
+        0.08957981843038385,
+        0.08923819327043293
+      ]
+    },
+    {
+      "center_distance_m": 0.4999137454865276,
+      "centers_base_m": [
+        [
+          1.2334140770412096,
+          0.37997441516063996
+        ],
+        [
+          1.2880036930223915,
+          -0.11694985145691593
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6871140770412095,
+          0.37997441516063996
+        ],
+        [
+          0.7417036930223915,
+          -0.11694985145691593
+        ]
+      ],
+      "confidences": [
+        0.8155692101029604,
+        0.7565841164768368
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10122217186229275,
+        0.08803551197619407
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.1244204,
+      "visible_ring_diameters_m": [
+        0.09493820187259294,
+        0.0825701825418595
+      ]
+    },
+    {
+      "center_distance_m": 0.49917280227334243,
+      "centers_base_m": [
+        [
+          1.2347258180462988,
+          0.3810670583452586
+        ],
+        [
+          1.2890830972429437,
+          -0.11513730754419968
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6884258180462989,
+          0.3810670583452586
+        ],
+        [
+          0.7427830972429438,
+          -0.11513730754419968
+        ]
+      ],
+      "confidences": [
+        0.8159083381347623,
+        0.8134109313828641
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10417997927288268,
+        0.09738872544049242
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.2601361,
+      "visible_ring_diameters_m": [
+        0.09771238574832389,
+        0.09134273949943057
+      ]
+    },
+    {
+      "center_distance_m": 0.4952979384434729,
+      "centers_base_m": [
+        [
+          1.2304260593951426,
+          0.37911522005292314
+        ],
+        [
+          1.2826679172623683,
+          -0.11341989150049168
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6841260593951425,
+          0.37911522005292314
+        ],
+        [
+          0.7363679172623683,
+          -0.11341989150049168
+        ]
+      ],
+      "confidences": [
+        0.8303135735149808,
+        0.7777461567474343
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09669047542634082,
+        0.09406962197867727
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.3601005,
+      "visible_ring_diameters_m": [
+        0.09068783751914852,
+        0.08822968917956074
+      ]
+    },
+    {
+      "center_distance_m": 0.4945633193239323,
+      "centers_base_m": [
+        [
+          1.2344530904975684,
+          0.3797786431752271
+        ],
+        [
+          1.281839007692155,
+          -0.11250933318854076
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6881530904975683,
+          0.3797786431752271
+        ],
+        [
+          0.7355390076921551,
+          -0.11250933318854076
+        ]
+      ],
+      "confidences": [
+        0.8096909958816402,
+        0.8358993961692807
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09990888287554303,
+        0.08562663489542525
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.4282415,
+      "visible_ring_diameters_m": [
+        0.09370644313192178,
+        0.08031085087200145
+      ]
+    },
+    {
+      "center_distance_m": 0.4994617502220403,
+      "centers_base_m": [
+        [
+          1.2280953205349414,
+          0.3797256117019128
+        ],
+        [
+          1.2916022464334478,
+          -0.11568221049893355
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6817953205349414,
+          0.3797256117019128
+        ],
+        [
+          0.7453022464334478,
+          -0.11568221049893355
+        ]
+      ],
+      "confidences": [
+        0.8662681431544169,
+        0.7453455666904149
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.0907791058573363,
+        0.10151054891404288
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.5642416,
+      "visible_ring_diameters_m": [
+        0.08514345147051526,
+        0.09520867619902533
+      ]
+    },
+    {
+      "center_distance_m": 0.4977992587144537,
+      "centers_base_m": [
+        [
+          1.2348215213851965,
+          0.37939323648627277
+        ],
+        [
+          1.2912936825687118,
+          -0.11519244566387062
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6885215213851964,
+          0.37939323648627277
+        ],
+        [
+          0.7449936825687119,
+          -0.11519244566387062
+        ]
+      ],
+      "confidences": [
+        0.8278596551335786,
+        0.8031432598753712
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09811265605796717,
+        0.09534398800076656
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.696147,
+      "visible_ring_diameters_m": [
+        0.09202172780642985,
+        0.08942494133073253
+      ]
+    },
+    {
+      "center_distance_m": 0.4985499975967132,
+      "centers_base_m": [
+        [
+          1.2314738221861783,
+          0.3802918733717312
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6851738221861783,
+          0.3802918733717312
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.8466527295211053,
+        0.8107167660454074
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09998281074269197,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.8002224,
+      "visible_ring_diameters_m": [
+        0.09377578148582456,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.4951391272234415,
+      "centers_base_m": [
+        [
+          1.2362581501537564,
+          0.3795933313587182
+        ],
+        [
+          1.2806743873489275,
+          -0.11354960246575996
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6899581501537563,
+          0.3795933313587182
+        ],
+        [
+          0.7343743873489276,
+          -0.11354960246575996
+        ]
+      ],
+      "confidences": [
+        0.7921059491386657,
+        0.727778822744536
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10062041507831913,
+        0.0913263987254237
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256414.8683617,
+      "visible_ring_diameters_m": [
+        0.09437380272975682,
+        0.08565676786985708
+      ]
+    },
+    {
+      "center_distance_m": 0.4999042642138864,
+      "centers_base_m": [
+        [
+          1.2319292070780268,
+          0.38013007562524986
+        ],
+        [
+          1.292314777867068,
+          -0.11611367115621724
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6856292070780269,
+          0.38013007562524986
+        ],
+        [
+          0.746014777867068,
+          -0.11611367115621724
+        ]
+      ],
+      "confidences": [
+        0.8133919757386213,
+        0.7519941237840515
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09967223823832846,
+        0.08923468640520714
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.0364058,
+      "visible_ring_diameters_m": [
+        0.09348448962186957,
+        0.0836949110665248
+      ]
+    },
+    {
+      "center_distance_m": 0.501965962145281,
+      "centers_base_m": [
+        [
+          1.2338514838481056,
+          0.38021610716577
+        ],
+        [
+          1.298425768650246,
+          -0.11757902026591723
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6875514838481055,
+          0.38021610716577
+        ],
+        [
+          0.752125768650246,
+          -0.11757902026591723
+        ]
+      ],
+      "confidences": [
+        0.805417478418282,
+        0.7062095955658648
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10189972423007652,
+        0.10720301340347523
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.1364667,
+      "visible_ring_diameters_m": [
+        0.09557369113634259,
+        0.1005477470064125
+      ]
+    },
+    {
+      "center_distance_m": 0.4987445844009097,
+      "centers_base_m": [
+        [
+          1.2320916091120986,
+          0.37873179823885983
+        ],
+        [
+          1.2916594766705467,
+          -0.1164427463651367
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6857916091120985,
+          0.37873179823885983
+        ],
+        [
+          0.7453594766705468,
+          -0.1164427463651367
+        ]
+      ],
+      "confidences": [
+        0.8037843545812144,
+        0.7556783868884868
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09679168829101993,
+        0.09132610847860752
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.2378628,
+      "visible_ring_diameters_m": [
+        0.09078276699163683,
+        0.08565649564184301
+      ]
+    },
+    {
+      "center_distance_m": 0.49733292981958155,
+      "centers_base_m": [
+        [
+          1.2323350323823563,
+          0.3785471196339726
+        ],
+        [
+          1.2889293246896494,
+          -0.11555522721449704
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6860350323823562,
+          0.3785471196339726
+        ],
+        [
+          0.7426293246896495,
+          -0.11555522721449704
+        ]
+      ],
+      "confidences": [
+        0.805145609490286,
+        0.7346082654649339
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09731497297820185,
+        0.09035287275821219
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.373251,
+      "visible_ring_diameters_m": [
+        0.0912735656610835,
+        0.08474367933299902
+      ]
+    },
+    {
+      "center_distance_m": 0.4964132462039103,
+      "centers_base_m": [
+        [
+          1.2342696541041023,
+          0.37872807203200926
+        ],
+        [
+          1.2898041982303914,
+          -0.11456902446805058
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6879696541041023,
+          0.37872807203200926
+        ],
+        [
+          0.7435041982303914,
+          -0.11456902446805058
+        ]
+      ],
+      "confidences": [
+        0.7980563453672002,
+        0.788793170301834
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09639796629790956,
+        0.09897736874577111
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.5407174,
+      "visible_ring_diameters_m": [
+        0.09041348763933797,
+        0.09283275829714296
+      ]
+    },
+    {
+      "center_distance_m": 0.4979148023213833,
+      "centers_base_m": [
+        [
+          1.238682315128761,
+          0.38042800169324215
+        ],
+        [
+          1.2883358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6923823151287609,
+          0.38042800169324215
+        ],
+        [
+          0.7420358081784153,
+          -0.11500482018951334
+        ]
+      ],
+      "confidences": [
+        0.7725557815019409,
+        0.783755227583869
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10371498917942744,
+        0.09692319914299928
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.6404169,
+      "visible_ring_diameters_m": [
+        0.09727626268803954,
+        0.09090611352317182
+      ]
+    },
+    {
+      "center_distance_m": 0.5011177669420377,
+      "centers_base_m": [
+        [
+          1.2278424887335584,
+          0.3810850805221829
+        ],
+        [
+          1.2919268107937916,
+          -0.11591815489088232
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6815424887335584,
+          0.3810850805221829
+        ],
+        [
+          0.7456268107937916,
+          -0.11591815489088232
+        ]
+      ],
+      "confidences": [
+        0.7704363200530061,
+        0.744324647562039
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.08957856910638098,
+        0.08821507139598615
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.776509,
+      "visible_ring_diameters_m": [
+        0.08401744519816692,
+        0.08273859473980698
+      ]
+    },
+    {
+      "center_distance_m": 0.49872916670081585,
+      "centers_base_m": [
+        [
+          1.2352299235483688,
+          0.380256303926599
+        ],
+        [
+          1.2899663605566636,
+          -0.11546005063690253
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6889299235483689,
+          0.380256303926599
+        ],
+        [
+          0.7436663605566636,
+          -0.11546005063690253
+        ]
+      ],
+      "confidences": [
+        0.8151822535320654,
+        0.7694476217936154
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09807608266431925,
+        0.10455915864406136
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.8442006,
+      "visible_ring_diameters_m": [
+        0.09198742492430996,
+        0.09806802529867713
+      ]
+    },
+    {
+      "center_distance_m": 0.5001808409519782,
+      "centers_base_m": [
+        [
+          1.2325044458695593,
+          0.3812614664902556
+        ],
+        [
+          1.290863107434098,
+          -0.11550320644434814
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6862044458695593,
+          0.3812614664902556
+        ],
+        [
+          0.7445631074340978,
+          -0.11550320644434814
+        ]
+      ],
+      "confidences": [
+        0.8729112964545362,
+        0.7914192424028339
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09650800661361084,
+        0.09070790338811781
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256415.9443455,
+      "visible_ring_diameters_m": [
+        0.09051669654618087,
+        0.0850766693192126
+      ]
+    },
+    {
+      "center_distance_m": 0.49878035474566307,
+      "centers_base_m": [
+        [
+          1.234049961905982,
+          0.38015253028352575
+        ],
+        [
+          1.286590136129521,
+          -0.11585288538526478
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6877499619059819,
+          0.38015253028352575
+        ],
+        [
+          0.7402901361295208,
+          -0.11585288538526478
+        ]
+      ],
+      "confidences": [
+        0.8304837046225944,
+        0.7786985207472737
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1003805403872471,
+        0.08934515269271726
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256416.0442283,
+      "visible_ring_diameters_m": [
+        0.09414881969070382,
+        0.08379851950043608
+      ]
+    },
+    {
+      "center_distance_m": 0.4991814463962157,
+      "centers_base_m": [
+        [
+          1.230929625554664,
+          0.38014411587524555
+        ],
+        [
+          1.2875742564998243,
+          -0.11581304176168632
+        ]
+      ],
+      "centers_m": [
+        [
+          0.684629625554664,
+          0.38014411587524555
+        ],
+        [
+          0.7412742564998244,
+          -0.11581304176168632
+        ]
+      ],
+      "confidences": [
+        0.8698613428734498,
+        0.7842583564881934
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1001224290780703,
+        0.09959838985392484
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256416.1443663,
+      "visible_ring_diameters_m": [
+        0.09390673218037493,
+        0.09341522581634668
+      ]
+    },
+    {
+      "center_distance_m": 0.49852955810267807,
+      "centers_base_m": [
+        [
+          1.2312510137866661,
+          0.3793915803943392
+        ],
+        [
+          1.292853041730548,
+          -0.115317334479097
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6849510137866661,
+          0.3793915803943392
+        ],
+        [
+          0.7465530417305479,
+          -0.115317334479097
+        ]
+      ],
+      "confidences": [
+        0.809208815935734,
+        0.7441224484771511
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10450802847177605,
+        0.10332845775392326
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256416.2481859,
+      "visible_ring_diameters_m": [
+        0.09802006933676784,
+        0.09691372750597943
+      ]
+    },
+    {
+      "center_distance_m": 0.49694690270544434,
+      "centers_base_m": [
+        [
+          1.237739244719099,
+          0.37922692101841377
+        ],
+        [
+          1.2892009735532828,
+          -0.11504821953989038
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6914392447190989,
+          0.37922692101841377
+        ],
+        [
+          0.7429009735532828,
+          -0.11504821953989038
+        ]
+      ],
+      "confidences": [
+        0.7525444013741924,
+        0.8284901657421659
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.10640870053070457,
+        0.10115204373449614
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256416.3802776,
+      "visible_ring_diameters_m": [
+        0.09980274584236229,
+        0.09487242736656121
+      ]
+    },
+    {
+      "center_distance_m": 0.49551742558669365,
+      "centers_base_m": [
+        [
+          1.2386116013279476,
+          0.3804135595974096
+        ],
+        [
+          1.2836098490599834,
+          -0.1130564767382436
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6923116013279474,
+          0.3804135595974096
+        ],
+        [
+          0.7373098490599833,
+          -0.1130564767382436
+        ]
+      ],
+      "confidences": [
+        0.77481814484352,
+        0.7853446852664124
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.1061150142158012,
+        0.08024442579494107
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256416.5162175,
+      "visible_ring_diameters_m": [
+        0.09952729185695042,
+        0.07526277449998454
+      ]
+    },
+    {
+      "center_distance_m": 0.5020632501641228,
+      "centers_base_m": [
+        [
+          1.2258694538369637,
+          0.37910284807200756
+        ],
+        [
+          1.2944490761856873,
+          -0.11825451094047244
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6795694538369637,
+          0.37910284807200756
+        ],
+        [
+          0.7481490761856873,
+          -0.11825451094047244
+        ]
+      ],
+      "confidences": [
+        0.7675952682602062,
+        0.6964275680841601
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09390851668709438,
+        0.09334737812478272
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256416.6161842,
+      "visible_ring_diameters_m": [
+        0.08807858545975668,
+        0.08755228292023286
+      ]
+    },
+    {
+      "center_distance_m": 0.5011324041067091,
+      "centers_base_m": [
+        [
+          1.2339208792560226,
+          0.3797372774083273
+        ],
+        [
+          1.2929531197367838,
+          -0.11790604971421284
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6876208792560224,
+          0.3797372774083273
+        ],
+        [
+          0.7466531197367839,
+          -0.11790604971421284
+        ]
+      ],
+      "confidences": [
+        0.8178171071749731,
+        0.6967513506673831
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.09564431093904555,
+        0.09084487110810127
+      ],
+      "ratios": [
+        0.9379190361747147,
+        0.9379190361747147
+      ],
+      "raw_count": 2,
+      "stamp": 1786256416.7522762,
+      "visible_ring_diameters_m": [
+        0.08970661993154433,
+        0.08520513395112653
+      ]
+    }
+  ],
+  "mean_base_depth_m": [
+    1.2333321056230764,
+    1.2893142472267525
+  ],
+  "physical_diameter_m": [
+    {
+      "max": 0.11257090850228461,
+      "mean": 0.099553805301147,
+      "median": 0.09967223823832846,
+      "min": 0.08957856910638098,
+      "stdev": 0.004421184431995761
+    },
+    {
+      "max": 0.10720301340347523,
+      "mean": 0.09433496449287813,
+      "median": 0.09461169376676198,
+      "min": 0.08024442579494107,
+      "stdev": 0.005111236782913434
+    }
+  ],
+  "physical_diameter_mean_errors_m": [
+    -0.0004461946988530002,
+    -0.005665035507121871
+  ],
+  "physical_diameter_within_5mm_fraction": [
+    0.7938144329896907,
+    0.4845360824742268
+  ],
+  "physical_reference": {
+    "disc_center_distance_m": 0.5,
+    "disc_outer_diameter_m": 0.1
+  },
+  "raw_disk_count_histogram": {
+    "1": 3,
+    "2": 97
+  },
+  "safety": {
+    "cmd_vel_samples": [
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      }
+    ],
+    "enable_motion_param": false,
+    "max_abs_angular_z": 0.0,
+    "max_abs_linear_x": 0.0,
+    "navigation_gate_enable_motion_param": false,
+    "navigation_gate_status": {
+      "allowed": false,
+      "enabled": false,
+      "motion_capable": false,
+      "reason": "ready_competition_mode"
+    }
+  },
+  "two_disc_availability": 0.97,
+  "two_disc_frames": 97,
+  "visible_ring_to_physical_ratio": [
+    0.9379190361747147,
+    0.9379190361747147
+  ]
+}

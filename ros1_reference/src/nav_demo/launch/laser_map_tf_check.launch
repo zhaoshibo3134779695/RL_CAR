@@ -1,0 +1,33 @@
+<launch>
+    <arg name="map" default="727best_map.yaml" />
+    <arg name="rviz" default="true" />
+    <arg name="rviz_config" default="$(find nav_demo)/config/laser_map_tf_check.rviz" />
+    <arg name="laser_yaw" default="3.14159" />
+    <arg name="mesh_yaw" default="0.0" />
+    <arg name="robot_x" default="0.0" />
+    <arg name="robot_y" default="0.0" />
+    <arg name="robot_yaw" default="0.0" />
+
+    <!-- Map + robot + laser only. No AMCL, no move_base, no serial cmd bridge. -->
+    <include file="$(find nav_demo)/launch/nav03_map_server.launch">
+        <arg name="map" value="$(arg map)" />
+    </include>
+
+    <include file="$(find lslidar_driver)/launch/lslidar_serial.launch">
+        <arg name="laser_yaw" value="$(arg laser_yaw)" />
+    </include>
+
+    <include file="$(find mowen)/launch/display.launch">
+        <arg name="mesh_yaw" value="$(arg mesh_yaw)" />
+    </include>
+
+    <node pkg="nav_demo" type="manual_map_tf.py" name="manual_map_tf" output="screen">
+        <param name="global_frame" value="map" />
+        <param name="base_frame" value="base_footprint" />
+        <param name="x" value="$(arg robot_x)" />
+        <param name="y" value="$(arg robot_y)" />
+        <param name="yaw" value="$(arg robot_yaw)" />
+    </node>
+
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config)" />
+</launch>

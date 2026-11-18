@@ -1,0 +1,77 @@
+{
+  "generated_on": "2026-08-11",
+  "generation_script": "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/generate_report_figures.py",
+  "live_capture": {
+    "capture_bag": "/tmp/vision_report_capture_20260811.bag",
+    "capture_bag_sha256": "97b65a71f3b758af2026aa394c5888612b86677a58e7da9cbaee0fea82293e38",
+    "selected_image_stamp": 1786415060.899856,
+    "selected_raw_stamp": 1786415060.899856,
+    "config": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/current_car_recalibrated_640x480_20260809.yaml",
+    "config_sha256": "7f49a55d3272a4a500803137a776c1aca052e8a75c259209b24027a7564726ea",
+    "formal_motion_started": false,
+    "capture_nodes": [
+      "usb_cam",
+      "yellow_track_avoidance"
+    ],
+    "motion_enabled": false,
+    "planning_enabled": false
+  },
+  "live_selected_frame": {
+    "disc_count": 2,
+    "disc_confidences": [
+      0.9634146987508867,
+      0.9182220752128608
+    ],
+    "disc_estimated_diameters_m": [
+      0.10303048364171842,
+      0.1033427105927994
+    ],
+    "disc_base_centers_m": [
+      [
+        0.556206404224465,
+        -0.11799976503421893
+      ],
+      [
+        1.077472347943464,
+        0.307770536011396
+      ]
+    ],
+    "disc_center_distance_m": 0.6730516572550225,
+    "left_boundary_quality": 0.932694111410406,
+    "boundary_detection_mode": "left_only"
+  },
+  "stage1_bag": {
+    "path": "/home/mowen/Sebastian/stage1_global_teb_compact_standard_ekf_20260810_trial7.bag",
+    "sha256": "5988d4b978d9b9cd163dbf8fc66fa3f66656157aaef3fd47e065da13a808b903",
+    "duration_sec": 49.19176459312439,
+    "move_base_result": {
+      "time": 1786352859.3401046,
+      "status": 3,
+      "text": "Goal reached."
+    }
+  },
+  "reported_statistics": {
+    "scale_validation_source": "/home/mowen/Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480_20260809_repair/calibration_report.json",
+    "acquire_locked_source": "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/navigation/PERCEPTION_ACQUIRE_LOCKED_REPORT_20260810.md",
+    "disc_acceptance_source": "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/perception/DISC_DETECTION_ACCEPTANCE.md"
+  },
+  "generated_images": [
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig01_visual_avoidance_architecture.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig02_yellow_line_detection.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig03_disc_detection_geometry.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig04_perspective_to_metric_bev.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig05_scale_validation_500mm.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig06_navigation_world_model.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig07_stage1_s_curve_five_moments.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig08_acquire_locked_cpu_ab.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig09_disc_520frame_acceptance.png",
+    "/home/mowen/Sebastian/src/yellow_track_avoidance/docs/report_assets/vision_avoidance_20260811/fig10_visual_navigation_closed_loop.png"
+  ],
+  "truth_constraints": [
+    "No vehicle motion was started for the live image capture.",
+    "Figures 2-4 and 10 use a real synchronized RGB/debug frame from the current source and config.",
+    "Figures 6-7 use messages recorded in the successful Stage1 Trial 7 bag.",
+    "Figures 5, 8 and 9 use only values already present in checked project reports.",
+    "No missing camera sequence was synthesized for the five-moment S-curve figure."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "config_file": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/current_car_recalibrated_640x480_20260809.yaml",
+  "image_size": [
+    640,
+    480
+  ],
+  "source_points": [
+    [
+      -8.568447416497047,
+      350.748154643287
+    ],
+    [
+      761.4994984106639,
+      339.45363900007914
+    ],
+    [
+      432.6843963745467,
+      239.50768389157295
+    ],
+    [
+      210.07397001923934,
+      240.45447857639752
+    ]
+  ],
+  "only_runtime_config_change": "bev.source_points (8 numeric values)",
+  "six_position_angle_to_old_target_deg": 0.09219661756006559,
+  "six_position_pitch_delta_deg": 0.08292747082024299,
+  "six_position_roll_delta_deg": -0.040472201541902474,
+  "yesterday_angle_to_old_target_deg": 0.7861410565361814,
+  "config_validation": "passed_require_calibration_true",
+  "bev_generation": "passed_640x800"
+}

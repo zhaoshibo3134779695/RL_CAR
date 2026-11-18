@@ -1,0 +1,33 @@
+<launch>
+  <arg name="config"
+       default="$(find yellow_track_avoidance)/config/current_car_calibrated_640x480.yaml"/>
+  <arg name="image_topic" default="/usb_cam/image_raw"/>
+  <arg name="camera_info_topic" default="/usb_cam/camera_info"/>
+  <arg name="output_cmd_topic" default="/yellow_track_avoidance/cmd_vel"/>
+  <arg name="start_camera" default="false"/>
+  <arg name="video_device"
+       default="/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._Orbbec_DaBai_DCW2_RGB_Camera_CH8Z16501C1-video-index0"/>
+  <arg name="image_width" default="640"/>
+  <arg name="image_height" default="480"/>
+  <arg name="framerate" default="30"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/current_car_camera.launch">
+    <arg name="start_camera" value="$(arg start_camera)"/>
+    <arg name="video_device" value="$(arg video_device)"/>
+    <arg name="image_width" value="$(arg image_width)"/>
+    <arg name="image_height" value="$(arg image_height)"/>
+    <arg name="framerate" value="$(arg framerate)"/>
+  </include>
+
+  <node pkg="yellow_track_avoidance"
+        type="yellow_track_avoidance_node.py"
+        name="yellow_track_avoidance"
+        output="screen"
+        required="true">
+    <param name="config_file" value="$(arg config)"/>
+    <param name="image_topic" value="$(arg image_topic)"/>
+    <param name="camera_info_topic" value="$(arg camera_info_topic)"/>
+    <param name="output_cmd_topic" value="$(arg output_cmd_topic)"/>
+    <param name="enable_motion" value="false"/>
+  </node>
+</launch>

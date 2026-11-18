@@ -1,0 +1,55 @@
+<launch>
+  <!--
+    Test-only Stage-1 planner simulation.
+
+    The real camera and lidar acquire and freeze the current field geometry,
+    but the chassis serial consumer, wheel odometry and IMU are absent.  The
+    node named cmd_vel_listener is a software-only holonomic odometry
+    integrator, allowing the unchanged Stage-1 runner to exercise the complete
+    GlobalPlanner + TEB route in RViz without moving the vehicle.
+  -->
+  <arg name="start_rviz" default="true"/>
+  <arg name="start_perception_view" default="true"/>
+  <arg name="startup_timeout_sec" default="90.0"/>
+  <arg name="navigation_timeout_sec" default="120.0"/>
+  <arg name="stage1_teb_guard_config"
+       default="$(find yellow_track_avoidance)/config/competition_stage1_teb_guard_override.yaml"/>
+  <arg name="global_costmap_inflation_radius" default="0.24"/>
+  <arg name="global_costmap_cost_scaling_factor" default="20.0"/>
+  <arg name="teb_disc_collision_radius_m" default="0.09"/>
+  <arg name="local_disc_collision_radius_m" default="0.09"/>
+  <arg name="include_passage_closures_in_teb" default="false"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_stage1_auto.launch">
+    <arg name="enable_motion" value="true"/>
+    <arg name="use_shadow_odometry" value="true"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="start_perception_view" value="$(arg start_perception_view)"/>
+    <arg name="startup_timeout_sec" value="$(arg startup_timeout_sec)"/>
+    <arg name="navigation_timeout_sec" value="$(arg navigation_timeout_sec)"/>
+    <arg name="stage1_teb_guard_config"
+         value="$(arg stage1_teb_guard_config)"/>
+    <arg name="global_costmap_inflation_radius"
+         value="$(arg global_costmap_inflation_radius)"/>
+    <arg name="global_costmap_cost_scaling_factor"
+         value="$(arg global_costmap_cost_scaling_factor)"/>
+    <arg name="teb_disc_collision_radius_m"
+         value="$(arg teb_disc_collision_radius_m)"/>
+    <arg name="local_disc_collision_radius_m"
+         value="$(arg local_disc_collision_radius_m)"/>
+    <arg name="include_passage_closures_in_teb"
+         value="$(arg include_passage_closures_in_teb)"/>
+  </include>
+
+  <!-- Test-only geometry observer.  It never publishes control or map data;
+       it records the exact rectangle clearance of both the simulated pose and
+       TEB's predicted local path against the frozen Stage-1 scene. -->
+  <node pkg="yellow_track_avoidance" type="stage1_shadow_observer.py"
+        name="yellow_track_stage1_shadow_observer" output="screen"
+        required="true">
+    <param name="vehicle_half_length_m" value="0.17"/>
+    <param name="vehicle_half_width_m" value="0.165"/>
+    <param name="disc_collision_radius_m"
+           value="$(arg local_disc_collision_radius_m)"/>
+  </node>
+</launch>

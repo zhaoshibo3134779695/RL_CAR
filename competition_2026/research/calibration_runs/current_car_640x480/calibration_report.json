@@ -1,0 +1,212 @@
+{
+  "accepted": true,
+  "camera_ground_calibration_complete": true,
+  "navigation_motion_ready": false,
+  "motion_blocker": "base_link to nearest visible BEV section offset is not field-measured",
+  "camera": {
+    "device": "/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._Orbbec_DaBai_DCW2_RGB_Camera_CH8Z16501C1-video-index0",
+    "resolution": [
+      640,
+      480
+    ],
+    "pixel_format": "mjpeg",
+    "photometry": {
+      "auto_exposure": 1,
+      "exposure_dynamic_framerate": 0,
+      "exposure_time_absolute": 100,
+      "gain": 0,
+      "white_balance_automatic": 0,
+      "white_balance_temperature": 4600,
+      "white_balance_warmup_sec": 4.0,
+      "sharpness": 3
+    }
+  },
+  "intrinsics": {
+    "rms_px": 0.19305061528376685,
+    "accepted_views": 13,
+    "maximum_reprojection_error_px": 0.3263443112373352,
+    "camera_matrix": [
+      480.57484806180787,
+      0.0,
+      318.60292133424883,
+      0.0,
+      480.48775589659414,
+      243.14979394495168,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "distortion_coefficients": [
+      0.023638354669622053,
+      -0.13381957882198958,
+      -0.00041046343283492254,
+      -0.0006708471691467912,
+      0.1569722068752687
+    ]
+  },
+  "ground_constraints": {
+    "disc_diameter_m": 0.1,
+    "disc_edge_gap_m": 0.4,
+    "disc_center_distance_m": 0.5,
+    "yellow_lines": "straight and parallel"
+  },
+  "ground_fit": {
+    "timestamp_utc": "2026-08-03T15:35:19.891861+00:00",
+    "method": "intrinsics_plus_two_disc_and_parallel_lane_pose_fit",
+    "source_image": "/home/mowen/Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480/disc_scene_raw.png",
+    "disc_diameter_m": 0.1,
+    "disc_edge_gap_m": 0.4,
+    "disc_center_distance_m": 0.5,
+    "yellow_line_constraint": "straight_and_parallel",
+    "fitted_yellow_center_width_m": 0.9196409691685199,
+    "fitted_yellow_parallel_angle_deg": 0.17068881973427746,
+    "fitted_camera_height_m": 0.20504418759681164,
+    "near_ground_coordinate_m": -0.35,
+    "far_ground_coordinate_m": 1.2189853476431116,
+    "local_forward_origin_offset_verified": false,
+    "safety_valid_for_motion": false,
+    "boundary_profile_source": "config/calibrated.yaml 640x480 Orbbec profile",
+    "boundary_profile_revalidated_on_current_scene": true,
+    "left_profile_points_current_scene": {
+      "far_point": [
+        185.0,
+        268.0
+      ],
+      "near_point": [
+        0.0,
+        340.0
+      ]
+    },
+    "roi_polygon_normalized_current_scene": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.1,
+        0.5
+      ],
+      [
+        1.0,
+        0.5
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ]
+  },
+  "offline_validation": {
+    "both_boundaries": true,
+    "boundary_quality": 0.8201402030414741,
+    "disc_count": 2,
+    "center_distance_m": 0.4993469121155117,
+    "edge_gap_m": 0.40948037411736804,
+    "diameters_m": [
+      0.08811490417257273,
+      0.09161817182371457
+    ],
+    "stop_reason": "no_collision_free_candidate",
+    "command": {
+      "linear_x": 0.0,
+      "linear_y": 0.0,
+      "angular_z": 0.0
+    }
+  },
+  "live_validation": {
+    "status_frames": 100,
+    "disk_frames": 100,
+    "duration_s": 9.622544527053833,
+    "stop_reasons": {
+      "no_collision_free_candidate": 50,
+      "planning_disabled": 50
+    },
+    "both_boundaries_frames": 100,
+    "two_raw_discs_frames": 100,
+    "two_confirmed_discs_frames": 100,
+    "processing_time_ms": {
+      "median": 91.99555700001838,
+      "p95": 104.41529800027638,
+      "maximum": 125.60833299994556
+    },
+    "maximum_abs_output_command": 0.0,
+    "metric_frames": 100,
+    "photometry": {
+      "auto_exposure": 1,
+      "exposure_dynamic_framerate": 0,
+      "exposure_time_absolute": 100,
+      "gain": 0,
+      "white_balance_automatic": 0,
+      "white_balance_temperature": 4600,
+      "sharpness": 3
+    },
+    "center_distance_m": {
+      "mean": 0.5001932694841638,
+      "stdev": 0.0010593049141316207,
+      "minimum": 0.49730472344291554,
+      "maximum": 0.5022706488320728
+    },
+    "edge_gap_m": {
+      "mean": 0.41012615330262736,
+      "stdev": 0.0016025531571491195,
+      "minimum": 0.40528532048628385,
+      "maximum": 0.4125305305461171
+    },
+    "disc_1_diameter_m": {
+      "mean": 0.08885812072675166,
+      "stdev": 0.0017956159569723037,
+      "minimum": 0.08582501611429538,
+      "maximum": 0.09461560080632053
+    },
+    "disc_2_diameter_m": {
+      "mean": 0.09127611163632118,
+      "stdev": 0.0005072984486719401,
+      "minimum": 0.089874380080535,
+      "maximum": 0.09320699719963876
+    }
+  },
+  "cold_start_validation": {
+    "timestamp": "2026-08-03T23:59:05+08:00",
+    "white_balance_warmup_sec": 4.0,
+    "status_frames": 60,
+    "disk_frames": 60,
+    "both_boundaries_frames": 60,
+    "two_confirmed_discs_frames": 60,
+    "boundary_quality_mean": 0.795852,
+    "center_distance_m": {
+      "mean": 0.501108,
+      "minimum": 0.500799,
+      "maximum": 0.501558
+    },
+    "edge_gap_m": {
+      "mean": 0.415098,
+      "minimum": 0.414594,
+      "maximum": 0.416216
+    },
+    "maximum_abs_output_command": 0.0,
+    "camera_info_verified": true
+  },
+  "archive_parameter_tuning": {
+    "accepted": true,
+    "source_archive": "/home/mowen/Sebastian/src/yellow_track_avoidance_migration_20260731.zip",
+    "source_archive_sha256": "38971e1014dbee23ae61fe3dec3a4dcc361919317c75087c3c9c98c72f7099ba",
+    "source_profile": "config/calibrated.yaml",
+    "source_profile_sha256": "19c84f01656880a4f7a41c5faf40900ba6a7fbf7057910a099425f4aa1a22972",
+    "ab_frames_per_profile": 100,
+    "original_boundary_quality_mean": 0.8241055662830061,
+    "archive_boundary_quality_mean": 0.863373271284084,
+    "original_left_valid_sections_mean": 19.46,
+    "archive_left_valid_sections_mean": 22.65,
+    "archive_both_boundaries_frames": 100,
+    "archive_two_discs_frames": 100,
+    "maximum_abs_output_command": 0.0
+  },
+  "outputs": {
+    "config": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/current_car_calibrated_640x480.yaml",
+    "camera_info": "/home/mowen/Sebastian/src/yellow_track_avoidance/config/orbbec_640x480_camera_info.yaml",
+    "live_validation": "/home/mowen/Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480/live_validation.json",
+    "cold_start_validation": "/home/mowen/Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480/cold_start_validation.json",
+    "archive_parameter_audit": "/home/mowen/Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480/archive_parameter_audit/report.json",
+    "bev_preview": "/home/mowen/Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480/calibrated_scene/bev.png"
+  }
+}

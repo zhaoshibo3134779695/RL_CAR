@@ -1,0 +1,600 @@
+{
+  "captured_total_frames": 100,
+  "center_distance_m": {
+    "max": 0.4966762718803394,
+    "mean": 0.4966762718803394,
+    "median": 0.4966762718803394,
+    "min": 0.4966762718803394,
+    "stdev": 0.0
+  },
+  "center_distance_mean_error_m": -0.003323728119660585,
+  "center_distance_within_5mm_fraction": 1.0,
+  "confidence": [
+    {
+      "max": 0.7247956872717047,
+      "mean": 0.7247956872717047,
+      "median": 0.7247956872717047,
+      "min": 0.7247956872717047,
+      "stdev": 0.0
+    },
+    {
+      "max": 0.6560165650106923,
+      "mean": 0.6560165650106923,
+      "median": 0.6560165650106923,
+      "min": 0.6560165650106923,
+      "stdev": 0.0
+    }
+  ],
+  "diameter_method": [
+    "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+    "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+  ],
+  "frames": [
+    {
+      "raw_count": 0,
+      "stamp": 1786256562.665116
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256562.7689223
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256562.8691027
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256562.936873
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.0369415
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.1391702
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.2049985
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.304765
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.4048724
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.4728763
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.5727994
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.6407049
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.744644
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256563.8086727
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.8765473
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256563.9765913
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256564.0807352
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.1488595
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.2487102
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.3487773
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.416862
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.516897
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256564.6168401
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.6845675
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.7846663
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.8888881
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256564.952761
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.0205197
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.1248877
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.2245777
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.2925553
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.3565774
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.4607701
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.5285258
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.59249
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256565.7285616
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.7964861
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.8644962
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256565.9646015
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256566.0328455
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256566.1326396
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256566.2005548
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256566.300619
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256566.4004874
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256566.5047708
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256566.604962
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256566.7073379
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256566.8046153
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256566.908618
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256567.00868
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256567.0768917
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256567.1768458
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256567.2446783
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256567.377223
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256567.4447596
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256567.5449016
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256567.6486146
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256567.717223
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256567.8489175
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256567.9486544
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.0166543
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.1167119
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.184565
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.2885296
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.3886347
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.4565077
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.5205278
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.6245692
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.6924362
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256568.7563183
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256568.8603792
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256568.9244354
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.0286174
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.1285968
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.2286682
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.2966967
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256569.396462
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.464434
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.5645392
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.6687596
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256569.7687116
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.836417
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.900399
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256569.968978
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.104817
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.172589
+    },
+    {
+      "center_distance_m": 0.4966762718803394,
+      "centers_base_m": [
+        [
+          1.2278759279715703,
+          0.3773782596889696
+        ],
+        [
+          1.288331014022428,
+          -0.115605007389677
+        ]
+      ],
+      "centers_m": [
+        [
+          0.6815759279715702,
+          0.3773782596889696
+        ],
+        [
+          0.742031014022428,
+          -0.115605007389677
+        ]
+      ],
+      "confidences": [
+        0.7247956872717047,
+        0.6560165650106923
+      ],
+      "methods": [
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+        "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio"
+      ],
+      "physical_diameters_m": [
+        0.08157981812170803,
+        0.08007996014868386
+      ],
+      "ratios": [
+        0.922076,
+        0.922076
+      ],
+      "raw_count": 2,
+      "stamp": 1786256570.2723937,
+      "visible_forward_spans_m": [
+        0.08227994184072951,
+        0.07293984729227054
+      ],
+      "visible_lateral_spans_m": [
+        0.06877093451954641,
+        0.07475087548020952
+      ],
+      "visible_ring_diameters_m": [
+        0.07522279237439206,
+        0.07383980933405782
+      ]
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.3406522
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.4405005
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.5088172
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786256570.6085966
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.6764305
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.7447162
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.844634
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256570.9126596
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256571.0125427
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256571.112396
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256571.1804943
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256571.248506
+    },
+    {
+      "raw_count": 0,
+      "stamp": 1786256571.3486254
+    }
+  ],
+  "mean_base_depth_m": [
+    1.2278759279715703,
+    1.288331014022428
+  ],
+  "physical_diameter_m": [
+    {
+      "max": 0.08157981812170803,
+      "mean": 0.08157981812170803,
+      "median": 0.08157981812170803,
+      "min": 0.08157981812170803,
+      "stdev": 0.0
+    },
+    {
+      "max": 0.08007996014868386,
+      "mean": 0.08007996014868386,
+      "median": 0.08007996014868386,
+      "min": 0.08007996014868386,
+      "stdev": 0.0
+    }
+  ],
+  "physical_diameter_mean_errors_m": [
+    -0.018420181878291975,
+    -0.019920039851316143
+  ],
+  "physical_diameter_within_5mm_fraction": [
+    0.0,
+    0.0
+  ],
+  "physical_reference": {
+    "disc_center_distance_m": 0.5,
+    "disc_outer_diameter_m": 0.1
+  },
+  "raw_disk_count_histogram": {
+    "0": 80,
+    "1": 19,
+    "2": 1
+  },
+  "safety": {
+    "cmd_vel_samples": [
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      }
+    ],
+    "enable_motion_param": false,
+    "max_abs_angular_z": 0.0,
+    "max_abs_linear_x": 0.0,
+    "navigation_gate_enable_motion_param": false,
+    "navigation_gate_status": {
+      "allowed": false,
+      "enabled": false,
+      "motion_capable": false,
+      "reason": "ready_competition_mode"
+    }
+  },
+  "two_disc_availability": 0.01,
+  "two_disc_frames": 1,
+  "visible_ring_to_physical_ratio": [
+    0.922076,
+    0.922076
+  ]
+}

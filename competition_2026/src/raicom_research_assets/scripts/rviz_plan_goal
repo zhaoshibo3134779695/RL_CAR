@@ -1,0 +1,94 @@
+#!/usr/bin/python3
+from functools import partial
+
+import rclpy
+from action_msgs.msg import GoalStatus
+from geometry_msgs.msg import PoseStamped
+from nav2_msgs.action import ComputePathToPose
+from nav_msgs.msg import Path
+from rclpy.action import ActionClient
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import DurabilityPolicy, QoSProfile
+from visualization_msgs.msg import Marker
+
+
+class RvizPlanGoal(Node):
+    """Plan from the displayed vehicle pose whenever RViz publishes a new goal."""
+
+    def __init__(self):
+        super().__init__('rviz_plan_goal')
+        qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.paths = self.create_publisher(Path, '~/path', qos)
+        self.markers = self.create_publisher(Marker, '~/goal', qos)
+        self.planner = ActionClient(self, ComputePathToPose, 'compute_path_to_pose')
+        self.goal = None
+        self.pending = False
+        self.create_subscription(PoseStamped, 'goal_pose', self.set_goal, 10)
+        self.create_timer(0.15, self.dispatch)
+
+    def set_goal(self, pose):
+        self.goal = pose
+        self.pending = True
+        self.paths.publish(Path(header=pose.header))
+        self.mark_goal(pose, 'Planning')
+
+    def dispatch(self):
+        if not self.pending or not self.planner.server_is_ready():
+            return
+        pose = self.goal
+        self.pending = False
+        request = ComputePathToPose.Goal(goal=pose, planner_id='GridBased', use_start=False)
+        self.planner.send_goal_async(request).add_done_callback(partial(self.accepted, pose))
+
+    def accepted(self, pose, future):
+        if pose is not self.goal:
+            return
+        handle = future.result()
+        if handle is None or not handle.accepted:
+            self.mark_goal(pose, 'Goal rejected')
+            return
+        handle.get_result_async().add_done_callback(partial(self.finished, pose))
+
+    def finished(self, pose, future):
+        if pose is not self.goal:
+            return
+        outcome = future.result()
+        if outcome and outcome.status == GoalStatus.STATUS_SUCCEEDED and outcome.result.path.poses:
+            self.paths.publish(outcome.result.path)
+            self.mark_goal(pose, '')
+        else:
+            self.mark_goal(pose, 'No route')
+            if outcome:
+                self.get_logger().warning(f'Planning failed: {outcome.result.error_msg}')
+
+    def mark_goal(self, pose, message):
+        marker = Marker(header=pose.header, ns='clicked_goal', id=0)
+        marker.pose = pose.pose
+        marker.color.a = 1.0
+        if message:
+            marker.type = Marker.TEXT_VIEW_FACING
+            marker.text = message
+            marker.scale.z = 0.11
+            marker.color.r, marker.color.g = 0.9, 0.23
+        else:
+            marker.type = Marker.ARROW
+            marker.scale.x, marker.scale.y, marker.scale.z = 0.12, 0.035, 0.055
+            marker.color.r, marker.color.g = 0.85, 0.16
+        self.markers.publish(marker)
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = RvizPlanGoal()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.destroy_node()
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+
+
+if __name__ == '__main__':
+    main()

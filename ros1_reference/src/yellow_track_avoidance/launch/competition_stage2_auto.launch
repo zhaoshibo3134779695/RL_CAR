@@ -1,0 +1,36 @@
+<launch>
+  <!--
+    One-command Stage-2 entrypoint.  The runner waits for a stationary 40-scan
+    wall capture, a frozen three-wall map, a valid plan preview, fresh AMCL,
+    an initialized AMCL transform, and a single /cmd_vel authority chain before
+    it dispatches the goal.
+  -->
+  <arg name="enable_motion" default="false"/>
+  <arg name="start_rviz" default="true"/>
+  <arg name="front_clearance_m" default="0.20"/>
+  <arg name="stage2_laser_lateral_offset_m" default="0.0"/>
+  <arg name="startup_timeout_sec" default="35.0"/>
+  <arg name="navigation_timeout_sec" default="90.0"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_stage2_prepare.launch">
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="stage2_laser_lateral_offset_m"
+         value="$(arg stage2_laser_lateral_offset_m)"/>
+  </include>
+
+  <include file="$(find yellow_track_avoidance)/launch/competition_stage2_lidar_goal_capture.launch">
+    <arg name="front_clearance_m" value="$(arg front_clearance_m)"/>
+  </include>
+
+  <include if="$(arg enable_motion)"
+           file="$(find yellow_track_avoidance)/launch/competition_stage2_chassis_unlock.launch"/>
+
+  <node pkg="yellow_track_avoidance" type="stage2_auto_runner.py"
+        name="yellow_track_stage2_auto_runner" output="screen">
+    <param name="enable_motion" value="$(arg enable_motion)"/>
+    <param name="ready_stable_sec" value="0.50"/>
+    <param name="startup_timeout_sec" value="$(arg startup_timeout_sec)"/>
+    <param name="navigation_timeout_sec" value="$(arg navigation_timeout_sec)"/>
+    <param name="status_timeout_sec" value="2.0"/>
+  </node>
+</launch>

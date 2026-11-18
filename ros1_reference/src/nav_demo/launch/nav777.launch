@@ -1,0 +1,15 @@
+<launch>
+    <arg name="start_lidar" default="true" />
+    <arg name="start_move_base" default="true" />
+    <!-- Competition mode: use the user-drawn 727best map as the only map. -->
+    <include file="$(find nav_demo)/launch/navigation_odom_only.launch">
+        <arg name="start_lidar" value="$(arg start_lidar)" />
+        <arg name="start_move_base" value="$(arg start_move_base)" />
+        <arg name="localization_map" value="727best_map.yaml" />
+        <arg name="forbidden_map" value="727best_map.yaml" />
+        <arg name="global_costmap_resolution" value="0.005" />
+        <arg name="initial_pose_x" value="-2.206142425537" />
+        <arg name="initial_pose_y" value="1.518534635544" />
+        <arg name="initial_pose_a" value="-1.578953110544" />
+    </include>
+</launch>

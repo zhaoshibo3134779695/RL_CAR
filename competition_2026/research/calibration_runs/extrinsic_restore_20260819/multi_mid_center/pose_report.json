@@ -1,0 +1,251 @@
+{
+  "label": "multi_mid_center",
+  "timestamp_local": "2026-08-19",
+  "method": "rough_grid_rectification_then_classic_subpixel_inverse_mapping",
+  "prewarp_source_quad_px": [
+    [
+      252.0,
+      322.0
+    ],
+    [
+      371.0,
+      319.0
+    ],
+    [
+      383.0,
+      346.0
+    ],
+    [
+      249.0,
+      349.0
+    ]
+  ],
+  "target_normal_camera": [
+    -9.015736093250697e-05,
+    -0.9956418693589867,
+    -0.09325910063362533
+  ],
+  "close_center_normal_camera": [
+    -0.0001492892996294467,
+    -0.995937124789876,
+    -0.09005121419492426
+  ],
+  "current_normal_camera": [
+    -0.006547348332253243,
+    -0.9959440880107492,
+    -0.08973575533895695
+  ],
+  "current_height_m_median": 0.2033792993845055,
+  "height_std_mm": 0.19746167973689346,
+  "frames": 16,
+  "attempts": 19,
+  "reprojection_rms_mean_px": 0.26097710616886616,
+  "reprojection_rms_max_px": 0.33425989747047424,
+  "normal_spread_deg_p95": 0.03255711492546734,
+  "angle_to_target_deg": 0.42181858846315146,
+  "angle_to_close_center_deg": 0.36702793780634807,
+  "pitch_like_deg": {
+    "target": 5.351128782339556,
+    "current": 5.148516128469979,
+    "current_minus_target": -0.2026126538695765
+  },
+  "roll_like_deg": {
+    "target": -0.005188247318965411,
+    "current": -0.3766577129590217,
+    "current_minus_target": -0.3714694656400563
+  },
+  "samples": [
+    {
+      "normal": [
+        -0.006689529843525496,
+        -0.9959323708062406,
+        -0.08985523340759544
+      ],
+      "height_m": 0.20346766236998703,
+      "reprojection_rms_px": 0.26628610491752625,
+      "reprojection_max_px": 0.7287294864654541,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_00.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_00.png"
+    },
+    {
+      "normal": [
+        -0.006522917004132598,
+        -0.9959386539414569,
+        -0.08979782368763842
+      ],
+      "height_m": 0.20347121341281846,
+      "reprojection_rms_px": 0.25298193097114563,
+      "reprojection_max_px": 0.7465443015098572,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_01.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_01.png"
+    },
+    {
+      "normal": [
+        -0.006880761283501281,
+        -0.9959413721695097,
+        -0.0897409512166752
+      ],
+      "height_m": 0.2034005853908765,
+      "reprojection_rms_px": 0.26422396302223206,
+      "reprojection_max_px": 0.7467393279075623,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_02.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_02.png"
+    },
+    {
+      "normal": [
+        -0.006791427103630121,
+        -0.9959526850204731,
+        -0.08962212739277312
+      ],
+      "height_m": 0.20333828657837752,
+      "reprojection_rms_px": 0.2790181636810303,
+      "reprojection_max_px": 0.9366341233253479,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_03.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_03.png"
+    },
+    {
+      "normal": [
+        -0.006630363395446242,
+        -0.9959472475392969,
+        -0.08969458400674395
+      ],
+      "height_m": 0.20327856133330657,
+      "reprojection_rms_px": 0.2575753927230835,
+      "reprojection_max_px": 0.7372506260871887,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_04.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_04.png"
+    },
+    {
+      "normal": [
+        -0.006368167838961565,
+        -0.9959457267111206,
+        -0.08973046240955619
+      ],
+      "height_m": 0.20335801337813447,
+      "reprojection_rms_px": 0.23742659389972687,
+      "reprojection_max_px": 0.6132988333702087,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_05.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_05.png"
+    },
+    {
+      "normal": [
+        -0.00650598507486112,
+        -0.9959517692589387,
+        -0.08965347437882962
+      ],
+      "height_m": 0.20326966478365244,
+      "reprojection_rms_px": 0.25775429606437683,
+      "reprojection_max_px": 0.7546451091766357,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_06.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_06.png"
+    },
+    {
+      "normal": [
+        -0.006531225390049959,
+        -0.9959306987056513,
+        -0.08988540743957062
+      ],
+      "height_m": 0.20362315459860597,
+      "reprojection_rms_px": 0.2424512356519699,
+      "reprojection_max_px": 0.6936277151107788,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_07.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_07.png"
+    },
+    {
+      "normal": [
+        -0.006563464193319592,
+        -0.9959102093477291,
+        -0.090109798883059
+      ],
+      "height_m": 0.20355716281026418,
+      "reprojection_rms_px": 0.2436693012714386,
+      "reprojection_max_px": 0.7513458728790283,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_08.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_08.png"
+    },
+    {
+      "normal": [
+        -0.0071518135433708665,
+        -0.995977355837585,
+        -0.0893194168241907
+      ],
+      "height_m": 0.2030611424740386,
+      "reprojection_rms_px": 0.33425989747047424,
+      "reprojection_max_px": 1.5321801900863647,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_09.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_09.png"
+    },
+    {
+      "normal": [
+        -0.006408227065191011,
+        -0.9959690802659501,
+        -0.08946801540259358
+      ],
+      "height_m": 0.2032352936831914,
+      "reprojection_rms_px": 0.26199689507484436,
+      "reprojection_max_px": 0.9934035539627075,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_10.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_10.png"
+    },
+    {
+      "normal": [
+        -0.006763847011123652,
+        -0.9959625933794287,
+        -0.08951403779593885
+      ],
+      "height_m": 0.20313232924822655,
+      "reprojection_rms_px": 0.2723480463027954,
+      "reprojection_max_px": 0.7479828596115112,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_11.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_11.png"
+    },
+    {
+      "normal": [
+        -0.00649736824009015,
+        -0.9959320390573323,
+        -0.0898730092133175
+      ],
+      "height_m": 0.20370906353614432,
+      "reprojection_rms_px": 0.2765863835811615,
+      "reprojection_max_px": 0.840988278388977,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_12.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_12.png"
+    },
+    {
+      "normal": [
+        -0.0063457575400672935,
+        -0.9959801258263881,
+        -0.0893494282023951
+      ],
+      "height_m": 0.2029904070456539,
+      "reprojection_rms_px": 0.24135790765285492,
+      "reprojection_max_px": 0.7408860325813293,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_13.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_13.png"
+    },
+    {
+      "normal": [
+        -0.006756626979893602,
+        -0.9959364017923226,
+        -0.08980552085933323
+      ],
+      "height_m": 0.2035500192753199,
+      "reprojection_rms_px": 0.24805444478988647,
+      "reprojection_max_px": 0.7205509543418884,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_14.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_14.png"
+    },
+    {
+      "normal": [
+        -0.006073078480796499,
+        -0.9959295680268255,
+        -0.08993004641201317
+      ],
+      "height_m": 0.20352192500206073,
+      "reprojection_rms_px": 0.2396431416273117,
+      "reprojection_max_px": 0.7099840044975281,
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/frame_15.png",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_mid_center/corners_15.png"
+    }
+  ]
+}

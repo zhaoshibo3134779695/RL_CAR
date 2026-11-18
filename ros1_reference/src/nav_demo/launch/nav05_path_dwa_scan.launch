@@ -1,0 +1,34 @@
+<launch>
+    <arg name="rotation_center_offset_x" default="-0.0134" />
+    <arg name="rotation_center_offset_y" default="0.1264" />
+    <arg name="clockwise_rotation_center_offset_x" default="0.0277" />
+    <arg name="clockwise_rotation_center_offset_y" default="0.1504" />
+    <arg name="global_costmap_resolution" default="0.005" />
+    <arg name="start_move_base" default="true" />
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base"
+          output="screen" clear_params="true" if="$(arg start_move_base)">
+        <remap from="cmd_vel" to="/cmd_vel_nav_raw" />
+        <rosparam file="$(find nav_demo)/param/costmap_common_scan_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find nav_demo)/param/costmap_common_scan_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find nav_demo)/param/local_costmap_amcl_params.yaml" command="load" />
+        <rosparam file="$(find nav_demo)/param/global_costmap_amcl_params.yaml" command="load" />
+        <param name="global_costmap/resolution" value="$(arg global_costmap_resolution)" />
+
+        <rosparam file="$(find nav_demo)/param/move_base_params.yaml" command="load" />
+        <rosparam file="$(find nav_demo)/param/global_planner_params.yaml" command="load" />
+        <rosparam file="$(find nav_demo)/param/dwa_local_planner_safe_params.yaml" command="load" />
+    </node>
+
+    <node pkg="nav_demo" type="cmd_vel_center_compensator.py"
+          name="cmd_vel_center_compensator" output="screen">
+        <param name="input_topic" value="/cmd_vel_nav_raw" />
+        <param name="output_topic" value="/cmd_vel" />
+        <param name="ccw_center_offset_x" value="$(arg rotation_center_offset_x)" />
+        <param name="ccw_center_offset_y" value="$(arg rotation_center_offset_y)" />
+        <param name="cw_center_offset_x" value="$(arg clockwise_rotation_center_offset_x)" />
+        <param name="cw_center_offset_y" value="$(arg clockwise_rotation_center_offset_y)" />
+        <param name="max_translation_speed" value="0.0" />
+        <param name="apply_during_translation" value="false" />
+    </node>
+</launch>

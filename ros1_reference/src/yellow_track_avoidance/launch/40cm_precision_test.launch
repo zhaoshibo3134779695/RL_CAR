@@ -1,0 +1,49 @@
+<launch>
+  <!--
+    Exact 40 cm two-disc precision regression profile.
+
+    This is deliberately separate from the formal competition planner.  It
+    preserves the gate-centering controller for metric/heading/tracking
+    acceptance tests.  Both software motion locks and hardware startup remain
+    off unless the operator explicitly overrides them.
+  -->
+  <arg name="config"
+       default="$(find yellow_track_avoidance)/config/current_car.yaml"/>
+  <arg name="video_device"
+       default="/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._Orbbec_DaBai_DCW2_RGB_Camera_CH8Z16501C1-video-index0"/>
+  <arg name="start_camera" default="false"/>
+  <arg name="start_lidar" default="false"/>
+  <arg name="start_odometry" default="false"/>
+  <arg name="start_chassis" default="false"/>
+  <arg name="start_rviz" default="false"/>
+  <arg name="start_perception_views" default="false"/>
+  <arg name="enable_motion" default="false"/>
+  <arg name="start_enabled" default="false"/>
+
+  <include file="$(find yellow_track_avoidance)/launch/current_car_navigation.launch">
+    <arg name="config" value="$(arg config)"/>
+    <arg name="video_device" value="$(arg video_device)"/>
+    <arg name="start_camera" value="$(arg start_camera)"/>
+    <arg name="start_lidar" value="$(arg start_lidar)"/>
+    <arg name="start_odometry" value="$(arg start_odometry)"/>
+    <arg name="start_chassis" value="$(arg start_chassis)"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="start_perception_views"
+         value="$(arg start_perception_views)"/>
+    <arg name="enable_motion" value="$(arg enable_motion)"/>
+    <arg name="start_enabled" value="$(arg start_enabled)"/>
+    <!-- Keep the frozen experimental controller isolated from the formal
+         DWA/costmap profile. -->
+    <arg name="enable_passage_supervisor" value="true"/>
+    <arg name="disc_costmap_writes_enabled" value="false"/>
+    <arg name="disc_mission_lock_enabled" value="false"/>
+    <arg name="disc_confirmed_memory_timeout_sec" value="120.0"/>
+    <arg name="passage_track_fresh_sec" value="120.0"/>
+    <arg name="competition_two_disc_mode" value="true"/>
+    <arg name="enable_gate_special_mode" value="true"/>
+    <arg name="claim_all_road_discs" value="true"/>
+    <arg name="force_between_disc_pair" value="true"/>
+    <!-- Precision failure stays stopped; it never falls back to blind DWA. -->
+    <arg name="competition_finish_priority" value="false"/>
+  </include>
+</launch>

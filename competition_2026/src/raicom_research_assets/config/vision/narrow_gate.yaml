@@ -1,0 +1,74 @@
+# Conditional close-disc gate crossing.
+#
+# All gap values are physical edge-to-edge distances. With 0.10 m diameter
+# discs, trigger_edge_gap_m=0.45 corresponds to a 0.55 m center distance.
+enabled: true
+control_rate_hz: 20.0
+
+disc_radius_m: 0.050
+vehicle_half_length_m: 0.165
+vehicle_half_width_m: 0.150
+
+# Open/dispersed fields stay on normal SBPL + TEB. Hysteresis prevents a pair
+# near 0.45 m from repeatedly arming and disarming due to perception noise.
+trigger_edge_gap_m: 0.450
+release_edge_gap_m: 0.480
+pair_confirm_duration_sec: 0.60
+# Confirmation restarts if the same IDs move beyond any of these bounds.
+pair_midpoint_variation_max_m: 0.015
+pair_distance_variation_max_m: 0.015
+pair_angle_variation_max_deg: 1.5
+maximum_candidate_track_age_sec: 0.40
+
+# A close pair is a gate only when it genuinely straddles the current route.
+midpoint_path_distance_max_m: 0.15
+pair_along_path_mismatch_max_m: 0.10
+crossing_angle_deviation_max_deg: 20.0
+minimum_opposite_side_offset_m: 0.02
+gate_ahead_max_m: 1.20
+gate_ahead_min_m: 0.10
+
+# TEB approaches normally. At 0.50 m before the midpoint, the controller
+# freezes the pair, cancels move_base and aligns the rectangular body.
+prealign_distance_m: 0.50
+latest_takeover_progress_m: -0.10
+align_lateral_tolerance_m: 0.008
+align_yaw_tolerance_deg: 1.5
+align_hold_duration_sec: 0.30
+# Upstream of the discs the controller may safely correct a larger initial
+# error. The tighter stop limits below apply after CROSSING begins.
+alignment_lateral_abort_m: 0.15
+alignment_yaw_abort_deg: 45.0
+
+pass_speed_mps: 0.040
+exit_speed_mps: 0.030
+lateral_gain: 0.80
+yaw_gain: 1.50
+prealign_longitudinal_gain: 0.80
+maximum_lateral_speed_mps: 0.015
+maximum_align_longitudinal_speed_mps: 0.015
+maximum_angular_speed_radps: 0.080
+slow_lateral_error_m: 0.012
+slow_yaw_error_deg: 2.0
+stop_lateral_error_m: 0.030
+stop_yaw_error_deg: 6.0
+
+# These are hard physical/controller margins. They are intentionally separate
+# from TEB min_obstacle_dist, which is an optimizer cost rather than a hard
+# collision boundary.
+minimum_physical_clearance_m: 0.008
+geometry_uncertainty_m: 0.005
+emergency_direct_clearance_m: 0.005
+exit_clearance_margin_m: 0.050
+exit_distance_m: 0.350
+stop_hold_duration_sec: 0.30
+
+acceleration_x_mps2: 0.10
+acceleration_y_mps2: 0.08
+acceleration_yaw_radps2: 0.25
+
+robot_pose_timeout_sec: 0.30
+disc_status_timeout_sec: 0.40
+global_path_timeout_sec: 5.0
+reset_linear_speed_max_mps: 0.01
+reset_angular_speed_max_radps: 0.03

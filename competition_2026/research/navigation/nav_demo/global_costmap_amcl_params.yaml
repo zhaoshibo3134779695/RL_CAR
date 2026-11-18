@@ -1,0 +1,26 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_footprint
+
+  plugins:
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+
+  static_layer:
+    map_topic: /forbidden_map
+    subscribe_to_updates: false
+
+  inflation_layer:
+    inflation_radius: 0.005
+    cost_scaling_factor: 10.0
+
+  inflation_radius: 0.005
+  cost_scaling_factor: 10.0
+
+  update_frequency: 1.0
+  publish_frequency: 1.0
+  transform_tolerance: 0.5
+  resolution: 0.005
+
+  static_map: true
+  always_send_full_costmap: true

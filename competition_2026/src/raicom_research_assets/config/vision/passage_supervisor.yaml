@@ -1,0 +1,205 @@
+# Final competition passage supervisor.
+#
+# All local geometry is evaluated in odom. The calibrated camera/base offset
+# is applied upstream exactly once by the perception and disc bridge nodes.
+
+enabled: true
+control_rate_hz: 20.0
+
+robot_pose_timeout_sec: 0.30
+disc_status_timeout_sec: 0.40
+boundary_timeout_sec: 0.50
+# Reject replayed/frozen camera frames by their original image timestamp.  The
+# larger source bound accounts for the measured perception/TF callback delay;
+# the independent 0.50 s receipt bound still detects a stopped publisher.
+boundary_source_timeout_sec: 1.20
+# During special authority only, retain the last camera-stamped corridor for a
+# tightly bounded odometric continuation.  Any one bound expires the cache.
+last_corridor_max_age_sec: 1.20
+odom_propagation_max_sec: 0.90
+max_blind_distance_m: 0.05
+route_cache_timeout_sec: 30.0
+navigation_failure_takeover_grace_sec: 5.0
+minimum_boundary_quality: 0.65
+# The current test segment has one physical yellow edge; reconstruct the
+# opposite corridor edge from the calibrated 0.88 m grey width + 0.03 m line.
+allow_single_boundary_inference: true
+minimum_single_boundary_quality: 0.32
+move_base_cmd_timeout_sec: 0.25
+
+# Current 727 map: supervise the wide upper-right yellow-track segment and
+# continue 0.65 m past its old west edge into the wide/narrow connector.  The
+# lower extension keeps the small semicircular yellow bend inside supervision.
+# Generic launch files leave this disabled; current_car_navigation enables it.
+activation_zone_enabled: false
+activation_zone_frame: map
+activation_zone_polygon:
+  - [-0.65, 0.85]
+  - [2.35, 0.85]
+  - [2.35, 1.95]
+  - [-0.65, 1.95]
+
+vehicle_half_length_m: 0.170
+vehicle_half_width_m: 0.165
+disc_radius_m: 0.050
+
+# Formal competition mode uses the generic free-interval planner.  The exact
+# two-disc gate controller is retained only for the dedicated 40 cm precision
+# regression launch profile.
+competition_two_disc_mode: false
+enable_gate_special_mode: false
+# DWA's costmap intentionally has no discs.  Claim every fresh confirmed disc
+# inside the yellow road and either follow a checked local channel or hold.
+claim_all_road_discs: true
+decision_horizon_m: 1.20
+decision_min_forward_m: 0.10
+bypass_takeover_distance_m: 1.05
+# The measured front-edge-to-disc-edge distance is 0.675 m, while the
+# controller uses base-center-to-disc-center distance (~0.895 m).
+gate_takeover_distance_m: 1.05
+# The two staggered discs can be confirmed up to about 1.5 s apart. Preserve
+# the first confirmed track long enough to classify the pair as one gate.
+track_fresh_sec: 2.00
+# Once special gate control owns cmd_vel, update the locked pair only from
+# current camera frames.  A brief loss keeps the last stamped frame so the
+# rear of the vehicle can clear discs after they leave the camera view.
+gate_visual_update_max_age_sec: 0.60
+locked_track_drift_stop_m: 0.030
+scene_confirm_sec: 0.35
+scene_release_sec: 0.80
+scene_position_variation_max_m: 0.015
+scene_progress_variation_max_m: 0.030
+scene_angle_variation_max_deg: 1.5
+route_projection_max_distance_m: 0.40
+
+# A supervisor-owned cancel is a transaction: it must either enter the
+# prepared special controller or send a fresh move_base goal. Limit automatic
+# rollback retries so repeated bad geometry cannot create a cancel loop.
+auto_resume_enabled: true
+auto_resume_cooldown_sec: 0.50
+max_auto_resume_per_goal: 1
+
+# move_base normally abandons an ABORTED/REJECTED/LOST goal permanently.
+# In competition finish-first mode, keep resubmitting the saved destination so
+# a transient lidar/costmap blockage cannot turn one failed plan into a lock.
+# Zero retries means unlimited; operator cancel/preempt and success never retry.
+retry_navigation_failures: false
+navigation_failure_retry_cooldown_sec: 0.75
+max_navigation_failure_retries_per_goal: 0
+
+# Independent finish supervisor. It escalates only after SBPL+TEB makes no
+# odometric progress: clear/retry, 0.4 m short goal, then a bounded 0.4 m
+# yellow-corridor creep before restoring the original destination.
+finish_recovery_enabled: true
+navigation_no_progress_sec: 4.0
+navigation_progress_distance_m: 0.05
+recovery_short_goal_distance_m: 0.40
+recovery_creep_distance_m: 0.40
+recovery_creep_speed_mps: 0.04
+clear_costmaps_service: /move_base/clear_costmaps
+recovery_lidar_topic: /scan
+recovery_lidar_timeout_sec: 0.30
+recovery_lidar_stop_distance_m: 0.30
+recovery_lidar_half_angle_deg: 35.0
+
+# The first BEV boundary sample is about 0.39 m in front of base_link.
+boundary_start_extrapolation_m: 0.45
+boundary_end_extrapolation_m: 0.30
+
+# Never force a two-disc pair to fit a preselected route.  Free space decides
+# whether the result is between, left, right, S-shaped, or blocked.
+force_between_disc_pair: false
+line_clearance_margin_m: 0.030
+disc_clearance_margin_m: 0.030
+geometry_uncertainty_m: 0.005
+minimum_residual_clearance_m: 0.020
+emergency_line_clearance_m: 0.010
+side_choice_min_advantage_m: 0.040
+side_switch_required_advantage_m: 0.060
+side_invalid_confirm_sec: 0.30
+minimum_shift_start_distance_m: 0.40
+late_detection_stop_distance_m: 0.30
+
+single_shift_length_m: 0.45
+single_hold_after_disc_m: 0.30
+single_merge_length_m: 0.45
+passage_sample_step_m: 0.05
+passage_lateral_grid_step_m: 0.01
+maximum_lateral_slope: 0.60
+
+# Deterministic holonomic tracking. A small vy is deliberately retained.
+bypass_speed_mps: 0.050
+lateral_gain: 1.00
+yaw_gain: 1.50
+maximum_lateral_speed_mps: 0.025
+maximum_angular_speed_radps: 0.10
+stop_lateral_error_m: 0.080
+stop_yaw_error_deg: 15.0
+completion_lateral_tolerance_m: 0.025
+
+# Precision-regression-only gate parameters.  They are inactive in the formal
+# profile because enable_gate_special_mode and competition_two_disc_mode are
+# false, but 40cm_precision_test.launch re-enables the retained controller.
+gate_special_mode_max_gap_m: 0.80
+gate_release_gap_m: 0.85
+gate_longitudinal_mismatch_max_m: 0.50
+gate_midpoint_path_distance_max_m: 0.20
+gate_normal_angle_tolerance_deg: 55.0
+
+# The measured test gap is 40 cm. With the 33 cm body this leaves 35 mm/side;
+# reserve 20 mm of that as a hard modeled margin and enter only after tighter
+# lateral/yaw alignment. A smaller gap is rejected rather than used for this run.
+minimum_predicted_gate_clearance_m: 0.020
+emergency_direct_clearance_m: 0.020
+gate_align_distance_m: 0.50
+gate_align_lateral_tolerance_m: 0.005
+gate_align_yaw_tolerance_deg: 1.5
+gate_align_hold_sec: 0.30
+gate_max_align_speed_mps: 0.020
+gate_lateral_abort_m: 0.15
+gate_yaw_abort_deg: 45.0
+approach_speed_mps: 0.080
+gate_speed_mps: 0.030
+gate_exit_speed_mps: 0.050
+# Once the base centre is 24 cm beyond the observed gate midpoint, the 17 cm
+# rear half-length has cleared the 5 cm disc radius with about 2 cm reserve.
+gate_exit_distance_m: 0.24
+gate_exit_clearance_margin_m: 0.015
+
+# Explicit move_base cancel -> measured stop -> special authority handoff.
+handoff_linear_speed_max_mps: 0.010
+handoff_angular_speed_max_radps: 0.030
+handoff_stop_hold_sec: 0.25
+takeover_ack_timeout_sec: 0.50
+degraded_hold_sec: 0.20
+exit_stop_hold_sec: 0.30
+
+# From the 0.50 m alignment pose to the 0.24 m exit takes about 24.7 s at
+# 0.03 m/s, so the former 22 s timeout could fire during a correct crossing.
+handoff_stop_timeout_sec: 1.5
+approach_align_timeout_sec: 10.0
+cross_exit_timeout_sec: 28.0
+overall_timeout_sec: 40.0
+special_control_max_sec: 30.0
+special_no_progress_timeout_sec: 1.20
+special_min_progress_m: 0.015
+special_min_yaw_progress_deg: 0.5
+special_retry_cooldown_sec: 2.0
+special_max_attempts: 2
+
+# A planner failure must not release authority to DWA while discs are omitted
+# from the costmap.  recoverable_hold stops and keeps replanning instead.
+competition_finish_priority: false
+
+acceleration_x_mps2: 0.10
+acceleration_y_mps2: 0.08
+acceleration_yaw_radps2: 0.25
+
+# Command-level guard: sample the full 0.34 x 0.33 m footprint along every
+# proposed move_base or passage-controller twist before the gate can move.
+swept_prediction_horizon_sec: 0.35
+swept_translation_step_m: 0.005
+swept_rotation_step_deg: 1.0
+
+reset_linear_speed_max_mps: 0.010
+reset_angular_speed_max_radps: 0.030

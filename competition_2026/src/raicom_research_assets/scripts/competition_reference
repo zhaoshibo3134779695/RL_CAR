@@ -1,0 +1,63 @@
+#!/usr/bin/python3
+import math
+
+import rclpy
+from geometry_msgs.msg import Point32, PolygonStamped, PoseStamped
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import DurabilityPolicy, QoSProfile
+from visualization_msgs.msg import Marker
+
+
+class CompetitionReference(Node):
+    """Publish static vehicle geometry and expose the original navigation tuning for inspection."""
+
+    def __init__(self):
+        super().__init__('competition_reference', automatically_declare_parameters_from_overrides=True)
+        self.outputs = []
+        self.qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        coords = self.get_parameter('nav_costmap_footprint_xy').value
+        footprint = PolygonStamped()
+        footprint.header.frame_id = 'base_footprint'
+        footprint.polygon.points = [Point32(x=x, y=y, z=0.008) for x, y in zip(coords[::2], coords[1::2])]
+        self.publish_static('footprint', footprint)
+        if self.get_parameter('competition_map').value:
+            pose = PoseStamped()
+            pose.header.frame_id = 'map'
+            pose.pose.position.x = self.get_parameter('map_start.x').value
+            pose.pose.position.y = self.get_parameter('map_start.y').value
+            yaw = self.get_parameter('map_start.yaw').value
+            pose.pose.orientation.z = math.sin(yaw / 2)
+            pose.pose.orientation.w = math.cos(yaw / 2)
+            self.publish_static('original_start', pose)
+            walls = Marker()
+            walls.header.frame_id = 'map'
+            walls.type = Marker.MESH_RESOURCE
+            walls.ns = '727best'
+            walls.mesh_resource = 'package://raicom_research_assets/worlds/727best_walls.stl'
+            walls.pose.orientation.w = 1.0
+            walls.scale.x = walls.scale.y = walls.scale.z = 1.0
+            walls.color.r = walls.color.g = walls.color.b = 0.48
+            walls.color.a = 1.0
+            self.publish_static('walls', walls)
+
+    def publish_static(self, name, message):
+        publisher = self.create_publisher(type(message), '~/' + name, self.qos)
+        self.outputs.append(publisher)
+        publisher.publish(message)
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = CompetitionReference()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.destroy_node()
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+
+
+if __name__ == '__main__':
+    main()

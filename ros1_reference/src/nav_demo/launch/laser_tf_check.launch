@@ -1,0 +1,17 @@
+<launch>
+    <arg name="rviz" default="true" />
+    <arg name="rviz_config" default="$(find nav_demo)/config/laser_tf_check.rviz" />
+    <arg name="laser_yaw" default="3.14159" />
+    <arg name="mesh_yaw" default="0.0" />
+
+    <!-- Laser/robot-model only. Use RViz Fixed Frame=base_link to check scan direction. -->
+    <include file="$(find lslidar_driver)/launch/lslidar_serial.launch">
+        <arg name="laser_yaw" value="$(arg laser_yaw)" />
+    </include>
+
+    <include file="$(find mowen)/launch/display.launch">
+        <arg name="mesh_yaw" value="$(arg mesh_yaw)" />
+    </include>
+
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config)" />
+</launch>

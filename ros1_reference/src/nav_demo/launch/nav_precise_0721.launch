@@ -1,0 +1,11 @@
+<launch>
+    <!-- User-drawn 727best map at its native 0.5 cm/pixel scale. -->
+    <include file="$(find nav_demo)/launch/navigation_odom_only.launch">
+        <arg name="localization_map" value="727best_map.yaml" />
+        <arg name="forbidden_map" value="727best_map.yaml" />
+        <arg name="global_costmap_resolution" value="0.005" />
+        <arg name="initial_pose_x" value="-2.188" />
+        <arg name="initial_pose_y" value="1.296422513659279" />
+        <arg name="initial_pose_a" value="-1.5429596205952723" />
+    </include>
+</launch>

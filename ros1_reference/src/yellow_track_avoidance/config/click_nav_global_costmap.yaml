@@ -1,0 +1,22 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  # A 500 x 400 cell global map repeatedly missed the former 10 Hz deadline.
+  # Global planning does not need to mirror the 10 Hz sensor input.
+  update_frequency: 1.0
+  publish_frequency: 1.0
+  transform_tolerance: 0.35
+  resolution: 0.01
+  static_map: true
+  rolling_window: false
+  track_unknown_space: false
+
+  # The current 0.34 x 0.33 m rectangle has a circumscribed radius of about
+  # 0.237 m. This band triggers SBPL's exact heading-dependent polygon check;
+  # cells outside the 0.165 m inscribed band remain traversable, so 0.24 m is
+  # not additional safety clearance and does not enlarge the hard obstacle.
+  inflation_radius: 0.24
+  # Finish-first mode: decay every non-lethal preference cell as aggressively
+  # as the 0.237 m physical circumscribed-radius trigger permits.
+  # footprint_padding remains zero, so this does not enlarge the vehicle.
+  cost_scaling_factor: 70.0

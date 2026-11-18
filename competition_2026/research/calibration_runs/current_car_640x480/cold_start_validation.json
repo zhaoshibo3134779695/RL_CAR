@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-08-03T23:59:05+08:00",
+  "accepted": true,
+  "camera_info": {
+    "resolution": [640, 480],
+    "fx": 480.57484806180787,
+    "distortion_coefficients": [
+      0.023638354669622053,
+      -0.13381957882198958,
+      -0.00041046343283492254,
+      -0.0006708471691467912,
+      0.1569722068752687
+    ]
+  },
+  "photometry": {
+    "white_balance_warmup_sec": 4.0,
+    "auto_exposure": 1,
+    "exposure_dynamic_framerate": 0,
+    "exposure_time_absolute": 100,
+    "gain": 0,
+    "white_balance_automatic": 0,
+    "white_balance_temperature": 4600,
+    "sharpness": 3
+  },
+  "status_frames": 60,
+  "disk_frames": 60,
+  "both_boundaries_frames": 60,
+  "two_confirmed_discs_frames": 60,
+  "boundary_quality_mean": 0.795852,
+  "center_distance_m": {
+    "mean": 0.501108,
+    "minimum": 0.500799,
+    "maximum": 0.501558
+  },
+  "edge_gap_m": {
+    "mean": 0.415098,
+    "minimum": 0.414594,
+    "maximum": 0.416216
+  },
+  "maximum_abs_output_command": 0.0,
+  "motion_enabled": false
+}

@@ -1,0 +1,23 @@
+SBPLLatticePlanner:
+  # Search the global map in x, y and heading. Unlike GlobalPlanner, SBPL
+  # rotates and collision-checks the Costmap2DROS polygon footprint at every
+  # lattice pose.
+  environment_type: XYThetaLattice
+  planner_type: ARAPlanner
+  # The package-local signed-char runtime has been verified with the custom
+  # lattice in every translation direction and on the real 1 cm map.
+  allocated_time: 1.5
+  initial_epsilon: 3.0
+  # Keep the planner's normal backward search. Both successor and predecessor
+  # directions are covered by the package-local signed-char SBPL runtime.
+  forward_search: false
+  force_scratch_limit: 500
+
+  nominalvel_mpersecs: 0.10
+  timetoturn45degsinplace_secs: 2.62
+  # Inflation cells are preferences, not walls. Only inscribed/lethal cells
+  # from the static map or real lidar remain non-traversable to SBPL.
+  lethal_obstacle: 253
+  allow_unknown: false
+  publish_footprint_path: true
+  visualizer_skip_poses: 1

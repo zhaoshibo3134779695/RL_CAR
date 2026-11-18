@@ -1,0 +1,65 @@
+<launch>
+    <arg name="localization_map" default="727best_map.yaml" />
+    <arg name="forbidden_map" default="727best_map.yaml" />
+    <arg name="rviz" default="true" />
+    <arg name="rviz_config" default="$(find nav_demo)/config/single_nav.rviz" />
+    <arg name="start_cmd_bridge" default="true" />
+    <arg name="laser_yaw" default="3.14159" />
+    <arg name="mesh_yaw" default="0.0" />
+    <arg name="allow_rotation" default="true" />
+    <arg name="max_angular_z" default="0.50" />
+    <arg name="initial_pose_x" default="0.0" />
+    <arg name="initial_pose_y" default="0.0" />
+    <arg name="initial_pose_a" default="0.0" />
+    <param name="use_sim_time" value="false" />
+
+    <!-- Localization map for AMCL. It should contain only lidar-visible structures. -->
+    <include file="$(find nav_demo)/launch/nav03_map_server.launch">
+        <arg name="map" value="$(arg localization_map)" />
+    </include>
+
+    <!-- Forbidden-area map for global planning. It is not used by AMCL. -->
+    <node name="forbidden_map_server" pkg="map_server" type="map_server" args="$(find nav_demo)/map/$(arg forbidden_map)">
+        <remap from="map" to="forbidden_map" />
+        <remap from="map_metadata" to="forbidden_map_metadata" />
+        <remap from="static_map" to="forbidden_static_map" />
+    </node>
+
+    <!-- Robot hardware and TF chain. -->
+    <include file="$(find lslidar_driver)/launch/lslidar_serial.launch">
+        <arg name="laser_yaw" value="$(arg laser_yaw)" />
+    </include>
+    <include file="$(find mowen)/launch/display.launch">
+        <arg name="mesh_yaw" value="$(arg mesh_yaw)" />
+    </include>
+    <include file="$(find yesense_imu)/launch/yesense_ahrs.launch" />
+
+    <node pkg="car_bringup" name="pubv" type="pubv.py" />
+    <node if="$(arg start_cmd_bridge)" pkg="car_bringup" name="cmd_vel_serial_bridge" type="newt.py" output="screen">
+        <param name="allow_rotation" value="$(arg allow_rotation)" />
+        <param name="max_angular_z" value="$(arg max_angular_z)" />
+    </node>
+
+    <node pkg="car_bringup" type="base_node" name="odometry_publisher">
+        <param name="odom_frame" type="string" value="odom" />
+        <param name="base_footprint_frame" type="string" value="base_footprint" />
+        <param name="linear_scale_x" type="double" value="1.07" />
+        <param name="linear_scale_y" type="double" value="1.0" />
+        <param name="angular_scale" type="double" value="2.22" />
+        <param name="max_vel_dt" type="double" value="0.5" />
+        <remap from="/sub_vel" to="/vel_raw" />
+        <remap from="/pub_odom" to="/odom" />
+    </node>
+
+    <!-- AMCL publishes map -> odom. Do not run gmapping or lidar_loc with this file. -->
+    <include file="$(find nav_demo)/launch/nav04_amcl_tuned.launch">
+        <arg name="initial_pose_x" value="$(arg initial_pose_x)" />
+        <arg name="initial_pose_y" value="$(arg initial_pose_y)" />
+        <arg name="initial_pose_a" value="$(arg initial_pose_a)" />
+    </include>
+
+    <!-- move_base with scan-only costmaps. -->
+    <include file="$(find nav_demo)/launch/nav05_path_dwa_scan.launch" />
+
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config)" />
+</launch>

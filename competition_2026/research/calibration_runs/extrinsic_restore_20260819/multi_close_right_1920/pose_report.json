@@ -1,0 +1,348 @@
+{
+  "label": "multi_close_right_1920",
+  "timestamp_local": "2026-08-19",
+  "method": "native_1920_rough_rectification_then_SB_inverse_mapping",
+  "intrinsics_source": "config/intrinsic_calibrated_1920x1080_checkerboard.yaml",
+  "prewarp_source_quad_px": [
+    [
+      1097.0,
+      847.0
+    ],
+    [
+      1554.0,
+      838.0
+    ],
+    [
+      1889.0,
+      1062.0
+    ],
+    [
+      1190.0,
+      1068.0
+    ]
+  ],
+  "target_normal_camera": [
+    -9.015736093250698e-05,
+    -0.9956418693589868,
+    -0.09325910063362534
+  ],
+  "close_center_normal_camera": [
+    -0.00540507038029957,
+    -0.9953385725441455,
+    -0.0962907639390557
+  ],
+  "current_normal_camera": [
+    -0.003382745742683509,
+    -0.9956504296207742,
+    -0.09310627812993094
+  ],
+  "current_height_m_median": 0.20077521244115365,
+  "height_std_mm": 0.02600083566792207,
+  "frames": 16,
+  "attempts": 16,
+  "reprojection_rms_mean_px": 0.12837715912610292,
+  "reprojection_rms_max_px": 0.13735076785087585,
+  "normal_spread_deg_p95": 0.005462375567022179,
+  "angle_to_target_deg": 0.18885523386561381,
+  "angle_to_close_center_deg": 0.21687810157461435,
+  "pitch_like_deg": {
+    "target": 5.351128782339556,
+    "current": 5.342365067312536,
+    "current_minus_target": -0.008763715027019892
+  },
+  "roll_like_deg": {
+    "target": -0.005188247318965412,
+    "current": -0.1946630089302073,
+    "current_minus_target": -0.18947476161124188
+  },
+  "samples": [
+    {
+      "normal": [
+        -0.003358922112000196,
+        -0.995651130603694,
+        -0.09309964430561202
+      ],
+      "height_m": 0.2007594446988717,
+      "reprojection_rms_px": 0.12443003803491592,
+      "reprojection_max_px": 0.2983556389808655,
+      "bbox_px": [
+        1205.0770263671875,
+        875.9487915039062,
+        1665.9659423828125,
+        992.195068359375
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_00.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_00.jpg"
+    },
+    {
+      "normal": [
+        -0.0033728090085565175,
+        -0.9956522313748758,
+        -0.09308736927007288
+      ],
+      "height_m": 0.2007565256885961,
+      "reprojection_rms_px": 0.12592308223247528,
+      "reprojection_max_px": 0.32347410917282104,
+      "bbox_px": [
+        1205.102783203125,
+        875.992919921875,
+        1665.9176025390625,
+        992.1768798828125
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_01.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_01.jpg"
+    },
+    {
+      "normal": [
+        -0.0033835225660617616,
+        -0.9956488636446759,
+        -0.09312299446490546
+      ],
+      "height_m": 0.20078319626079527,
+      "reprojection_rms_px": 0.13015596568584442,
+      "reprojection_max_px": 0.3146059215068817,
+      "bbox_px": [
+        1205.086181640625,
+        875.962646484375,
+        1665.974853515625,
+        992.1475219726562
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_02.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_02.jpg"
+    },
+    {
+      "normal": [
+        -0.0033941891014426274,
+        -0.9956591907179762,
+        -0.09301212511908519
+      ],
+      "height_m": 0.2007260570586238,
+      "reprojection_rms_px": 0.12704388797283173,
+      "reprojection_max_px": 0.36318299174308777,
+      "bbox_px": [
+        1205.14892578125,
+        875.9786987304688,
+        1665.8758544921875,
+        992.1725463867188
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_03.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_03.jpg"
+    },
+    {
+      "normal": [
+        -0.003415719743415261,
+        -0.9956533243536231,
+        -0.09307411327653614
+      ],
+      "height_m": 0.2007557624770373,
+      "reprojection_rms_px": 0.1239834800362587,
+      "reprojection_max_px": 0.31765201687812805,
+      "bbox_px": [
+        1205.03173828125,
+        875.9740600585938,
+        1665.97314453125,
+        992.1990966796875
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_04.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_04.jpg"
+    },
+    {
+      "normal": [
+        -0.0033660862371769195,
+        -0.9956466454171333,
+        -0.09314733991399216
+      ],
+      "height_m": 0.2007966425846679,
+      "reprojection_rms_px": 0.13735076785087585,
+      "reprojection_max_px": 0.4036121666431427,
+      "bbox_px": [
+        1205.052734375,
+        875.9609375,
+        1665.992919921875,
+        992.2332153320312
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_05.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_05.jpg"
+    },
+    {
+      "normal": [
+        -0.0034015405394285207,
+        -0.9956429514972902,
+        -0.09318552814532644
+      ],
+      "height_m": 0.2008166598270441,
+      "reprojection_rms_px": 0.12963123619556427,
+      "reprojection_max_px": 0.29794782400131226,
+      "bbox_px": [
+        1205.0897216796875,
+        875.9788208007812,
+        1665.962646484375,
+        992.2429809570312
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_06.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_06.jpg"
+    },
+    {
+      "normal": [
+        -0.003410204078964205,
+        -0.9956435353862144,
+        -0.09317897269116127
+      ],
+      "height_m": 0.20081110807156227,
+      "reprojection_rms_px": 0.1263091117143631,
+      "reprojection_max_px": 0.31640201807022095,
+      "bbox_px": [
+        1205.1025390625,
+        875.9723510742188,
+        1665.9652099609375,
+        992.18603515625
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_07.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_07.jpg"
+    },
+    {
+      "normal": [
+        -0.0033945002751233425,
+        -0.9956483382478002,
+        -0.09312821222527956
+      ],
+      "height_m": 0.20078577702983075,
+      "reprojection_rms_px": 0.12674686312675476,
+      "reprojection_max_px": 0.325297087430954,
+      "bbox_px": [
+        1205.11865234375,
+        875.9595947265625,
+        1665.9400634765625,
+        992.201904296875
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_08.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_08.jpg"
+    },
+    {
+      "normal": [
+        -0.0033702085298502917,
+        -0.9956505458465543,
+        -0.09310548990217515
+      ],
+      "height_m": 0.20075422710955346,
+      "reprojection_rms_px": 0.1303694248199463,
+      "reprojection_max_px": 0.25192180275917053,
+      "bbox_px": [
+        1205.0357666015625,
+        875.957275390625,
+        1665.941650390625,
+        992.2290649414062
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_09.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_09.jpg"
+    },
+    {
+      "normal": [
+        -0.003371745284982512,
+        -0.9956465362039864,
+        -0.09314830260792151
+      ],
+      "height_m": 0.20078711813287464,
+      "reprojection_rms_px": 0.1258656233549118,
+      "reprojection_max_px": 0.30095767974853516,
+      "bbox_px": [
+        1205.06298828125,
+        875.9617309570312,
+        1665.89697265625,
+        992.220703125
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_10.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_10.jpg"
+    },
+    {
+      "normal": [
+        -0.003321524597012116,
+        -0.9956437952527656,
+        -0.09317939927376695
+      ],
+      "height_m": 0.20079043360224297,
+      "reprojection_rms_px": 0.13084189593791962,
+      "reprojection_max_px": 0.27831149101257324,
+      "bbox_px": [
+        1205.060546875,
+        875.9780883789062,
+        1665.936279296875,
+        992.2147827148438
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_11.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_11.jpg"
+    },
+    {
+      "normal": [
+        -0.003388194372202292,
+        -0.995650337176184,
+        -0.09310706858153761
+      ],
+      "height_m": 0.20076722862151203,
+      "reprojection_rms_px": 0.1215914934873581,
+      "reprojection_max_px": 0.2912990152835846,
+      "bbox_px": [
+        1205.06640625,
+        876.0011596679688,
+        1665.9063720703125,
+        992.2093505859375
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_12.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_12.jpg"
+    },
+    {
+      "normal": [
+        -0.0034141414425538745,
+        -0.9956513529469624,
+        -0.09309525773686533
+      ],
+      "height_m": 0.20078503722028632,
+      "reprojection_rms_px": 0.12863001227378845,
+      "reprojection_max_px": 0.28436338901519775,
+      "bbox_px": [
+        1205.0888671875,
+        875.9954223632812,
+        1665.9080810546875,
+        992.2431640625
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_13.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_13.jpg"
+    },
+    {
+      "normal": [
+        -0.0033553759620052366,
+        -0.9956570537049024,
+        -0.09303640609904495
+      ],
+      "height_m": 0.2007223020556677,
+      "reprojection_rms_px": 0.13425472378730774,
+      "reprojection_max_px": 0.34417542815208435,
+      "bbox_px": [
+        1205.110107421875,
+        875.9842529296875,
+        1665.95458984375,
+        992.1929321289062
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_14.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_14.jpg"
+    },
+    {
+      "normal": [
+        -0.003381969000102408,
+        -0.9956513402041612,
+        -0.09309656833278002
+      ],
+      "height_m": 0.20076437740060285,
+      "reprojection_rms_px": 0.13090693950653076,
+      "reprojection_max_px": 0.32913970947265625,
+      "bbox_px": [
+        1205.07177734375,
+        875.968505859375,
+        1665.99072265625,
+        992.2125854492188
+      ],
+      "raw": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/frame_15.jpg",
+      "overlay": "calibration_runs/extrinsic_restore_20260819/multi_close_right_1920/corners_15.jpg"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+member	reason
+bit_ws/src/mycobot_ros/mycobot_description/urdf/280_arduino/mycobot_step.STEP	STEP end marker missing
+bit_ws/src/mycobot_ros/mycobot_description/urdf/320_urdf/gripper_base.dae	not well-formed (invalid token): line 2766, column 1914936
+bit_ws/src/mycobot_ros/mycobot_description/urdf/mycobot/mycobot_step.STEP	STEP end marker missing
+bit_ws/src/mycobot_ros/mycobot_description/urdf/new_320_pi/base.dae	not well-formed (invalid token): line 402, column 280733
+bit_ws/nav_records/goals_0725.bag	invalid_rosbag_header
+Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480/archive_parameter_audit/live_raw.png	image file is truncated
+Sebastian/src/yellow_track_avoidance/calibration_runs/current_car_640x480/archive_parameter_audit/capture_frames/frame0012.png	image file is truncated
+Sebastian/src/yellow_track_avoidance/calibration_runs/archive/current_car_640x480/cold_start_capture/frame0042.png	image file is truncated
+Sebastian/src/yellow_track_avoidance/calibration_runs/archive/current_car_640x480/cold_start_debug/raw_overlay0010.png	image file is truncated

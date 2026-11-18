@@ -1,0 +1,55 @@
+map_file: ../maps/track_7_15_5x4.yaml
+frame_id: map
+route_name: upper_right_wide_to_finish
+travel_direction: right_to_left
+
+# ROS map coordinates: +x right, +y up. Start in the upper-right wide passage
+# facing west. Disc avoidance ends at the narrow-passage handoff.
+start:
+  x_m: 4.15
+  y_m: 3.49
+  yaw_rad: 3.141592653589793
+
+alignment:
+  start_x_m: 3.50
+  end_x_m: 2.85
+  wide_center_y_m: 3.49
+  narrow_center_y_m: 3.66
+
+avoidance:
+  enabled: true
+  handoff_x_m: 2.60
+  zone_polygon_m:
+    - [2.60, 3.03]
+    - [4.38, 3.03]
+    - [4.38, 3.95]
+    - [2.60, 3.95]
+
+narrow_passage:
+  obstacle_free: true
+  center_y_m: 3.66
+  finish_x_m: 1.00
+
+sampling:
+  spacing_m: 0.01
+
+safety:
+  map_boundary_margin_m: 0.03
+
+fusion:
+  # Fixed only for offline commissioning. Replace with localization before any
+  # vehicle-motion stage.
+  pose_source: fixed_start
+  map_frame: map
+  base_frame: base_link
+  tf_lookup_timeout_sec: 0.08
+  maximum_pose_age_sec: 0.30
+  maximum_route_distance_m: 0.45
+  local_forward_origin_offset_m: 0.0
+  maximum_message_age_sec: 0.25
+  disk_topic: /yellow_track_avoidance/debug/disks
+  candidate_topic: /yellow_track_avoidance/debug/candidates
+  fused_path_topic: /yellow_track_avoidance/map_fused_path
+  status_topic: /yellow_track_avoidance/map_fusion_status
+
+vehicle_profiles_file: vehicle_profiles.yaml

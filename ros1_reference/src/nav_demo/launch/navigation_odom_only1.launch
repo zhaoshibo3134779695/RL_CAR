@@ -1,0 +1,94 @@
+<launch>
+    <arg name="localization_map" default="727best_map.yaml" />
+    <arg name="forbidden_map" default="727best_map.yaml" />
+    <arg name="rviz" default="true" />
+    <arg name="rviz_config" default="$(find nav_demo)/config/single_nav.rviz" />
+    <!-- Calibrated from the real outer wall and start barrier. -->
+    <arg name="laser_x" default="-0.060" />
+    <arg name="laser_y" default="0.009" />
+    <arg name="laser_yaw" default="3.10376" />
+    <arg name="mesh_yaw" default="0.0" />
+    <arg name="initial_pose_x" default="0.0" />
+    <arg name="initial_pose_y" default="0.0" />
+    <arg name="initial_pose_a" default="0.0" />
+    <arg name="rotation_center_offset_x" default="0.0925" />
+    <arg name="rotation_center_offset_y" default="0.0825" />
+    <arg name="clockwise_rotation_center_offset_x" default="0.0800" />
+    <arg name="clockwise_rotation_center_offset_y" default="0.1075" />
+    <param name="use_sim_time" value="false" />
+
+    <include file="$(find nav_demo)/launch/nav03_map_server.launch">
+        <arg name="map" value="$(arg localization_map)" />
+    </include>
+
+    <node name="forbidden_map_server" pkg="map_server" type="map_server" args="$(find nav_demo)/map/$(arg forbidden_map)">
+        <remap from="map" to="forbidden_map" />
+        <remap from="map_metadata" to="forbidden_map_metadata" />
+        <remap from="static_map" to="forbidden_static_map" />
+    </node>
+
+    <include file="$(find lslidar_driver)/launch/lslidar_serial.launch">
+        <arg name="laser_x" value="$(arg laser_x)" />
+        <arg name="laser_y" value="$(arg laser_y)" />
+        <arg name="laser_yaw" value="$(arg laser_yaw)" />
+    </include>
+    <include file="$(find mowen)/launch/display.launch">
+        <arg name="mesh_yaw" value="$(arg mesh_yaw)" />
+    </include>
+    <include file="$(find yesense_imu)/launch/yesense_ahrs.launch" />
+
+    <node pkg="car_bringup" name="pubv" type="pubv.py" />
+    <node pkg="car_bringup" name="cmd_vel_serial_bridge" type="newt.py" output="screen">
+        <param name="allow_rotation" value="true" />
+        <param name="max_angular_z" value="0.50" />
+        <remap from="/cmd_vel" to="/cmd_vel_nav_raw"/>
+    </node>
+
+    <node pkg="nav_demo" type="vel_center_corrector.py"
+          name="vel_center_corrector" output="screen">
+        <param name="input_topic" value="/vel_raw" />
+        <param name="output_topic" value="/vel_raw_centered" />
+        <param name="command_topic" value="/cmd_vel_nav_raw" />
+        <param name="max_command_translation" value="0.03" />
+        <param name="apply_during_translation" value="true" />
+        <param name="min_command_angular" value="0.05" />
+        <param name="min_feedback_angular" value="0.02" />
+        <param name="hold_time" value="0.40" />
+        <param name="ccw_vx_per_w" value="0.108895" />
+        <param name="ccw_vy_per_w" value="-0.116189" />
+        <param name="cw_vx_per_w" value="0.143333" />
+        <param name="cw_vy_per_w" value="-0.106667" />
+    </node>
+
+    <node pkg="car_bringup" type="base_node" name="odometry_publisher" output="screen">
+        <param name="odom_frame" value="odom" />
+        <param name="base_footprint_frame" value="base_footprint" />
+        <param name="linear_scale_x" value="1.07" />
+        <param name="linear_scale_y" value="1.0" />
+        <param name="angular_scale" value="2.22" />
+        <param name="max_vel_dt" value="0.5" />
+        <param name="use_imu_yaw" value="true" />
+        <param name="imu_topic" value="/imu0" />
+        <param name="imu_timeout" value="0.2" />
+        <remap from="/sub_vel" to="/vel_raw_centered" />
+        <remap from="/pub_odom" to="/odom" />
+    </node>
+
+    <node pkg="nav_demo" type="odom_map_tf.py" name="odom_map_tf" output="screen">
+        <param name="map_frame" value="map" />
+        <param name="odom_frame" value="odom" />
+        <param name="base_frame" value="base_footprint" />
+        <param name="transform_tolerance" value="0.5" />
+        <param name="initial_x" value="$(arg initial_pose_x)" />
+        <param name="initial_y" value="$(arg initial_pose_y)" />
+        <param name="initial_yaw" value="$(arg initial_pose_a)" />
+    </node>
+
+    <include file="$(find nav_demo)/launch/nav05_path_dwa_scan.launch">
+        <arg name="rotation_center_offset_x" value="$(arg rotation_center_offset_x)" />
+        <arg name="rotation_center_offset_y" value="$(arg rotation_center_offset_y)" />
+        <arg name="clockwise_rotation_center_offset_x" value="$(arg clockwise_rotation_center_offset_x)" />
+        <arg name="clockwise_rotation_center_offset_y" value="$(arg clockwise_rotation_center_offset_y)" />
+    </include>
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config)" />
+</launch>

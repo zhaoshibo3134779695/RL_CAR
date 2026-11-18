@@ -1,0 +1,48 @@
+{
+  "source_workspace": "raicom_2026",
+  "vehicle_source_archives": "inputs.tsv",
+  "ubuntu_workspace_disposition": {
+    "ubuntu-delivered": 1359,
+    "ubuntu-mixed-original-inventory": 3,
+    "ubuntu-external-model-by-reference": 2,
+    "ubuntu-generated-cache": 28,
+    "ubuntu-off-scope-weights": 3
+  },
+  "ros1_nonempty_package_files": {
+    "robot_pose_ekf": {
+      "cache_or_outside_scope": 24,
+      "delivered": 20
+    },
+    "rf2o_laser_odometry": {
+      "cache_or_outside_scope": 24,
+      "delivered": 14
+    },
+    "car_bringup": {
+      "delivered": 21,
+      "cache_or_outside_scope": 7
+    },
+    "mbot_teleop": {
+      "delivered": 5
+    },
+    "nav_demo": {
+      "delivered": 135,
+      "mission_or_outside_scope": 32,
+      "cache_or_outside_scope": 25
+    },
+    "mbot_bringup": {
+      "delivered": 8
+    },
+    "yellow_track_avoidance": {
+      "delivered": 1360,
+      "cache_or_outside_scope": 92,
+      "local_working_notes": 4,
+      "invalid_original": 4
+    }
+  },
+  "additional_mapping_launches": 3,
+  "valid_mcap_recordings": 12,
+  "optional_vendor_pin": "25fdeb5754cfee2cbbe8603bb14c855aec7a8010",
+  "external_visual_model_source": "src/mowen/SOURCE.md",
+  "integrity_manifest": "archive-files.sha256",
+  "coverage": "Counts refer to the published Ubuntu competition workspace and seven recoverable ROS 1 navigation/vision packages. Caches and build products are excluded. Seven divergent auxiliary vendor blobs are documented in ros1_reference/README.md."
+}

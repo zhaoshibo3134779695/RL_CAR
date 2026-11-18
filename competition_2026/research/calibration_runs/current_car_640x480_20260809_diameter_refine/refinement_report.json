@@ -1,0 +1,113 @@
+{
+  "timestamp_local": "2026-08-09T13:32:50+08:00",
+  "configuration": "config/current_car_recalibrated_640x480_20260809.yaml",
+  "physical_reference": {
+    "disc_outer_diameter_m": 0.1,
+    "disc_edge_gap_m": 0.4,
+    "disc_center_distance_m": 0.5
+  },
+  "camera_model": {
+    "intrinsics_fixed": true,
+    "fitted_camera_height_m": 0.19525135730461626,
+    "homography_source_points_px": [
+      [-20.760422439195537, 389.5231081425489],
+      [766.6827108875516, 395.6832193312954],
+      [431.52163018655324, 284.33511655491037],
+      [208.20976593587005, 280.103046745819]
+    ]
+  },
+  "detector_refinement": {
+    "red_hsv_minimum_saturation": 5,
+    "projected_diameter_mode": "geometric_mean_ground_spans",
+    "diameter_method": "72_point_visible_ring_geometric_mean_ground_spans_with_physical_ratio",
+    "visible_ring_to_physical_diameter_ratio": 0.922076,
+    "diameter_ratio_changes_centers": false,
+    "diameter_ratio_changes_collision_radius": false,
+    "fixed_physical_collision_radius_m": 0.05,
+    "rejected_attempt": {
+      "method": "fixed_lab_a_threshold_compensation",
+      "reason": "It degraded segmentation and live stability, so it was fully reverted."
+    }
+  },
+  "final_locked_live_validation": {
+    "source_file": "final_live_geomean_sat5_100.json",
+    "captured_total_frames": 100,
+    "two_disc_frames": 100,
+    "two_disc_availability": 1.0,
+    "raw_disk_count_histogram": {"2": 100},
+    "center_distance_m": {
+      "mean": 0.5005880079307743,
+      "mean_error": 0.0005880079307742925,
+      "stdev": 0.000967983575877251,
+      "min": 0.49740742230358936,
+      "max": 0.503357080114172,
+      "within_5mm_fraction": 1.0
+    },
+    "physical_diameter_m": [
+      {
+        "mean": 0.0998958969492642,
+        "mean_error": -0.00010410305073579873,
+        "stdev": 0.0018576420321468419,
+        "min": 0.0960716540646033,
+        "max": 0.10682677732540857,
+        "within_5mm_fraction": 0.98
+      },
+      {
+        "mean": 0.10180921728518937,
+        "mean_error": 0.00180921728518936,
+        "stdev": 0.0008498623332564274,
+        "min": 0.10008464026030368,
+        "max": 0.10410218541313054,
+        "within_5mm_fraction": 1.0
+      }
+    ],
+    "safety": {
+      "maximum_observed_cmd_vel": 0.0,
+      "navigation_gate_motion_capable": false,
+      "navigation_gate_enabled": false,
+      "navigation_gate_allowed": false
+    }
+  },
+  "cross_scene_check": {
+    "center_distance_remained_approximately_m": [0.4985, 0.5015],
+    "saved_weak_light_physical_diameters_m": [0.09146, 0.08673],
+    "diameter_consistency_passed": false
+  },
+  "software_verification": {
+    "unit_tests_run": 150,
+    "unit_tests_passed": 150,
+    "catkin_package_build_passed": true
+  },
+  "multi_depth_closeout": {
+    "timestamp_local": "2026-08-09T14:27:38+08:00",
+    "method": "fixed_intrinsics_two_depth_physical_ground_plane_refit",
+    "near_locked_100_reprojected": {
+      "center_distance_mean_m": 0.5000031668490497,
+      "center_distance_stdev_m": 0.0009580820540742484,
+      "physical_diameter_means_m": [0.10162941595773865, 0.10404427873417783]
+    },
+    "far_locked_live_closeout_20": {
+      "source_file": "calibration_closeout_20.json",
+      "two_disc_frames": 18,
+      "two_disc_availability": 0.9,
+      "center_distance_mean_m": 0.49799474887420425,
+      "center_distance_mean_error_m": -0.002005251125795749,
+      "center_distance_stdev_m": 0.0010885742371864082,
+      "physical_diameter_means_m": [0.10181530949366936, 0.09612399817250243]
+    },
+    "white_balance_warmup_sec": 10.0,
+    "user_accepted_practical_tolerance": true,
+    "motion_remained_locked": true
+  },
+  "validation_scope": {
+    "current_scene_same_depth": "passed",
+    "saved_weak_light_scene_diameter_consistency": "not_passed",
+    "independent_second_depth": "completed_at_practical_tolerance"
+  },
+  "verdict": {
+    "current_scene_metric_fit_passed": true,
+    "motion_release_authorized": false,
+    "requires_independent_multi_depth_ground_truth": false,
+    "camera_calibration_closed": true
+  }
+}

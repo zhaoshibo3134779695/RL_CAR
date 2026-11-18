@@ -1,0 +1,114 @@
+TebLocalPlannerROS:
+  odom_topic: /odom
+  map_frame: odom
+
+  # One deterministic, automatically sized trajectory at the common 8 Hz
+  # move_base controller cadence.  Feedback remains enabled for the locked
+  # baseline report.
+  teb_autosize: true
+  dt_ref: 0.20
+  dt_hysteresis: 0.02
+  max_samples: 200
+  global_plan_overwrite_orientation: false
+  allow_init_with_backwards_motion: false
+  max_global_plan_lookahead_dist: 0.90
+  global_plan_viapoint_sep: 0.10
+  via_points_ordered: true
+  # Check the complete practical horizon (this baseline stays below 50 poses).
+  # The original value 8 allowed a collision later in a 17-pose trajectory to
+  # remain outside TEB's costmap feasibility gate.
+  feasibility_check_no_poses: 50
+  publish_feedback: true
+
+  # Match the measured omnidirectional capability used by the frozen DWA
+  # baseline.  Positive y limits are what activate TEB's holonomic model.
+  max_vel_x: 0.10
+  max_vel_x_backwards: 0.04
+  max_vel_y: 0.08
+  max_vel_theta: 0.30
+  acc_lim_x: 0.20
+  acc_lim_y: 0.20
+  acc_lim_theta: 0.60
+  min_turning_radius: 0.0
+  is_footprint_dynamic: false
+
+  # The launch file overwrites these vertices from the same 0.34 x 0.33 m
+  # dimensions used by both costmaps, so all three profiles share one body.
+  footprint_model:
+    type: polygon
+    vertices:
+      - [-0.170, -0.165]
+      - [-0.170,  0.165]
+      - [ 0.170,  0.165]
+      - [ 0.170, -0.165]
+
+  xy_goal_tolerance: 0.01
+  yaw_goal_tolerance: 0.05
+  free_goal_vel: false
+  complete_global_plan: true
+
+  # /disc_scan contains the near surface of each 0.10 m disc.  Keep 20 mm from
+  # that surface around the exact polygon.  The association radii below must
+  # also span the 0.237 m circumscribed body radius; otherwise the non-legacy
+  # association can ignore an obstacle until the rectangle already overlaps.
+  min_obstacle_dist: 0.020
+  inflation_dist: 0.005
+  dynamic_obstacle_inflation_dist: 0.005
+  include_dynamic_obstacles: false
+  include_costmap_obstacles: true
+  costmap_obstacles_behind_robot_dist: 0.80
+  obstacle_poses_affected: 12
+  legacy_obstacle_association: false
+  obstacle_association_force_inclusion_factor: 12.0
+  obstacle_association_cutoff_factor: 15.0
+  costmap_converter_plugin: ""
+  costmap_converter_spin_thread: false
+
+  no_inner_iterations: 6
+  no_outer_iterations: 4
+  optimization_activate: true
+  optimization_verbose: false
+  penalty_epsilon: 0.0
+  weight_max_vel_x: 2.0
+  weight_max_vel_y: 2.0
+  weight_max_vel_theta: 1.0
+  weight_acc_lim_x: 1.0
+  weight_acc_lim_y: 1.0
+  weight_acc_lim_theta: 1.0
+  weight_kinematics_nh: 0.0
+  weight_kinematics_forward_drive: 0.0
+  weight_kinematics_turning_radius: 0.0
+  weight_optimaltime: 1.0
+  weight_shortest_path: 0.0
+  weight_obstacle: 50.0
+  weight_inflation: 0.0
+  weight_dynamic_obstacle: 0.0
+  weight_dynamic_obstacle_inflation: 0.0
+  weight_viapoint: 10.0
+  weight_adapt_factor: 1.3
+
+  # The first candidate intentionally optimizes one trajectory only.  SBPL is
+  # a separate global-planner profile, never an additional TEB homotopy search.
+  enable_homotopy_class_planning: false
+  enable_multithreading: false
+  simple_exploration: false
+  max_number_classes: 1
+  selection_cost_hysteresis: 1.0
+  selection_prefer_initial_plan: 0.90
+  selection_obst_cost_scale: 0.0
+  selection_viapoint_cost_scale: 0.0
+  selection_alternative_time_cost: false
+  switching_blocking_period: 0.0
+  roadmap_graph_no_samples: 20
+  roadmap_graph_area_width: 1.20
+  roadmap_graph_area_length_scale: 1.0
+  h_signature_prescaler: 0.5
+  h_signature_threshold: 0.1
+  obstacle_heading_threshold: 0.45
+  viapoints_all_candidates: false
+  visualize_hc_graph: false
+
+  # Do not let TEB silently shorten/reinitialize a failed trajectory during the
+  # clean baseline.  A failure should remain visible in logs and feedback.
+  shrink_horizon_backup: false
+  oscillation_recovery: false

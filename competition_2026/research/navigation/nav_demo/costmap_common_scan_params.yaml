@@ -1,0 +1,5 @@
+# Measured body size centered on base_footprint.
+footprint: [[-0.1475, -0.155], [-0.1475, 0.155], [0.1475, 0.155], [0.1475, -0.155]]
+footprint_padding: 0.0
+
+map_type: costmap

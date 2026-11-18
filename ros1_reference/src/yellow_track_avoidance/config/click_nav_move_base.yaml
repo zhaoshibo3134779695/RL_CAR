@@ -1,0 +1,18 @@
+shutdown_costmaps: false
+# Match the measured DWA/costmap throughput and the 8 Hz local costmap.  At
+# 15 Hz almost every active control cycle overran its 66.7 ms budget, so DWA's
+# dynamic window was computed for a period the hardware could not sustain.
+controller_frequency: 8.0
+controller_patience: 0.8
+planner_frequency: 0.5
+planner_patience: 1.8
+# The holonomic chassis needs several seconds for low-speed lateral/yaw
+# corrections near a staggered disc pair.  Two seconds falsely classified a
+# still-controllable approach as oscillation before DWA could settle.
+oscillation_timeout: 6.0
+oscillation_distance: 0.03
+recovery_behavior_enabled: true
+clearing_rotation_allowed: false
+
+base_global_planner: SBPLLatticePlanner
+base_local_planner: teb_local_planner/TebLocalPlannerROS

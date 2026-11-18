@@ -1,0 +1,6 @@
+image: map630_competition_measured.png
+resolution: 0.010000
+origin: [-2.390, -1.915, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

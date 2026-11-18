@@ -1,0 +1,100 @@
+{
+  "nav2_maps": [
+    "maps/track/competition_blank_5x4.yaml",
+    "maps/track/competition_blank_5x4_1cm.yaml",
+    "maps/track/track_7_15_5x4.yaml",
+    "maps/vehicle/7.15.yaml",
+    "maps/vehicle/722109_map.yaml",
+    "maps/vehicle/723best_map.yaml",
+    "maps/vehicle/724best1_map.yaml",
+    "maps/vehicle/724best2_map.yaml",
+    "maps/vehicle/724best_map.yaml",
+    "maps/vehicle/727best_map.yaml",
+    "maps/vehicle/forbidden_precise_0721.yaml",
+    "maps/vehicle/forbidden_texture_precise.yaml",
+    "maps/vehicle/map630.yaml",
+    "maps/vehicle/map630_competition_measured.yaml",
+    "maps/vehicle/map630_competition_rigid.yaml",
+    "maps/vehicle/map630_cropped.yaml",
+    "maps/vehicle/map630_cropped_48cm_1cm.yaml",
+    "maps/vehicle/map630_cropped_right_angle.yaml",
+    "maps/vehicle/map630_cropped_rounded_10cm.yaml",
+    "maps/vehicle/map630_cropped_rounded_10cm_shifted.yaml",
+    "maps/vehicle/map630_cropped_rounded_10cm_start_corner_widened.yaml",
+    "maps/vehicle/map7_aligned.yaml",
+    "maps/vehicle/map7_aligned_48cm_1cm.yaml",
+    "maps/vehicle/map7_competition_measured.yaml",
+    "maps/vehicle/map7_competition_rigid.yaml",
+    "maps/vehicle/map7_cropped.yaml",
+    "maps/vehicle/map7_precise_0721.yaml",
+    "maps/vehicle/map7_texture_precise.yaml",
+    "maps/vehicle/mymap.yaml",
+    "maps/vehicle/mymap_scaled_1_62.yaml",
+    "maps/vehicle/mymap（复件）.yaml",
+    "maps/vehicle/outer_wall_localization.yaml",
+    "maps/vehicle/real_obstacles_localization.yaml"
+  ],
+  "vision": {
+    "measurements": {
+      "calibrated": true,
+      "boundary_quality": 0.9674289222243084,
+      "left_boundary": true,
+      "right_boundary": false,
+      "detected_discs": 2,
+      "tracked_discs": 0,
+      "selected_path": null,
+      "stamp_sec": 123,
+      "stamp_nanosec": 0
+    },
+    "bev": [
+      640,
+      800,
+      123
+    ]
+  },
+  "live_replay": {
+    "wheel_messages_observed": 5,
+    "filtered_messages_observed": 3,
+    "input": "recordings/angular_calibration_20260810_group1"
+  },
+  "scene": {
+    "map": [
+      978,
+      799
+    ],
+    "model": "mowen",
+    "tf": "map -> base_footprint -> base_link",
+    "subscribers": [
+      "scene_verification",
+      "rviz"
+    ]
+  },
+  "static_planner": {
+    "start": [
+      0.5,
+      1.5
+    ],
+    "goal": [
+      1.5,
+      1.5
+    ],
+    "frame": "map",
+    "poses": 399
+  },
+  "ros": "Lyrical",
+  "pure_algorithm_tests": 123,
+  "native_rosbag_messages_decoded": 121383,
+  "legacy_json_messages_decoded": 6737,
+  "trajectory_example_data_rows": 980,
+  "ubuntu_download_copies_removed": {
+    "Sebastian.zip": 546931913,
+    "bit_ws.zip": 546555779,
+    "智能侦察总任务包.zip": 228872
+  },
+  "archives_reclaimed_bytes": 1093716564,
+  "pios_core_commit": "dc187250209866daf91f00c11b0570f810aa14c3",
+  "workspace_packages": [
+    "mowen",
+    "raicom_research_assets"
+  ]
+}

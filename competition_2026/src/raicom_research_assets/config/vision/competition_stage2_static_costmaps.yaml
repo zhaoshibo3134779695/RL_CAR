@@ -1,0 +1,49 @@
+# Stage-2 walls are captured once into /map.  Neither costmap consumes /scan;
+# live scans are reserved for AMCL localization against that frozen geometry.
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 1.0
+  publish_frequency: 1.0
+  transform_tolerance: 0.35
+  rolling_window: false
+  track_unknown_space: false
+  resolution: 0.01
+  footprint_padding: 0.0
+  inflation_radius: 0.01
+  cost_scaling_factor: 70.0
+  plugins:
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+  static_layer:
+    map_topic: /map
+    subscribe_to_updates: false
+    first_map_only: true
+  inflation_layer:
+    inflation_radius: 0.01
+    cost_scaling_factor: 70.0
+
+local_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 8.0
+  publish_frequency: 4.0
+  transform_tolerance: 0.35
+  rolling_window: true
+  track_unknown_space: false
+  width: 3
+  height: 2
+  resolution: 0.01
+  footprint_padding: 0.0
+  inflation_radius: 0.01
+  cost_scaling_factor: 70.0
+  plugins:
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+  static_layer:
+    map_topic: /map
+    subscribe_to_updates: false
+    first_map_only: true
+  inflation_layer:
+    inflation_radius: 0.01
+    cost_scaling_factor: 70.0

@@ -1,0 +1,614 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+  Property Tree Widget:
+    Expanded: []
+    Splitter Ratio: 0.61
+- Class: rviz_common/Tool Properties
+  Name: Tool Properties
+- Class: rviz_common/Views
+  Name: Views
+- Class: rviz_common/Time
+  Name: Time
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Background Color: 36; 41; 49
+    Fixed Frame: map
+    Frame Rate: 30
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Grid - 0.5 m
+    Enabled: true
+    Alpha: 0.22
+    Color: 125; 142; 156
+    Cell Size: 0.5
+    Plane Cell Count: 12
+    Offset:
+      X: 0
+      Y: 0
+      Z: -0.012
+  - Class: rviz_default_plugins/Map
+    Name: Competition map
+    Enabled: true
+    Alpha: 0.8
+    Draw Behind: true
+    Topic:
+      Value: /map
+      Depth: 1
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/RobotModel
+    Name: Mowen reference
+    Enabled: true
+    Description Source: Topic
+    Description Topic:
+      Value: /robot_description
+      Depth: 1
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+    Visual Enabled: true
+  - Class: rviz_default_plugins/Marker
+    Name: Course walls - 727best
+    Enabled: true
+    Topic:
+      Value: /competition_reference/walls
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+  - Class: rviz_default_plugins/Polygon
+    Name: Navigation footprint
+    Enabled: true
+    Topic:
+      Value: /competition_reference/footprint
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+    Color: 19; 192; 167
+  - Class: rviz_default_plugins/Pose
+    Name: Onboard start pose
+    Enabled: true
+    Topic:
+      Value: /competition_reference/original_start
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+    Color: 245; 160; 43
+    Shaft Length: 0.13
+    Shaft Radius: 0.014
+    Head Length: 0.06
+    Head Radius: 0.03
+  - Class: rviz_default_plugins/TF
+    Name: TF
+    Enabled: true
+    Marker Scale: 0.13
+    Show Axes: true
+    Show Arrows: false
+    Show Names: false
+  - Class: rviz_default_plugins/Axes
+    Name: Body axes
+    Enabled: false
+    Reference Frame: base_footprint
+    Length: 0.21
+    Radius: 0.008
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Recorded waypoints
+    Enabled: true
+    Topic:
+      Value: /recorded_waypoints/markers
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+  - Class: rviz_default_plugins/Path
+    Name: Recorded waypoint plan
+    Enabled: true
+    Topic:
+      Value: /recorded_waypoints/path
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+    Color: 135; 57; 190
+    Line Style: Billboards
+    Line Width: 0.025
+    Offset: {X: 0, Y: 0, Z: 0.027}
+  - Class: rviz_default_plugins/Path
+    Name: Driven trail
+    Enabled: true
+    Topic:
+      Value: /route_simulation/trail
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+    Color: 4; 143; 90
+    Line Style: Billboards
+    Line Width: 0.035
+    Offset: {X: 0, Y: 0, Z: 0.043}
+  - Class: rviz_default_plugins/Path
+    Name: Planned path
+    Enabled: true
+    Topic:
+      Value: /rviz_plan_goal/path
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+    Color: 0; 162; 205
+    Line Style: Billboards
+    Line Width: 0.028
+    Offset: {X: 0, Y: 0, Z: 0.035}
+  - Class: rviz_default_plugins/Marker
+    Name: Planning goal
+    Enabled: true
+    Topic:
+      Value: /rviz_plan_goal/goal
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+  - Class: rviz_common/Group
+    Name: Vehicle sensors
+    Enabled: false
+    Displays:
+    - Class: rviz_default_plugins/LaserScan
+      Name: Lidar
+      Enabled: true
+      Topic:
+        Value: /scan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Style: Points
+      Size (Pixels): 3
+    - Class: rviz_imu_plugin/Imu
+      Name: IMU - onboard
+      Enabled: true
+      Topic:
+        Value: /imu0
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_imu_plugin/Imu
+      Name: IMU - legacy driver topic
+      Enabled: false
+      Topic:
+        Value: /imu/imu_data
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Odometry
+      Name: Fused odometry
+      Enabled: true
+      Topic:
+        Value: /odom
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Keep: 12
+    - Class: rviz_default_plugins/Odometry
+      Name: Wheel odometry
+      Enabled: false
+      Topic:
+        Value: /odom_raw
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Keep: 12
+    - Class: rviz_default_plugins/LaserScan
+      Name: Disc scan
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/disc_scan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Style: Points
+  - Class: rviz_common/Group
+    Name: Nav2
+    Enabled: false
+    Displays:
+    - Class: nav2_rviz_plugins/ParticleCloud
+      Name: AMCL particles
+      Enabled: true
+      Topic:
+        Value: /particle_cloud
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Path
+      Name: Global path
+      Enabled: true
+      Topic:
+        Value: /plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Color: 0; 165; 215
+    - Class: rviz_default_plugins/Path
+      Name: Local path
+      Enabled: true
+      Topic:
+        Value: /local_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Color: 245; 108; 43
+    - Class: rviz_default_plugins/Map
+      Name: Global costmap
+      Enabled: true
+      Topic:
+        Value: /global_costmap/costmap
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        Depth: 1
+      Alpha: 0.35
+      Color Scheme: costmap
+      Update Topic:
+        Value: /global_costmap/costmap_updates
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Polygon
+      Name: Global footprint
+      Enabled: true
+      Topic:
+        Value: /global_costmap/published_footprint
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Map
+      Name: Local costmap
+      Enabled: true
+      Topic:
+        Value: /local_costmap/costmap
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        Depth: 1
+      Alpha: 0.35
+      Color Scheme: costmap
+      Update Topic:
+        Value: /local_costmap/costmap_updates
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Polygon
+      Name: Local footprint
+      Enabled: true
+      Topic:
+        Value: /local_costmap/published_footprint
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+  - Class: rviz_common/Group
+    Name: Onboard navigation
+    Enabled: false
+    Displays:
+    - Class: rviz_default_plugins/PoseArray
+      Name: PoseArray
+      Enabled: true
+      Topic:
+        Value: /particlecloud
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 255; 25; 0
+      Shape: Arrow (Flat)
+    - Class: rviz_default_plugins/Map
+      Name: Map_global
+      Enabled: true
+      Topic:
+        Value: /move_base/global_costmap/costmap
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 0.4
+      Color Scheme: costmap
+      Update Topic:
+        Value: /move_base/global_costmap/costmap_updates
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Map
+      Name: Map_local
+      Enabled: true
+      Topic:
+        Value: /move_base/local_costmap/costmap
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 0.4
+      Color Scheme: map
+      Update Topic:
+        Value: /move_base/local_costmap/costmap_updates
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Path
+      Name: Path_global
+      Enabled: true
+      Topic:
+        Value: /move_base/DWAPlannerROS/global_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 25; 255; 0
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/Path
+      Name: Path_local
+      Enabled: true
+      Topic:
+        Value: /move_base/DWAPlannerROS/local_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 239; 41; 41
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/Path
+      Name: Path
+      Enabled: true
+      Topic:
+        Value: /move_base/GlobalPlanner/plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 32; 74; 135
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/Polygon
+      Name: Polygon
+      Enabled: true
+      Topic:
+        Value: /move_base/global_costmap/footprint
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 25; 255; 0
+    - Class: rviz_default_plugins/Path
+      Name: Global Plan
+      Enabled: true
+      Topic:
+        Value: /move_base/SBPLLatticePlanner/plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 30; 220; 60
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/Path
+      Name: Local Plan
+      Enabled: true
+      Topic:
+        Value: /move_base/TebLocalPlannerROS/local_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 255; 80; 30
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/Polygon
+      Name: Robot Footprint
+      Enabled: true
+      Topic:
+        Value: /move_base/local_costmap/footprint
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 0; 255; 120
+    - Class: rviz_default_plugins/Path
+      Name: TEB global path
+      Enabled: true
+      Topic:
+        Value: /move_base/TebLocalPlannerROS/global_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Color: 122; 68; 207
+  - Class: rviz_common/Group
+    Name: Stage 1 and 2
+    Enabled: false
+    Displays:
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Detected Discs
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/disc_markers
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Passage Supervisor
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/passage/markers
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Live Yellow Corridor
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/corridor_markers
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Stage 1 Lidar Goal
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/stage1_lidar_goal_markers
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Disc Gap Decisions
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/passage_closure_markers
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Path
+      Name: Stage 1 Goal Preview
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/stage1_lidar_goal_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 255; 40; 210
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/Path
+      Name: Yellow Corridor Centerline
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/corridor_centerline
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 0; 230; 255
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/Path
+      Name: Dynamic Goal Plan Preview
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/corridor_goal_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 255; 40; 210
+      Buffer Length: 1
+      Line Style: Lines
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Frozen Stage 2 Walls
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/stage2_frozen_scene_markers
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Stage 2 Lidar Goal
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/stage2_lidar_goal_markers
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Path
+      Name: Stage 2 Goal Preview
+      Enabled: true
+      Topic:
+        Value: /yellow_track_avoidance/stage2_lidar_goal_plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+      Alpha: 1
+      Color: 255; 40; 210
+      Buffer Length: 1
+      Line Style: Lines
+  - Class: rviz_common/Group
+    Name: Camera images
+    Enabled: true
+    Displays:
+    - Class: rviz_default_plugins/Image
+      Name: RGB camera
+      Enabled: false
+      Topic:
+        Value: /usb_cam/image_raw
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Image
+      Name: Birds-eye view
+      Enabled: false
+      Topic:
+        Value: /track_perception/debug/bev
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Image
+      Name: Yellow mask
+      Enabled: false
+      Topic:
+        Value: /track_perception/debug/yellow_mask
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Image
+      Name: Camera overlay
+      Enabled: false
+      Topic:
+        Value: /track_perception/debug/raw_overlay
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Image
+      Name: Disc overlay
+      Enabled: false
+      Topic:
+        Value: /track_perception/debug/disc_overlay
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+    - Class: rviz_default_plugins/Image
+      Name: Plan overlay
+      Enabled: false
+      Topic:
+        Value: /track_perception/debug/plan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 10
+  Tools:
+  - Class: rviz_default_plugins/Interact
+    Hide Inactive Objects: true
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/Select
+  - Class: rviz_default_plugins/FocusCamera
+  - Class: rviz_default_plugins/Measure
+  - Class: rviz_default_plugins/SetInitialPose
+    Topic: /initialpose
+  - Class: rviz_default_plugins/SetGoal
+    Topic: /goal_pose
+  - Class: rviz_default_plugins/PublishPoint
+    Single click: true
+    Topic: /clicked_point
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 9.3
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Pitch: 1.03
+      Yaw: 4.7
+      Enable Stereo Rendering: false
+      Focal Shape Size: 0.025
+Window Geometry:
+  Width: 920
+  Height: 860
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Views:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000200000000000000e900000315fc0200000001fc0000001100000315000000300100001cfa000000000200000003fb000000100044006900730070006c0061007900730100000000ffffffff0000001300fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000000ffffffff0000001300fffffffb0000000a005600690065007700730100000000ffffffff0000001300ffffff000000030000039800000030fc0100000001fb0000000800540069006d00650100000000000003980000003400ffffff000002a90000031500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  X: 971
+  Y: 65
+  Displays:
+    collapsed: false

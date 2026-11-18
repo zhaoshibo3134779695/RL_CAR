@@ -1,0 +1,103 @@
+<launch>
+  <!--
+    Map-localized yellow-track navigation integration.
+    Motion is disabled and output is isolated by default. Do not run move_base
+    or another chassis command source while enabling this controller.
+  -->
+  <arg name="map" default="$(find yellow_track_avoidance)/maps/track_7_15_5x4.yaml"/>
+  <arg name="route" default="$(find yellow_track_avoidance)/config/track_7_15_route.yaml"/>
+  <arg name="config" default="$(find yellow_track_avoidance)/config/calibrated.yaml"/>
+  <arg name="image_topic" default="/camera/color/image_raw"/>
+  <arg name="camera_info_topic" default="/camera/color/camera_info"/>
+
+  <arg name="map_frame" default="map"/>
+  <arg name="odom_frame" default="odom"/>
+  <arg name="base_frame" default="base_link"/>
+  <arg name="scan_topic" default="/scan"/>
+  <arg name="start_map_server" default="true"/>
+  <arg name="start_amcl" default="false"/>
+  <arg name="initial_x" default="4.15"/>
+  <arg name="initial_y" default="3.49"/>
+  <arg name="initial_yaw" default="3.141592653589793"/>
+  <arg name="local_forward_origin_offset_m" default="0.0"/>
+
+  <arg name="enable_motion" default="false"/>
+  <arg name="start_armed" default="false"/>
+  <arg name="output_cmd_topic" default="/yellow_track_avoidance/navigation_cmd_vel"/>
+  <arg name="chassis_cmd_topic" default="/cmd_vel"/>
+  <arg name="expected_chassis_publisher" default="/vel_ctrl"/>
+
+  <node if="$(arg start_map_server)" pkg="map_server" type="map_server"
+        name="yellow_track_map_server" output="screen" args="$(arg map)"/>
+
+  <!-- Optional localization-only AMCL. /scan, /odom and odom->base TF must
+       already be provided by the robot bringup. -->
+  <node if="$(arg start_amcl)" pkg="amcl" type="amcl" name="amcl"
+        output="screen">
+    <remap from="scan" to="$(arg scan_topic)"/>
+    <param name="global_frame_id" value="$(arg map_frame)"/>
+    <param name="odom_frame_id" value="$(arg odom_frame)"/>
+    <param name="base_frame_id" value="$(arg base_frame)"/>
+    <param name="odom_model_type" value="omni"/>
+    <param name="gui_publish_rate" value="20.0"/>
+    <param name="laser_max_range" value="6.0"/>
+    <param name="laser_max_beams" value="360"/>
+    <param name="min_particles" value="1000"/>
+    <param name="max_particles" value="3000"/>
+    <param name="kld_err" value="0.05"/>
+    <param name="kld_z" value="0.99"/>
+    <param name="odom_alpha1" value="0.2"/>
+    <param name="odom_alpha2" value="0.2"/>
+    <param name="odom_alpha3" value="0.2"/>
+    <param name="odom_alpha4" value="0.2"/>
+    <param name="odom_alpha5" value="0.2"/>
+    <param name="laser_model_type" value="likelihood_field"/>
+    <param name="laser_likelihood_max_dist" value="2.0"/>
+    <param name="update_min_d" value="0.02"/>
+    <param name="update_min_a" value="0.03"/>
+    <param name="transform_tolerance" value="0.5"/>
+    <param name="initial_pose_x" value="$(arg initial_x)"/>
+    <param name="initial_pose_y" value="$(arg initial_y)"/>
+    <param name="initial_pose_a" value="$(arg initial_yaw)"/>
+  </node>
+
+  <node pkg="yellow_track_avoidance" type="map_route_publisher.py"
+        name="yellow_track_map_route" output="screen" required="true">
+    <param name="route_file" value="$(arg route)"/>
+  </node>
+
+  <node pkg="yellow_track_avoidance" type="yellow_track_avoidance_node.py"
+        name="yellow_track_avoidance" output="screen" required="true">
+    <param name="config_file" value="$(arg config)"/>
+    <param name="image_topic" value="$(arg image_topic)"/>
+    <param name="camera_info_topic" value="$(arg camera_info_topic)"/>
+    <param name="output_cmd_topic" value="/yellow_track_avoidance/perception_cmd_vel"/>
+    <param name="enable_planning" value="true"/>
+    <param name="enable_motion" value="false"/>
+  </node>
+
+  <node pkg="yellow_track_avoidance" type="map_avoidance_fusion.py"
+        name="yellow_track_map_avoidance_fusion" output="screen" required="true">
+    <param name="route_file" value="$(arg route)"/>
+    <param name="perception_config_file" value="$(arg config)"/>
+    <param name="pose_source" value="tf"/>
+    <param name="map_frame" value="$(arg map_frame)"/>
+    <param name="base_frame" value="$(arg base_frame)"/>
+    <param name="local_forward_origin_offset_m" value="$(arg local_forward_origin_offset_m)"/>
+  </node>
+
+  <node pkg="yellow_track_avoidance" type="map_path_controller.py"
+        name="yellow_track_navigation" output="screen" required="true">
+    <param name="map_frame" value="$(arg map_frame)"/>
+    <param name="base_frame" value="$(arg base_frame)"/>
+    <param name="enable_motion" value="$(arg enable_motion)"/>
+    <param name="start_armed" value="$(arg start_armed)"/>
+    <param name="output_cmd_topic" value="$(arg output_cmd_topic)"/>
+    <param name="chassis_cmd_topic" value="$(arg chassis_cmd_topic)"/>
+    <rosparam param="expected_chassis_publishers" subst_value="true">["$(arg expected_chassis_publisher)"]</rosparam>
+    <param name="maximum_linear_speed_mps" value="0.08"/>
+    <param name="maximum_angular_speed_radps" value="0.30"/>
+    <param name="path_timeout_sec" value="0.50"/>
+    <param name="status_timeout_sec" value="0.50"/>
+  </node>
+</launch>

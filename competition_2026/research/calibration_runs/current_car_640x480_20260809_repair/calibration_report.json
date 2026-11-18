@@ -1,0 +1,115 @@
+{
+  "timestamp_local": "2026-08-09T10:37:00+08:00",
+  "status": "candidate_static_validation_passed_motion_validation_pending",
+  "safety_valid_for_motion": false,
+  "problem": {
+    "old_visual_disc_center_distance_m": 0.381904,
+    "physical_disc_center_distance_m": 0.5,
+    "old_scale_ratio": 0.763808,
+    "symptom": "The old ground homography compressed the current two-disc lateral geometry after the vehicle-top repair."
+  },
+  "known_physical_constraints": {
+    "disc_diameter_m": 0.1,
+    "disc_edge_gap_m": 0.4,
+    "disc_center_distance_m": 0.5,
+    "track_gray_width_m": 0.88,
+    "yellow_line_width_m": 0.03,
+    "yellow_centerline_separation_m": 0.91,
+    "vehicle_width_m": 0.33,
+    "vehicle_length_m": 0.34
+  },
+  "diagnosis": {
+    "intrinsics_reused": true,
+    "reason_intrinsics_reused": "No evidence that the lens or image resolution changed; the observed fault is consistent with an external camera pose change.",
+    "previous_fitted_camera_height_m": 0.20504418759681164,
+    "candidate_fitted_camera_height_m": 0.19844455970785904,
+    "pose_fit_estimated_rotation_change_deg": 10.189282719349809,
+    "interpretation": "The old and current ground views are not compatible with one fixed external pose. The approximately 10.19 degree value is a constrained pose-fit estimate, not a direct mechanical angle measurement."
+  },
+  "method": {
+    "name": "fixed_intrinsics_two_disc_center_scale_and_projected_circle_shape_pose_fit",
+    "source_image": "calibration_runs/current_car_640x480_20260809_repair/current_raw.png",
+    "frames_used": 60,
+    "absolute_metric_constraint": "Two physical disc centers are 0.50 m apart.",
+    "shape_constraint": "Projected circle aspect and orientation from both discs.",
+    "segmented_absolute_diameter_used_for_pose_fit": false,
+    "yellow_width_used_as_independent_constraint": false,
+    "yellow_width_note": "The running detector is left-only and synthesizes the opposite boundary at 0.91 m, so the reported 0.91 m cannot independently validate this calibration."
+  },
+  "candidate": {
+    "config": "config/current_car_recalibrated_640x480_20260809.yaml",
+    "base_config_preserved": "config/current_car_calibrated_640x480.yaml",
+    "bev_source_is_undistorted": true,
+    "bev_source_points": [
+      [-19.087082909300516, 390.9551053967012],
+      [758.9812432204095, 395.092867814242],
+      [424.5079246253305, 283.87786019247517],
+      [201.63459176580648, 279.0547081367786]
+    ],
+    "normal_profile_points_reprojected_from_old_metric_ground": true
+  },
+  "offline_validation": {
+    "raw_disc_count": 2,
+    "left_boundary_detected": true,
+    "boundary_quality": 0.7457937994034761,
+    "left_valid_sections": 17,
+    "left_fit_rms_px": 0.6523814707418664,
+    "motion_output_zero": true
+  },
+  "locked_live_validation": {
+    "sample_frames": 60,
+    "two_disc_frames": 60,
+    "center_distance_m": {
+      "mean": 0.5018282699647244,
+      "median": 0.5017840685102555,
+      "minimum": 0.4999333216298853,
+      "maximum": 0.5038523477365294,
+      "standard_deviation": 0.0010103048069078052
+    },
+    "left_disc_diameter_m": {
+      "mean": 0.0899740579403593,
+      "standard_deviation": 0.0018853236270348977
+    },
+    "right_disc_diameter_m": {
+      "mean": 0.09610009888490739,
+      "standard_deviation": 0.0012920742871009219
+    },
+    "corridor_quality": 0.8920223245946524,
+    "navigation_gate_enabled": false,
+    "navigation_gate_allowed": false,
+    "maximum_cmd_vel": 0.0
+  },
+  "locked_pair_diagnostic": {
+    "disc_ids": [1, 2],
+    "center_distance_m": 0.5020766939020936,
+    "estimated_edge_gap_m": 0.40207669390209366,
+    "predicted_minimum_clearance_m": 0.036038346951046824,
+    "minimum_required_clearance_m": 0.02,
+    "metric_geometry_checks_passed": true,
+    "accepted": false,
+    "reason_codes": [
+      "MIDPOINT_TOO_FAR_FROM_ROUTE",
+      "NOT_STRADDLING_ROUTE",
+      "GATE_AHEAD_OUT_OF_RANGE"
+    ],
+    "midpoint_route_offset_m": -0.3252345090878758,
+    "route_offsets_m": [-0.07987551433879331, -0.5705935038369584],
+    "takeover_distance_m": 1.2127374685222687,
+    "interpretation": "The repaired metric geometry passes. Rejection is now caused by the current discs being on the same side of the active yellow-derived route, plus a 0.0127 m takeover-range excess. Do not alter calibration to hide route-relative placement failures."
+  },
+  "software_regression_validation": {
+    "command": "python3 -m unittest discover -s test -p 'test_*.py' -v",
+    "tests_run": 169,
+    "result": "OK"
+  },
+  "remaining_validation": {
+    "required": true,
+    "procedure": "With the vehicle locked, project two independent ground marks exactly 0.50 m apart at approximately x=0.8 m. Prefer repeating at x=0.5, 0.8 and 1.1 m.",
+    "reason": "The current two-disc center distance was itself an input to the pose fit, and the current right yellow boundary is synthesized rather than observed."
+  },
+  "rollback": {
+    "original_config_unchanged": true,
+    "config": "config/current_car_calibrated_640x480.yaml",
+    "instruction": "Stop the candidate launch and relaunch current_car_navigation.launch with config:=.../config/current_car_calibrated_640x480.yaml and start_enabled:=false."
+  }
+}

@@ -1,0 +1,428 @@
+ros:
+  image_topic: /camera/color/image_raw
+  camera_info_topic: /camera/color/camera_info
+  output_cmd_topic: /yellow_track_avoidance/cmd_vel
+  debug_topic_prefix: /yellow_track_avoidance/debug
+  queue_size: 1
+  camera_timeout_sec: 0.5
+  publish_debug_images: true
+  publish_candidates: true
+  require_exclusive_output: true
+  publisher_audit_interval_sec: 0.5
+camera:
+  expected_encoding: rgb8
+  expected_width: 640
+  expected_height: 480
+  # Raw yellow/disc acceptance uses the fixed lower-half camera ROI.  The
+  # metric BEV has extrapolated source corners outside the image and must not
+  # be clipped into a second detection ROI.
+  use_bev_polygon_for_detection: false
+  # Order: near-left, near-right, far-right, far-left. The far pair was moved
+  # halfway toward the corresponding image edge to widen the real detection
+  # region; the near pair was already on the image edges.
+  detection_source_points: [[0.0, 312.0], [639.0, 312.0], [560.5, 259.0], [78.0, 263.0]]
+  detection_extend_to_image_bottom: true
+  roi_y_start_ratio: 0.5
+  roi_y_end_ratio: 1.0
+  roi_x_start_ratio: 0.0
+  roi_x_end_ratio: 1.0
+  yellow_roi_y_start_ratio: 0.5
+  yellow_roi_y_end_ratio: 1.0
+  yellow_roi_x_start_ratio: 0.0
+  yellow_roi_x_end_ratio: 1.0
+camera_photometry:
+  set_auto_exposure_service: /camera/set_color_auto_exposure
+  get_auto_exposure_service: /camera/get_color_auto_exposure
+  set_exposure_service: /camera/set_color_exposure
+  get_exposure_service: /camera/get_color_exposure
+  set_gain_service: /camera/set_color_gain
+  get_gain_service: /camera/get_color_gain
+  auto_exposure: false
+  exposure: 100
+  gain: 0
+  white_balance_supported: false
+  service_timeout_sec: 5.0
+camera_intrinsics:
+  calibrated: true
+  image_width: 640
+  image_height: 480
+  distortion_model: plumb_bob
+  camera_matrix:
+  - 480.68819954028316
+  - 0.0
+  - 318.1117712776428
+  - 0.0
+  - 478.201690131788
+  - 236.78185125654952
+  - 0.0
+  - 0.0
+  - 1.0
+  distortion_coefficients:
+  - 0.04102293494957588
+  - -0.20555212391599648
+  - -0.004331988100240161
+  - -0.00206319000748095
+  - 0.2378304674300293
+  rectified_camera_matrix:
+  - 479.11765896098996
+  - 0.0
+  - 316.76513000848587
+  - 0.0
+  - 476.58073540674536
+  - 234.73390571207094
+  - 0.0
+  - 0.0
+  - 1.0
+  calibration_rms_px: 0.17787123007908634
+yellow_hsv:
+  lower:
+  - 12
+  - 15
+  - 70
+  upper:
+  - 32
+  - 255
+  - 255
+yellow_scoring:
+  enabled: true
+  band_height_px: 24
+  ground_max_saturation: 55
+  ground_min_value: 45
+  hue_low: 10
+  hue_peak: 25
+  hue_high: 42
+  saturation_full_scale: 85.0
+  lab_b_mad_k: 3.0
+  cb_mad_k: 3.0
+  lab_b_min_delta: 3.0
+  cb_min_delta: 3.0
+  lab_b_full_delta: 16.0
+  cb_full_delta: 14.0
+  hsv_weight: 0.25
+  lab_b_weight: 0.45
+  cb_weight: 0.3
+  minimum_hue_evidence: 0.08
+  score_threshold: 0.46
+yellow_confidence_v2:
+  enabled: true
+  absolute_center: 10.0
+  absolute_scale: 6.0
+  green_excess_center: 0.015
+  green_excess_scale: 0.01
+  green_penalty: 0.7
+  specular_luminance_center: 245.0
+  specular_luminance_scale: 4.0
+  specular_chroma_center: 10.0
+  specular_chroma_scale: 3.0
+  specular_penalty: 0.9
+  hue_low: 10.0
+  hue_peak: 25.0
+  hue_high: 42.0
+  hue_bonus_min_saturation: 30.0
+  hue_bonus_saturation_scale: 10.0
+  hue_bonus_weight: 0.2
+  display_threshold: 0.4
+yellow_orientation_filter:
+  enabled: false
+  window_size_px: 25
+  minimum_nonhorizontal_angle_deg: 10.0
+  minimum_anisotropy: 0.2
+  minimum_support_pixels: 18
+  recovery_dilate_px: 3
+  red_exclusion_dilate_px: 0
+red_hsv:
+  lower_1:
+  - 0
+  - 20
+  - 60
+  upper_1:
+  - 15
+  - 255
+  - 255
+  lower_2:
+  - 155
+  - 20
+  - 60
+  upper_2:
+  - 179
+  - 255
+  - 255
+white_hsv:
+  lower:
+  - 0
+  - 0
+  - 190
+  upper:
+  - 179
+  - 60
+  - 255
+morphology:
+  yellow_open_kernel: 1
+  yellow_close_kernel: 5
+  yellow_open_iterations: 0
+  yellow_close_iterations: 1
+  red_open_kernel: 1
+  red_close_kernel: 3
+  red_open_iterations: 1
+  red_close_iterations: 1
+  white_open_kernel: 1
+  white_close_kernel: 3
+  white_open_iterations: 1
+  white_close_iterations: 1
+boundary:
+  row_step_px: 8
+  row_band_half_height_px: 3
+  minimum_row_pixels: 7
+  minimum_boundary_gap_px: 35
+  row_assignment_mode: perspective_sides
+  perspective_center_exclusion_px: 70.0
+  row_tracking_max_jump_px: 72.0
+  row_tracking_max_gap_rows: 1
+  row_tracking_velocity_alpha: 0.5
+  use_previous_reference_center: false
+  enforce_perspective_side_direction: true
+  perspective_direction_slope_tolerance: 0.15
+  minimum_fit_points: 6
+  polynomial_degree: 1
+  robust_fit_iterations: 3
+  fit_outlier_px: 18.0
+  smoothing_alpha: 1.0
+  lane_width_alpha: 0.08
+  initial_lane_width_px: 0.0
+  minimum_lane_width_px: 80.0
+  maximum_lane_width_px: 900.0
+  single_side_hold_frames: 0
+  both_side_stop_frames: 3
+  minimum_quality: 0.25
+normal_profile_detector:
+  enabled: true
+  normal_sections: 28
+  normal_step_px: 2.0
+  corridor_far_px: 25.0
+  corridor_near_px: 60.0
+  max_offset_change_per_section_px: 8.0
+  dp_smooth_weight: 0.12
+  dp_position_weight: 0.08
+  road_reference_inside_distances_px: [8.0, 12.0, 16.0]
+  ridge_distances_px: [3.0, 5.0, 8.0, 11.0]
+  local_delta_center: 4.0
+  local_delta_scale: 3.0
+  ridge_center: 3.0
+  ridge_scale: 2.0
+  inner_edge_center: 2.0
+  inner_edge_scale: 2.0
+  profile_score_weights:
+    base_confidence: 0.35
+    local_delta: 0.30
+    ridge: 0.25
+    inner_edge: 0.10
+  minimum_section_confidence: 0.40
+  minimum_base_confidence: 0.18
+  minimum_section_prominence: 2.0
+  minimum_valid_sections: 12
+  minimum_support_ratio: 0.38
+  minimum_arc_coverage_ratio: 0.50
+  minimum_median_confidence: 0.40
+  minimum_median_prominence: 3.0
+  maximum_fit_rms_px: 5.0
+  maximum_consecutive_missing_sections: 6
+  minimum_quality_score: 0.50
+  direction_slope_tolerance: 0.15
+  left:
+    far_point: [185.0, 268.0]
+    near_point: [0.0, 340.0]
+  right:
+    far_point: [445.0, 260.0]
+    near_point: [639.0, 330.0]
+disk_detection:
+  minimum_contour_area_px: 30.0
+  maximum_contour_area_px: 120000.0
+  minimum_circularity: 0.03
+  minimum_axis_ratio: 0.08
+  minimum_minor_axis_px: 2.5
+  maximum_major_axis_px: 180.0
+  proposal_red_close_kernel_x: 15
+  proposal_red_close_kernel_y: 3
+  minimum_white_candidate_area_px: 8.0
+  maximum_white_candidate_area_px: 6000.0
+  minimum_red_pixels_near_white_proposal: 5
+  white_outer_scale_hypotheses:
+  - 1.0
+  - 1.45
+  - 2.0
+  - 2.4
+  annulus_inner_ratio: 0.48
+  annulus_outer_ratio: 1.08
+  center_ratio: 0.4
+  minimum_red_annulus_ratio: 0.3
+  ring_sector_count: 20
+  minimum_sector_red_ratio: 0.12
+  minimum_ring_sector_coverage: 0.5
+  maximum_missing_sector_fraction: 0.35
+  center_max_saturation: 45
+  center_lab_neutral_tolerance: 14
+  minimum_neutral_center_ratio: 0.65
+  minimum_center_brightness_contrast: 8.0
+  full_center_brightness_contrast: 35.0
+  minimum_white_center_ratio: 0.15
+  maximum_red_center_ratio: 0.3
+  maximum_center_offset_fraction: 0.35
+  minimum_center_offset_limit_px: 4.0
+  lane_filter_enabled: true
+  lane_center_margin_px: 20.0
+  outer_contours_only: true
+  hierarchy_bonus: 0.08
+  confidence_threshold: 0.62
+  dedup_center_fraction: 0.32
+  cross_view_dedup_distance_m: 0.06
+  tracking_match_distance_m: 0.3
+  confirmation_frames: 3
+  allowed_missed_frames: 4
+  track_timeout_sec: 0.8
+  position_smoothing_alpha: 0.45
+  minimum_projected_diameter_m: 0.055
+  maximum_projected_diameter_m: 0.15
+disc_acceptance:
+  overall_recall: 0.95
+  false_positive_rate: 0.01
+  max_consecutive_misses: 3
+  processing_fps: 10.0
+  normal_recall: 0.98
+  near_yellow_recall: 0.95
+  occlusion_20_recall: 0.95
+  occlusion_40_recall: 0.85
+  reflection_recall: 0.90
+  center_std_near_px: 3.0
+  center_std_middle_px: 4.0
+  center_std_far_px: 5.0
+bev:
+  calibrated: true
+  source_is_undistorted: true
+  source_points:
+  - - -363.6008423031446
+    - 479.48201921303774
+  - - 1167.053477456982
+    - 466.1409884585299
+  - - 463.33862932436324
+    - 259.0086199134597
+  - - 206.51268976452525
+    - 263.2988494877937
+  extend_to_image_bottom: false
+  bottom_extension_output_fraction: 0.35
+  output_width_px: 640
+  output_height_px: 800
+  # The mapped field includes 5 cm outside each yellow centreline so that the
+  # 0.91 m centreline span is not clipped at the BEV image edges.
+  real_width_m: 1.01
+  real_length_m: 1.5689853476431117
+physical:
+  robot_width_m: 0.3
+  robot_length_m: 0.33
+  disk_diameter_m: 0.1
+  track_gray_width_m: 0.88
+  yellow_line_width_m: 0.03
+  # Forward distance from base_link to the BEV x=0 nearest-visible-ground
+  # section. Derived conservatively from the measured 0.47 m right-front
+  # wheel-to-disc-center distance (2026-07-24).
+  local_forward_origin_offset_m: 0.39
+safety:
+  boundary_margin_m: 0.03
+  obstacle_margin_m: 0.03
+  emergency_obstacle_distance_m: 0.03
+  minimum_corridor_width_m: 0.02
+  track_width_tolerance_m: 0.2
+  stop_is_latched: true
+  stop_recovery_frames: 10
+planner:
+  horizon_m: 2.5
+  sample_spacing_m: 0.04
+  candidate_offsets_m:
+  - -0.45
+  - -0.3
+  - -0.16
+  - 0.0
+  - 0.16
+  - 0.3
+  - 0.45
+  pre_obstacle_clearance_m: 0.35
+  post_obstacle_clearance_m: 0.55
+  minimum_transition_m: 0.45
+  # 3.5 1/m requires 0.28 rad/s at the 0.08 m/s approach speed, below the
+  # configured 0.35 rad/s limit. This remains an offline-only setting until
+  # raised-wheel validation.
+  maximum_curvature: 3.5
+  direction_lock_min_sec: 1.5
+  collision_sample_padding_m: 0.01
+  score_weights:
+    obstacle_clearance: 4.0
+    boundary_clearance: 3.0
+    lateral_offset: 1.1
+    path_length: 0.5
+    curvature: 2.0
+    smoothness: 1.5
+    previous_path: 1.8
+    return_to_center: 1.2
+state_machine:
+  approach_confirm_frames: 2
+  avoid_confirm_frames: 2
+  clear_confirm_frames: 5
+  return_confirm_frames: 8
+  avoid_start_distance_m: 1.35
+  approach_distance_m: 2.2
+  minimum_avoid_time_sec: 0.8
+  return_timeout_sec: 4.0
+  center_tolerance_m: 0.06
+control:
+  enable_motion: false
+  max_linear_speed_mps: 0.12
+  approach_speed_mps: 0.08
+  avoid_speed_mps: 0.06
+  return_speed_mps: 0.08
+  max_angular_speed_radps: 0.35
+  max_linear_accel_mps2: 0.25
+  max_angular_accel_radps2: 0.8
+  lookahead_distance_m: 0.38
+  heading_gain: 0.8
+  curvature_slowdown_gain: 1.2
+  shutdown_stop_repeats: 5
+  shutdown_stop_interval_sec: 0.04
+debug:
+  image_publish_stride: 2
+  draw_raw_contours: true
+  draw_all_candidates: true
+  image_jpeg_quality: 90
+calibration_metadata:
+  method: depth_ground_plane_plus_lane_width
+  timestamp_utc: '2026-07-21T10:09:42.882240+00:00'
+  source_image: /home/mo-bit/newznzc_ws1/src/yellow_track_avoidance/calibration_runs/current/raw.jpg
+  point_order:
+  - near-left
+  - near-right
+  - far-right
+  - far-left
+  depth_topic: /camera/depth/points
+  depth_frame: camera_depth_optical_frame
+  color_frame: camera_color_optical_frame
+  depth_plane_normal: [-0.01367098, -0.99948261, -0.02911369]
+  depth_plane_d_m: 0.15782215
+  depth_plane_frames: 10
+  depth_plane_support_ratio_median: 0.84365
+  depth_plane_inlier_threshold_m: 0.006
+  depth_plane_inlier_p95_m: 0.004835
+  raw_lane_width_m: 0.8436447584047047
+  lane_width_reference_m: 0.91
+  depth_scale_correction: 1.07865305975559
+  corrected_color_camera_height_m: 0.16996820664157455
+  lane_center_right_of_camera_m: 0.033114830284414254
+  near_forward_from_camera_m: 0.31209121619000896
+  far_forward_from_camera_m: 1.8810765638331206
+  represented_forward_span_m: 1.5689853476431117
+  disc_reference_diameter_m: 0.1
+  disc_recovered_diameters_m: [0.09620793253479398, 0.0989756562060234]
+  bev_lateral_margin_each_side_m: 0.05
+  mapped_lateral_span_m: 1.01
+  meters_per_pixel_x: 0.0015805946791862286
+  meters_per_pixel_y: 0.001963686292419414
+  raw_detection_region: configured six-point ROI through image bottom; independent of metric BEV polygon
+  intrinsics_valid: true
+  safety_valid: true

@@ -1,0 +1,54 @@
+#!/usr/bin/python3
+import json
+import cv2
+import rclpy
+from cv_bridge import CvBridge, CvBridgeError
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
+from sensor_msgs.msg import Image
+from std_msgs.msg import String
+from raicom_research_assets.perception import TrackAnalysis, competition_profile, VIEWS
+
+
+class TrackPerception(Node):
+    def __init__(self):
+        super().__init__('track_perception')
+        cfg = self.declare_parameter('config_file', str(competition_profile())).value
+        self.analysis = TrackAnalysis(cfg)
+        topic = self.declare_parameter('image_topic', self.analysis.config['ros']['image_topic']).value
+        self.bridge = CvBridge()
+        self.views = {v: self.create_publisher(Image, f'~/debug/{v}', 1) for v in VIEWS}
+        self.status = self.create_publisher(String, '~/measurements', 10)
+        self.create_subscription(Image, topic, self.process_frame, qos_profile_sensor_data)
+
+    def process_frame(self, frame):
+        try:
+            stamp = frame.header.stamp
+            image = self.bridge.imgmsg_to_cv2(frame, desired_encoding='bgr8')
+            images, measurements = self.analysis.analyze(image, stamp.sec + stamp.nanosec * 1e-9)
+            for key, view in images.items():
+                if key in self.views and self.views[key].get_subscription_count():
+                    msg = self.bridge.cv2_to_imgmsg(view, encoding='bgr8' if view.ndim == 3 else 'mono8')
+                    msg.header = frame.header
+                    self.views[key].publish(msg)
+            measurements.update(stamp_sec=stamp.sec, stamp_nanosec=stamp.nanosec)
+            self.status.publish(String(data=json.dumps(measurements)))
+        except (CvBridgeError, ValueError, cv2.error) as exc:
+            self.get_logger().error(str(exc), throttle_duration_sec=2.0)
+
+
+def main():
+    try:
+        with rclpy.init():
+            node = TrackPerception()
+            try:
+                rclpy.spin(node)
+            finally:
+                node.destroy_node()
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+
+
+if __name__ == '__main__':
+    main()

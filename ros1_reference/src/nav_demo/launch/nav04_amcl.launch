@@ -1,0 +1,11 @@
+<launch>
+    <arg name="initial_pose_x" default="-2.188" />
+    <arg name="initial_pose_y" default="1.296422513659279" />
+    <arg name="initial_pose_a" default="-1.5429596205952723" />
+
+    <include file="$(find nav_demo)/launch/nav04_amcl_tuned.launch">
+        <arg name="initial_pose_x" value="$(arg initial_pose_x)" />
+        <arg name="initial_pose_y" value="$(arg initial_pose_y)" />
+        <arg name="initial_pose_a" value="$(arg initial_pose_a)" />
+    </include>
+</launch>

@@ -1,0 +1,2812 @@
+{
+  "captured_total_frames": 100,
+  "center_distance_m": {
+    "max": 0.5199000108303784,
+    "mean": 0.5042295066282375,
+    "min": 0.4904955485928073,
+    "stdev": 0.0077650445343193635
+  },
+  "center_distance_mean_error_m": 0.0042295066282375116,
+  "confidence": [
+    {
+      "max": 0.9206957990884257,
+      "mean": 0.9008811236352566,
+      "min": 0.8709898276285273,
+      "stdev": 0.010357185652844722
+    },
+    {
+      "max": 0.7675555839097574,
+      "mean": 0.7059805082545059,
+      "min": 0.6206431473614957,
+      "stdev": 0.03815973626211649
+    }
+  ],
+  "corrected_physical_diameter_m": [
+    {
+      "max": 0.09767415922145783,
+      "mean": 0.09565298708010586,
+      "min": 0.09412884484919115,
+      "stdev": 0.0007938078039817584
+    },
+    {
+      "max": 0.12813678729649555,
+      "mean": 0.09204089381005595,
+      "min": 0.05676225317379406,
+      "stdev": 0.017964612844635373
+    }
+  ],
+  "diameter_method": [
+    "72_point_visible_ring_lateral_span_with_physical_ratio",
+    "72_point_visible_ring_lateral_span_with_physical_ratio"
+  ],
+  "frames": [
+    {
+      "center_distance_m": 0.500940708594029,
+      "centers_base_m": [
+        [
+          0.7473489240245939,
+          0.3505088256325604
+        ],
+        [
+          0.7928243700582208,
+          -0.14836348000760097
+        ]
+      ],
+      "confidences": [
+        0.8998055261834782,
+        0.7443608107333981
+      ],
+      "corrected_physical_diameters_m": [
+        0.09576368180537578,
+        0.09419692785976701
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252905.5721157,
+      "visible_ring_diameters_m": [
+        0.0828311915670743,
+        0.08147602127954359
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5010053488221513,
+      "centers_base_m": [
+        [
+          0.7473509615408884,
+          0.35036155522193757
+        ],
+        [
+          0.7929689138612395,
+          -0.148562649416907
+        ]
+      ],
+      "confidences": [
+        0.9013383701773278,
+        0.7406390296602702
+      ],
+      "corrected_physical_diameters_m": [
+        0.09649834760849599,
+        0.09283076256897312
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252905.6760113,
+      "visible_ring_diameters_m": [
+        0.08346664378370588,
+        0.0802943509763485
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5088008161199234,
+      "centers_base_m": [
+        [
+          0.7477306586950868,
+          0.3504260940987609
+        ],
+        [
+          0.7946686818665551,
+          -0.1562050266045126
+        ]
+      ],
+      "confidences": [
+        0.9019395272743508,
+        0.7072386729607567
+      ],
+      "corrected_physical_diameters_m": [
+        0.09540143119637517,
+        0.1140603855276044
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252905.776166,
+      "visible_ring_diameters_m": [
+        0.0825178614086704,
+        0.0986570009187031
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5031332695065599,
+      "centers_base_m": [
+        [
+          0.7476008569217292,
+          0.35045326131275956
+        ],
+        [
+          0.7903761144493797,
+          -0.15085838250553815
+        ]
+      ],
+      "confidences": [
+        0.9131385016424652,
+        0.7562385221392415
+      ],
+      "corrected_physical_diameters_m": [
+        0.09555954540063014,
+        0.09105260777828436
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252905.9439828,
+      "visible_ring_diameters_m": [
+        0.08265462294180292,
+        0.07875632865591614
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252906.0439441
+    },
+    {
+      "center_distance_m": 0.5070065207884306,
+      "centers_base_m": [
+        [
+          0.7482759939386481,
+          0.35026680484447303
+        ],
+        [
+          0.7972886881136431,
+          -0.15436510846630602
+        ]
+      ],
+      "confidences": [
+        0.884823632007922,
+        0.6834446571353844
+      ],
+      "corrected_physical_diameters_m": [
+        0.09529846197814697,
+        0.10848641987846705
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252906.14394,
+      "visible_ring_diameters_m": [
+        0.08242879775865425,
+        0.0938357763399498
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252906.2480104
+    },
+    {
+      "center_distance_m": 0.5057184183834469,
+      "centers_base_m": [
+        [
+          0.7465939643104856,
+          0.35010452001212883
+        ],
+        [
+          0.7877115225516095,
+          -0.15393959025654871
+        ]
+      ],
+      "confidences": [
+        0.905919737026001,
+        0.6361814899952168
+      ],
+      "corrected_physical_diameters_m": [
+        0.0948129411374255,
+        0.08163507743036072
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252906.3481088,
+      "visible_ring_diameters_m": [
+        0.08200884450487961,
+        0.07061059693767502
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.4994872588157131,
+      "centers_base_m": [
+        [
+          0.747641487393722,
+          0.3502064792603631
+        ],
+        [
+          0.7889673517124963,
+          -0.1475682636279652
+        ]
+      ],
+      "confidences": [
+        0.8951460781948746,
+        0.7357456720305965
+      ],
+      "corrected_physical_diameters_m": [
+        0.09485586609591297,
+        0.09471292837747289
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252906.448092,
+      "visible_ring_diameters_m": [
+        0.08204597262477281,
+        0.08192233805564322
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49954407388448163,
+      "centers_base_m": [
+        [
+          0.7473067354519052,
+          0.35041092137413415
+        ],
+        [
+          0.7873826434508772,
+          -0.14752301335130946
+        ]
+      ],
+      "confidences": [
+        0.9179340794142876,
+        0.6829669815906179
+      ],
+      "corrected_physical_diameters_m": [
+        0.09496357972575502,
+        0.0927913431252981
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252906.5844035,
+      "visible_ring_diameters_m": [
+        0.08213913997318328,
+        0.08026025496595128
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5107682198013659,
+      "centers_base_m": [
+        [
+          0.7478843113944814,
+          0.3511339638060469
+        ],
+        [
+          0.7819087959984182,
+          -0.15849973681283183
+        ]
+      ],
+      "confidences": [
+        0.9162438694063504,
+        0.6715711281457077
+      ],
+      "corrected_physical_diameters_m": [
+        0.09578699559063496,
+        0.07593592689080973
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252906.6840022,
+      "visible_ring_diameters_m": [
+        0.0828513569217949,
+        0.06568109317161741
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5008362308918846,
+      "centers_base_m": [
+        [
+          0.747713519587432,
+          0.35025196090280364
+        ],
+        [
+          0.7929251671878549,
+          -0.14853941542125063
+        ]
+      ],
+      "confidences": [
+        0.8925892021135023,
+        0.7241765322764004
+      ],
+      "corrected_physical_diameters_m": [
+        0.09524273977883776,
+        0.09093609516547924
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252906.7839901,
+      "visible_ring_diameters_m": [
+        0.08238060061252844,
+        0.07865555059089922
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252906.9199946
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252907.0201716
+    },
+    {
+      "center_distance_m": 0.49600368600326133,
+      "centers_base_m": [
+        [
+          0.7471065794394331,
+          0.35019720027467643
+        ],
+        [
+          0.7879937784853648,
+          -0.14411838058738813
+        ]
+      ],
+      "confidences": [
+        0.9154388621764293,
+        0.7352786715793838
+      ],
+      "corrected_physical_diameters_m": [
+        0.09447741127988742,
+        0.1023113640267768
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252907.1239314,
+      "visible_ring_diameters_m": [
+        0.08171862657066636,
+        0.0884946363112252
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.4955028196781981,
+      "centers_base_m": [
+        [
+          0.747669173644549,
+          0.3503751570946568
+        ],
+        [
+          0.8031519408861747,
+          -0.14201158810494388
+        ]
+      ],
+      "confidences": [
+        0.8876999647344928,
+        0.6377290317032414
+      ],
+      "corrected_physical_diameters_m": [
+        0.09601947175970835,
+        0.0849737916826521
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252907.2239866,
+      "visible_ring_diameters_m": [
+        0.08305243814311253,
+        0.07349843160114704
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49915640702588226,
+      "centers_base_m": [
+        [
+          0.7468419420289314,
+          0.3500612424332175
+        ],
+        [
+          0.7952215679057966,
+          -0.14674508851980372
+        ]
+      ],
+      "confidences": [
+        0.9046446771292693,
+        0.7438513052854063
+      ],
+      "corrected_physical_diameters_m": [
+        0.09590038280469157,
+        0.09037617012482123
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252907.3238776,
+      "visible_ring_diameters_m": [
+        0.08294943166027319,
+        0.07817124111749986
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252907.4240406
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252907.5239687
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252907.6279495
+    },
+    {
+      "center_distance_m": 0.5005874356246557,
+      "centers_base_m": [
+        [
+          0.7483015228192808,
+          0.35034294854197795
+        ],
+        [
+          0.79202110922254,
+          -0.14833167330075897
+        ]
+      ],
+      "confidences": [
+        0.8968169024759779,
+        0.7596223239972734
+      ],
+      "corrected_physical_diameters_m": [
+        0.09578602418291582,
+        0.09158775488291813
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252907.7600205,
+      "visible_ring_diameters_m": [
+        0.08285051669868154,
+        0.07921920635135157
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49367879856791874,
+      "centers_base_m": [
+        [
+          0.7476708515991446,
+          0.35037016446456287
+        ],
+        [
+          0.8030639681238068,
+          -0.14019110469266371
+        ]
+      ],
+      "confidences": [
+        0.9206957990884257,
+        0.6526886693467977
+      ],
+      "corrected_physical_diameters_m": [
+        0.09514961134315553,
+        0.08219866284793143
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252907.863863,
+      "visible_ring_diameters_m": [
+        0.08230004878796499,
+        0.0710980724691827
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49113478612109995,
+      "centers_base_m": [
+        [
+          0.7485767073729548,
+          0.3500690723384623
+        ],
+        [
+          0.7887188945784518,
+          -0.1394224832011378
+        ]
+      ],
+      "confidences": [
+        0.897646060947202,
+        0.7147891445755298
+      ],
+      "corrected_physical_diameters_m": [
+        0.09547911565716038,
+        0.11148066450652983
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252907.9638703,
+      "visible_ring_diameters_m": [
+        0.08258505490344603,
+        0.0964256605811364
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5199000108303784,
+      "centers_base_m": [
+        [
+          0.7473844007789003,
+          0.35042860259095443
+        ],
+        [
+          0.7821561744473655,
+          -0.1683073080778335
+        ]
+      ],
+      "confidences": [
+        0.9067661483146771,
+        0.7246274547710218
+      ],
+      "corrected_physical_diameters_m": [
+        0.0951982239642305,
+        0.062378059746717875
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252908.100641,
+      "visible_ring_diameters_m": [
+        0.08234209647507273,
+        0.05395416006418363
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5016037435132931,
+      "centers_base_m": [
+        [
+          0.7482344046354578,
+          0.3507698671235909
+        ],
+        [
+          0.7919507549834256,
+          -0.1489252361331883
+        ]
+      ],
+      "confidences": [
+        0.8941819255118308,
+        0.7266098317598267
+      ],
+      "corrected_physical_diameters_m": [
+        0.0972558907673205,
+        0.09360969077599128
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252908.2320354,
+      "visible_ring_diameters_m": [
+        0.08412188386351449,
+        0.08096808814179757
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252908.3320744
+    },
+    {
+      "center_distance_m": 0.5067531922131648,
+      "centers_base_m": [
+        [
+          0.7473358599495283,
+          0.3506419705531616
+        ],
+        [
+          0.793947041536559,
+          -0.15396301908655022
+        ]
+      ],
+      "confidences": [
+        0.9128179418104349,
+        0.7055723160877199
+      ],
+      "corrected_physical_diameters_m": [
+        0.0947074237337311,
+        0.10593232149578123
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252908.435994,
+      "visible_ring_diameters_m": [
+        0.08191757679133416,
+        0.0916265984091413
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252908.5360253
+    },
+    {
+      "center_distance_m": 0.5121491789330386,
+      "centers_base_m": [
+        [
+          0.7478150358404642,
+          0.3500720435622255
+        ],
+        [
+          0.7847664725285791,
+          -0.16074237754241588
+        ]
+      ],
+      "confidences": [
+        0.9126274514945021,
+        0.7192358313596837
+      ],
+      "corrected_physical_diameters_m": [
+        0.09537396429115734,
+        0.06584235308385966
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252908.6360247,
+      "visible_ring_diameters_m": [
+        0.08249410379571148,
+        0.05695061487506395
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49849957091564306,
+      "centers_base_m": [
+        [
+          0.7474819618532429,
+          0.3501897722152684
+        ],
+        [
+          0.7972638783564086,
+          -0.14581787187134446
+        ]
+      ],
+      "confidences": [
+        0.8963287792934453,
+        0.6995603394271269
+      ],
+      "corrected_physical_diameters_m": [
+        0.0957443240428568,
+        0.09183080390992003
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252908.7361205,
+      "visible_ring_diameters_m": [
+        0.08281444799053994,
+        0.07942943260974357
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49792126674373133,
+      "centers_base_m": [
+        [
+          0.7484502615087884,
+          0.35024002729916465
+        ],
+        [
+          0.7958017806341658,
+          -0.14542459874570565
+        ]
+      ],
+      "confidences": [
+        0.9040246462588748,
+        0.6794354179744623
+      ],
+      "corrected_physical_diameters_m": [
+        0.09555274554659623,
+        0.08796764211627812
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252908.8398452,
+      "visible_ring_diameters_m": [
+        0.08264874138000944,
+        0.07608797488222967
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252908.907785
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252909.0091267
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252909.07615
+    },
+    {
+      "center_distance_m": 0.5032367589609889,
+      "centers_base_m": [
+        [
+          0.7479211065416843,
+          0.35038200065102937
+        ],
+        [
+          0.7892626717213173,
+          -0.15115375137275064
+        ]
+      ],
+      "confidences": [
+        0.9086821972732569,
+        0.6837494729210374
+      ],
+      "corrected_physical_diameters_m": [
+        0.096120188438298,
+        0.08828992422506679
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.2080657,
+      "visible_ring_diameters_m": [
+        0.08313955344967744,
+        0.07636673412152006
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.504961636962444,
+      "centers_base_m": [
+        [
+          0.7481407987398048,
+          0.3503511559387664
+        ],
+        [
+          0.7951804580182049,
+          -0.15241471925441244
+        ]
+      ],
+      "confidences": [
+        0.88782919513628,
+        0.7118159402817856
+      ],
+      "corrected_physical_diameters_m": [
+        0.09516267607305924,
+        0.10731391668309936
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.2758825,
+      "visible_ring_diameters_m": [
+        0.08231134917998234,
+        0.0928216148649776
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5149797264763274,
+      "centers_base_m": [
+        [
+          0.7481144308818743,
+          0.3504780783374701
+        ],
+        [
+          0.7955916767480201,
+          -0.16230845600854651
+        ]
+      ],
+      "confidences": [
+        0.890892599988831,
+        0.63101595111374
+      ],
+      "corrected_physical_diameters_m": [
+        0.09540993453351078,
+        0.12813678729649555
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.3760858,
+      "visible_ring_diameters_m": [
+        0.08252521640519894,
+        0.11083244268861918
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5064021476764514,
+      "centers_base_m": [
+        [
+          0.748070923916289,
+          0.35037091944765025
+        ],
+        [
+          0.7965097576195981,
+          -0.15370924735202235
+        ]
+      ],
+      "confidences": [
+        0.9026841103713611,
+        0.6820535824220593
+      ],
+      "corrected_physical_diameters_m": [
+        0.09597512488557394,
+        0.10670843402825123
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.4798477,
+      "visible_ring_diameters_m": [
+        0.08301408013141565,
+        0.09229790014527631
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.4904955485928073,
+      "centers_base_m": [
+        [
+          0.747016089745172,
+          0.34994057908785103
+        ],
+        [
+          0.7902537436178027,
+          -0.1386455325413577
+        ]
+      ],
+      "confidences": [
+        0.8860973079065172,
+        0.6791280717890367
+      ],
+      "corrected_physical_diameters_m": [
+        0.09515655198091688,
+        0.11375657424385198
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.6496966,
+      "visible_ring_diameters_m": [
+        0.08230605212122422,
+        0.09839421809571307
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5082283412489651,
+      "centers_base_m": [
+        [
+          0.7485512983462218,
+          0.35033338948192017
+        ],
+        [
+          0.7939921066028401,
+          -0.15585943918484363
+        ]
+      ],
+      "confidences": [
+        0.9030086180111202,
+        0.6565113991117256
+      ],
+      "corrected_physical_diameters_m": [
+        0.09530769739066508,
+        0.07549234552248395
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.7486665,
+      "visible_ring_diameters_m": [
+        0.08243678596680443,
+        0.06529741563747611
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5023821365762975,
+      "centers_base_m": [
+        [
+          0.7481910175237723,
+          0.3505129293309547
+        ],
+        [
+          0.7871866823248941,
+          -0.1503534693001416
+        ]
+      ],
+      "confidences": [
+        0.8983847059093832,
+        0.6739584426191503
+      ],
+      "corrected_physical_diameters_m": [
+        0.09490805462366417,
+        0.08885046871412546
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.8497367,
+      "visible_ring_diameters_m": [
+        0.08209111330710944,
+        0.07685157938936857
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49476899323447937,
+      "centers_base_m": [
+        [
+          0.7474944266588099,
+          0.3503061979136284
+        ],
+        [
+          0.7996552033628997,
+          -0.14170560076592195
+        ]
+      ],
+      "confidences": [
+        0.912287747778263,
+        0.6285859788833972
+      ],
+      "corrected_physical_diameters_m": [
+        0.09509084821533433,
+        0.08313324154397493
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252909.9479952,
+      "visible_ring_diameters_m": [
+        0.08224922137818003,
+        0.07190644016711452
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5014033943140388,
+      "centers_base_m": [
+        [
+          0.7482630497174823,
+          0.3502959691105092
+        ],
+        [
+          0.7928381532566844,
+          -0.14912211623893912
+        ]
+      ],
+      "confidences": [
+        0.9112365871975033,
+        0.731854503531672
+      ],
+      "corrected_physical_diameters_m": [
+        0.09560548313088432,
+        0.09289805719067547
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252910.0520234,
+      "visible_ring_diameters_m": [
+        0.08269435697106231,
+        0.0803525577369552
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5145867271604239,
+      "centers_base_m": [
+        [
+          0.7479037277262301,
+          0.35024813727878057
+        ],
+        [
+          0.7871643894995529,
+          -0.16283869767880957
+        ]
+      ],
+      "confidences": [
+        0.8978977538587573,
+        0.6206431473614957
+      ],
+      "corrected_physical_diameters_m": [
+        0.09499795911198866,
+        0.12674888499818937
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252910.183882,
+      "visible_ring_diameters_m": [
+        0.08216887656510824,
+        0.1096319708711193
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5158125962680677,
+      "centers_base_m": [
+        [
+          0.7470919572636718,
+          0.35013939535990657
+        ],
+        [
+          0.7840646080920307,
+          -0.16434642325857468
+        ]
+      ],
+      "confidences": [
+        0.9034864959958823,
+        0.7530451503845269
+      ],
+      "corrected_physical_diameters_m": [
+        0.09634349958671691,
+        0.061003841626716085
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252910.2521567,
+      "visible_ring_diameters_m": [
+        0.08333270734857767,
+        0.052765524433150246
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5011543099261353,
+      "centers_base_m": [
+        [
+          0.7483228568134245,
+          0.35024119630523537
+        ],
+        [
+          0.7928845367158621,
+          -0.14892801252260637
+        ]
+      ],
+      "confidences": [
+        0.8907094701476205,
+        0.7252901369752772
+      ],
+      "corrected_physical_diameters_m": [
+        0.09561243784701842,
+        0.0948108575382598
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252910.3520353,
+      "visible_ring_diameters_m": [
+        0.08270037248146811,
+        0.08200704228718717
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5161380949784479,
+      "centers_base_m": [
+        [
+          0.7480837482835553,
+          0.35095702986637844
+        ],
+        [
+          0.7802449841630077,
+          -0.16417808638438497
+        ]
+      ],
+      "confidences": [
+        0.906335271821452,
+        0.7550735827794265
+      ],
+      "corrected_physical_diameters_m": [
+        0.0963463715747561,
+        0.06280007304800433
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252910.456067,
+      "visible_ring_diameters_m": [
+        0.08333519148647806,
+        0.05431918220977902
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252910.5878565
+    },
+    {
+      "center_distance_m": 0.4908256938324973,
+      "centers_base_m": [
+        [
+          0.747186641844422,
+          0.35032092008383203
+        ],
+        [
+          0.7888818958820218,
+          -0.13873057773300562
+        ]
+      ],
+      "confidences": [
+        0.9131863130323863,
+        0.7444574395981668
+      ],
+      "corrected_physical_diameters_m": [
+        0.09554784627288233,
+        0.11444737183751105
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252910.72409,
+      "visible_ring_diameters_m": [
+        0.08264450373300292,
+        0.09899172632363122
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252910.8239
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252910.9239578
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252910.9921584
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252911.1279604
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252911.2281034
+    },
+    {
+      "center_distance_m": 0.5177439999031896,
+      "centers_base_m": [
+        [
+          0.7467848915726819,
+          0.3500466176801864
+        ],
+        [
+          0.7810096520429903,
+          -0.16656495323794926
+        ]
+      ],
+      "confidences": [
+        0.8889235270578277,
+        0.745845381753019
+      ],
+      "corrected_physical_diameters_m": [
+        0.09667522828361488,
+        0.05957922293230121
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252911.3278751,
+      "visible_ring_diameters_m": [
+        0.08361963745321688,
+        0.05153329461739467
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49395170486121726,
+      "centers_base_m": [
+        [
+          0.7472040206598761,
+          0.3502503778737495
+        ],
+        [
+          0.7878601413872174,
+          -0.14202532392627532
+        ]
+      ],
+      "confidences": [
+        0.9173599391555457,
+        0.6904589072187467
+      ],
+      "corrected_physical_diameters_m": [
+        0.09476776363929935,
+        0.10559314533970328
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252911.396081,
+      "visible_ring_diameters_m": [
+        0.08196976804153505,
+        0.09133322659396638
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49999510198456365,
+      "centers_base_m": [
+        [
+          0.7485180988160094,
+          0.3504695299805776
+        ],
+        [
+          0.7987187848446702,
+          -0.14699905508867675
+        ]
+      ],
+      "confidences": [
+        0.8955591523030452,
+        0.6891965488237564
+      ],
+      "corrected_physical_diameters_m": [
+        0.09484750354250482,
+        0.09550081042955441
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252911.4961326,
+      "visible_ring_diameters_m": [
+        0.08203873939971001,
+        0.0826038198863111
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5045144255289867,
+      "centers_base_m": [
+        [
+          0.7478213880971474,
+          0.35086523853553053
+        ],
+        [
+          0.7886254085366985,
+          -0.15199640991542482
+        ]
+      ],
+      "confidences": [
+        0.8978101251175689,
+        0.6716681258361061
+      ],
+      "corrected_physical_diameters_m": [
+        0.09732880265974653,
+        0.08795328217608221
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252911.6681244,
+      "visible_ring_diameters_m": [
+        0.08418494930560277,
+        0.07607555419272781
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5010776381047636,
+      "centers_base_m": [
+        [
+          0.7474812427298447,
+          0.3501340130611224
+        ],
+        [
+          0.7922117967769369,
+          -0.14894311218435372
+        ]
+      ],
+      "confidences": [
+        0.911012890920122,
+        0.7396510492381915
+      ],
+      "corrected_physical_diameters_m": [
+        0.09498907565878903,
+        0.09215539487183826
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252911.733272,
+      "visible_ring_diameters_m": [
+        0.08216119278562228,
+        0.07971018890107154
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5130630462510547,
+      "centers_base_m": [
+        [
+          0.7481596158020551,
+          0.35028387720396476
+        ],
+        [
+          0.7926121088018808,
+          -0.16084982868375342
+        ]
+      ],
+      "confidences": [
+        0.9074425874546531,
+        0.6712980459278431
+      ],
+      "corrected_physical_diameters_m": [
+        0.0956539408898591,
+        0.12278176850022737
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252911.8679326,
+      "visible_ring_diameters_m": [
+        0.08273627070955775,
+        0.1062005970933293
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5178000244782293,
+      "centers_base_m": [
+        [
+          0.7474581109272058,
+          0.35054437072339956
+        ],
+        [
+          0.7828772155078634,
+          -0.16604284590159524
+        ]
+      ],
+      "confidences": [
+        0.9043721159457222,
+        0.7566334080080875
+      ],
+      "corrected_physical_diameters_m": [
+        0.09554584714395309,
+        0.05935025227804038
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252911.9678833,
+      "visible_ring_diameters_m": [
+        0.08264277457818991,
+        0.05133524550557311
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5181744249695216,
+      "centers_base_m": [
+        [
+          0.74800236748567,
+          0.3510032421376133
+        ],
+        [
+          0.7843164211352665,
+          -0.16589715852002654
+        ]
+      ],
+      "confidences": [
+        0.9153164261705317,
+        0.7606583177741728
+      ],
+      "corrected_physical_diameters_m": [
+        0.09629530931682419,
+        0.05836380885681873
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.0681267,
+      "visible_ring_diameters_m": [
+        0.08329102497586705,
+        0.050482017199675794
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49189703307362836,
+      "centers_base_m": [
+        [
+          0.7473857191717967,
+          0.3502711399086521
+        ],
+        [
+          0.8007627732498778,
+          -0.1387212743930258
+        ]
+      ],
+      "confidences": [
+        0.8927005763974103,
+        0.6496314440435308
+      ],
+      "corrected_physical_diameters_m": [
+        0.0950505559125493,
+        0.0795600379153082
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.1719227,
+      "visible_ring_diameters_m": [
+        0.08221437038469537,
+        0.06881578295036532
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5053838156906688,
+      "centers_base_m": [
+        [
+          0.7476491580433018,
+          0.35044138859485335
+        ],
+        [
+          0.78465620694087,
+          -0.15358567366862555
+        ]
+      ],
+      "confidences": [
+        0.8922206763459591,
+        0.6652747312622418
+      ],
+      "corrected_physical_diameters_m": [
+        0.09549385571342031,
+        0.0822474303311065
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.2720394,
+      "visible_ring_diameters_m": [
+        0.0825978043759053,
+        0.0711402541049027
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.4990609890146023,
+      "centers_base_m": [
+        [
+          0.7474774074050549,
+          0.35011439567799746
+        ],
+        [
+          0.797860271361235,
+          -0.14639687083647554
+        ]
+      ],
+      "confidences": [
+        0.899743836431854,
+        0.6693923196901782
+      ],
+      "corrected_physical_diameters_m": [
+        0.09494909308020445,
+        0.0920999823967294
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.4079509,
+      "visible_ring_diameters_m": [
+        0.0821266096893623,
+        0.07966225965217032
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5004241831984202,
+      "centers_base_m": [
+        [
+          0.747658147085778,
+          0.35026921591949395
+        ],
+        [
+          0.7929210921552656,
+          -0.14810376582554668
+        ]
+      ],
+      "confidences": [
+        0.8973299899069215,
+        0.7483704955881006
+      ],
+      "corrected_physical_diameters_m": [
+        0.09624181150040811,
+        0.0929120229364346
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.5079012,
+      "visible_ring_diameters_m": [
+        0.0832447518188994,
+        0.08036463746635306
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49927136633830754,
+      "centers_base_m": [
+        [
+          0.7478205491198496,
+          0.35075091948352727
+        ],
+        [
+          0.7886038348347554,
+          -0.1468519551581059
+        ]
+      ],
+      "confidences": [
+        0.8805454897049831,
+        0.7336199256050676
+      ],
+      "corrected_physical_diameters_m": [
+        0.09571447789264563,
+        0.0964690082797036
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.6079266,
+      "visible_ring_diameters_m": [
+        0.08278863243981055,
+        0.08344126661025311
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5122070127754653,
+      "centers_base_m": [
+        [
+          0.7478372088119056,
+          0.3505442611290804
+        ],
+        [
+          0.7896833589092074,
+          -0.15995052205523358
+        ]
+      ],
+      "confidences": [
+        0.8908794462817897,
+        0.6877259267255939
+      ],
+      "corrected_physical_diameters_m": [
+        0.09514341685914948,
+        0.12057878473370398
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.708141,
+      "visible_ring_diameters_m": [
+        0.08229469084347402,
+        0.10429511719798748
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252912.812136
+    },
+    {
+      "center_distance_m": 0.501320155967994,
+      "centers_base_m": [
+        [
+          0.7477145982725292,
+          0.35054885191333746
+        ],
+        [
+          0.7927470642929247,
+          -0.1487446246952556
+        ]
+      ],
+      "confidences": [
+        0.8912542191715322,
+        0.7435540449722675
+      ],
+      "corrected_physical_diameters_m": [
+        0.09691836178085325,
+        0.09080984031873728
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252912.9120038,
+      "visible_ring_diameters_m": [
+        0.0838299367744883,
+        0.07854634594045555
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252913.0119925
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252913.1119041
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252913.2159586
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252913.280158
+    },
+    {
+      "center_distance_m": 0.5050604485507569,
+      "centers_base_m": [
+        [
+          0.7475517168228589,
+          0.35027883586528463
+        ],
+        [
+          0.7930669543511808,
+          -0.15272655162378815
+        ]
+      ],
+      "confidences": [
+        0.8709898276285273,
+        0.6974795018666969
+      ],
+      "corrected_physical_diameters_m": [
+        0.09495199322498912,
+        0.08456912293658264
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252913.3844311,
+      "visible_ring_diameters_m": [
+        0.08212911818155583,
+        0.07314841170012643
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252913.4844906
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252913.5841932
+    },
+    {
+      "center_distance_m": 0.5106616516640607,
+      "centers_base_m": [
+        [
+          0.7481523047141744,
+          0.3506846149204512
+        ],
+        [
+          0.7965629727510577,
+          -0.15767719491629203
+        ]
+      ],
+      "confidences": [
+        0.9120131258467322,
+        0.6897631293727928
+      ],
+      "corrected_physical_diameters_m": [
+        0.09468840385215799,
+        0.11785321177103188
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252913.6843224,
+      "visible_ring_diameters_m": [
+        0.08190112546631756,
+        0.10193762162195108
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252913.7881036
+    },
+    {
+      "center_distance_m": 0.516792387167169,
+      "centers_base_m": [
+        [
+          0.7474855574702334,
+          0.3504975983034225
+        ],
+        [
+          0.7826052670094807,
+          -0.1651000912141121
+        ]
+      ],
+      "confidences": [
+        0.9001298652973653,
+        0.755437016552177
+      ],
+      "corrected_physical_diameters_m": [
+        0.09572526192616539,
+        0.058591991122206095
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252913.9201932,
+      "visible_ring_diameters_m": [
+        0.08279796013408358,
+        0.05067938439128944
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5028599814681234,
+      "centers_base_m": [
+        [
+          0.7480258588500079,
+          0.35056631394151944
+        ],
+        [
+          0.791762943922621,
+          -0.15038800368781535
+        ]
+      ],
+      "confidences": [
+        0.9165234355700667,
+        0.7223637930003931
+      ],
+      "corrected_physical_diameters_m": [
+        0.0974831860952252,
+        0.09680362304301346
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252913.9880767,
+      "visible_ring_diameters_m": [
+        0.08431848389489421,
+        0.08373069302993923
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5179581837727768,
+      "centers_base_m": [
+        [
+          0.7472094140853619,
+          0.3501658562994041
+        ],
+        [
+          0.7856791599746713,
+          -0.16636174101598183
+        ]
+      ],
+      "confidences": [
+        0.896076319601616,
+        0.7497329086938533
+      ],
+      "corrected_physical_diameters_m": [
+        0.09663058576365291,
+        0.05725533410067748
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252914.1241002,
+      "visible_ring_diameters_m": [
+        0.083581023721442,
+        0.04952323738730596
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.4963605112085457,
+      "centers_base_m": [
+        [
+          0.7477736862450732,
+          0.35009692147266885
+        ],
+        [
+          0.787104462549711,
+          -0.14470288362276906
+        ]
+      ],
+      "confidences": [
+        0.9126164024892459,
+        0.7067316622804385
+      ],
+      "corrected_physical_diameters_m": [
+        0.09575260212602851,
+        0.10162118588151832
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252914.2241426,
+      "visible_ring_diameters_m": [
+        0.08282160815272332,
+        0.08789766387775612
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.4992960670895801,
+      "centers_base_m": [
+        [
+          0.7477698509202834,
+          0.35063526094540126
+        ],
+        [
+          0.8009723977204247,
+          -0.14581821283144844
+        ]
+      ],
+      "confidences": [
+        0.9111343082063684,
+        0.6699953238530241
+      ],
+      "corrected_physical_diameters_m": [
+        0.09506086128139585,
+        0.09243572342985854
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252914.3241017,
+      "visible_ring_diameters_m": [
+        0.082223284055985,
+        0.07995266024358205
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5035316004611432,
+      "centers_base_m": [
+        [
+          0.7482068382385305,
+          0.35099357348323634
+        ],
+        [
+          0.7920455594180754,
+          -0.15062604254897424
+        ]
+      ],
+      "confidences": [
+        0.893821698592802,
+        0.7256620077464532
+      ],
+      "corrected_physical_diameters_m": [
+        0.09741330105293844,
+        0.09941555538091963
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252914.4281073,
+      "visible_ring_diameters_m": [
+        0.08425803653931851,
+        0.08598989467885909
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.501163304704752,
+      "centers_base_m": [
+        [
+          0.7479612575980784,
+          0.350620611838077
+        ],
+        [
+          0.7932411020674214,
+          -0.14849299613852412
+        ]
+      ],
+      "confidences": [
+        0.9116617715882321,
+        0.7337406318379746
+      ],
+      "corrected_physical_diameters_m": [
+        0.09750469784877348,
+        0.09190688343621282
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252914.5279946,
+      "visible_ring_diameters_m": [
+        0.08433709057485378,
+        0.07949523790981022
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252914.596125
+    },
+    {
+      "center_distance_m": 0.4988481110474528,
+      "centers_base_m": [
+        [
+          0.7479188293175904,
+          0.3506653263202837
+        ],
+        [
+          0.7976202040001685,
+          -0.14570067901275058
+        ]
+      ],
+      "confidences": [
+        0.8966978681892814,
+        0.6837103962666546
+      ],
+      "corrected_physical_diameters_m": [
+        0.09767415922145783,
+        0.09171688171769923
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252914.6962483,
+      "visible_ring_diameters_m": [
+        0.08448366688812214,
+        0.07933089513969559
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252914.7961721
+    },
+    {
+      "center_distance_m": 0.5186421734769054,
+      "centers_base_m": [
+        [
+          0.7474446872904412,
+          0.3501999644869479
+        ],
+        [
+          0.7823562106059379,
+          -0.16726586979454355
+        ]
+      ],
+      "confidences": [
+        0.8950993139853286,
+        0.7675555839097574
+      ],
+      "corrected_physical_diameters_m": [
+        0.09523113919969914,
+        0.05676225317379406
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252914.9334493,
+      "visible_ring_diameters_m": [
+        0.08237056664375442,
+        0.049096745005823006
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5131596418670978,
+      "centers_base_m": [
+        [
+          0.746991399841837,
+          0.3504673137399018
+        ],
+        [
+          0.7901093196686837,
+          -0.1608776412865203
+        ]
+      ],
+      "confidences": [
+        0.898327985866898,
+        0.6986791918961018
+      ],
+      "corrected_physical_diameters_m": [
+        0.0967933599092852,
+        0.12287812088326733
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252915.0320094,
+      "visible_ring_diameters_m": [
+        0.08372181589008937,
+        0.10628393748445739
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5041786918865653,
+      "centers_base_m": [
+        [
+          0.7479589803739845,
+          0.350226437603592
+        ],
+        [
+          0.7849373841895282,
+          -0.1525943565206195
+        ]
+      ],
+      "confidences": [
+        0.8839131238423518,
+        0.650335395408163
+      ],
+      "corrected_physical_diameters_m": [
+        0.09552371594200415,
+        0.08314703834926117
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252915.132308,
+      "visible_ring_diameters_m": [
+        0.08262363210378121,
+        0.07191837377075354
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252915.2680507
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252915.3360863
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252915.436324
+    },
+    {
+      "center_distance_m": 0.5112743454970957,
+      "centers_base_m": [
+        [
+          0.7476592257708752,
+          0.35056039584828624
+        ],
+        [
+          0.794421183563708,
+          -0.15857099747456202
+        ]
+      ],
+      "confidences": [
+        0.9012453412251192,
+        0.6903039521794274
+      ],
+      "corrected_physical_diameters_m": [
+        0.09412884484919115,
+        0.11972445276228459
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252915.5364993,
+      "visible_ring_diameters_m": [
+        0.08141713259872896,
+        0.10355615923550715
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.5019519561284963,
+      "centers_base_m": [
+        [
+          0.7471735777693564,
+          0.35040596527547996
+        ],
+        [
+          0.7973873278730828,
+          -0.14902805995882906
+        ]
+      ],
+      "confidences": [
+        0.8934056736789124,
+        0.7215442479424379
+      ],
+      "corrected_physical_diameters_m": [
+        0.09539727807641657,
+        0.09799121825395957
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252915.6066108,
+      "visible_ring_diameters_m": [
+        0.08251426915043214,
+        0.08475790840603492
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.49933454193238735,
+      "centers_base_m": [
+        [
+          0.7479014505021362,
+          0.350449449865883
+        ],
+        [
+          0.7910095423092087,
+          -0.1470208278267447
+        ]
+      ],
+      "confidences": [
+        0.8894695578875146,
+        0.7346640438301689
+      ],
+      "corrected_physical_diameters_m": [
+        0.09548690099728623,
+        0.09513302702006654
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252915.7759037,
+      "visible_ring_diameters_m": [
+        0.0825917888654995,
+        0.08228570410930501
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "center_distance_m": 0.4951400626700039,
+      "centers_base_m": [
+        [
+          0.7478266616687335,
+          0.3501667695853969
+        ],
+        [
+          0.7898144790754615,
+          -0.14318980009851298
+        ]
+      ],
+      "confidences": [
+        0.9030337322308851,
+        0.7272504678954186
+      ],
+      "corrected_physical_diameters_m": [
+        0.09492893285043918,
+        0.10350183122576209
+      ],
+      "diameter_methods": [
+        "72_point_visible_ring_lateral_span_with_physical_ratio",
+        "72_point_visible_ring_lateral_span_with_physical_ratio"
+      ],
+      "raw_count": 2,
+      "stamp": 1786252915.8722508,
+      "visible_ring_diameters_m": [
+        0.08210917201547341,
+        0.08952433582522126
+      ],
+      "visible_ring_ratios": [
+        0.86495412462749,
+        0.86495412462749
+      ]
+    },
+    {
+      "raw_count": 1,
+      "stamp": 1786252915.9762225
+    }
+  ],
+  "physical_diameter_mean_errors_m": [
+    -0.004347012919894144,
+    -0.007959106189944054
+  ],
+  "physical_reference": {
+    "disc_center_distance_m": 0.5,
+    "disc_outer_diameter_m": 0.1
+  },
+  "raw_disk_count_histogram": {
+    "1": 32,
+    "2": 68
+  },
+  "safety": {
+    "cmd_vel_samples": [
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      },
+      {
+        "angular_z": 0.0,
+        "linear_x": 0.0
+      }
+    ],
+    "max_abs_angular_z": 0.0,
+    "max_abs_linear_x": 0.0,
+    "navigation_gate_enable_motion_param": false,
+    "navigation_gate_status": {
+      "activation_zone": {
+        "active": false,
+        "enabled": false,
+        "frame_id": "map",
+        "polygon": [
+          [
+            -0.65,
+            0.85
+          ],
+          [
+            2.35,
+            0.85
+          ],
+          [
+            2.35,
+            1.95
+          ],
+          [
+            -0.65,
+            1.95
+          ]
+        ],
+        "pose_available": true,
+        "robot_xy": null
+      },
+      "allowed": false,
+      "auto_localization": {
+        "active": false,
+        "elapsed_sec": 0.0,
+        "message": "",
+        "mode": "stationary_camera_lidar_fusion",
+        "state": "idle"
+      },
+      "command": {
+        "angular_z": 0.0,
+        "linear_x": 0.0,
+        "linear_y": 0.0
+      },
+      "command_fresh": false,
+      "emergency_clearance_m": 0.02,
+      "enabled": false,
+      "enforce_boundary_in_activation_zone": false,
+      "enforce_disc_emergency_clearance": true,
+      "enforce_perception_safety": false,
+      "input_cmd_topic": "/yellow_track_avoidance/move_base_cmd_vel",
+      "local_forward_origin_offset_m": 0.5463,
+      "minimum_disk_clearance_m": 0.5567084675909021,
+      "minimum_disk_distance_m": 0.8048625480075785,
+      "motion_capable": false,
+      "normal_command_safety": {
+        "minimum_disc_clearance_m": null,
+        "minimum_line_clearance_m": null,
+        "reason": "activation_zone_not_active",
+        "safe": true,
+        "sample_count": 0
+      },
+      "output_cmd_topic": "/cmd_vel",
+      "ready": true,
+      "reason": "ready_competition_mode",
+      "selected_command_source": "move_base",
+      "special_authority_latched": false,
+      "special_command_fresh": true,
+      "special_input_cmd_topic": "/yellow_track_avoidance/passage_cmd_vel",
+      "special_safe": true,
+      "special_status_fresh": true,
+      "special_status_topic": "/yellow_track_avoidance/passage/status",
+      "stamp": 1786252916.089633,
+      "terminal_goal_guard": {
+        "armed": false,
+        "available": false,
+        "boundary_topic": "/yellow_track_avoidance/debug/boundaries",
+        "distance_m": null,
+        "enabled": true,
+        "frame_match": false,
+        "goal_topic": "/yellow_track_avoidance/corridor_goal",
+        "lateral_error_m": null,
+        "left_line_reference_m": 0.67,
+        "left_sweep_clearance_m": null,
+        "line_mode": "disabled",
+        "odom_topic": "/odom",
+        "overrun_m": 0.025,
+        "owns_output": false,
+        "remaining_m": null,
+        "right_sweep_clearance_m": null,
+        "stable_sec": 0.0,
+        "state": "normal_nav",
+        "stop_latched": false,
+        "stop_lateral_m": 0.008,
+        "stop_reason": "",
+        "stop_remaining_window_m": [
+          -0.005,
+          0.015
+        ],
+        "stop_stable_sec": 0.4,
+        "stop_yaw_rad": 0.0261799388,
+        "takeover_remaining_m": 0.12,
+        "valid_line_frames": 0,
+        "visual_lateral_error_m": null,
+        "visual_yaw_error_rad": null
+      }
+    },
+    "perception_enable_motion_param": false,
+    "perception_status": {
+      "camera_info_received": true,
+      "command": {
+        "angular_z": 0.0,
+        "linear_x": 0.0,
+        "linear_y": 0.0
+      },
+      "diagnostics": {
+        "boundary_detection_mode": "left_only",
+        "boundary_quality": 0.9172843905216432,
+        "boundary_source": "projected_raw_profile",
+        "boundary_used_history": false,
+        "calibrated": true,
+        "confirmed_disk_count": 2,
+        "desired_command": {
+          "angular_z": 0.0,
+          "linear_x": 0.0
+        },
+        "disc_used_history": false,
+        "intrinsics_calibrated": true,
+        "left_detected": true,
+        "left_fit_rms_px": 0.946702851434626,
+        "left_longest_missing_sections": 0,
+        "left_median_confidence": 0.837056428194046,
+        "left_median_prominence": 68.2493896484375,
+        "left_quality": 0.9172843905216432,
+        "left_slope_dx_dy": -2.4470328412749613,
+        "left_space_m": 0.0,
+        "left_support_ratio": 1.0,
+        "left_valid_sections": 28,
+        "local_forward_origin_offset_m": 0.5463,
+        "motion_enabled": false,
+        "output_command": {
+          "angular_z": 0.0,
+          "linear_x": 0.0
+        },
+        "planning_enabled": false,
+        "processing_error": "",
+        "processing_time_ms": 84.58414899996569,
+        "profile_detector": true,
+        "raw_disk_count": 1,
+        "right_detected": false,
+        "right_fit_rms_px": null,
+        "right_longest_missing_sections": 60,
+        "right_median_confidence": 0.0,
+        "right_median_prominence": 0.0,
+        "right_quality": 0.0,
+        "right_slope_dx_dy": null,
+        "right_space_m": 0.0,
+        "right_support_ratio": 0.0,
+        "right_valid_sections": 0,
+        "safe_path": false,
+        "selected_path": null
+      },
+      "stamp": 1786252915.9762225,
+      "state": "STOP",
+      "stop_reason": "planning_disabled"
+    }
+  },
+  "two_disc_availability": 0.68,
+  "two_disc_frames": 68,
+  "visible_ring_diameter_m": [
+    {
+      "max": 0.08448366688812214,
+      "mean": 0.08273544570787758,
+      "min": 0.08141713259872896,
+      "stdev": 0.0006866073342155118
+    },
+    {
+      "max": 0.11083244268861918,
+      "mean": 0.07961115073540871,
+      "min": 0.049096745005823006,
+      "stdev": 0.015538565977303352
+    }
+  ],
+  "visible_ring_to_physical_ratio": [
+    0.86495412462749,
+    0.86495412462749
+  ]
+}
